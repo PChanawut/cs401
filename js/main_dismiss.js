@@ -1,4 +1,4 @@
-fetch("component/main_renew.html")
+fetch("component/main_dismiss.html")
 		  .then(response => {
 		    return response.text()
 		  })
