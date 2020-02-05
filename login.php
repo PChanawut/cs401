@@ -7,11 +7,12 @@
     <meta name="author" content="">
 
     <!-- configHeader -->
-    <configHeader></configHeader>
-
+    <title>OAP - สํานักงานปรมาณูเพื่อสันติ</title>
+    <link rel='icon' href='asset/config/favicon.ico'>
+    <link rel="stylesheet" href="stylesheet/bootstrap.min.css" crossorigin="anonymous"></link>
+    
     <!-- script Block -->
     <script src="js/config.js"></script>
-    
     <!-- Custom styles for this template -->
     <link href="css/login.css" rel="stylesheet">
 
