@@ -10,7 +10,11 @@
     <title>OAP - สํานักงานปรมาณูเพื่อสันติ</title>
     <link rel='icon' href='asset/config/favicon.ico'>
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css" crossorigin="anonymous"></link>
-    
+        
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font.css" crossorigin="anonymous"></link>
+
     <!-- script Block -->
     <script src="js/config.js"></script>
     <!-- Custom styles for this template -->
