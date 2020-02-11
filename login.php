@@ -1,25 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- config -->
+    <?php include 'component/config.php' ?>
 
-    <!-- configHeader -->
-    <title>OAP - สํานักงานปรมาณูเพื่อสันติ</title>
-    <link rel='icon' href='asset/config/favicon.ico'>
-    <link rel="stylesheet" href="stylesheet/bootstrap.min.css" crossorigin="anonymous"></link>
-        
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/font.css" crossorigin="anonymous"></link>
-
-    <!-- script Block -->
-    <script src="js/config.js"></script>
     <!-- Custom styles for this template -->
     <link href="css/login.css" rel="stylesheet">
-
   </head>
     <body class="text-center">
         <form class="form-signin">
@@ -34,4 +20,7 @@
           <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Sign in</button>
         </form>
     </body>
+
+    <!-- script Block -->
+    <script src="js/config.js"></script>
 </html>
