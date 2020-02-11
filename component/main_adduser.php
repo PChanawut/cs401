@@ -13,6 +13,7 @@
           <tr>
             <th scope="col">ลำดับที่</th>
             <th scope="col">ชื่อ / นามสกุล สมาชิก</th>
+            <th scope="col">ตำแหน่ง</th>
             <th scope="col">จัดการสมาชิก</th>
           </tr>
         </thead>
@@ -20,11 +21,13 @@
           <tr>
             <th scope="row">1</th>
             <td>ชนะวุฒิ มหัทธนาคุณ</td>
+            <td>ผู้จัดการ</td>
             <td><button type="button" class="btn btn-secondary">ลบสมาชิก</button></td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>ชนะวุฒิ2</td>
+            <td>ผู้จัดการ</td>
             <td><button type="button" class="btn btn-secondary">ลบสมาชิก</button></td>
           </tr>
         </tbody>
