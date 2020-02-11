@@ -23,18 +23,13 @@
   <body>
 
     <!-- header -->
-    <header></header>
+    <?php include 'component/header.php' ?>
     
     <!-- main -->
-    <main></main>
+    <?php include 'component/main_request.php' ?>
     
     
     <!-- footer -->
 
-
-    <!-- script Block -->
-
-    <script src="js/header.js"></script>
-    <script src="js/main_dismiss.js"></script>
   </body>
 </html>

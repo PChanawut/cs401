@@ -23,18 +23,12 @@
   <body>
 
     <!-- header -->
-    <header></header>
+    <?php include 'component/header.php' ?>
     
     <!-- main -->
-    <main></main>
-    
-    
+    <?php include 'component/main_renew.php' ?>
+
     <!-- footer -->
 
-
-    <!-- script Block -->
-
-    <script src="js/header.js"></script>
-    <script src="js/main_request.js"></script>
   </body>
 </html>

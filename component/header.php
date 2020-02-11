@@ -1,12 +1,12 @@
 <!-- style="background-color: #307BC0;" bg-light-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">OAP</a>
-	  <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<a class="navbar-brand" href="#">
-		 <img src="bird.jpg" alt="Logo" style="width:40px;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color : #2D70B8;">
+	  <!-- <a class="navbar-brand" href="#">OAP</a> -->
+	  <nav class="navbar navbar-expand-sm">
+		<a class="navbar-brand text-light" href="#">
+			<img src="asset/config/logo.png" alt="logo" width="35" height="35" class="d-inline-block align-top">
+			OAP
 	   </a>
-	   ...
-	 </nav> -->
+	 </nav>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -14,27 +14,27 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 	      	<li class="nav-item active">
-	        	<a class="nav-link text-secondary" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+	        	<a class="nav-link text-light" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
 			</li>
 			  
 	      	<li class="nav-item">
-	        	<a class="nav-link text-secondary" href="#">ขอใบอนุญาต</a>
+	        	<a class="nav-link text-light" href="#">ขอใบอนุญาต</a>
 			</li>
 			  
 	      	<li class="nav-item">
-				<a class="nav-link text-secondary" href="#">ยกเลิกใบอนุญาต</a>
+				<a class="nav-link text-light" href="#">ยกเลิกใบอนุญาต</a>
 			</li>
 			  
 			<li class="nav-item">
-				<a class="nav-link text-secondary" href="#">ต่อใบอนุญาต</a>
+				<a class="nav-link text-light" href="#">ต่อใบอนุญาต</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-secondary" href="#">ใบอนุญาตทั้งหมด</a>
+				<a class="nav-link text-light" href="#">ใบอนุญาตทั้งหมด</a>
 			</li>
 		</ul>
 		
 		<div class="dropdown">
-			<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<a class="nav-link dropdown-toggle text-light" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Hi, Sujaree
 				</a>
 				<div class="dropdown-menu" style="right: 0;

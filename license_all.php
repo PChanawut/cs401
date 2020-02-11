@@ -23,18 +23,12 @@
   <body>
 
     <!-- header -->
-    <header></header>
+    <?php include 'component/header.php' ?>
     
     <!-- main -->
-    <main></main>
-    
+    <?php include 'component/main_all.php' ?>
     
     <!-- footer -->
-
-
-    <!-- script Block -->
-
-    <script src="js/header.js"></script>
-    <script src="js/main_adduser.js"></script>
+    
   </body>
 </html>
