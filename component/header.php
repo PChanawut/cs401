@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!-- style="background-color: #307BC0;" bg-light-->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color : #2D70B8;">
 	  <!-- <a class="navbar-brand" href="#">OAP</a> -->
@@ -35,14 +38,14 @@
 		
 		<div class="dropdown">
 			<a class="nav-link dropdown-toggle text-light" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Hi, Sujaree
+				<?php print($_SESSION['fistname']) ?>
 				</a>
 				<div class="dropdown-menu" style="right: 0;
 				left: auto;" aria-labelledby="profileDropdown">
 				<a class="dropdown-item" href="#">Profile</a>
 				<a class="dropdown-item" href="#">Another action</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#">Log out</a>
+				<a class="dropdown-item" href="php/logout.php">Log out</a>
 				</div>
 		</div>
 	    <!-- <form class="form-inline my-2 my-lg-0">
