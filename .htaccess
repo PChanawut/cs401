@@ -1,0 +1,8 @@
+RewriteEngine on  
+RewriteRule ^index  index.php [NC,L]
+
+RewriteRule ^license_all  license_all.php [NC,L]
+RewriteRule ^license_dismiss  license_dismiss.php [NC,L]
+RewriteRule ^license_renew  license_renew.php [NC,L]
+RewriteRule ^license_request  license_request.php [NC,L]
+RewriteRule ^adduser  adduser.php [NC,L]

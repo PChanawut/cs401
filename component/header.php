@@ -1,11 +1,14 @@
-<?php 
+<?php
 	session_start();
+	if(empty($_SESSION["u_id"])){  
+		Header("Location: ./");
+	}
 ?>
 <!-- style="background-color: #307BC0;" bg-light-->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color : #2D70B8;">
 	  <!-- <a class="navbar-brand" href="#">OAP</a> -->
 	  <nav class="navbar navbar-expand-sm">
-		<a class="navbar-brand text-light" href="#">
+		<a class="navbar-brand text-light" href="index.php">
 			<img src="asset/config/logo.png" alt="logo" width="35" height="35" class="d-inline-block align-top">
 			OAP
 	   </a>

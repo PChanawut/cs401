@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(isset($_SESSION["u_id"])){  
-    Header("Location: license_all.php");
+    Header("Location: license_all");
   }
 ?>
 <!doctype html>
@@ -51,7 +51,8 @@
             success: function(response){
               if (response == 'success') {
                 $(document).ajaxStop(function(){
-                    window.location.reload();
+                    // window.location.reload();
+                    location.replace("license_all");
                 });  
               }
               else {
