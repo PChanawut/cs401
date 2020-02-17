@@ -8,7 +8,7 @@
     
     <hr>
     
-    <table class="table">
+    <table class="table" id='table-adduser'>
         <thead class="thead-light">
           <tr>
             <th scope="col">ลำดับที่</th>
@@ -32,5 +32,5 @@
           </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-light">เพิ่มสมาชิก</button>
+    <button type="button" class="btn btn-light" data-toggle="modal" data-target=".model-adduser">เพิ่มสมาชิก</button>
 </div>

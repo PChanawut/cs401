@@ -11,10 +11,8 @@
             $row = mysqli_fetch_array($result);
             $_SESSION['u_id'] = $row['first_name'];
             $_SESSION['fistname'] = $row['first_name'];
-            
 
             echo 'success';
-            // }
         }else{
           echo 'invalid';
         }
