@@ -41,7 +41,7 @@
 		
 		<div class="dropdown">
 			<a class="nav-link dropdown-toggle text-light" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<?php print($_SESSION['fistname']) ?>
+				<?php print($_SESSION['name']) ?>
 				</a>
 				<div class="dropdown-menu" style="right: 0;
 				left: auto;" aria-labelledby="profileDropdown">
