@@ -12,7 +12,7 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">ลำดับที่</th>
-            <th scope="col">ชื่อ / นามสกุล สมาชิก</th>
+            <th scope="col">ชื่อ / นามสกุล</th>
             <th scope="col">ตำแหน่ง</th>
             <th scope="col">จัดการสมาชิก</th>
           </tr>
