@@ -57,12 +57,25 @@
               }
               else {
                 $("#invalid").css("display", "block");
+
                 $("#username").val("");
+                $("#username").addClass("is-invalid");
                 $("#password").val("");
+                $("#password").addClass("is-invalid");
               }
             }
         });
       });
       });
+
+      $(document).ready(function() {
+        $('#username').click(function() {
+          if(($("#username").hasClass("is-invalid") && $("#username").val() == "")||($("#password").hasClass("is-invalid") && $("#password").val() == "")){
+            $("#username").removeClass("is-invalid");
+            $("#password").removeClass("is-invalid");
+          }
+        });
+      });
     </script>
+
 </html>

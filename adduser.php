@@ -22,7 +22,7 @@
     
     <!-- model -->
     <div class="modal fade model-adduser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">เพิ่มสมาชิก</h5>
@@ -32,19 +32,30 @@
           </div>
           <!-- body -->
           <div class="modal-body">
-            <div class="form-group">
-              <label for="model-adduser-firstname" class="col-form-label">ชื่อ :</label>
-              <input type="text" class="form-control" id="model-adduser-first">
+            <div class="form-group" style="margin-bottom : 5px;">
+              <label for="model-adduser-username" class="col-form-label">Username :</label>
+              <input type="text" class="form-control" id="model-adduser-username">
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom : 5px;">
+              <label for="model-adduser-password" class="col-form-label">Password :</label>
+              <input type="password" class="form-control" id="model-adduser-password">
+            </div>
+            <div class="form-group" style="margin-bottom : 5px;">
+              <label for="model-adduser-repassword" class="col-form-label">Comfirm password :</label>
+              <input type="password" class="form-control" id="model-adduser-repassword">
+            </div>
+            <div class="form-group" style="margin-bottom : 5px;">
+              <label for="model-adduser-firstname" class="col-form-label">ชื่อ :</label>
+              <input type="text" class="form-control" id="model-adduser-firstname">
+            </div>
+            <div class="form-group" style="margin-bottom : 5px;">
               <label for="model-adduser-lastname" class="col-form-label">นามสกุล :</label>
               <input type="text" class="form-control" id="model-adduser-lastname">
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom : 5px;">
               <label for="model-adduser-status" class="col-form-label">ตำแหน่ง :</label>
               <input type="text" class="form-control" id="model-adduser-status">
-            </div>
-
+            </div>            
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
