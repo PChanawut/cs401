@@ -24,18 +24,18 @@
 			</li>
 			  
 	      	<li class="nav-item">
-	        	<a class="nav-link text-light" href="license_request.php">ขอใบอนุญาต</a>
+	        	<a class="nav-link text-light" href="license_request">ขอใบอนุญาต</a>
 			</li>
 			  
 	      	<li class="nav-item">
-				<a class="nav-link text-light" href="license_dismiss.php">ยกเลิกใบอนุญาต</a>
+				<a class="nav-link text-light" href="license_dismiss">ยกเลิกใบอนุญาต</a>
 			</li>
 			  
 			<li class="nav-item">
-				<a class="nav-link text-light" href="license_renew.php">ต่อใบอนุญาต</a>
+				<a class="nav-link text-light" href="license_renew">ต่อใบอนุญาต</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-light" href="license_all.php">ใบอนุญาตทั้งหมด</a>
+				<a class="nav-link text-light" href="license_all">ใบอนุญาตทั้งหมด</a>
 			</li>
 		</ul>
 		

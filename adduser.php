@@ -30,12 +30,25 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <!-- body -->
           <div class="modal-body">
-            ...
+            <div class="form-group">
+              <label for="model-adduser-firstname" class="col-form-label">ชื่อ :</label>
+              <input type="text" class="form-control" id="model-adduser-first">
+            </div>
+            <div class="form-group">
+              <label for="model-adduser-lastname" class="col-form-label">นามสกุล :</label>
+              <input type="text" class="form-control" id="model-adduser-lastname">
+            </div>
+            <div class="form-group">
+              <label for="model-adduser-status" class="col-form-label">ตำแหน่ง :</label>
+              <input type="text" class="form-control" id="model-adduser-status">
+            </div>
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary">เพิ่มสมาชิก</button>
           </div>
         </div>
       </div>
