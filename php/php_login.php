@@ -9,7 +9,7 @@
         $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result)==1){
             $row = mysqli_fetch_array($result);
-            $_SESSION['u_id'] = $row['company_id'];
+            $_SESSION['company_id'] = $row['company_id'];
             $_SESSION['name'] = $row['company_name'];
             
             echo 'success';
@@ -19,4 +19,5 @@
     }else{
         echo 'invalid';
     }
+    mysqli_close($result);
 ?>

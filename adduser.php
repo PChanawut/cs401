@@ -7,7 +7,6 @@
   <body>
     <!-- header -->
     <?php include 'component/header.php' ?>
-
     <!-- main -->
     <?php include 'component/main_adduser.php' ?>
 
@@ -30,41 +29,101 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <!-- body -->
-          <div class="modal-body">
-            <div class="form-group" style="margin-bottom : 5px;">
-              <label for="model-adduser-username" class="col-form-label">Username :</label>
-              <input type="text" class="form-control" id="model-adduser-username">
+          <form id="adduser_form" method="post" autocomplete="off">
+            <!-- body -->
+            <div class="modal-body">
+                <div class="form-group" style="margin-bottom : 5px;">
+                  <label for="model-adduser-username" class="col-form-label">Username :</label>
+                  <input type="text" class="form-control" id="model-adduser-username" required>
+                </div>
+                <div class="form-group" style="margin-bottom : 5px;">
+                  <label for="model-adduser-password" class="col-form-label">Password :</label>
+                  <input type="password" class="form-control" id="model-adduser-password" required autocomplete>
+                </div>
+                <div class="form-group" style="margin-bottom : 5px;">
+                  <label for="model-adduser-repassword" class="col-form-label" style="margin-bottom : 5px;">Comfirm password :</label>
+                  <input type="password" class="form-control" id="model-adduser-repassword" required autocomplete>
+                </div>
+                <div class="form-group" style="margin-bottom : 5px;">
+                  <label for="model-adduser-firstname" class="col-form-label">ชื่อ :</label>
+                  <input type="text" class="form-control" id="model-adduser-firstname" required>
+                </div>
+                <div class="form-group" style="margin-bottom : 5px;">
+                  <label for="model-adduser-lastname" class="col-form-label">นามสกุล :</label>
+                  <input type="text" class="form-control" id="model-adduser-lastname" required>
+                </div>
+                <div class="form-group" style="margin-bottom : 5px;">
+                  <label for="model-adduser-status" class="col-form-label">ตำแหน่ง :</label>
+                  <input type="text" class="form-control" id="model-adduser-status" required>
+                </div>          
             </div>
-            <div class="form-group" style="margin-bottom : 5px;">
-              <label for="model-adduser-password" class="col-form-label">Password :</label>
-              <input type="password" class="form-control" id="model-adduser-password">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">เพิ่มสมาชิก</button>
             </div>
-            <div class="form-group" style="margin-bottom : 5px;">
-              <label for="model-adduser-repassword" class="col-form-label">Comfirm password :</label>
-              <input type="password" class="form-control" id="model-adduser-repassword">
-            </div>
-            <div class="form-group" style="margin-bottom : 5px;">
-              <label for="model-adduser-firstname" class="col-form-label">ชื่อ :</label>
-              <input type="text" class="form-control" id="model-adduser-firstname">
-            </div>
-            <div class="form-group" style="margin-bottom : 5px;">
-              <label for="model-adduser-lastname" class="col-form-label">นามสกุล :</label>
-              <input type="text" class="form-control" id="model-adduser-lastname">
-            </div>
-            <div class="form-group" style="margin-bottom : 5px;">
-              <label for="model-adduser-status" class="col-form-label">ตำแหน่ง :</label>
-              <input type="text" class="form-control" id="model-adduser-status">
-            </div>            
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">เพิ่มสมาชิก</button>
-          </div>
+          </form>  
         </div>
       </div>
     </div>
     <!-- script -->
+    <script type="text/javascript">
+    // js veridate
+      $(document).ready(function() {
+        $('#model-adduser-repassword').focusout(function() {
+          if($('#model-adduser-repassword').val() != $('#model-adduser-password').val()){
+            $("#model-adduser-password").addClass("is-invalid");
+            $("#model-adduser-repassword").addClass("is-invalid");
+            $("#invalid").css("display", "block");
+          }
+          if($('#model-adduser-password').hasClass("is-invalid") && $('#model-adduser-repassword').hasClass("is-invalid")){
+            if($('#model-adduser-repassword').val() == $('#model-adduser-password').val()){
+              $("#model-adduser-password").removeClass("is-invalid");
+              $("#model-adduser-repassword").removeClass("is-invalid");
+              $("#invalid").css("display", "none");
+            }
+          }
+        })
+      });
+
+      // ajax
+      $(document).ready(function() {
+        $('#adduser_form').submit(function(e) {
+          let username = $("#model-adduser-username").val();
+          let password = $("#model-adduser-password").val();
+          let firstname = $("#model-adduser-firstname").val();
+          let lastname = $("#model-adduser-lastname").val();
+          let status = $("#model-adduser-status").val();
+          if(password == $("#model-adduser-repassword").val()){
+              e.preventDefault();
+              $.ajax({
+                type: 'POST',
+                url: 'php/php_adduser.php',
+                data: {
+                  username:username,
+                  password:password,
+                  firstname:firstname,
+                  lastname:lastname,
+                  status:status
+                },
+                success: function(response){
+                  if (response == 'success') {
+                    // $(document).ajaxStop(function(){
+                        alert(response);
+                        // window.location.reload();
+                        // location.replace("license_all");
+                    // });  
+                  }
+                  else {
+                    alert(response);
+                  }
+                }
+            });
+          }else{
+            // check;
+          }
+      });
+      });
+    </script>
     <script type="text/javascript">
     $(document).ready(function() {
       $('#table-adduser > tbody:last').append('<tr><th scope="col">ลำดับที่</th></tr>'); 

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(empty($_SESSION["u_id"])){  
+	if(empty($_SESSION["company_id"])){  
 		Header("Location: ./");
 	}
 ?>
@@ -46,9 +46,9 @@
 				<div class="dropdown-menu" style="right: 0;
 				left: auto;" aria-labelledby="profileDropdown">
 				<a class="dropdown-item" href="#">Profile</a>
-				<a class="dropdown-item" href="#">Another action</a>
+				<a class="dropdown-item" href="adduser">เพิ่มสมาชิก</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="php/logout.php">Log out</a>
+				<a class="dropdown-item" href="php/php_logout.php">Log out</a>
 				</div>
 		</div>
 	    <!-- <form class="form-inline my-2 my-lg-0">

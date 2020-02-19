@@ -20,8 +20,7 @@
           <h1 class="h4 mb-4 font-weight-normal">Office of Atoms for Peace</h1>
           <div id='invalid' style="display:none"><h6 style="color:red;">*username หรือ password ไม่ถูกต้อง</h6></div>
           <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="text" id='username' class="form-control mb-2" placeholder="username" required autofocus>
-          
+          <input type="text" id='username' class="form-control mb-2" placeholder="username" required>
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" id='password' class="form-control" placeholder="password" autocomplete="on" required>
     
@@ -38,12 +37,12 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $('#login_form').submit(function(e) {
-          var username = $("#username").val();
-          var password = $("#password").val();
+          let username = $("#username").val();
+          let password = $("#password").val();
           e.preventDefault();
           $.ajax({
             type: 'POST',
-            url: 'php/login.php',
+            url: 'php/php_login.php',
             data: {
               username:username,
               password:password
