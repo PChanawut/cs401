@@ -24,7 +24,7 @@
         <div class="modal fade model-adduser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header alert alert-primary">
                         <h5 class="modal-title" id="exampleModalLongTitle">เพิ่มสมาชิก</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -33,32 +33,32 @@
                     <form id="adduser_form" method="post" autocomplete="off">
                         <!-- body -->
                         <div class="modal-body">
-                            <div class="form-group" style="margin-bottom : 5px;">
+                            <div class="form-group" style="margin-bottom : 3px;">
                                 <label for="model-adduser-username" class="col-form-label">ชื่อบัญชีผู้ใช้ :</label>
-                                <input type="text" class="form-control" id="model-adduser-username" required>
+                                <input type="text" class="form-control input-sm" id="model-adduser-username" required>
                             </div>
-                            <div class="form-group" style="margin-bottom : 5px;">
+                            <div class="form-group" style="margin-bottom : 3px;">
                                 <label for="model-adduser-password" class="col-form-label">รหัสผ่าน :</label>
-                                <input type="password" class="form-control" id="model-adduser-password" required autocomplete>
+                                <input type="password" class="form-control input-sm" id="model-adduser-password" required autocomplete>
                             </div>
-                            <div class="form-group" style="margin-bottom : 5px;">
-                                <label for="model-adduser-repassword" class="col-form-label" style="margin-bottom : 5px;">ยืนยันรหัสผ่าน :</label>
-                                <input type="password" class="form-control" id="model-adduser-repassword" required autocomplete>
+                            <div class="form-group" style="margin-bottom : 3px;">
+                                <label for="model-adduser-repassword" class="col-form-label">ยืนยันรหัสผ่าน :</label>
+                                <input type="password" class="form-control input-sm" id="model-adduser-repassword" required autocomplete>
                             </div>
-                            <div class="form-group" style="margin-bottom : 5px;">
+                            <div class="form-group" style="margin-bottom : 3px;">
                                 <label for="model-adduser-firstname" class="col-form-label">ชื่อ :</label>
-                                <input type="text" class="form-control" id="model-adduser-firstname" required>
+                                <input type="text" class="form-control input-sm" id="model-adduser-firstname" required>
                             </div>
-                            <div class="form-group" style="margin-bottom : 5px;">
+                            <div class="form-group" style="margin-bottom : 3px;">
                                 <label for="model-adduser-lastname" class="col-form-label">นามสกุล :</label>
-                                <input type="text" class="form-control" id="model-adduser-lastname" required>
+                                <input type="text" class="form-control input-sm" id="model-adduser-lastname" required>
                             </div>
-                            <div class="form-group" style="margin-bottom : 5px;">
+                            <div class="form-group" style="margin-bottom : 3px;">
                                 <label for="model-adduser-status" class="col-form-label">ตำแหน่ง :</label>
-                                <input type="text" class="form-control" id="model-adduser-status" required>
+                                <input type="text" class="form-control input-sm" id="model-adduser-status" required>
                             </div>
                             <!-- checkbox -->
-                            <div class="form-group" style="margin-bottom : 5px;">
+                            <div class="form-group" style="margin-bottom : 3px;">
                                 <label for="model-adduser-username" class="col-form-label">กำหนดสิทธิ์ :</label>
                                 <div class="contrainer ml-3">
                                     <div class="row">
