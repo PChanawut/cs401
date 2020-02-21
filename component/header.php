@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	if(empty($_SESSION["company_id"])){  
 		Header("Location: ./");
 	}

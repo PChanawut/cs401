@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if(isset($_SESSION["u_id"])){  
+  if(isset($_SESSION["company_id"])){  
     Header("Location: license_all");
   }
 ?>
@@ -50,7 +50,6 @@
             success: function(response){
               if (response == 'success') {
                 $(document).ajaxStop(function(){
-                    // window.location.reload();
                     location.replace("license_all");
                 });  
               }

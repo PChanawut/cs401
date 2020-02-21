@@ -13,3 +13,5 @@
 
 <!-- css -->
 <link href="css/main.css" rel="stylesheet">
+
+<?php session_start(); ?>

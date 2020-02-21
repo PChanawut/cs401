@@ -3,6 +3,9 @@
   <head>
     <!-- config -->
     <?php include 'component/config.php' ?>
+    <?php
+      // $_SESSION['permission'][4]
+    ?>
   </head>
   <body>
     <!-- header -->

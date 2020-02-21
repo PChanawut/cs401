@@ -5,19 +5,27 @@
         $username = $_POST['username'];
         $password = md5($_POST['password']);
 
-        $sql="SELECT * FROM company Where company_user='".$username."' and company_password='".$password."' ";
+        $sql="SELECT * FROM usercompany Where usercompany_username='".$username."' and usercompany_password='".$password."'";
         $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result)==1){
             $row = mysqli_fetch_array($result);
-            $_SESSION['company_id'] = $row['company_id'];
-            $_SESSION['name'] = $row['company_name'];
-            
-            echo 'success';
+            if($row['usercompany_ativate'] != 'deativate'){
+                $_SESSION['company_id'] = $row['company_id'];
+                $_SESSION['name'] = $row['usercompany_fname']." ".$row['usercompany_lname'];
+                
+                $_SESSION['permission'] = array();
+                for($i=0 ; $i < strlen($row['usercompany_permission']) ; $i++){
+                    $_SESSION['permission'][$i] = $row['usercompany_permission'][$i];
+                }
+                echo 'success';    
+            }else{
+                echo 'invalid';
+            }
         }else{
           echo 'invalid';
         }
     }else{
         echo 'invalid';
     }
-    mysqli_close($result);
+    mysqli_close($conn);
 ?>
