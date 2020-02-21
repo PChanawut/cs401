@@ -37,15 +37,15 @@
             <!-- body -->
             <div class="modal-body">
                 <div class="form-group" style="margin-bottom : 5px;">
-                  <label for="model-adduser-username" class="col-form-label">Username :</label>
+                  <label for="model-adduser-username" class="col-form-label">ชื่อบัญชีผู้ใช้ :</label>
                   <input type="text" class="form-control" id="model-adduser-username" required>
                 </div>
                 <div class="form-group" style="margin-bottom : 5px;">
-                  <label for="model-adduser-password" class="col-form-label">Password :</label>
+                  <label for="model-adduser-password" class="col-form-label">รหัสผ่าน :</label>
                   <input type="password" class="form-control" id="model-adduser-password" required autocomplete>
                 </div>
                 <div class="form-group" style="margin-bottom : 5px;">
-                  <label for="model-adduser-repassword" class="col-form-label" style="margin-bottom : 5px;">Comfirm password :</label>
+                  <label for="model-adduser-repassword" class="col-form-label" style="margin-bottom : 5px;">ยืนยันรหัสผ่าน :</label>
                   <input type="password" class="form-control" id="model-adduser-repassword" required autocomplete>
                 </div>
                 <div class="form-group" style="margin-bottom : 5px;">
@@ -59,7 +59,33 @@
                 <div class="form-group" style="margin-bottom : 5px;">
                   <label for="model-adduser-status" class="col-form-label">ตำแหน่ง :</label>
                   <input type="text" class="form-control" id="model-adduser-status" required>
-                </div>          
+                </div>
+                <!-- checkbox -->
+                <div class="form-group" style="margin-bottom : 5px;">
+                  <label for="model-adduser-username" class="col-form-label">กำหนดสิทธิ์ :</label>
+                  <div class="contrainer ml-3">
+                    <div class="row">
+                      <div class="col custom-control custom-checkbox mr-2">
+                        <input type="checkbox" class="custom-control-input" id="checkPermission-request">
+                        <label class="custom-control-label" for="checkPermission-request">ขอใบอนุญาต</label>
+                      </div>        
+                      <div class="col custom-control custom-checkbox mr-2">
+                        <input type="checkbox" class="custom-control-input" id="checkPermission-renew">
+                        <label class="custom-control-label" for="checkPermission-renew">ต่อใบอนุญาต</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col custom-control custom-checkbox mr-2">
+                        <input type="checkbox" class="custom-control-input" id="checkPermission-dismiss">
+                        <label class="custom-control-label" for="checkPermission-dismiss">ยกเลิกใบอนุญาต</label>
+                      </div>
+                      <div class="col custom-control custom-checkbox mr-2">
+                        <input type="checkbox" class="custom-control-input" id="checkPermission-all">
+                        <label class="custom-control-label" for="checkPermission-all">ดูใบอนุญาต</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
