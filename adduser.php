@@ -32,7 +32,7 @@
                     </div>
                     <form id="adduser_form" method="post" autocomplete="off">
                         <!-- body -->
-                        <div class="modal-body">
+                        <div class="modal-body" style="margin-top : -25px;">
                             <div class="form-group" style="margin-bottom : 3px;">
                                 <label for="model-adduser-username" class="col-form-label">ชื่อบัญชีผู้ใช้ :</label>
                                 <input type="text" class="form-control input-sm" id="model-adduser-username" required>
