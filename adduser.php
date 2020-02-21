@@ -3,6 +3,11 @@
   <head>
     <!-- config -->
     <?php include 'component/config.php' ?>
+    <?php
+      if($_SESSION["permission"][4] != 1){  
+        Header("Location: home");
+      }
+    ?>
   </head>
   <body>
     <!-- header -->
@@ -18,7 +23,6 @@
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
-    
     <!-- model -->
     <div class="modal fade model-adduser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -123,11 +127,6 @@
           }
       });
       });
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-      $('#table-adduser > tbody:last').append('<tr><th scope="col">ลำดับที่</th></tr>'); 
-    });
     </script>
   </body>
 </html>

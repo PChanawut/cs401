@@ -1,15 +1,13 @@
-<?php
-  session_start();
-  if(isset($_SESSION["company_id"])){  
-    Header("Location: license_all");
-  }
-?>
 <!doctype html>
 <html lang="en">
   <head>
      <!-- config -->
     <?php include 'component/config.php' ?>
-
+    <?php
+      if(isset($_SESSION["company_id"])){  
+        Header("Location: home");
+      }
+    ?>
     <!-- Custom styles for this template -->
     <link href="css/login.css" rel="stylesheet">
   </head>
@@ -50,7 +48,7 @@
             success: function(response){
               if (response == 'success') {
                 $(document).ajaxStop(function(){
-                    location.replace("license_all");
+                    location.replace("home");
                 });  
               }
               else {

@@ -45,7 +45,9 @@
 				<div class="dropdown-menu" style="right: 0;
 				left: auto;" aria-labelledby="profileDropdown">
 				<a class="dropdown-item" href="#">Profile</a>
-				<a class="dropdown-item" href="adduser">เพิ่มสมาชิก</a>
+				<?php if($_SESSION['permission'][4] == 1){ ?>  
+					<a class="dropdown-item" href="adduser">เพิ่มสมาชิก</a>
+				<?php } ?>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="php/php_logout.php">Log out</a>
 				</div>

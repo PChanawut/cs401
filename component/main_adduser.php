@@ -16,7 +16,7 @@
       }
     ?>
     <table class="table" id='table-adduser'>
-        <thead class="thead-light">
+        <thead class="alert alert-primary">
           <tr>
             <th scope="col">ลำดับที่</th>
             <th scope="col">ชื่อ / นามสกุล</th>
