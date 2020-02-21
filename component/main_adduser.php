@@ -8,13 +8,13 @@
     <?php include('php/config/database.php'); ?>
     <?php
         $users = array();
-        $sql = "SELECT * FROM usercompany Where company_id=".$_SESSION["company_id"]."";  
+        $sql = "SELECT * FROM usercompany WHERE company_id=".$_SESSION["company_id"]." AND NOT usercompany_id = ".$_SESSION["user_id"]."";  
         $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
         while ($user =  mysqli_fetch_assoc($user_query)){
           $users[] = $user;
         }
         ?>
-    <table class="table" id='table-adduser'>
+    <table class="table" id="table-adduser">
         <thead class="alert alert-primary">
             <tr>
                 <th scope="col">ลำดับที่</th>
@@ -25,11 +25,8 @@
         </thead>
         <?php
             $i = 1;
-            // echo '<script language="javascript">';
-            // echo 'alert('.$users.');';
-            // echo '</script>';
             if (is_array($users) || is_object($users)){
-              foreach($users as $user){
+                foreach($users as $user){
             ?>
         <tbody>
             <th scope="row"><?php echo $i++; ?></th>
@@ -38,8 +35,9 @@
             <td><button type="button" class="btn btn-secondary">ลบสมาชิก</button></td>
         </tbody>
         <?php
+                }
             }
-            }
+            mysqli_close($conn);
             ?>
     </table>
     <button type="button" class="btn btn-light" data-toggle="modal" data-target=".model-adduser">เพิ่มสมาชิก</button>

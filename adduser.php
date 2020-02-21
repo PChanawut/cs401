@@ -21,7 +21,7 @@
         <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
         <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
         <!-- model -->
-        <div class="modal fade model-adduser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal fade model-adduser" id="model-adduser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header alert alert-primary">
@@ -64,7 +64,7 @@
                                     <div class="row">
                                         <div class="col custom-control custom-checkbox mr-2">
                                             <input type="checkbox" class="custom-control-input" id="checkPermission-request">
-                                            <label class="custom-control-label" for="checkPermission-request">ขอใบอนุญาต</label>
+                                            <label class="custom-control-label" for="checkPermission-request" checked>ขอใบอนุญาต</label>
                                         </div>
                                         <div class="col custom-control custom-checkbox mr-2">
                                             <input type="checkbox" class="custom-control-input" id="checkPermission-renew">
@@ -114,40 +114,48 @@
             
             // ajax
             $(document).ready(function() {
-              $('#adduser_form').submit(function(e) {
-                let username = $("#model-adduser-username").val();
-                let password = $("#model-adduser-password").val();
-                let firstname = $("#model-adduser-firstname").val();
-                let lastname = $("#model-adduser-lastname").val();
-                let status = $("#model-adduser-status").val();
-                if (password == $("#model-adduser-repassword").val()) {
-                  e.preventDefault();
-                  $.ajax({
-                    type: 'POST',
-                    url: 'php/php_adduser.php',
-                    data: {
-                      username: username,
-                      password: password,
-                      firstname: firstname,
-                      lastname: lastname,
-                      status: status
-                    },
-                    success: function(response) {
-                      if (response == 'success') {
-                        // $(document).ajaxStop(function(){
-                        alert(response);
-                        // window.location.reload();
-                        // location.replace("license_all");
-                        // });  
-                      } else {
-                        alert(response);
-                      }
+                $('#adduser_form').submit(function(e) {
+                    let username = $("#model-adduser-username").val();
+                    let password = $("#model-adduser-password").val();
+                    let firstname = $("#model-adduser-firstname").val();
+                    let lastname = $("#model-adduser-lastname").val();
+                    let status = $("#model-adduser-status").val();
+                    let permission = "";
+                    $('#checkPermission-request').is(":checked")?permission += "1":permission += "0";
+                    $('#checkPermission-renew').is(":checked")?permission += "1":permission += "0";
+                    $('#checkPermission-dismiss').is(":checked")?permission += "1":permission += "0";
+                    $('#checkPermission-all').is(":checked")?permission += "1":permission += "0";
+                    permission+="0"; //can add user(admin)
+                    if (password == $("#model-adduser-repassword").val()) {
+                        e.preventDefault();
+                        $.ajax({
+                            type: 'POST',
+                            url: 'php/php_adduser.php',
+                            data: {
+                                username: username,
+                                password: password,
+                                firstname: firstname,
+                                lastname: lastname,
+                                status: status,
+                                permission: permission
+                            },
+                            success: function(response) {
+                                if (response == 'success') {
+                                    $('#table-adduser tbody').empty();
+                                    
+                                    
+                                    //close model
+                                    $('#model-adduser').modal('toggle');
+                                } else {
+                                    alert(response);
+                                }
+                            }
+                        });
+                    } else {
+                    // check;
                     }
-                  });
-                } else {
-                  // check;
-                }
               });
+            //   $('#table-adduser-tbody').find("tbody").append("<th>5</th>");
             });
         </script>
     </body>

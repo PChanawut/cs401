@@ -11,6 +11,7 @@
             $row = mysqli_fetch_array($result);
             if($row['usercompany_ativate'] != 'deativate'){
                 $_SESSION['company_id'] = $row['company_id'];
+                $_SESSION['user_id'] = $row['usercompany_id'];
                 $_SESSION['name'] = $row['usercompany_fname']." ".$row['usercompany_lname'];
                 
                 $_SESSION['permission'] = array();
@@ -24,8 +25,8 @@
         }else{
           echo 'invalid';
         }
+        mysqli_close($conn);
     }else{
         echo 'invalid';
     }
-    mysqli_close($conn);
 ?>
