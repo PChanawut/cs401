@@ -13,7 +13,6 @@
             $company_id = $_SESSION["company_id"];
             $sql = "INSERT INTO usercompany(usercompany_id,company_id,usercompany_username,usercompany_password,usercompany_fname,usercompany_lname,usercompany_status) 
             VALUES (NULL,'$company_id','$username','$password','$firstname','$lastname','$status');";
-            echo $sql;
             if (mysqli_query($conn, $sql)) {
                 echo "success";
             } else {
