@@ -6,75 +6,7 @@
     <?php include 'component/config.php' ?>
 </head>
 
-<!-- <style>
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 20px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom radio button */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input~.checkmark {
-    background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.container input:checked~.checkmark {
-    background-color: #2196F3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.container input:checked~.checkmark:after {
-    display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.container .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
-}
-</style> -->
-
 <body>
-    <!-- header -->
-    <?php include 'component/header_notRegister.php' ?>
-
     <div class="container mt-5">
         <div class="row">
             <div class="col">
@@ -108,7 +40,7 @@
                     <li class="breadcrumb-item"><a href="#">ข้อมูลส่วนตัว</a></li>
                 </div>
                 <div class="col-sm">
-                    <li class="breadcrumb-item"><a href="#">สร้างไอดี</a></li>
+                    <li class="breadcrumb-item"><a href="#">สร้างบัญชีผู้ใช้</a></li>
                 </div>
                 <div class="col-sm">
                     <li class="breadcrumb-item active" aria-current="page">เสร็จสิ้น</li>
@@ -194,8 +126,11 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputCity">อำเภอ:</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <label for="inputState">อำเภอ:</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputState">จังหวัด:</label>
@@ -221,15 +156,102 @@
         </form>
     </div>
 
+    <div class="container mt-5">
+        <!-- <div class="row">
+            <div class="col">
+                <h4>สร้างบัญชีผู้ใช้</h4>
+            </div>
+        </div>
 
-    <!-- footer -->
+        <hr> -->
+
+        <form>
+            <div class="alert alert-primary" role="alert">
+                <h5>รายละเอียดของบัญชีผู้ใช้</h5>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col">
+                    <i style='font-size:34px' class="far fa-user"></i>
+                    <br><br>
+
+                    <!-- <div class="form-row">
+                        <div class="form-grou col-5">
+                            <label for="inputAddress2">ชื่อผู้ขอรับบัญชีผู้ใช้:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="ชื่อบัญชีผู้ใช้">
+                        </div>
+                    </div>
+                    <br> -->
+
+                    <div class="form-row">
+                        <div class="form-grou col-4">
+                            <label for="inputAddress2">ชื่อบัญชีผู้ใช้:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="ชื่อบัญชีผู้ใช้">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="inputAddress2">รหัสผ่าน:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="รหัสผ่าน">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="inputAddress2">ยืนยันรหัสผ่าน:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="ยืนยันรหัสผ่าน">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container mt-5 mx-auto">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-primary" role="alert">
+                    <h5>ยืนยันการขอรับชื่อบัญชีผู้ใช้</h5>
+                </div>
+
+                <div class="text-center mb-3">
+                    <div class="text-center mb">
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <p style='font-size:20px'>
+                                        ชื่อผู้ขอบัญชี:<br>ชื่อบัญชีผู้ใช้:<br>เบอร์โทรศัพท์ที่สามารถติดต่อได้:</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <i style='font-size:18px;' class="fas fa-exclamation-circle text-danger">
+                                        กรุณาติดต่อเจ้าหน้าที่ที่สำนักงานภายใน 15 วัน</i>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <button type="button" class="btn btn-light">ยกเลิก</button>
+                                    <button type="button" class="btn btn-light">ยืนยันการขอบัญชีผู้ใช้</button>
+                                </div>
+
+                            </div>
+
+                            <!-- <button type="button" class="btn btn-light">ยกเลิก</button>
+                        <button type="button" class="btn btn-light">ยืนยันการขอบัญชีผู้ใช้</button> -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
-    <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
+        <!-- footer -->
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
+        <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
 
 </html>
