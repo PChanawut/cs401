@@ -111,9 +111,50 @@
                 }
               })
             });
-            
+            // function write table;
+            function writeTable(){
+                $('#table-adduser tbody').empty();
+                <?php include('php/config/database.php'); ?>
+                <?php
+                    $users = array();
+                    $sql = "SELECT * FROM usercompany WHERE company_id=".$_SESSION["company_id"]." AND NOT usercompany_id = ".$_SESSION["user_id"]."";  
+                    $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
+                    while ($user =  mysqli_fetch_assoc($user_query)){
+                    $users[] = $user;
+                    }
+                    ?>
+                <?php
+                    $i = 1;
+                    if (is_array($users) || is_object($users)){
+                        foreach($users as $user){
+                    ?>
+                    $('#table-adduser').append(
+                        "<tbody>"
+                            +"<th scope=\"row\"><?php echo $i++; ?></th>"
+                            +"<td><?php echo $user['usercompany_fname'];echo " ";echo $user['usercompany_lname']; ?></td>"
+                            +"<td><?php echo $user['usercompany_status']; ?></td>"
+                            +"<td>"
+                                +"<div class=\"row\">"
+                                    +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
+                                    +"<form id=\"table-adduser-row\" action=\"php/php_disableuser.php\" method=\"post\">"
+                                        +"<input id=\"usercompany-row-id\" name=\"iduser\" type=\"hidden\" value=\"<?php echo $user['usercompany_id']; ?>\">"
+                                        +"<button type=\"submit\" class=\"btn btn-secondary ml-2\">ลบสมาชิก</button>"
+                                    +"</form>"
+                                +"</div>"
+                            +"</td>"
+                        +"</tbody>"
+                    );
+                <?php
+                        }
+                    }
+                    mysqli_close($conn);
+                    ?>
+            }
+
             // ajax
+            //add user;
             $(document).ready(function() {
+                writeTable();
                 $('#adduser_form').submit(function(e) {
                     let username = $("#model-adduser-username").val();
                     let password = $("#model-adduser-password").val();
@@ -142,8 +183,8 @@
                             success: function(response) {
                                 if (response == 'success') {
                                     $('#table-adduser tbody').empty();
-                                    
-                                    
+                                    writeTable();
+    
                                     //close model
                                     $('#model-adduser').modal('toggle');
                                 } else {
@@ -155,8 +196,35 @@
                     // check;
                     }
               });
-            //   $('#table-adduser-tbody').find("tbody").append("<th>5</th>");
-            });
+            }); 
+            //delete user;
+            // $('#table-adduser-row').submit(function(e) {
+            //     let usercompanyid = $("#usercompany-row-id").val();
+            //     console.log($("#usercompany-row-id").val());
+            //     e.preventDefault();
+                // $.ajax({
+                // type: 'POST',
+                // url: 'php/php_login.php',
+                // data: {
+                //     username: username,
+                //     password: password
+                // },
+                // success: function(response) {
+                //     if (response == 'success') {
+                //     $(document).ajaxStop(function() {
+                //         location.replace("home");
+                //     });
+                //     } else {
+                //     $("#invalid").css("display", "block");
+            
+                //     $("#username").val("");
+                //     $("#username").addClass("is-invalid");
+                //     $("#password").val("");
+                //     $("#password").addClass("is-invalid");
+                //     }
+                // }
+                // });
+            // });
         </script>
     </body>
 </html>
