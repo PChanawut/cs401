@@ -155,11 +155,9 @@
                 }
                 setIndex();
                 setIdTbody();
-            }); 
-            
+          
             // ajax
             //add user;
-            $(document).ready(function() {
                 $('#adduser_form').submit(function(e) {
                     let username = $("#model-adduser-username").val();
                     let password = $("#model-adduser-password").val();
@@ -186,7 +184,27 @@
                                 permission: permission
                             },
                             success: function(response) {
-                                if (response == 'success') {
+                                console.log(response);
+                                if (response != 'error') {
+                                    $('#table-adduser').append(
+                                        "<tbody class=\"index\">"
+                                            +"<th class=\"index\" id=\"id-row\" scope=\"row\"></td>"
+                                            +"<td>"+firstname+" "+lastname+"</td>"
+                                            +"<td>"+status+"</td>"
+                                            +"<td>"
+                                                +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
+                                                +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser("+response+",this)\" class=\"btn btn-secondary ml-2\">ลบสมาชิก</button>"      
+                                            +"</td>"
+                                        +"</tbody>"
+                                    ); 
+                                    // setIndex();
+                                    $("th.index").each(function(index) {
+                                        $(this).text(++index);
+                                    });
+                                    // setIdTbody();
+                                    $("tbody.index").each(function(index) {
+                                        $(this).attr("id",++index);
+                                    });
                                     //close model
                                     $('#model-adduser').modal('toggle');
                                     
