@@ -129,12 +129,12 @@
                     ?>
                     $('#table-adduser').append(
                         "<tbody class=\"index\">"
-                            +"<th class=\"index\" id=\"id-row\" scope=\"row\"></td>"
+                            +"<th class=\"index d-none d-sm-block\" id=\"id-row\" scope=\"row\"></td>"
                             +"<td><?php echo $user['usercompany_fname'];echo " ";echo $user['usercompany_lname']; ?></td>"
-                            +"<td><?php echo $user['usercompany_status']; ?></td>"
+                            +"<td class=\"d-none d-sm-block\"><?php echo $user['usercompany_status']; ?></td>"
                             +"<td>"
                                 +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
-                                +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser(<?php echo $user['usercompany_id'];?>,this)\" class=\"btn btn-secondary ml-2\">ลบสมาชิก</button>"      
+                                +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser(<?php echo $user['usercompany_id'];?>,this)\" class=\"btn btn-danger ml-2\">ลบสมาชิก</button>"      
                             +"</td>"
                         +"</tbody>"
                     );
@@ -188,12 +188,12 @@
                                 if (response != 'error') {
                                     $('#table-adduser').append(
                                         "<tbody class=\"index\">"
-                                            +"<th class=\"index\" id=\"id-row\" scope=\"row\"></td>"
+                                            +"<th class=\"index d-none d-sm-block\" id=\"id-row\" scope=\"row\"></td>"
                                             +"<td>"+firstname+" "+lastname+"</td>"
-                                            +"<td>"+status+"</td>"
+                                            +"<td class=\"d-none d-sm-block\">"+status+"</td>"
                                             +"<td>"
                                                 +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
-                                                +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser("+response+",this)\" class=\"btn btn-secondary ml-2\">ลบสมาชิก</button>"      
+                                                +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser("+response+",this)\" class=\"btn btn-danger ml-2\">ลบสมาชิก</button>"      
                                             +"</td>"
                                         +"</tbody>"
                                     ); 

@@ -49,7 +49,7 @@
 					<a class="dropdown-item" href="adduser">เพิ่มสมาชิก</a>
 				<?php } ?>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="php/php_logout.php">Log out</a>
+				<a class="dropdown-item" href="php/php_logout.php">ออกจากระบบ</a>
 				</div>
 		</div>
 	    <!-- <form class="form-inline my-2 my-lg-0">
