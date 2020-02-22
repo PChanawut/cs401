@@ -113,7 +113,6 @@
             });
             // function write table;
             $(document).ready(function() {
-                // $('#table-adduser tbody').empty();
                 <?php include('php/config/database.php'); ?>
                 <?php
                     $users = array();
@@ -129,7 +128,7 @@
                         foreach($users as $user){
                     ?>
                     $('#table-adduser').append(
-                        "<tbody th=\"<?php echo $user['usercompany_id']; ?>\">"
+                        "<tbody id=\"<?php echo $user['usercompany_id']; ?>\">"
                             +"<th class=\"index\" scope=\"row\"></td>"
                             +"<td><?php echo $user['usercompany_fname'];echo " ";echo $user['usercompany_lname']; ?></td>"
                             +"<td><?php echo $user['usercompany_status']; ?></td>"
@@ -184,8 +183,6 @@
                             },
                             success: function(response) {
                                 if (response == 'success') {
-                                    $('table#table-adduser tbody#2').remove();
-                                    
                                     //close model
                                     $('#model-adduser').modal('toggle');
                                 } else {
@@ -197,6 +194,19 @@
                     // check;
                     }
               });
+              $('table#table-adduser tbody:last-child').append(
+                    "<tbody id=\"<?php echo $user['usercompany_id']; ?>\">"
+                            +"<th class=\"index\" scope=\"row\"></td>"
+                            +"<td><?php echo $user['usercompany_fname'];echo " ";echo $user['usercompany_lname']; ?></td>"
+                            +"<td><?php echo $user['usercompany_status']; ?></td>"
+                            +"<td>"
+                                +"<div class=\"row\">"
+                                    +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
+                                    +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser(<?php echo $user['usercompany_id']; ?>)\" class=\"btn btn-secondary ml-2\">ลบสมาชิก</button>"
+                                +"</div>"
+                            +"</td>"
+                    +"</tbody>"
+              );
             }); 
             function deleteUser(row_userid){
                 $.ajax({
@@ -207,6 +217,8 @@
                 },
                 success: function(response) {
                     if (response == 'success') {
+                        $('table#table-adduser tbody#'+row_userid).remove();
+                        setIndex();
                         // $('#table-adduser tbody').empty();
                         
                     } else {
