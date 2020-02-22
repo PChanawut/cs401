@@ -128,15 +128,13 @@
                         foreach($users as $user){
                     ?>
                     $('#table-adduser').append(
-                        "<tbody id=\"<?php echo $user['usercompany_id']; ?>\">"
-                            +"<th class=\"index\" scope=\"row\"></td>"
+                        "<tbody class=\"index\">"
+                            +"<th class=\"index\" id=\"id-row\" scope=\"row\"></td>"
                             +"<td><?php echo $user['usercompany_fname'];echo " ";echo $user['usercompany_lname']; ?></td>"
                             +"<td><?php echo $user['usercompany_status']; ?></td>"
                             +"<td>"
-                                +"<div class=\"row\">"
-                                    +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
-                                    +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser(<?php echo $user['usercompany_id']; ?>)\" class=\"btn btn-secondary ml-2\">ลบสมาชิก</button>"
-                                +"</div>"
+                                +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
+                                +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser(<?php echo $user['usercompany_id'];?>,this)\" class=\"btn btn-secondary ml-2\">ลบสมาชิก</button>"      
                             +"</td>"
                         +"</tbody>"
                     );
@@ -150,7 +148,13 @@
                         $(this).text(++index);
                     });
                 }
+                function setIdTbody(){
+                    $("tbody.index").each(function(index) {
+                        $(this).attr("id",++index);
+                    });
+                }
                 setIndex();
+                setIdTbody();
             }); 
             
             // ajax
@@ -185,6 +189,7 @@
                                 if (response == 'success') {
                                     //close model
                                     $('#model-adduser').modal('toggle');
+                                    
                                 } else {
                                     alert(response);
                                 }
@@ -194,21 +199,8 @@
                     // check;
                     }
               });
-              $('table#table-adduser tbody:last-child').append(
-                    "<tbody id=\"<?php echo $user['usercompany_id']; ?>\">"
-                            +"<th class=\"index\" scope=\"row\"></td>"
-                            +"<td><?php echo $user['usercompany_fname'];echo " ";echo $user['usercompany_lname']; ?></td>"
-                            +"<td><?php echo $user['usercompany_status']; ?></td>"
-                            +"<td>"
-                                +"<div class=\"row\">"
-                                    +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
-                                    +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser(<?php echo $user['usercompany_id']; ?>)\" class=\"btn btn-secondary ml-2\">ลบสมาชิก</button>"
-                                +"</div>"
-                            +"</td>"
-                    +"</tbody>"
-              );
             }); 
-            function deleteUser(row_userid){
+            function deleteUser(row_userid,row_no){
                 $.ajax({
                 type: 'POST',
                 url: 'php/php_disableuser.php',
@@ -217,10 +209,17 @@
                 },
                 success: function(response) {
                     if (response == 'success') {
-                        $('table#table-adduser tbody#'+row_userid).remove();
-                        setIndex();
-                        // $('#table-adduser tbody').empty();
-                        
+                        var row = row_no.parentNode.parentNode;
+                        row.parentNode.removeChild(row);
+
+                        // setIndex();
+                        $("th.index").each(function(index) {
+                            $(this).text(++index);
+                        });
+                        // setIdTbody();
+                        $("tbody.index").each(function(index) {
+                        $(this).attr("id",++index);
+                    });
                     } else {
                         
                     }
