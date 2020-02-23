@@ -15,11 +15,16 @@
         <!-- main -->
         <?php include 'component/main_adduser.php' ?>
         <!-- footer -->
+
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
         <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
         <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
+        <!-- validated -->
+        <script src="js/adduser_php/adduser.js" crossorigin="anonymous"></script>
+
         <!-- model -->
         <div class="modal fade model-adduser" id="model-adduser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -92,26 +97,9 @@
                 </div>
             </div>
         </div>
+        
         <!-- script -->
         <script type="text/javascript">
-            // js veridate
-            $(document).ready(function() {
-              $('#model-adduser-repassword').focusout(function() {
-                if ($('#model-adduser-repassword').val() != $('#model-adduser-password').val()) {
-                  $("#model-adduser-password").addClass("is-invalid");
-                  $("#model-adduser-repassword").addClass("is-invalid");
-                  $("#invalid").css("display", "block");
-                }
-                if ($('#model-adduser-password').hasClass("is-invalid") && $('#model-adduser-repassword').hasClass("is-invalid")) {
-                  if ($('#model-adduser-repassword').val() == $('#model-adduser-password').val()) {
-                    $("#model-adduser-password").removeClass("is-invalid");
-                    $("#model-adduser-repassword").removeClass("is-invalid");
-                    $("#invalid").css("display", "none");
-                  }
-                }
-              })
-            });
-            // function write table;
             $(document).ready(function() {
                 <?php include('php/config/database.php'); ?>
                 <?php
@@ -133,7 +121,7 @@
                             +"<td><?php echo $user['usercompany_fname'];echo " ";echo $user['usercompany_lname']; ?></td>"
                             +"<td class=\"d-none d-sm-block\"><?php echo $user['usercompany_status']; ?></td>"
                             +"<td>"
-                                +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
+                                //+"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
                                 +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser(<?php echo $user['usercompany_id'];?>,this)\" class=\"btn btn-danger ml-2\">ลบสมาชิก</button>"      
                             +"</td>"
                         +"</tbody>"
@@ -143,19 +131,13 @@
                     }
                     mysqli_close($conn);
                     ?>
-                function setIndex(){
-                    $("th.index").each(function(index) {
-                        $(this).text(++index);
-                    });
-                }
-                function setIdTbody(){
-                    $("tbody.index").each(function(index) {
-                        $(this).attr("id",++index);
-                    });
-                }
-                setIndex();
-                setIdTbody();
-          
+                $("th.index").each(function(index) {
+                    $(this).text(++index);
+                });
+                $("tbody.index").each(function(index) {
+                    $(this).attr("id",++index);
+                });
+       
             // ajax
             //add user;
                 $('#adduser_form').submit(function(e) {
@@ -192,7 +174,7 @@
                                             +"<td>"+firstname+" "+lastname+"</td>"
                                             +"<td class=\"d-none d-sm-block\">"+status+"</td>"
                                             +"<td>"
-                                                +"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
+                                                //+"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
                                                 +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser("+response+",this)\" class=\"btn btn-danger ml-2\">ลบสมาชิก</button>"      
                                             +"</td>"
                                         +"</tbody>"
