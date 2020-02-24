@@ -49,19 +49,14 @@
                 <h5>ข้อมูลส่วนตัวของผู้ขออนุญาต</h5>
             </div>
             <div class="form-row">
-                <div class="form-group col-mb">
-                    <label for="inputEmail4">คำนำหน้า:</label>
-                    <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            คำนำหน้า
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">นาย</a>
-                            <a class="dropdown-item" href="#">นาง</a>
-                            <a class="dropdown-item" href="#">นางสาว</a>
-                        </div>
-                    </div>
+                <div class="form-group col-2">
+                    <label for="inputState">คำนำหน้า:</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>คำนำหน้า</option>
+                        <option>นาย</option>
+                        <option>นาง</option>
+                        <option>นางสาว</option>
+                    </select>
                 </div>
                 <div class="form-group col">
                     <label for="inputPassword4">ชื่อ:</label>
@@ -150,20 +145,15 @@
         </form>
     </div>
     <div class="container mt-5">
-        <!-- <div class="row">
-                <div class="col">
-                    <h4>สร้างบัญชีผู้ใช้</h4>
-                </div>
-                </div>
-                
-                <hr> -->
         <form>
             <div class="alert alert-primary" role="alert">
                 <h5>รายละเอียดของบัญชีผู้ใช้</h5>
             </div>
             <div class="form-row">
                 <div class="form-group col">
-                    <i style='font-size:34px' class="glyphicon glyphicon-user"></i>
+                    <i style='font-size:40px' class="fas fa-user"></i>
+                    <i style='font-size:40px' class="fas fa-building"></i>
+                    <!-- <i style='font-size:34px' class="glyphicon glyphicon-user"></i> -->
                     <br>
                     <br>
                     <!-- <div class="form-row">
@@ -352,24 +342,148 @@
                     <input type="text" class="form-control" id="inputZip">
                 </div>
             </div>
-            <!-- <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                </div>
-            </div> -->
             <button type="submit" class="btn btn-primary">ถัดไป</button>
         </form>
+    </div>
+    <!-- body officer -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h4>สร้างบัญชีผู้ใช้สำหรับเจ้าหน้าที่สำนักงานปรมาณูเพื่อสันติ</h4>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <nav aria-label="breadcrumb" align="center">
+            <ol class="breadcrumb bg-light">
+                <div class="col-sm">
+                    <li class="breadcrumb-item"><a href="#">ข้อมูลส่วนตัว</a></li>
+                </div>
+                <div class="col-sm">
+                    <li class="breadcrumb-item"><a href="#">สร้างบัญชีผู้ใช้</a></li>
+                </div>
+                <div class="col-sm">
+                    <li class="breadcrumb-item active" aria-current="page">เสร็จสิ้น</li>
+                </div>
+            </ol>
+        </nav>
+        <form>
+            <div class="alert alert-primary" role="alert">
+                <h5>ข้อมูลส่วนตัวของเจ้าหน้าที่</h5>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-2">
+                    <label for="inputState">คำนำหน้า:</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>คำนำหน้า</option>
+                        <option>นาย</option>
+                        <option>นาง</option>
+                        <option>นางสาว</option>
+                    </select>
+                    <!-- <label for="inputEmail4">คำนำหน้า:</label>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            คำนำหน้า
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">นาย</a>
+                            <a class="dropdown-item" href="#">นาง</a>
+                            <a class="dropdown-item" href="#">นางสาว</a>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="form-group col-4">
+                    <label for="inputPassword4">ชื่อ:</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="form-group col-4">
+                    <label for="inputPassword4">นามสกุล:</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="form-group col-2">
+                    <label for="inputAddress">วันเดือนปีเกิด:</label>
+                    <input type="text" class="form-control" id="inputAddress"
+                        placeholder="กรุณาเลือกวันเดือนปีเกิดของคุณ">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-3">
+                    <label for="inputAddress">เลขบัตรประจำตัวประชาชน:</label>
+                    <input type="text" class="form-control" id="inputAddress"
+                        placeholder="เลขบัตรประจำตัวประชาชน 13 หลัก">
+                </div>
+                <div class="form-group col-2">
+                    <label for="inputAddress">เบอร์โทรศัพท์:</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="เบอร์โทรศัพท์">
+                </div>
+                <div class="form-group col-4">
+                    <label for="inputAddress">E-Mail:</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="E-Mail">
+                </div>
+                <div class="form-group col-3">
+                    <label for="inputState">ตำแหน่ง:</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>คณะอนุกรรมการ</option>
+                        <option>เจ้าหน้าที่ขออนุญาต</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputState">ID เครื่องวัดรังสีประจำตัว:</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">ถัดไป</button>
+        </form>
+    </div>
+    <div class="container mt-5">
+        <form>
+            <div class="alert alert-primary" role="alert">
+                <h5>รายละเอียดของบัญชีผู้ใช้</h5>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <i style='font-size:40px' class="fas fa-user"></i>
+                    <!-- <i style='font-size:40px' class="fas fa-building"></i> -->
+                    <!-- <i style='font-size:34px' class="glyphicon glyphicon-user"></i> -->
+                    <br>
+                    <br>
+                    <!-- <div class="form-row">
+                            <div class="form-grou col-5">
+                                <label for="inputAddress2">ชื่อผู้ขอรับบัญชีผู้ใช้:</label>
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="ชื่อบัญชีผู้ใช้">
+                            </div>
+                            </div>
+                            <br> -->
+                    <div class="form-row">
+                        <div class="form-grou col-4">
+                            <label for="inputAddress2">ชื่อบัญชีผู้ใช้:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="ชื่อบัญชีผู้ใช้">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="inputAddress2">รหัสผ่าน:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="รหัสผ่าน">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="inputAddress2">ยืนยันรหัสผ่าน:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="ยืนยันรหัสผ่าน">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
-        <!-- footer -->
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
-        <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
-        <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
-        <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
+    <!-- footer -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
+    <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
 
 </html>
