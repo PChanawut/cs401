@@ -7,11 +7,15 @@
 </head>
 
 <body>
-    <?php include 'component/main_register_person.php' ?>
-    <?php include 'component/main_register_company.php' ?>
+    <!-- header -->
+    <?php include 'component/header.php' ?>
+
+    <!-- main -->
+    <?php include 'component/main_officer_confirmRegister.php' ?>
 
     <!-- footer -->
-    
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>

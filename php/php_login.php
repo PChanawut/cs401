@@ -14,7 +14,8 @@
                 $_SESSION['company_id'] = $row['company_id'];
                 $_SESSION['user_id'] = $row['usercompany_id'];
                 $_SESSION['name'] = $row['usercompany_fname']." ".$row['usercompany_lname'];
-                
+                $_SESSION['type'] = $row['usercompany_type'];
+
                 $_SESSION['permission'] = array();
                 for($i=0 ; $i < strlen($row['usercompany_permission']) ; $i++){
                     $_SESSION['permission'][$i] = $row['usercompany_permission'][$i];

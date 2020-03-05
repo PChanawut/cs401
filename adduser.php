@@ -171,7 +171,7 @@
                                     $('#table-adduser').append(
                                         "<tbody class=\"index\">"
                                             +"<th class=\"index d-none d-sm-block\" id=\"id-row\" scope=\"row\"></td>"
-                                            +"<td>"+firstname+" "+lastname+"</td>"
+                                            +"<td>"+response+" "+lastname+"</td>"
                                             +"<td class=\"d-none d-sm-block\">"+status+"</td>"
                                             +"<td>"
                                                 //+"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
@@ -189,7 +189,6 @@
                                     });
                                     //close model
                                     $('#model-adduser').modal('toggle');
-                                    
                                 } else {
                                     alert(response);
                                 }

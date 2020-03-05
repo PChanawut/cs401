@@ -21,21 +21,49 @@
 	      	<li class="nav-item active">
 	        	<a class="nav-link text-light" href="./">หน้าแรก <span class="sr-only">(current)</span></a>
 			</li>
-			  
-	      	<li class="nav-item">
-	        	<a class="nav-link text-light" href="license_request">ขอใบอนุญาต</a>
-			</li>
-			  
-	      	<li class="nav-item">
-				<a class="nav-link text-light" href="license_dismiss">ยกเลิกใบอนุญาต</a>
-			</li>
-			  
+			<!-- request -->
+			<?php
+				if($_SESSION["permission"][0] == 1){
+			?>  
+				<li class="nav-item">
+					<a class="nav-link text-light" href="license_request">ขอใบอนุญาต</a>
+				</li>
+			<?php
+				}
+			?>
+
+			<!-- renew -->
+			<?php
+				if($_SESSION["permission"][1] == 1){
+			?>
 			<li class="nav-item">
 				<a class="nav-link text-light" href="license_renew">ต่อใบอนุญาต</a>
 			</li>
+			<?php
+				}
+			?>
+
+			<!-- dismiss -->
+			<?php
+				if($_SESSION["permission"][2] == 1){
+			?>
+	      	<li class="nav-item">
+				<a class="nav-link text-light" href="license_dismiss">ยกเลิกใบอนุญาต</a>
+			</li>
+			<?php
+				}
+			?>
+
+			<!-- all -->
+			<?php
+				if($_SESSION["permission"][3] == 1){
+			?>
 			<li class="nav-item">
 				<a class="nav-link text-light" href="license_all">ใบอนุญาตทั้งหมด</a>
 			</li>
+			<?php
+				}
+			?>
 		</ul>
 		
 		<div class="dropdown">

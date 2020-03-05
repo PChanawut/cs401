@@ -10,10 +10,12 @@
             $lastname = $_POST['lastname'];
             $status = $_POST['status'];
             $permission = $_POST['permission'];
-
+            if($_SESSION['type'] == 'company'){
+                $type = 'usercompany';
+            }
             $company_id = $_SESSION["company_id"];
-            $sql = "INSERT INTO usercompany(usercompany_id,company_id,usercompany_username,usercompany_password,usercompany_fname,usercompany_lname,usercompany_status,usercompany_ativate,usercompany_permission) 
-                    VALUES (NULL,'$company_id','$username','$password','$firstname','$lastname','$status','ativate','$permission');";
+            $sql = "INSERT INTO usercompany(usercompany_id,company_id,usercompany_username,usercompany_password,usercompany_fname,usercompany_lname,usercompany_status,usercompany_type,usercompany_ativate,usercompany_permission) 
+                    VALUES (NULL,'$company_id','$username','$password','$firstname','$lastname','$status','$type','ativate','$permission');";
             if (mysqli_query($conn, $sql)) {
                 echo mysqli_insert_id($conn);
             } else {

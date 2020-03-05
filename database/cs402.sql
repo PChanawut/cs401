@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2020 at 10:15 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Mar 04, 2020 at 05:05 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -62,6 +62,7 @@ CREATE TABLE `usercompany` (
   `usercompany_fname` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `usercompany_lname` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `usercompany_status` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `usercompany_type` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `usercompany_ativate` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `usercompany_permission` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -70,15 +71,16 @@ CREATE TABLE `usercompany` (
 -- Dumping data for table `usercompany`
 --
 
-INSERT INTO `usercompany` (`usercompany_id`, `company_id`, `usercompany_username`, `usercompany_password`, `usercompany_fname`, `usercompany_lname`, `usercompany_status`, `usercompany_ativate`, `usercompany_permission`) VALUES
-(1, 1, 'pchana', '25f9e794323b453885f5181f1b624d0b', 'ชนะวุฒิ', 'มหัทธนาคุณ', 'ผู้จัดการ', 'ativate', '11111'),
-(2, 1, 'user_mail', '25f9e794323b453885f5181f1b624d0b', 'สุจารี', 'ไทยรัตน์', 'แม่บ้าน', 'ativate', '11110'),
-(3, 1, 'rangsan', '25f9e794323b453885f5181f1b624d0b', 'รังสรรค์', 'ประเสริฐนรสาร', 'พ่อบ้าน', 'deativate', '11110'),
-(4, 1, 'wanida', '25f9e794323b453885f5181f1b624d0b', 'วนิดา', 'สงวนเผ่า', 'ชงกาแฟ', 'ativate', '01100'),
-(5, 1, 'domepakorn', '25f9e794323b453885f5181f1b624d0b', 'ปกรณ์', 'จิรักษา', 'นักดนตรี', 'ativate', '11000'),
-(6, 1, 'putha', '25f9e794323b453885f5181f1b624d0b', 'ภูธา', 'ลิ่มถิรสกุล', 'หัวหน้าภาคสนาม', 'deativate', '11100'),
-(7, 1, 'ratchani', '25f9e794323b453885f5181f1b624d0b', 'รัชนีกร', 'เหลืองธนูศิลป์', 'นักเต้น', 'ativate', '10000'),
-(8, 1, 'jadet', '25f9e794323b453885f5181f1b624d0b', 'ประสงค์ ', 'ทัศศิริ', 'ผู้กำกับ', 'ativate', '11110');
+INSERT INTO `usercompany` (`usercompany_id`, `company_id`, `usercompany_username`, `usercompany_password`, `usercompany_fname`, `usercompany_lname`, `usercompany_status`, `usercompany_type`, `usercompany_ativate`, `usercompany_permission`) VALUES
+(1, 1, 'pchana', '25f9e794323b453885f5181f1b624d0b', 'ชนะวุฒิ', 'มหัทธนาคุณ', 'บริษัท', 'company', 'ativate', '11111'),
+(2, 1, 'user_mail', '25f9e794323b453885f5181f1b624d0b', 'สุจารี', 'ไทยรัตน์', 'แม่บ้าน', 'usercompany', 'ativate', '11110'),
+(3, 1, 'rangsan', '25f9e794323b453885f5181f1b624d0b', 'รังสรรค์', 'ประเสริฐนรสาร', 'พ่อบ้าน', 'usercompany', 'deativate', '11110'),
+(4, 1, 'wanida', '25f9e794323b453885f5181f1b624d0b', 'วนิดา', 'สงวนเผ่า', 'ชงกาแฟ', 'usercompany', 'ativate', '01100'),
+(5, 1, 'domepakorn', '25f9e794323b453885f5181f1b624d0b', 'ปกรณ์', 'จิรักษา', 'นักดนตรี', 'usercompany', 'ativate', '11000'),
+(6, 1, 'putha', '25f9e794323b453885f5181f1b624d0b', 'ภูธา', 'ลิ่มถิรสกุล', 'หัวหน้าภาคสนาม', 'usercompany', 'deativate', '11100'),
+(7, 1, 'ratchani', '25f9e794323b453885f5181f1b624d0b', 'รัชนีกร', 'เหลืองธนูศิลป์', 'นักเต้น', 'usercompany', 'ativate', '10000'),
+(8, 1, 'jadet', '25f9e794323b453885f5181f1b624d0b', 'ประสงค์ ', 'ทัศศิริ', 'ผู้กำกับ', 'usercompany', 'ativate', '11110'),
+(9, 1, 'teewin', '25f9e794323b453885f5181f1b624d0b', 'ธีวินท์', 'เตสมัตถ์เลอมาน', 'พ่อบ้าน', 'usercompany', 'ativate', '00010');
 
 --
 -- Indexes for dumped tables
@@ -110,7 +112,7 @@ ALTER TABLE `company`
 -- AUTO_INCREMENT for table `usercompany`
 --
 ALTER TABLE `usercompany`
-  MODIFY `usercompany_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `usercompany_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
