@@ -123,6 +123,32 @@
                     </label>
                 </div>
             </div> -->
+        <form>
+            <div class="alert alert-primary" role="alert">
+                <h5>รายละเอียดของบัญชีผู้ใช้</h5>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <i style='font-size:34px' class="glyphicon glyphicon-user"></i>
+                    <br>
+                    <br>
+                    <div class="form-row">
+                        <div class="form-grou col-4">
+                            <label for="inputAddress2">ชื่อบัญชีผู้ใช้:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="ชื่อบัญชีผู้ใช้">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="inputAddress2">รหัสผ่าน:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="รหัสผ่าน">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="inputAddress2">ยืนยันรหัสผ่าน:</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="ยืนยันรหัสผ่าน">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
         <button type="submit" class="btn btn-primary">ถัดไป</button>
     </form>
 </div>
