@@ -123,15 +123,9 @@
                 <input type="text" class="form-control" id="inputZip">
             </div>
         </div>
-        <!-- <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                    </div>
-                    </div> -->
-        <button type="submit" class="btn btn-primary">ถัดไป</button>
+        <div class="mb-5">
+            <button type="submit" class="btn btn-primary">ถัดไป</button>
+        </div>
     </form>
 </div>
 <div class="container mt-5">
