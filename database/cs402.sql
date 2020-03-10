@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2020 at 05:05 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Generation Time: Mar 10, 2020 at 11:50 AM
+-- Server version: 10.3.15-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,6 +47,30 @@ CREATE TABLE `company` (
 INSERT INTO `company` (`company_id`, `company_name`, `office_name`, `company_address`, `company_phone`, `company_fax`, `company_email`, `enroll_start`, `enroll_no`) VALUES
 (1, 'Chana enterprise', 'Chana enterprise บางนา', '64 หมู่ที่ 8 , ตำบลคลองหนึ่ง อำเภอคลองหลวง , กรุงเทพและปริมณฑล , ปทุมธานี , 12120 , ประเทศไทย', '0123456789', '012345678', 'chana_enterprise@hotmail.com', '2019-03-09', '0135560026742'),
 (2, 'mail enterprise', 'Mail enterprise ชลบุรี', '64 หมู่ที่ 8 , ตำบลคลองหนึ่ง อำเภอคลองหลวง , กรุงเทพและปริมณฑล , ปทุมธานี , 12120 , ประเทศไทย', '0123456789', '012345678', 'mail_enterprise@hotmail.com', '2019-03-01', '0135560026742');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `register`
+--
+
+CREATE TABLE `register` (
+  `type` varchar(2) DEFAULT NULL,
+  `gender` int(11) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `birthday` date NOT NULL,
+  `idnumber` varchar(13) NOT NULL,
+  `phonenumber` varchar(15) NOT NULL,
+  `address` varchar(300) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `company_name` varchar(50) NOT NULL,
+  `enroll_start` date NOT NULL,
+  `enroll_no` varchar(30) NOT NULL,
+  `company_phone` int(20) NOT NULL,
+  `company_email` varchar(50) NOT NULL,
+  `office_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
