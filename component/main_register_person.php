@@ -1,40 +1,4 @@
 <div class="container mt-5">
-    <div class="row">
-        <div class="col">
-            <h4>สร้างบัญชีผู้ใช้</h4>
-        </div>
-    </div>
-    <hr>
-    <div class="container">
-        <div class="row">
-            <div class="custom-control custom-radio custom-control-inline col-sm">
-                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline1">
-                    <h5>สร้างบัญชีผู้ใช้สำหรับบุคคลธรรมดา</h5>
-                </label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline col-sm">
-                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline2">
-                    <h5>สร้างบัญชีผู้ใช้สำหรับนิติบุคคล</h5>
-                </label>
-            </div>
-        </div>
-    </div>
-    <br>
-    <nav aria-label="breadcrumb" align="center">
-        <ol class="breadcrumb bg-light">
-            <div class="col-sm">
-                <li class="breadcrumb-item"><a href="#">ข้อมูลส่วนตัว</a></li>
-            </div>
-            <div class="col-sm">
-                <li class="breadcrumb-item"><a href="#">สร้างบัญชีผู้ใช้</a></li>
-            </div>
-            <div class="col-sm">
-                <li class="breadcrumb-item active" aria-current="page">เสร็จสิ้น</li>
-            </div>
-        </ol>
-    </nav>
     <form>
         <div class="alert alert-primary" role="alert">
             <h5>ข้อมูลส่วนตัวของผู้ขออนุญาต</h5>
@@ -43,8 +7,8 @@
             <div class="form-group col-mb">
                 <label for="inputEmail4">คำนำหน้า:</label>
                 <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="gender" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         คำนำหน้า
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -56,29 +20,29 @@
             </div>
             <div class="form-group col">
                 <label for="inputPassword4">ชื่อ:</label>
-                <input type="password" class="form-control" id="inputPassword4">
+                <input type="password" class="form-control" id="firstname">
             </div>
             <div class="form-group col">
                 <label for="inputPassword4">นามสกุล:</label>
-                <input type="password" class="form-control" id="inputPassword4">
+                <input type="password" class="form-control" id="lastname">
             </div>
             <div class="form-group col-2">
                 <label for="inputAddress">วันเดือนปีเกิด:</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="กรุณาเลือกวันเดือนปีเกิดของคุณ">
+                <input type="text" class="form-control" id="birthday" placeholder="กรุณาเลือกวันเดือนปีเกิดของคุณ">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-4">
                 <label for="inputAddress">เลขบัตรประจำตัวประชาชน:</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="เลขบัตรประจำตัวประชาชน 13 หลัก">
+                <input type="text" class="form-control" id="idnumber" placeholder="เลขบัตรประจำตัวประชาชน 13 หลัก">
             </div>
             <div class="form-group col-3">
                 <label for="inputAddress">เบอร์โทรศัพท์:</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="เบอร์โทรศัพท์">
+                <input type="text" class="form-control" id="phonenumber" placeholder="เบอร์โทรศัพท์">
             </div>
             <div class="form-group col-5">
                 <label for="inputAddress">E-Mail:</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="E-Mail">
+                <input type="text" class="form-control" id="email" placeholder="E-Mail">
             </div>
         </div>
         <br>
@@ -88,39 +52,40 @@
         <div class="form-row">
             <div class="form-group col">
                 <label for="inputAddress2">เลขที่:</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                <input type="text" class="form-control" id="
+                " placeholder="Apartment, studio, or floor">
             </div>
             <div class="form-group col-3">
                 <label for="inputAddress2">หมู่ที่:</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor">
             </div>
             <div class="form-group col-3">
                 <label for="inputAddress2">ถนน:</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                <input type="text" class="form-control" id="address3" placeholder="Apartment, studio, or floor">
             </div>
             <div class="form-group col-3">
                 <label for="inputAddress2">ตำบล:</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                <input type="text" class="form-control" id="address4" placeholder="Apartment, studio, or floor">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputState">อำเภอ:</label>
-                <select id="inputState" class="form-control">
+                <select id="address4" class="form-control">
                     <option selected>Choose...</option>
                     <option>...</option>
                 </select>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputState">จังหวัด:</label>
-                <select id="inputState" class="form-control">
+                <select id="address5" class="form-control">
                     <option selected>Choose...</option>
                     <option>...</option>
                 </select>
             </div>
             <div class="form-group col-md-2">
                 <label for="inputZip">รหัสไปรษณีย์:</label>
-                <input type="text" class="form-control" id="inputZip">
+                <input type="text" class="form-control" id="address6">
             </div>
         </div>
         <!-- <div class="form-group">
@@ -161,15 +126,15 @@
                 <div class="form-row">
                     <div class="form-grou col-4">
                         <label for="inputAddress2">ชื่อบัญชีผู้ใช้:</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="ชื่อบัญชีผู้ใช้">
+                        <input type="text" class="form-control" id="username" placeholder="ชื่อบัญชีผู้ใช้">
                     </div>
                     <div class="form-group col-4">
                         <label for="inputAddress2">รหัสผ่าน:</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="รหัสผ่าน">
+                        <input type="text" class="form-control" id="password" placeholder="รหัสผ่าน">
                     </div>
                     <div class="form-group col-4">
                         <label for="inputAddress2">ยืนยันรหัสผ่าน:</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="ยืนยันรหัสผ่าน">
+                        <input type="text" class="form-control" id="confirmpassword" placeholder="ยืนยันรหัสผ่าน">
                     </div>
                 </div>
             </div>
