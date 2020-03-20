@@ -35,7 +35,6 @@
                 },
                 success: function(response) {
                     response = JSON.parse(response);
-                    console.log(response);
                     if (response.success == true) {
                         $('#info_register_namelname').text(response.company.company_name);
                         $('#info_register_birthday').text(response.company.enroll_start);

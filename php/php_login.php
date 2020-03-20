@@ -1,5 +1,8 @@
 <?php
     session_start();
+
+    $response = array();
+    
     if(isset($_POST['username']) && isset($_POST['password'])){
         include('config/database.php');
         $username = $_POST['username'];
@@ -20,15 +23,16 @@
                 for($i=0 ; $i < strlen($row['usercompany_permission']) ; $i++){
                     $_SESSION['permission'][$i] = $row['usercompany_permission'][$i];
                 }
-                echo 'success';    
+                $response['success'] = true;
             }else{
-                echo 'invalid';
+                $response['success'] = false;
             }
         }else{
-          echo 'invalid';
+            $response['success'] = false;
         }
         mysqli_close($conn);
     }else{
-        echo 'invalid';
+        $response['success'] = false;
     }
+    echo json_encode($response);
 ?>
