@@ -29,7 +29,7 @@
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'php/php_officer_comfirm_register.php',
+                url: 'php/php_officer_confirm_register.php',
                 data: {
                     id_enroll_no: id_enroll_no
                 },
