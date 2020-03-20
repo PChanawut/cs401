@@ -123,6 +123,8 @@
                     </label>
                 </div>
             </div> -->
-        <button type="submit" class="btn btn-primary">ถัดไป</button>
+        <div class="mb-5">
+            <button type="submit" class="btn btn-primary">ถัดไป</button>
+        </div>
     </form>
 </div>
