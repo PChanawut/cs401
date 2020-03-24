@@ -32,6 +32,7 @@
         }else{
             $response['success'] = false;
         }
+        mysqli_close($conn);
     }else{
         $response['success'] = false;
     }
