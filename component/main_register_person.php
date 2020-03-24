@@ -108,12 +108,9 @@
                 <button id="nextOne" type="button" class="btn btn-primary">ถัดไป</button>
             </div>
         </div>
-<<<<<<< HEAD
         <div class="mb-5">
             <button type="submit" class="btn btn-primary">ถัดไป</button>
         </div>
-=======
->>>>>>> mail
     </form>
 </div>
 <div class="container mt-5">

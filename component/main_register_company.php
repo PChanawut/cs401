@@ -123,11 +123,9 @@
                     </label>
                 </div>
             </div> -->
-<<<<<<< HEAD
         <div class="mb-5">
             <button type="submit" class="btn btn-primary">ถัดไป</button>
         </div>
-=======
         <form>
             <div class="alert alert-primary" role="alert">
                 <h5>รายละเอียดของบัญชีผู้ใช้</h5>
@@ -155,6 +153,5 @@
             </div>
         </form>
         <button type="submit" class="btn btn-primary">ถัดไป</button>
->>>>>>> mail
     </form>
 </div>
