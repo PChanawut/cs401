@@ -34,11 +34,11 @@
                 </div>
                 <div class="form-group col">
                     <label for="inputPassword4">ชื่อ:</label>
-                    <input type="password" class="form-control" id="firstname">
+                    <input type="text" class="form-control" id="firstname">
                 </div>
                 <div class="form-group col">
                     <label for="inputPassword4">นามสกุล:</label>
-                    <input type="password" class="form-control" id="lastname">
+                    <input type="text" class="form-control" id="lastname">
                 </div>
                 <div class="form-group col-3">
                     <label for="inputAddress">วันเดือนปีเกิด:</label>
@@ -108,9 +108,6 @@
                 <button id="nextOne" type="button" class="btn btn-primary">ถัดไป</button>
             </div>
         </div>
-        <div class="mb-5">
-            <button type="submit" class="btn btn-primary">ถัดไป</button>
-        </div>
     </form>
 </div>
 <div class="container mt-5">
@@ -124,13 +121,6 @@
                     <i style='font-size:34px' class="glyphicon glyphicon-user"></i>
                     <br>
                     <br>
-                    <!-- <div class="form-row">
-                            <div class="form-grou col-5">
-                                <label for="inputAddress2">ชื่อผู้ขอรับบัญชีผู้ใช้:</label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="ชื่อบัญชีผู้ใช้">
-                            </div>
-                            </div>
-                            <br> -->
                     <div class="form-row">
                         <div class="form-grou col-4">
                             <label for="inputAddress2">ชื่อบัญชีผู้ใช้:</label>
