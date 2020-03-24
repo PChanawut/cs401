@@ -10,7 +10,6 @@ $('#login_form').submit(function(e) {
             password: password
         },
         success: function(response) {
-            console.log(response);
             response = JSON.parse(response);
             if (response.success) {
                 $(document).ajaxStop(function() {
