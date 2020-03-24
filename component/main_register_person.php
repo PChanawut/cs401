@@ -104,7 +104,7 @@
             </div>
             <br>
             <!-- Button next first page -->
-            <div id="nextFirst" style="float:right;>">
+            <div id="nextFirst" style="float:right;">
                 <button id="nextOne" type="button" class="btn btn-primary">ถัดไป</button>
             </div>
         </div>
