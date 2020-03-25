@@ -34,7 +34,8 @@
         <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
         <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
         <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
+        
         <!-- ajax -->
-        <script src="js/index/js_index.js" crossorigin="anonymous"></script>
+        <script src="js/js_index.js" crossorigin="anonymous"></script>
     </body>
 </html>

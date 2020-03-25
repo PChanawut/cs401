@@ -11,7 +11,7 @@ $('#adduser_form').submit(function(e) {
     $('#checkPermission-dismiss').is(":checked")?permission += "1":permission += "0";
     $('#checkPermission-all').is(":checked")?permission += "1":permission += "0";
     permission+="0"; //can add user(admin)
-    if (password == $("#model-adduser-repassword").val()) {
+    // if (password == $("#model-adduser-repassword").val()) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
@@ -25,16 +25,16 @@ $('#adduser_form').submit(function(e) {
                 permission: permission
             },
             success: function(response) {
-                console.log(response);
-                if (response != 'error') {
+                response = JSON.parse(response);
+                if (response.success) {
                     $('#table-adduser').append(
                         "<tbody class=\"index\">"
                             +"<th class=\"index d-none d-sm-block\" id=\"id-row\" scope=\"row\"></td>"
-                            +"<td>"+firstname+" "+lastname+"</td>"
-                            +"<td class=\"d-none d-sm-block\">"+status+"</td>"
+                            +"<td>"+response.firstname+" "+response.lastname+"</td>"
+                            +"<td class=\"d-none d-sm-block\">"+response.status+"</td>"
                             +"<td>"
                                 //+"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"
-                                +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser("+response+",this)\" class=\"btn btn-danger ml-2\">ลบสมาชิก</button>"      
+                                +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser("+response.id+",this)\" class=\"btn btn-danger ml-2\">ลบสมาชิก</button>"      
                             +"</td>"
                         +"</tbody>"
                     ); 
@@ -53,9 +53,9 @@ $('#adduser_form').submit(function(e) {
                 }
             }
         });
-    } else {
+    // } else {
     // check;
-    }
+    // }
 });
 function deleteUser(row_userid,row_no){
     $.ajax({
@@ -84,18 +84,26 @@ function deleteUser(row_userid,row_no){
     });
 }
 $(document).ready(function() {
-    $('#model-adduser-repassword').focusout(function() {
-        if ($('#model-adduser-repassword').val() != $('#model-adduser-password').val()) {
-            $("#model-adduser-password").addClass("is-invalid");
-            $("#model-adduser-repassword").addClass("is-invalid");
-            $("#invalid").css("display", "block");
-        }
-        if ($('#model-adduser-password').hasClass("is-invalid") && $('#model-adduser-repassword').hasClass("is-invalid")) {
-            if ($('#model-adduser-repassword').val() == $('#model-adduser-password').val()) {
-                $("#model-adduser-password").removeClass("is-invalid");
-                $("#model-adduser-repassword").removeClass("is-invalid");
-                $("#invalid").css("display", "none");
-            }
-        }
+    // $('#model-adduser-repassword').focusout(function() {
+    //     if ($('#model-adduser-repassword').val() != $('#model-adduser-password').val()) {
+    //         $("#model-adduser-password").addClass("is-invalid");
+    //         $("#model-adduser-repassword").addClass("is-invalid");
+    //         $("#invalid").css("display", "block");
+    //     }
+    //     if ($('#model-adduser-password').hasClass("is-invalid") && $('#model-adduser-repassword').hasClass("is-invalid")) {
+    //         if ($('#model-adduser-repassword').val() == $('#model-adduser-password').val()) {
+    //             $("#model-adduser-password").removeClass("is-invalid");
+    //             $("#model-adduser-repassword").removeClass("is-invalid");
+    //             $("#invalid").css("display", "none");
+    //         }
+    //     }
+    // })
+    $(document).ready(function(){
+        $("th.index").each(function(index) {
+            $(this).text(++index);
+        });
+        $("tbody.index").each(function(index) {
+            $(this).attr("id",++index);
+        });
     })
 });

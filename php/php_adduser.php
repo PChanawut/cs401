@@ -1,31 +1,41 @@
 <?php
     session_start();
+
+    $response = array();
+
     if(!empty($_SESSION["company_id"])){  
-        if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['firstname'])
-        && isset($_POST['lastname']) && isset($_POST['status']) && isset($_POST['permission']) ){
-            include('config/database.php');
-            $username = $_POST['username'];
-            $password = md5($_POST['password']);
-            $firstname = $_POST['firstname'];
-            $lastname = $_POST['lastname'];
-            $status = $_POST['status'];
-            $permission = $_POST['permission'];
-            if($_SESSION['type'] == 'company'){
-                $type = 'usercompany';
+        if($_SESSION["permission"][4] == 1){
+            if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['firstname'])
+            && isset($_POST['lastname']) && isset($_POST['status']) && isset($_POST['permission']) ){
+                include('config/database.php');
+                $username = $_POST['username'];
+                $password = md5($_POST['password']);
+                $firstname = $_POST['firstname'];
+                $lastname = $_POST['lastname'];
+                $status = $_POST['status'];
+                $permission = $_POST['permission'];
+                if($_SESSION['type'] == 'company'){
+                    $type = 'usercompany';
+                }
+                $company_id = $_SESSION["company_id"];
+                $sql = "INSERT INTO usercompany(usercompany_id,company_id,usercompany_username,usercompany_password,usercompany_fname,usercompany_lname,usercompany_status,usercompany_type,usercompany_ativate,usercompany_permission) 
+                        VALUES (NULL,'$company_id','$username','$password','$firstname','$lastname','$status','$type','ativate','$permission');";
+                if (mysqli_query($conn, $sql)) {
+                    $response['success'] = true;
+                    $response['id'] = mysqli_insert_id($conn);
+                    $response['firstname'] = $firstname;
+                    $response['lastname'] = $lastname;
+                    $response['status'] = $status;
+                } else {
+                    $response['success'] = false;
+                }
+                mysqli_close($conn);
+            }else{
+                $response['success'] = false;
             }
-            $company_id = $_SESSION["company_id"];
-            $sql = "INSERT INTO usercompany(usercompany_id,company_id,usercompany_username,usercompany_password,usercompany_fname,usercompany_lname,usercompany_status,usercompany_type,usercompany_ativate,usercompany_permission) 
-                    VALUES (NULL,'$company_id','$username','$password','$firstname','$lastname','$status','$type','ativate','$permission');";
-            if (mysqli_query($conn, $sql)) {
-                echo mysqli_insert_id($conn);
-            } else {
-                echo "error";
-            }
-            mysqli_close($conn);
-        }else{
-            echo 'error';
         }
 	}else{
-        echo 'error';
+        $response['success'] = false;
     }
+    echo json_encode($response);
 ?>
