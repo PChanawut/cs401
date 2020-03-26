@@ -174,7 +174,8 @@
                             <div class="row mt-3">
                                 <div class="col">
                                     <button type="button" class="btn btn-light">ยกเลิก</button>
-                                    <button type="button" class="btn btn-light">ยืนยันการขอบัญชีผู้ใช้</button>
+                                    <button type="submit" class="btn btn-light" value="Register"
+                                        name="submit">ยืนยันการขอบัญชีผู้ใช้</button>
                                 </div>
                             </div>
                         </form>
