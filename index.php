@@ -20,11 +20,7 @@
                 <h6 style="color:red;">*username หรือ password ไม่ถูกต้อง</h6>
             </div>
             <div>
-                <label for="inputEmail" class="sr-only">Email address</label>
                 <input type="text" id='username' class="form-control mb-2" placeholder="ชื่อบัญชีผู้ใช้" required>
-                <label for="inputPassword" class="sr-only">Password</label>
-            </div>
-            <div>
                 <input type="password" id='password' class="form-control" placeholder="รหัสผ่าน" autocomplete="on" required>    
                 <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">เข้าสู่ระบบ</button>
             </div>
