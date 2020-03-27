@@ -1,5 +1,5 @@
 <!-- page's company -->
-<div class="alert alert-primary" role="alert">
+<!-- <div class="alert alert-primary" role="alert">
     <h5>ข้อมูลของบริษัท</h5>
 </div>
 
@@ -141,4 +141,4 @@
             </div>
         </div>
     </div>
-<button type="submit" class="btn btn-primary">ถัดไป</button>
+<button type="submit" class="btn btn-primary">ถัดไป</button> -->
