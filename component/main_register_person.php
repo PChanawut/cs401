@@ -1,7 +1,7 @@
 <div class="alert alert-primary" role="alert">
     <h5>ข้อมูลส่วนตัวของผู้ขออนุญาต</h5>
 </div>
-<form id='person-register' method="post">
+<form id='person_register' method="post">
     <div class="form-row">
         <div class="form-group col-2">
             <label for="person_nametitle">คำนำหน้า:</label>
@@ -20,20 +20,28 @@
             <input type="text" class="form-control" id="person_lastname">
         </div>
         <div class="form-group col-3">
-            <label for="person_birthday">วันเดือนปีเกิด:</label>
-            <input type="text" class="form-control" id="person_birthday">
+            <label for="person_position">ตำแหน่ง:</label>
+            <input type="text" class="form-control" id="person_position">
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-4">
+        <div class="form-group col">
+            <label for="person_birthday">วันเดือนปีเกิด:</label>
+            <input type="text" class="form-control" id="person_birthday">
+        </div>
+        <div class="form-group col">
             <label for="person_identification">เลขบัตรประจำตัวประชาชน:</label>
             <input type="text" class="form-control" id="person_identification">
         </div>
-        <div class="form-group col-3">
+        <div class="form-group col">
             <label for="person_phonenumber">เบอร์โทรศัพท์:</label>
             <input type="text" class="form-control" id="person_phonenumber">
         </div>
-        <div class="form-group col-5">
+        <div class="form-group col">
+            <label for="person_fax">โทรสาร:</label>
+            <input type="text" class="form-control" id="person_fax">
+        </div>
+        <div class="form-group col">
             <label for="person_email">E-mail:</label>
             <input type="text" class="form-control" id="person_email">
         </div>
@@ -80,8 +88,8 @@
     </div>
     <div class="form-row">
         <div class="form-group col">
-            <label for="person_address">รายละเอียดที่อยู่ (ห้องเลขที่, บ้านเลขที่, หมู่, ตึก, ถนน)</label>
-            <input type="text" class="form-control" id="person_address">
+            <label for="person_storage_address">รายละเอียดที่อยู่ (ห้องเลขที่, บ้านเลขที่, หมู่, ตึก, ถนน)</label>
+            <input type="text" class="form-control" id="person_storage_address">
         </div>
     </div>
     <div class="form-row">
@@ -132,6 +140,6 @@
     </div>
     <div id="nextBack" class="mb-4" style="float:right;">
         <button onclick='document.location.href="./";' type="button" class="btn">ย้อนกลับ</button>
-        <button type="submit" class="btn btn-primary">ถัดไป</button>
+        <button class="btn btn-primary" type="submit">ถัดไป</button>
     </div>
 </form>

@@ -17,13 +17,13 @@
         <hr>
         <div class="custom-control custom-radio custom-control-inline col-sm">
             <input type="radio" id="type-person" name="radio-check-register" class="custom-control-input" checked>
-            <label class="custom-control-label" for="customRadioInline1">
+            <label class="custom-control-label" for="type-person">
                 <h5>สร้างบัญชีผู้ใช้สำหรับบุคคลธรรมดา</h5>
             </label>
         </div>
         <div class="custom-control custom-radio custom-control-inline col-sm mb-3">
             <input type="radio" id="type-company" name="radio-check-register" class="custom-control-input">
-            <label class="custom-control-label" for="customRadioInline2">
+            <label class="custom-control-label" for="type-company">
                 <h5>สร้างบัญชีผู้ใช้สำหรับนิติบุคคล</h5>
             </label>
         </div>
