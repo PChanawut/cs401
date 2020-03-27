@@ -4,64 +4,54 @@
 <head>
     <!-- config -->
     <?php include 'component/config.php' ?>
+    <link rel="stylesheet" href="./js/jquery.Thailand.js/dist/jquery.Thailand.min.css">
 </head>
 
 <body>
-    <form method="post" action="php_register_person.php">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col">
-                    <h4>สร้างบัญชีผู้ใช้</h4>
-                </div>
-            </div>
-            <hr>
-            <div class="container">
-                <div class="row">
-                    <div class="custom-control custom-radio custom-control-inline col-sm">
-                        <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                            class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline1">
-                            <h5>สร้างบัญชีผู้ใช้สำหรับบุคคลธรรมดา</h5>
-                        </label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline col-sm">
-                        <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                            class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline2">
-                            <h5>สร้างบัญชีผู้ใช้สำหรับนิติบุคคล</h5>
-                        </label>
-                    </div>
-                </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h4>สร้างบัญชีผู้ใช้</h4>
             </div>
         </div>
-        <div id='displayperson' class="col-sm" style="display: none;">
-            <?php include 'component/main_register_person.php' ?>
+        <hr>
+        <div class="custom-control custom-radio custom-control-inline col-sm">
+            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked>
+            <label class="custom-control-label" for="customRadioInline1">
+                <h5>สร้างบัญชีผู้ใช้สำหรับบุคคลธรรมดา</h5>
+            </label>
         </div>
-        <div id='displaycompany' class="col-sm" style="display: none;">
-            <?php include 'component/main_register_company.php' ?>
+        <div class="custom-control custom-radio custom-control-inline col-sm mb-3">
+            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline2">
+                <h5>สร้างบัญชีผู้ใช้สำหรับนิติบุคคล</h5>
+            </label>
         </div>
 
-        <!-- footer -->
+        <div class="container">
+            <div id='main_register_person'>
+                <?php include 'component/main_register_person.php' ?>
+            </div>
+            <div id='main_register_company' style="display: none;">
+                <?php include 'component/main_register_company.php' ?>
+            </div>
+        </div>
+    </div>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
-        <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
-        <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- footer -->
 
-        <script>
-        $(document).ready(function() {
-            $("#customRadioInline1").click(function() {
-                $("#displaycompany").hide();
-                $("#displayperson").show();
-            });
-            $("#customRadioInline2").click(function() {
-                $("#displayperson").hide();
-                $("#displaycompany").show();
-            });
-        });
-        </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
+    <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
+    
+
+
+    <script type="text/javascript" src="./js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+    <script type="text/javascript" src="./js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+    <script type="text/javascript" src="./js/js_register.js"></script>
 </body>
 
 </html>
