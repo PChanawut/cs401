@@ -25,10 +25,8 @@ $.Thailand({
 });
 
 $("#person_register").submit(function(e) {
-    // if(){
 
-    // }
-    let person_name = $("#person_nametitle").val()+$("#person_firstname").val()+" "+$("#person_lastname").val()
+    let person_name = $("#person_nametitle").val()+""+$("#person_firstname").val()+" "+$("#person_lastname").val()
     let person_position = $("#person_position").val()
     let person_birthday = $("#person_birthday").val()
     let person_identification = $("#person_identification").val()
@@ -84,20 +82,8 @@ $("#person_register").submit(function(e) {
             type: type
         },
         success: function(response) {
-            console.log(response)
-            console.log('---------------------------------------------------')
-            // response = JSON.parse(response);
-            // if (response.success) {
-            //     $(document).ajaxStop(function() {
-            //         location.replace("home");
-            //     });
-            // } else {
-            //     $("#invalid").css("display", "block");
-            //     $("#username").val("");
-            //     $("#username").addClass("is-invalid");
-            //     $("#password").val("");
-            //     $("#password").addClass("is-invalid");
-            // }
+            response = JSON.parse(response);
+            console.log(response);   
         }
     });
 });

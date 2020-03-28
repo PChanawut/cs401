@@ -27,11 +27,12 @@
     <div class="form-row">
         <div class="form-group col">
             <label for="person_birthday">วันเดือนปีเกิด:</label>
-            <input type="text" class="form-control" id="person_birthday">
+            <input type="date" aria-describedby="dateHelp" id="person_birthday" class="form-control">
+            <small id="dateHelp" class="form-text text-danger">*ใส่ปีเป็น คศ.</small>
         </div>
         <div class="form-group col">
             <label for="person_identification">เลขบัตรประจำตัวประชาชน:</label>
-            <input type="text" class="form-control" id="person_identification">
+            <input type="text" class="form-control" id="person_identification" data-mask="000 000 000">
         </div>
         <div class="form-group col">
             <label for="person_phonenumber">เบอร์โทรศัพท์:</label>
@@ -42,7 +43,7 @@
             <input type="text" class="form-control" id="person_fax">
         </div>
         <div class="form-group col">
-            <label for="person_email">E-mail:</label>
+            <label for="person_email">อีเมล์:</label>
             <input type="text" class="form-control" id="person_email">
         </div>
     </div>

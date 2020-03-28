@@ -51,6 +51,7 @@
     <script type="text/javascript" src="./js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
     <script type="text/javascript" src="./js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
     <script type="text/javascript" src="./js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+
     <script type="text/javascript" src="./js/js_register.js"></script>
 </body>
 
