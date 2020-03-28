@@ -30,7 +30,7 @@ $('#adduser_form').submit(function(e) {
                     $('#table-adduser').append(
                         "<tbody class=\"index\">"
                             +"<th class=\"index d-none d-sm-block\" id=\"id-row\" scope=\"row\"></td>"
-                            +"<td>"+response.firstname+" "+response.lastname+"</td>"
+                            +"<td>"+response.name+"</td>"
                             +"<td class=\"d-none d-sm-block\">"+response.status+"</td>"
                             +"<td>"
                                 //+"<button type=\"button\" class=\"btn btn-primary\">แก้ไข</button>"

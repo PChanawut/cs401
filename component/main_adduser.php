@@ -42,8 +42,8 @@
         ?>
         <tbody class="index">
             <th class="index d-none d-sm-block" id="id-row" scope="row">
-                </td>
-            <td><?php echo $user['usercompany_fname'];echo " ";echo $user['usercompany_lname']; ?></td>
+                <!-- </td> -->
+            <td><?php echo $user['usercompany_name']; ?></td>
             <td class="d-none d-sm-block"><?php echo $user['usercompany_status']; ?></td>
             <td>
                 <button type="submit" id="removeid" onclick="deleteUser(<?php echo $user['usercompany_id']; ?>,this)"

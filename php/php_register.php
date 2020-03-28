@@ -1,4 +1,5 @@
 <?php
+
     $response = array();
     
     if(isset($_POST['person_name']) && isset($_POST['person_position']) && isset($_POST['person_birthday']) && isset($_POST['person_identification']) 
@@ -32,10 +33,38 @@
         $person_password = md5($_POST['person_password']);
 
         $type = isset($_POST['type']);
-        $sql = "INSERT INTO company(company_id,company_type,company_name,office_name,company_address,
-                            company_address_storage,company_phone,company_fax,company_email,enroll_start,
-                            enroll_no,company_status)
-                VALUES (NULL,'$type','$person_name','$person_position','$address',NULL,'$phonenumber',NULL,'$email','$birthday','$idnumber'NULL)";
+
+        $sql1 = "INSERT INTO company(company_id, company_type, company_name, office_name, company_address,
+                            company_address_storage, company_phone ,company_fax ,company_email, enroll_start,
+                            enroll_no, company_status)
+                VALUES (NULL,$type ,$person_name ,$person_position ,$person_address
+                            ,$person_storage_address ,$person_phonenumber ,$person_fax ,$person_email ,CURDATE()
+                            ,$person_identification ,'wait')";
+        $sql2 = "INSERT INTO usercompany(usercompany_id, company_id, usercompany_username, usercompany_password, usercompany_fname,
+                            usercompany_lname, usercompany_status, usercompany_type, usercompany_ativate, usercompany_permission)
+                VALUE (NULL,'sql1',)";
+        //https://stackoverflow.com/questions/5178697/mysql-insert-into-multiple-tables-database-normalization 
+        //https://www.w3schools.com/php/func_mysqli_rollback.asp
+        try{
+            mysqli_autocommit($conn, FALSE);
+            $sql1 = "INSERT INTO company(company_id, company_type, company_name, office_name, company_address,
+                        company_address_storage, company_phone ,company_fax ,company_email, enroll_start,
+                        enroll_no, company_status)
+                    VALUES (NULL,$type ,$person_name ,$person_position ,$person_address,
+                        $person_storage_address ,$person_phonenumber ,$person_fax ,$person_email ,CURDATE(),
+                        $person_identification ,'wait')"; 
+            mysqli_query($conn,$sql1);
+            $company_id = mysqli_insert_id($conn);
+            
+            $company_first;
+            $sql2 = "INSERT INTO usercompany(usercompany_id, company_id, usercompany_username, usercompany_password, usercompany_fname,
+                        usercompany_lname, usercompany_status, usercompany_type, usercompany_ativate, usercompany_permission)
+                    VALUE (NULL, $company_id, $person_name)";
+            //mysqli_insert_id($conn);
+        }catch(Exception $e){
+            
+        }
+
         // if (mysqli_query($conn, $sql)) {
         //     $response['success'] = true;
         //     $response['id'] = mysqli_insert_id($conn);
