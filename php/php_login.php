@@ -16,7 +16,7 @@
             if($row['usercompany_ativate'] != 'deativate'){
                 $_SESSION['company_id'] = $row['company_id'];
                 $_SESSION['user_id'] = $row['usercompany_id'];
-                $_SESSION['name'] = $row['usercompany_fname']." ".$row['usercompany_lname'];
+                $_SESSION['name'] = $row['usercompany_name'];
                 $_SESSION['type'] = $row['usercompany_type'];
 
                 $_SESSION['permission'] = array();
