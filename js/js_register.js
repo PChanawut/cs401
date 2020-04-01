@@ -87,3 +87,42 @@ $("#person_register").submit(function(e) {
         }
     });
 });
+$("#person_address, #person_district, #person_amphoe, #person_province, #person_zipcode").change(function(){
+    if($("#person_address").val() != '' && $("#person_district").val() != '' 
+    && $("#person_amphoe").val() != '' && $("#person_province").val() != ''
+    && $("#person_zipcode").val() != ''){
+        $("#check-address-storage").removeAttr("disabled");
+        $("#person_storage_address").removeAttr("disabled");
+        $("#person_storage_district").removeAttr("disabled");
+        $("#person_storage_amphoe").removeAttr("disabled");
+        $("#person_storage_province").removeAttr("disabled");
+        $("#person_storage_zipcode").removeAttr("disabled");
+    }
+});
+$("#check-address-storage").click(function(){
+    if($(this).prop("checked") == true){
+        if($("#person_address").val() != '' && $("#person_district").val() != '' 
+        && $("#person_amphoe").val() != '' && $("#person_province").val() != ''
+        && $("#person_zipcode").val() != ''){
+            $("#person_storage_address").val($("#person_address").val())
+            $("#person_storage_district").val($("#person_district").val())
+            $("#person_storage_amphoe").val($("#person_amphoe").val())
+            $("#person_storage_amphoe").val($("#person_amphoe").val())
+            $("#person_storage_province").val($("#person_province").val())
+            $("#person_storage_zipcode").val($("#person_zipcode").val())
+
+            $("#person_storage_address").attr('disabled', true);
+            $("#person_storage_district").attr('disabled', true);
+            $("#person_storage_amphoe").attr('disabled', true);
+            $("#person_storage_province").attr('disabled', true);
+            $("#person_storage_zipcode").attr('disabled', true);
+        }
+    }else{
+        $("#check-address-storage").removeAttr("disabled");
+        $("#person_storage_address").removeAttr("disabled");
+        $("#person_storage_district").removeAttr("disabled");
+        $("#person_storage_amphoe").removeAttr("disabled");
+        $("#person_storage_province").removeAttr("disabled");
+        $("#person_storage_zipcode").removeAttr("disabled");
+    }
+})

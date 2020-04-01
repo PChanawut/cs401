@@ -90,25 +90,25 @@
     <div class="form-row">
         <div class="form-group col">
             <label for="person_storage_address">รายละเอียดที่อยู่ (ห้องเลขที่, บ้านเลขที่, หมู่, ตึก, ถนน)</label>
-            <input type="text" class="form-control" id="person_storage_address">
+            <input type="text" class="form-control" id="person_storage_address" disabled>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col">
             <label for="person_storage_district">ตำบล:</label>
-            <input type="text" class="form-control" id="person_storage_district">
+            <input type="text" class="form-control" id="person_storage_district" disabled>
         </div>
         <div class="form-group col">
             <label for="person_storage_amphoe">อำเภอ:</label>
-            <input type="text" class="form-control" id="person_storage_amphoe">
+            <input type="text" class="form-control" id="person_storage_amphoe" disabled>
         </div>
         <div class="form-group col">
             <label for="person_storage_province">จังหวัด:</label>
-            <input type="text" class="form-control" id="person_storage_province">
+            <input type="text" class="form-control" id="person_storage_province" disabled>
         </div>
         <div class="form-group col">
             <label for="person_storage_zipcode">รหัสไปรษณีย์:</label>
-            <input type="text" class="form-control" id="person_storage_zipcode">
+            <input type="text" class="form-control" id="person_storage_zipcode" disabled>
         </div>
     </div>
     <br>
