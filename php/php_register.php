@@ -60,6 +60,7 @@
         $response['success'] = true;
         mysqli_commit($conn);
     }     
+    $response['success'] = true;
     echo json_encode($response);
     mysqli_close($conn);
 ?>

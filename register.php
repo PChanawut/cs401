@@ -16,23 +16,22 @@
         </div>
         <hr>
         <div class="custom-control custom-radio custom-control-inline col-sm">
-            <input type="radio" id="type-person" name="radio-check-register" class="custom-control-input" checked>
-            <label class="custom-control-label" for="type-person">
-                <h5>สร้างบัญชีผู้ใช้สำหรับบุคคลธรรมดา</h5>
-            </label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline col-sm mb-3">
-            <input type="radio" id="type-company" name="radio-check-register" class="custom-control-input">
+            <input type="radio" id="type-company" name="radio-check-register" class="custom-control-input" checked>
             <label class="custom-control-label" for="type-company">
                 <h5>สร้างบัญชีผู้ใช้สำหรับนิติบุคคล</h5>
             </label>
         </div>
-
+        <div class="custom-control custom-radio custom-control-inline col-sm mb-3">
+            <input type="radio" id="type-person" name="radio-check-register" class="custom-control-input">
+            <label class="custom-control-label" for="type-person">
+                <h5>สร้างบัญชีผู้ใช้สำหรับบุคคลธรรมดา</h5>
+            </label>
+        </div>
         <div class="container">
-            <div id='main_register_person'>
+            <div id='main_register_person' style="display: none;">
                 <?php include 'component/main_register_person.php' ?>
             </div>
-            <div id='main_register_company' style="display: none;">
+            <div id='main_register_company'>
                 <?php include 'component/main_register_company.php' ?>
             </div>
         </div>
