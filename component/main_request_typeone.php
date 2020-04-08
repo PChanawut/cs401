@@ -30,8 +30,13 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col">
+            <div class="form-group col-2">
                 <label for="person_storage_address">หมายเลขโทรศัพท์:</label>
+                <!-- Don't forget id -->
+                <input type="text" class="form-control" id="person_storage_address">
+            </div>
+            <div class="form-group col">
+                <label for="person_storage_address">Email:</label>
                 <!-- Don't forget id -->
                 <input type="text" class="form-control" id="person_storage_address">
             </div>
@@ -146,6 +151,15 @@
                 <label for="name">กัมมันตภาพหรือน้ำหนัก:</label>
                 <input type="name" class="form-control" id="name" placeholder="ระบุกัมมันตภาพหรือน้ำหนัก">
             </div>
+            <div class="form-group col-1">
+                <label for="person_nametitle">หน่วย:</label>
+                <select class="custom-select" id="person_nametitle">
+                    <option value="นาย">Bq</option>
+                    <option value="นาง">Ci</option>
+                    <option value="นางสาว">kg</option>
+                    <option value="นางสาว">lb</option>
+                </select>
+            </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md">
@@ -234,8 +248,8 @@
                 <input type="name" class="form-control" id="name" placeholder="ระบุชื่อผู้ผลิตวัสดุกัมมันตรังสี">
             </div>
             <div class="form-group col-md">
-                <label for="name">หมายเลข:</label>
-                <input type="name" class="form-control" id="name" placeholder="ระบุหมายเลขหรือรหัสภาชนะบรรจุ">
+                <label for="name">กัมมันตภาพสูงสุดหรือน้ำหนัก:</label>
+                <input type="name" class="form-control" id="name" placeholder="ระบุกัมมันตภาพสูงสุดหรือน้ำหนัก">
             </div>
             <div class="form-group col-1">
                 <label for="person_nametitle">หน่วย:</label>
@@ -298,11 +312,11 @@
                 <label for="position">ตำแหน่ง:</label>
                 <input type="position" class="form-control" id="position" placeholder="position">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-1">
                 <label for="age">อายุ:</label>
                 <input type="age" class="form-control" id="age" placeholder="age">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-2">
                 <label for="nationality">สัญชาติ:</label>
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
@@ -310,6 +324,10 @@
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <!--  -->
@@ -400,11 +418,11 @@
                 <label for="position">ตำแหน่ง:</label>
                 <input type="position" class="form-control" id="position" placeholder="position">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-1">
                 <label for="age">อายุ:</label>
                 <input type="age" class="form-control" id="age" placeholder="age">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-2">
                 <label for="nationality">สัญชาติ:</label>
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
@@ -412,6 +430,10 @@
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <!--  -->
@@ -504,11 +526,11 @@
                 <label for="position">ตำแหน่ง:</label>
                 <input type="position" class="form-control" id="position" placeholder="position">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-1">
                 <label for="age">อายุ:</label>
                 <input type="age" class="form-control" id="age" placeholder="age">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-2">
                 <label for="nationality">สัญชาติ:</label>
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
@@ -516,6 +538,10 @@
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <!--  -->

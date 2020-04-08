@@ -185,6 +185,49 @@
                     <input type="text" class="form-control" id="person_storage_amphoe">
                 </div>
             </div>
+            <div id="selecthave4" class="row mx-auto">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline18" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline18">มีใบอนุญาตผลิต
+                        มีไว้ในครอบครองหรือใช้วัสดุพลอยได้</label>
+                </div>
+                <hr>
+                <div id="detailhave4" class="container" style="display:none;">
+                    <div class="row">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="inputPassword6">ใบอนุญาตเลขที่:</label>
+                                <input type="password" id="inputPassword6" class="form-control mx-sm-3"
+                                    aria-describedby="passwordHelpInline">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword6">หมดอายุวันที่:</label>
+                                <input type="password" id="inputPassword6" class="form-control mx-sm-3"
+                                    aria-describedby="passwordHelpInline">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="selectnothave4" class="row mx-auto">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline19" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline19">ไม่มีใบอนุญาตผลิต
+                        มีไว้ในครอบครองหรือใช้วัสดุพลอยได้</label>
+                </div>
+                <div id="detailnothave4" class="container" style="display:none;">
+                    <div class="row">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="inputPassword6">ยื่นแบบคำขออนุญาตเมื่อวันที่:</label>
+                                <input type="password" id="inputPassword6" class="form-control mx-sm-3"
+                                    aria-describedby="passwordHelpInline">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -220,13 +263,13 @@
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
             <div class="form-group col-md">
-                <label for="age">Email:</label>
-                <input type="age" class="form-control" id="age" placeholder="Email">
-            </div>
-            <div class="form-group col-md">
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="age">Email:</label>
+                <input type="age" class="form-control" id="age" placeholder="Email">
             </div>
         </div>
         <!--  -->
@@ -357,13 +400,13 @@
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
             <div class="form-group col-md">
-                <label for="age">Email:</label>
-                <input type="age" class="form-control" id="age" placeholder="Email">
-            </div>
-            <div class="form-group col-md">
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="age">Email:</label>
+                <input type="age" class="form-control" id="age" placeholder="Email">
             </div>
         </div>
         <!--  -->
@@ -622,3 +665,17 @@
         </div>
     </div>
 </div>
+
+<!-- script have or nothave permission -->
+<script>
+$(document).ready(function() {
+    $("#selecthave4").click(function() {
+        $("#detailnothave4").hide();
+        $("#detailhave4").show();
+    });
+    $("#selectnothave4").click(function() {
+        $("#detailhave4").hide();
+        $("#detailnothave4").show();
+    });
+});
+</script>

@@ -65,8 +65,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="typefive" class="row">
-                        <div class="col px-md-5">
+                    <div class="row">
+                        <div id="typefive" class="col px-md-5">
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="customRadioInline5" name="customRadioInline1"
                                     class="custom-control-input">

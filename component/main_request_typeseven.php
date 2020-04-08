@@ -35,6 +35,11 @@
                 <input type="text" class="form-control" id="person_storage_address">
             </div>
             <div class="form-group col">
+                <label for="person_storage_address">Email:</label>
+                <!-- Don't forget id -->
+                <input type="text" class="form-control" id="person_storage_address">
+            </div>
+            <div class="form-group col">
                 <label for="person_nametitle">ประเภทการใช้ประโยชน์:</label>
                 <select class="custom-select" id="person_nametitle">
                     <option value="การแพทย์">การแพทย์</option>
@@ -148,11 +153,11 @@
                 <label for="position">ตำแหน่ง:</label>
                 <input type="position" class="form-control" id="position" placeholder="position">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-1">
                 <label for="age">อายุ:</label>
                 <input type="age" class="form-control" id="age" placeholder="age">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-2">
                 <label for="nationality">สัญชาติ:</label>
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
@@ -160,6 +165,10 @@
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <!--  -->
@@ -250,11 +259,11 @@
                 <label for="position">ตำแหน่ง:</label>
                 <input type="position" class="form-control" id="position" placeholder="position">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-1">
                 <label for="age">อายุ:</label>
                 <input type="age" class="form-control" id="age" placeholder="age">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-2">
                 <label for="nationality">สัญชาติ:</label>
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
@@ -262,6 +271,10 @@
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <!--  -->
@@ -353,11 +366,11 @@
                 <label for="position">ตำแหน่ง:</label>
                 <input type="position" class="form-control" id="position" placeholder="position">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-1">
                 <label for="age">อายุ:</label>
                 <input type="age" class="form-control" id="age" placeholder="age">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-2">
                 <label for="nationality">สัญชาติ:</label>
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
@@ -365,6 +378,10 @@
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <!--  -->

@@ -29,8 +29,13 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col">
+            <div class="form-group col-2">
                 <label for="person_storage_address">หมายเลขโทรศัพท์:</label>
+                <!-- Don't forget id -->
+                <input type="text" class="form-control" id="person_storage_address">
+            </div>
+            <div class="form-group col">
+                <label for="person_storage_address">Email:</label>
                 <!-- Don't forget id -->
                 <input type="text" class="form-control" id="person_storage_address">
             </div>
@@ -241,11 +246,11 @@
                 <label for="position">ตำแหน่ง:</label>
                 <input type="position" class="form-control" id="position" placeholder="position">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-1">
                 <label for="age">อายุ:</label>
                 <input type="age" class="form-control" id="age" placeholder="age">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-2">
                 <label for="nationality">สัญชาติ:</label>
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
@@ -253,6 +258,10 @@
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <!--  -->
@@ -277,22 +286,25 @@
         <!--  -->
         <div class="form-row">
             <div class="form-group col-md">
-                <label for="subdistrict">ตำบล / แขวง:</label>
-                <input type="subdistrict" class="form-control" id="subdistrict" placeholder="subdistrict">
+                <label for="position">ตำแหน่ง:</label>
+                <input type="position" class="form-control" id="position" placeholder="position">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="age">อายุ:</label>
+                <input type="age" class="form-control" id="age" placeholder="age">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="nationality">สัญชาติ:</label>
+                <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
             <div class="form-group col-md">
-                <label for="district">อำเภอ:</label>
-                <input type="district" class="form-control" id="district" placeholder="district">
+                <!-- Don't forget change type and id -->
+                <label for="birthday">หมายเลขโทรศัพท์:</label>
+                <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
             </div>
-            <div class="form-row">
-                <div class="form-group col-md">
-                    <label for="alley">จังหวัด:</label>
-                    <input type="alley" class="form-control" id="alley" placeholder="จังหวัด">
-                </div>
-                <div class="form-group col-md">
-                    <label for="road">รหัสไปรษณีย์:</label>
-                    <input type="road" class="form-control" id="road" placeholder="รหัสไปรษณีย์">
-                </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <div class="form-row">
@@ -343,11 +355,11 @@
                 <label for="position">ตำแหน่ง:</label>
                 <input type="position" class="form-control" id="position" placeholder="position">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-1">
                 <label for="age">อายุ:</label>
                 <input type="age" class="form-control" id="age" placeholder="age">
             </div>
-            <div class="form-group col-md">
+            <div class="form-group col-md-2">
                 <label for="nationality">สัญชาติ:</label>
                 <input type="nationality" class="form-control" id="nationality" placeholder="nationality">
             </div>
@@ -355,6 +367,10 @@
                 <!-- Don't forget change type and id -->
                 <label for="birthday">หมายเลขโทรศัพท์:</label>
                 <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+            </div>
+            <div class="form-group col-md">
+                <label for="alley">Email:</label>
+                <input type="alley" class="form-control" id="alley" placeholder="Email">
             </div>
         </div>
         <!--  -->

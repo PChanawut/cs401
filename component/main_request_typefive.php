@@ -5,6 +5,14 @@
         </div>
 
         <div class="form-row">
+            <div class="form-group col-2">
+                <label for="person_nametitle">ขออนุญาตเพื่อ:</label>
+                <select class="custom-select" id="person_nametitle">
+                    <option value="ผลิต">ผลิต</option>
+                    <option value="มีไว้ในครอบครอง">มีไว้ในครอบครอง</option>
+                    <option value="ใช้">ใช้</option>
+                </select>
+            </div>
             <div class="form-group col">
                 <label for="person_storage_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
                 <input type="text" class="form-control" id="person_storage_address">
@@ -35,12 +43,9 @@
                 <input type="text" class="form-control" id="person_storage_address">
             </div>
             <div class="form-group col">
-                <label for="person_nametitle">ขออนุญาตเพื่อ:</label>
-                <select class="custom-select" id="person_nametitle">
-                    <option value="ผลิต">ผลิต</option>
-                    <option value="มีไว้ในครอบครอง">มีไว้ในครอบครอง</option>
-                    <option value="ใช้">ใช้</option>
-                </select>
+                <label for="person_storage_address">Email:</label>
+                <!-- Don't forget id -->
+                <input type="text" class="form-control" id="person_storage_address">
             </div>
             <div class="form-group col">
                 <label for="person_storage_address">ชนิดของเครื่องปฏิกรณ์ปรมาณู:</label>

@@ -6,16 +6,16 @@
         </div>
 
         <div class="form-row">
-            <div class="form-group col">
-                <label for="person_storage_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
-                <input type="text" class="form-control" id="person_storage_address">
-            </div>
-            <div class="form-group col">
+            <div class="form-group col-4">
                 <label for="person_nametitle">ขออนุญาตเพื่อ:</label>
                 <select class="custom-select" id="person_nametitle">
                     <option value="นำเข้า">นำหรือสั่งเข้ามาในราชอาณาจักร</option>
                     <option value="ส่งออก">นำหรือส่งออกนอกราชอาณาจักร</option>
                 </select>
+            </div>
+            <div class="form-group col">
+                <label for="person_storage_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
+                <input type="text" class="form-control" id="person_storage_address">
             </div>
         </div>
         <div class="form-row">
@@ -649,7 +649,7 @@
     <div class="form-row">
         <div class="form-group col-md">
             <label for="name">ลักษณะและขนาดของหีบห่อ:</label>
-            <input type="name" class="form-control" id="name" placeholder="ชื่อสถานที่ทำการ">
+            <input type="name" class="form-control" id="name" placeholder="ระบุลักษณะและขนาดของหีบห่อ">
         </div>
     </div>
     <div class="form-row">
