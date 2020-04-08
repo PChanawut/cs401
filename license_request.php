@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div id="three" class="col px-md-5">
+                        <div id="typethree" class="col px-md-5">
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="customRadioInline3" name="customRadioInline1"
                                     class="custom-control-input">
@@ -104,6 +104,12 @@
 
     <!-- main -->
     <?php include 'component/main_request_typeone.php' ?>
+    <?php include 'component/main_request_typetwo.php' ?>
+    <?php include 'component/main_request_typethree.php' ?>
+    <?php include 'component/main_request_typefour.php' ?>
+    <?php include 'component/main_request_typefive.php' ?>
+    <?php include 'component/main_request_typesix.php' ?>
+    <?php include 'component/main_request_typeseven.php' ?>
 
     <!-- footer -->
 
