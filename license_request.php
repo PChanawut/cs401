@@ -103,13 +103,27 @@
     </div>
 
     <!-- main -->
-    <?php include 'component/main_request_typeone.php' ?>
-    <?php include 'component/main_request_typetwo.php' ?>
-    <?php include 'component/main_request_typethree.php' ?>
-    <?php include 'component/main_request_typefour.php' ?>
-    <?php include 'component/main_request_typefive.php' ?>
-    <?php include 'component/main_request_typesix.php' ?>
-    <?php include 'component/main_request_typeseven.php' ?>
+    <div id="pageone">
+        <?php include 'component/main_request_typeone.php' ?>
+    </div>
+    <div id="pagetwo" style="display:none;">
+        <?php include 'component/main_request_typetwo.php' ?>
+    </div>
+    <div id="pagethree" style="display:none;">
+        <?php include 'component/main_request_typethree.php' ?>
+    </div>
+    <div id="pagefour" style="display:none;">
+        <?php include 'component/main_request_typefour.php' ?>
+    </div>
+    <div id="pagefive" style="display:none;">
+        <?php include 'component/main_request_typefive.php' ?>
+    </div>
+    <div id="pagesix" style="display:none;">
+        <?php include 'component/main_request_typesix.php' ?>
+    </div>
+    <div id="pageseven" style="display:none;">
+        <?php include 'component/main_request_typeseven.php' ?>
+    </div>
 
     <!-- footer -->
 
@@ -122,3 +136,71 @@
 </body>
 
 </html>
+
+<script>
+$(document).ready(function() {
+    $("#typeone").click(function() {
+        $("#pagetwo").hide();
+        $("#pagethree").hide();
+        $("#pagefour").hide();
+        $("#pagefive").hide();
+        $("#pagesix").hide();
+        $("#pageseven").hide();
+        $("#pageone").show();
+    });
+    $("#typetwo").click(function() {
+        $("#pageone").hide();
+        $("#pagethree").hide();
+        $("#pagefour").hide();
+        $("#pagefive").hide();
+        $("#pagesix").hide();
+        $("#pageseven").hide();
+        $("#pagetwo").show();
+    });
+    $("#typethree").click(function() {
+        $("#pageone").hide();
+        $("#pagetwo").hide();
+        $("#pagefour").hide();
+        $("#pagefive").hide();
+        $("#pagesix").hide();
+        $("#pageseven").hide();
+        $("#pagethree").show();
+    });
+    $("#typefour").click(function() {
+        $("#pageone").hide();
+        $("#pagetwo").hide();
+        $("#pagethree").hide();
+        $("#pagefive").hide();
+        $("#pagesix").hide();
+        $("#pageseven").hide();
+        $("#pagefour").show();
+    });
+    $("#typefive").click(function() {
+        $("#pageone").hide();
+        $("#pagetwo").hide();
+        $("#pagethree").hide();
+        $("#pagefour").hide();
+        $("#pagesix").hide();
+        $("#pageseven").hide();
+        $("#pagefive").show();
+    });
+    $("#typesix").click(function() {
+        $("#pageone").hide();
+        $("#pagetwo").hide();
+        $("#pagethree").hide();
+        $("#pagefour").hide();
+        $("#pagefive").hide();
+        $("#pageseven").hide();
+        $("#pagesix").show();
+    });
+    $("#typeseven").click(function() {
+        $("#pageone").hide();
+        $("#pagetwo").hide();
+        $("#pagethree").hide();
+        $("#pagefour").hide();
+        $("#pagefive").hide();
+        $("#pagesix").hide();
+        $("#pageseven").show();
+    });
+});
+</script>
