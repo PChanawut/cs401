@@ -1,82 +1,112 @@
 <div class="container mt-5">
     <!-- First Step -->
-    <div id="firststep" class="container">
-        <div class="row alert alert-primary" role="alert" style="height:45px">
-            <h5>สถานที่ใช้และจัดเก็บวัสดุ</h5>
+    <div id="stepone1" class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active">รายละเอียดสถานที่จัดเก็บวัสดุ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">รายละเอียดวัสดุที่ขออนุญาต</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">เจ้าหน้าที่ที่เกี่ยวข้องกับวัสดุ</a>
+            </li>
+        </ul>
+        <br>
+        <div class="container">
+            <div class="row alert alert-primary" role="alert" style="height:45px">
+                <h5>สถานที่ใช้และจัดเก็บวัสดุ</h5>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="person_storage_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
+                    <input type="text" class="form-control" id="person_storage_address">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="person_storage_district">ตำบล:</label>
+                    <input type="text" class="form-control" id="person_storage_district">
+                </div>
+                <div class="form-group col">
+                    <label for="person_storage_amphoe">อำเภอ:</label>
+                    <input type="text" class="form-control" id="person_storage_amphoe">
+                </div>
+                <div class="form-group col">
+                    <label for="person_storage_province">จังหวัด:</label>
+                    <input type="text" class="form-control" id="person_storage_province">
+                </div>
+                <div class="form-group col">
+                    <label for="person_storage_zipcode">รหัสไปรษณีย์:</label>
+                    <input type="text" class="form-control" id="person_storage_zipcode">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-2">
+                    <label for="person_storage_address">หมายเลขโทรศัพท์:</label>
+                    <!-- Don't forget id -->
+                    <input type="text" class="form-control" id="person_storage_address">
+                </div>
+                <div class="form-group col">
+                    <label for="person_storage_address">Email:</label>
+                    <!-- Don't forget id -->
+                    <input type="text" class="form-control" id="person_storage_address">
+                </div>
+                <div class="form-group col">
+                    <label for="person_nametitle">ประเภทการใช้ประโยชน์:</label>
+                    <select class="custom-select" id="person_nametitle">
+                        <option value="การแพทย์">การแพทย์</option>
+                        <option value="อุตสาหกรรม">อุตสาหกรรม</option>
+                        <option value="ศึกษาวิจัย">ศึกษาวิจัย</option>
+                        <option value="อื่นๆ">อื่นๆ</option>
+                    </select>
+                </div>
+                <div class="form-group col">
+                    <label for="person_nametitle">ขออนุญาตเพื่อ:</label>
+                    <select class="custom-select" id="person_nametitle">
+                        <option value="ผลิต">ผลิต</option>
+                        <option value="มีไว้ในครอบครอง">มีไว้ในครอบครอง</option>
+                        <option value="ใช้">ใช้</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
-        <div class="form-row">
-            <div class="form-group col">
-                <label for="person_storage_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
-                <input type="text" class="form-control" id="person_storage_address">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <label for="person_storage_district">ตำบล:</label>
-                <input type="text" class="form-control" id="person_storage_district">
-            </div>
-            <div class="form-group col">
-                <label for="person_storage_amphoe">อำเภอ:</label>
-                <input type="text" class="form-control" id="person_storage_amphoe">
-            </div>
-            <div class="form-group col">
-                <label for="person_storage_province">จังหวัด:</label>
-                <input type="text" class="form-control" id="person_storage_province">
-            </div>
-            <div class="form-group col">
-                <label for="person_storage_zipcode">รหัสไปรษณีย์:</label>
-                <input type="text" class="form-control" id="person_storage_zipcode">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-2">
-                <label for="person_storage_address">หมายเลขโทรศัพท์:</label>
-                <!-- Don't forget id -->
-                <input type="text" class="form-control" id="person_storage_address">
-            </div>
-            <div class="form-group col">
-                <label for="person_storage_address">Email:</label>
-                <!-- Don't forget id -->
-                <input type="text" class="form-control" id="person_storage_address">
-            </div>
-            <div class="form-group col">
-                <label for="person_nametitle">ประเภทการใช้ประโยชน์:</label>
-                <select class="custom-select" id="person_nametitle">
-                    <option value="การแพทย์">การแพทย์</option>
-                    <option value="อุตสาหกรรม">อุตสาหกรรม</option>
-                    <option value="ศึกษาวิจัย">ศึกษาวิจัย</option>
-                    <option value="อื่นๆ">อื่นๆ</option>
-                </select>
-            </div>
-            <div class="form-group col">
-                <label for="person_nametitle">ขออนุญาตเพื่อ:</label>
-                <select class="custom-select" id="person_nametitle">
-                    <option value="ผลิต">ผลิต</option>
-                    <option value="มีไว้ในครอบครอง">มีไว้ในครอบครอง</option>
-                    <option value="ใช้">ใช้</option>
-                </select>
-            </div>
+        <div class="float-right">
+            <button id="nextstepone1" type="button" class="btn btn-primary">ถัดไป</button>
         </div>
     </div>
     <br>
 </div>
 
 <!-- Second Step -->
-<div id="steptwo" class="container">
+<div id="steptwo1" class="container" style="display:none;">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link">รายละเอียดสถานที่จัดเก็บวัสดุ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active">รายละเอียดวัสดุที่ขออนุญาต</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">เจ้าหน้าที่ที่เกี่ยวข้องกับวัสดุ</a>
+        </li>
+    </ul>
+    <br>
     <div class="container">
         <div class="row alert alert-primary" role="alert" style="height:45px">
             <h5>รายละเอียดของชนิดวัสดุที่ขออนุญาต: </h5>
         </div>
     </div>
     <div class="row mx-auto">
-        <div id="materialopen" class="col px-md-5">
+        <div id="materialopen1" class="col px-md-5">
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" id="customRadioInline8" name="customRadioInline1" class="custom-control-input">
                 <label class="custom-control-label" for="customRadioInline8">วัสดุชนิดปิดผนึก</label>
             </div>
         </div>
-        <div id="materialclose" class="col px-md-5">
+        <div id="materialclose1" class="col px-md-5">
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" id="customRadioInline9" name="customRadioInline1" class="custom-control-input">
                 <label class="custom-control-label" for="customRadioInline9">วัสดุชนิดไม่ปิดผนึก</label>
@@ -85,7 +115,7 @@
     </div>
     <br>
     <!-- <hr> -->
-    <div id="closebox" class="container" style="display:none;">
+    <div id="closebox1" class="container" style="display:none;">
         <div class="row alert alert-light" role="alert" style="height:45px width:50px">
             <h5>ข้อมูลของวัสดุชนิดปิดผนึก</h5>
         </div>
@@ -202,7 +232,7 @@
     </div>
 
     <!-- No close -->
-    <div id="openbox" class="container" style="display:none;">
+    <div id="openbox1" class="container" style="display:none;">
         <div class="row alert alert-light" role="alert" style="height:45px">
             <h5>ข้อมูลของวัสดุชนิดไม่ปิดผนึก</h5>
         </div>
@@ -281,10 +311,26 @@
             </div>
         </div>
     </div>
+    <div class="float-right">
+        <button id="backstepone1" type="button" class="btn btn-light">ย้อนกลับ</button>
+        <button id="nextsteptwo1" type="button" class="btn btn-primary">ถัดไป</button>
+    </div>
 </div>
 
 <!-- Third Step -->
-<div class="container">
+<div id="stepthree1" class="container" style="display:none;">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link">รายละเอียดสถานที่จัดเก็บวัสดุ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">รายละเอียดวัสดุที่ขออนุญาต</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active">เจ้าหน้าที่ที่เกี่ยวข้องกับวัสดุ</a>
+        </li>
+    </ul>
+    <br>
     <div class="container">
         <div class="row alert alert-primary" role="alert" style="height:45px">
             <h5>รายละเอียดเจ้าหน้าที่ความปลอดภัยทางรังสี</h5>
@@ -605,22 +651,57 @@
     </div>
 
     <!-- button next back -->
-    <div id="nextback" class="container">
+    <div class="container">
         <div style="float:right;">
-            <button type="submit" class="btn btn-primary right">ยื่นคำขอใบอนุญาต</button>
+            <button id="backsteptwo1" type="button" class="btn btn-light">ย้อนกลับ</button>
+            <button id="confirm1" type="submit" class="btn btn-primary right">ยื่นคำขอใบอนุญาต</button>
         </div>
     </div>
 </div>
 
+<!-- script step one -->
 <script>
 $(document).ready(function() {
-    $("#materialopen").click(function() {
-        $("#openbox").hide();
-        $("#closebox").show();
+    $("#nextstepone1").click(function() {
+        $("#stepone1").hide();
+        $("#steptwo1").show();
     });
-    $("#materialclose").click(function() {
-        $("#closebox").hide();
-        $("#openbox").show();
+});
+</script>
+
+<!-- script step two -->
+<script>
+$(document).ready(function() {
+    $("#backstepone1").click(function() {
+        $("#steptwo1").hide();
+        $("#stepone1").show();
+    });
+    $("#nextsteptwo1").click(function() {
+        $("#steptwo1").hide();
+        $("#stepthree1").show();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $("#backsteptwo1").click(function() {
+        $("#stepone1").hide();
+        $("#stepthree1").hide();
+        $("#steptwo1").show();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $("#materialopen1").click(function() {
+        $("#openbox1").hide();
+        $("#closebox1").show();
+    });
+    $("#materialclose1").click(function() {
+        $("#closebox1").hide();
+        $("#openbox1").show();
     });
 });
 </script>
