@@ -65,7 +65,8 @@ function deleteUser(row_userid,row_no){
         row_userid: row_userid
     },
     success: function(response) {
-        if (response == 'success') {
+        response = JSON.parse(response);
+        if (response.success) {
             var row = row_no.parentNode.parentNode;
             row.parentNode.removeChild(row);
 
@@ -79,6 +80,24 @@ function deleteUser(row_userid,row_no){
         });
         } else {
             
+        }
+    }
+    });
+}
+function editUser(row_userid,row_no){
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_edituser.php',
+        data: {
+            row_userid: row_userid
+        },
+    success: function(response) {
+        if (response == 'success') {
+            var row = row_no.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+
+        } else {
+                
         }
     }
     });

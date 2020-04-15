@@ -22,10 +22,11 @@
     <table class="table" id="table-adduser">
         <thead class="alert alert-primary">
             <tr>
-                <th class="d-none d-sm-block">ลำดับ</th>
-                <th>ชื่อ / นามสกุล</th>
-                <th class="d-none d-sm-block">ตำแหน่ง</th>
-                <th>แก้ไขสมาชิก</th>
+                <th style="width:10%">ลำดับ</th>
+                <th style="width:20%">ชื่อ / นามสกุล</th>
+                <th style="width:20%">ตำแหน่ง</th>
+                <th>การเข้าถึง</th>
+                <th></th>
             </tr>
         </thead>
         <?php
@@ -41,13 +42,25 @@
                     foreach($users as $user){
         ?>
         <tbody class="index">
-            <th class="index d-none d-sm-block" id="id-row" scope="row">
+            <th class="index" id="id-row" scope="row">
                 <!-- </td> -->
             <td><?php echo $user['usercompany_name']; ?></td>
             <td class="d-none d-sm-block"><?php echo $user['usercompany_status']; ?></td>
             <td>
+                <span class="badge badge-info">ขอใบอนุญาต</span>
+                <span class="badge badge-secondary">ต่อใบอนุญาต</span>
+                <span class="badge badge-info">ยกเลิกใบอนุญาต</span>
+                <span class="badge badge-secondary">ดูใบอนุญาต</span>
+            </td>
+            <td class="text-right">
+                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"
+                    class="btn btn-warning ml-2">
+                    <i class="fa fa-edit" style="font-size:20px;color:white"></i>
+                </button>
                 <button type="submit" id="removeid" onclick="deleteUser(<?php echo $user['usercompany_id']; ?>,this)"
-                    class="btn btn-danger ml-2">ลบสมาชิก</button>
+                    class="btn btn-danger ml-2">
+                    <i class="fa fa-trash" style="font-size:20px;color:white"></i>
+                </button>
             </td>
         </tbody>
         <?php
