@@ -84,39 +84,25 @@ function deleteUser(row_userid,row_no){
     }
     });
 }
-function editUser(row_userid,row_no){
-    $.ajax({
-        type: 'POST',
-        url: 'php/php_edituser.php',
-        data: {
-            row_userid: row_userid
-        },
-    success: function(response) {
-        if (response == 'success') {
-            var row = row_no.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-
-        } else {
+function editUser(usercompany_id,row_no){
+    $('#model-edituser').modal('show')
+    // $.ajax({
+    //     type: 'POST',
+    //     url: 'php/php_edituser.php',
+    //     data: {
+    //         usercompany_id: usercompany_id
+    //     },
+    // success: function(response) {
+    //     if (response == 'success') {
+    //         // var row = row_no.parentNode.parentNode;
+    //         // row.parentNode.removeChild(row);
+    //     } else {
                 
-        }
-    }
-    });
+    //     }
+    // }
+    // });
 }
 $(document).ready(function() {
-    // $('#model-adduser-repassword').focusout(function() {
-    //     if ($('#model-adduser-repassword').val() != $('#model-adduser-password').val()) {
-    //         $("#model-adduser-password").addClass("is-invalid");
-    //         $("#model-adduser-repassword").addClass("is-invalid");
-    //         $("#invalid").css("display", "block");
-    //     }
-    //     if ($('#model-adduser-password').hasClass("is-invalid") && $('#model-adduser-repassword').hasClass("is-invalid")) {
-    //         if ($('#model-adduser-repassword').val() == $('#model-adduser-password').val()) {
-    //             $("#model-adduser-password").removeClass("is-invalid");
-    //             $("#model-adduser-repassword").removeClass("is-invalid");
-    //             $("#invalid").css("display", "none");
-    //         }
-    //     }
-    // })
     $(document).ready(function(){
         $("th.index").each(function(index) {
             $(this).text(++index);

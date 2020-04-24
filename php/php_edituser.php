@@ -3,19 +3,31 @@
 
     $response = array();
 
-    if(!empty($_SESSION["company_id"])){  
+    if(!empty($_SESSION["usercompany_id"])){  
         if($_SESSION["permission"][4] == 1){
             include('config/database.php');
-            $row_userid = $_POST['row_userid'];
+            $usercompany_id = $_POST['usercompany_id'];
 
-            $sql = "UPDATE usercompany 
-                    SET usercompany_ativate = 'deativate' 
-                    WHERE usercompany_id = '".$row_userid."'";
-
-            if (mysqli_query($conn, $sql)) {
-                echo "success";
+            $sql = "SELECT * FROM usercompany WHERE usercompany_id = ".$usercompany_id."";
+            $result = mysqli_query($conn,$sql);
+            if (mysqli_num_rows($result)==1) {
+                $row = mysqli_fetch_array($result);
+                if($row['usercompany_ativate'] != 'deativate'){
+                    $response['company_id'] = $row['company_id'];
+                    $response['user_id'] = $row['usercompany_id'];
+                    $response['name'] = $row['usercompany_name'];
+                    $response['type'] = $row['usercompany_type'];
+    
+                    $response['permission'] = array();
+                    for($i=0 ; $i < strlen($row['usercompany_permission']) ; $i++){
+                        $response['permission'][$i] = $row['usercompany_permission'][$i];
+                    }
+                    $response['success'] = true;
+                }else{
+                    $response['success'] = false;
+                }
             } else {
-                echo "queryerror";
+                $response['success'] = false;
             }
             mysqli_close($conn);
         }

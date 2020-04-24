@@ -23,7 +23,7 @@
 			</li>
 			<!-- request -->
 			<?php
-				if($_SESSION["permission"][0] == 1){
+				if($_SESSION["permission"][0] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany")){
 			?>  
 				<li class="nav-item">
 					<a class="nav-link text-light" href="license_request">ขอใบอนุญาต</a>
@@ -34,7 +34,7 @@
 
 			<!-- renew -->
 			<?php
-				if($_SESSION["permission"][1] == 1){
+				if($_SESSION["permission"][1] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany")){
 			?>
 			<li class="nav-item">
 				<a class="nav-link text-light" href="license_renew">ต่อใบอนุญาต</a>
@@ -45,7 +45,7 @@
 
 			<!-- dismiss -->
 			<?php
-				if($_SESSION["permission"][2] == 1){
+				if($_SESSION["permission"][2] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany")){
 			?>
 	      	<li class="nav-item">
 				<a class="nav-link text-light" href="license_dismiss">ยกเลิกใบอนุญาต</a>
@@ -56,10 +56,21 @@
 
 			<!-- all -->
 			<?php
-				if($_SESSION["permission"][3] == 1){
+				if($_SESSION["permission"][3] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany")){
 			?>
 			<li class="nav-item">
 				<a class="nav-link text-light" href="license_all">ใบอนุญาตทั้งหมด</a>
+			</li>
+			<?php
+				}
+			?>
+
+			<!-- officer_confirm_register -->
+			<?php
+				if($_SESSION["permission"][3] == 1 && ($_SESSION["type"] == "officer")){
+			?>
+			<li class="nav-item">
+				<a class="nav-link text-light" href="officer_confirm_register">ยืนยันการสมัคร</a>
 			</li>
 			<?php
 				}
@@ -73,7 +84,7 @@
 				<div class="dropdown-menu" style="right: 0;
 				left: auto;" aria-labelledby="profileDropdown">
 				<a class="dropdown-item" href="#">ข้อมูลส่วนตัว</a>
-				<?php if($_SESSION['permission'][4] == 1){ ?>  
+				<?php if($_SESSION['permission'][4] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany")){ ?>  
 					<a class="dropdown-item" href="adduser">เพิ่มสมาชิก</a>
 				<?php } ?>
 				<div class="dropdown-divider"></div>

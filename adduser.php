@@ -20,7 +20,7 @@
     <?php include 'component/main_adduser.php' ?>
     <!-- footer -->
 
-    <!-- model -->
+    <!-- model adduser-->
     <div class="modal fade model-adduser" id="model-adduser" tabindex="-1" role="dialog"
         aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -101,6 +101,87 @@
         </div>
     </div>
 
+
+    <!-- model edit-->
+    <div class="modal fade model-edituser" id="model-edituser" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header alert alert-primary">
+                    <h5 class="modal-title" id="exampleModalLongTitle">แก้ไขสมาชิก</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="adduser_form" method="post" autocomplete="off">
+                    <!-- body -->
+                    <div class="modal-body" style="margin-top : -25px;">
+                        <div class="form-group" style="margin-bottom : 3px;">
+                            <label for="model-edituser-username" class="col-form-label">ชื่อบัญชีผู้ใช้ :</label>
+                            <input type="text" class="form-control input-sm" id="model-edituser-username" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom : 3px;">
+                            <label for="model-edituser-password" class="col-form-label">รหัสผ่าน :</label>
+                            <input type="password" class="form-control input-sm" id="model-edituser-password" required
+                                autocomplete>
+                        </div>
+                        <div class="form-group" style="margin-bottom : 3px;">
+                            <label for="model-edituser-repassword" class="col-form-label">ยืนยันรหัสผ่าน :</label>
+                            <input type="password" class="form-control input-sm" id="model-edituser-repassword" required
+                                autocomplete>
+                        </div>
+                        <div class="form-group" style="margin-bottom : 3px;">
+                            <label for="model-edituser-firstname" class="col-form-label">ชื่อ :</label>
+                            <input type="text" class="form-control input-sm" id="model-edituser-firstname" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom : 3px;">
+                            <label for="model-edituser-lastname" class="col-form-label">นามสกุล :</label>
+                            <input type="text" class="form-control input-sm" id="model-edituser-lastname" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom : 3px;">
+                            <label for="model-edituser-status" class="col-form-label">ตำแหน่ง :</label>
+                            <input type="text" class="form-control input-sm" id="model-edituser-status" required>
+                        </div>
+                        <!-- checkbox -->
+                        <div class="form-group" style="margin-bottom : 3px;">
+                            <label for="model-edituser-username" class="col-form-label">กำหนดสิทธิ์ :</label>
+                            <div class="contrainer ml-3">
+                                <div class="row">
+                                    <div class="col custom-control custom-checkbox mr-2">
+                                        <input type="checkbox" class="custom-control-input"
+                                            id="checkPermission-request">
+                                        <label class="custom-control-label" for="checkPermission-request"
+                                            checked>ขอใบอนุญาต</label>
+                                    </div>
+                                    <div class="col custom-control custom-checkbox mr-2">
+                                        <input type="checkbox" class="custom-control-input" id="checkPermission-renew">
+                                        <label class="custom-control-label"
+                                            for="checkPermission-renew">ต่อใบอนุญาต</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col custom-control custom-checkbox mr-2">
+                                        <input type="checkbox" class="custom-control-input"
+                                            id="checkPermission-dismiss">
+                                        <label class="custom-control-label"
+                                            for="checkPermission-dismiss">ยกเลิกใบอนุญาต</label>
+                                    </div>
+                                    <div class="col custom-control custom-checkbox mr-2">
+                                        <input type="checkbox" class="custom-control-input" id="checkPermission-all">
+                                        <label class="custom-control-label" for="checkPermission-all">ดูใบอนุญาต</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">เพิ่มสมาชิก</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>

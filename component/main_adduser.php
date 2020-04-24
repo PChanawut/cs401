@@ -47,10 +47,54 @@
             <td><?php echo $user['usercompany_name']; ?></td>
             <td class="d-none d-sm-block"><?php echo $user['usercompany_status']; ?></td>
             <td>
-                <span class="badge badge-info">ขอใบอนุญาต</span>
-                <span class="badge badge-secondary">ต่อใบอนุญาต</span>
-                <span class="badge badge-info">ยกเลิกใบอนุญาต</span>
-                <span class="badge badge-secondary">ดูใบอนุญาต</span>
+                <!-- request -->
+                <?php
+                    if($user['usercompany_permission'][0]){
+                ?>
+                    <span class="badge badge-success">ขอใบอนุญาต</span>
+                <?php
+                    }else{
+                ?>
+                    <span class="badge badge-secondary">ขอใบอนุญาต</span>
+                <?php
+                    }
+                ?>
+                <!-- renew -->
+                <?php
+                    if($user['usercompany_permission'][1]){
+                ?>
+                    <span class="badge badge-success">ขอใบอนุญาต</span>
+                <?php
+                    }else{
+                ?>
+                    <span class="badge badge-secondary">ขอใบอนุญาต</span>
+                <?php
+                    }
+                ?>
+                <!-- dismiss -->
+                <?php
+                    if($user['usercompany_permission'][2]){
+                ?>
+                    <span class="badge badge-success">ยกเลิกใบอนุญาต</span>
+                <?php
+                    }else{
+                ?>
+                    <span class="badge badge-secondary">ยกเลิกใบอนุญาต</span>
+                <?php
+                    }
+                ?>
+                <!-- all -->
+                <?php
+                    if($user['usercompany_permission'][3]){
+                ?>
+                    <span class="badge badge-success">ดูใบอนุญาต</span>
+                <?php
+                    }else{
+                ?>
+                    <span class="badge badge-secondary">ดูใบอนุญาต</span>
+                <?php
+                    }
+                ?>
             </td>
             <td class="text-right">
                 <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"

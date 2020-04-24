@@ -4,6 +4,11 @@
 <head>
     <!-- config -->
     <?php include 'component/config.php' ?>
+    <?php
+        if ($_SESSION["permission"][0] != 1 || ($_SESSION["type"] != "company" || $_SESSION["type"] != "usercompany")) {
+            Header("Location: home");
+        }
+            ?>
 </head>
 
 <body>
