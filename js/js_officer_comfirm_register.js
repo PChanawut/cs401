@@ -18,7 +18,7 @@ $('#form_enroll_no').submit(function(e) {
                 $('#info_register_address').text(response.company.company_address);
                 $('#info_register_address_storage').text(response.company.company_address_storage);
             } else {
-
+                
             }
         }
     });

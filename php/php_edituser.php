@@ -3,12 +3,12 @@
 
     $response = array();
 
-    if(!empty($_SESSION["usercompany_id"])){  
+    if(!empty($_SESSION["user_id"])){  
         if($_SESSION["permission"][4] == 1){
             include('config/database.php');
             $usercompany_id = $_POST['usercompany_id'];
 
-            $sql = "SELECT * FROM usercompany WHERE usercompany_id = ".$usercompany_id."";
+            $sql = "SELECT * FROM usercompany WHERE usercompany_id = ".$usercompany_id." AND company_id = ".$_SESSION['company_id']."";
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result)==1) {
                 $row = mysqli_fetch_array($result);

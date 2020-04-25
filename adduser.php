@@ -91,16 +91,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">เพิ่มสมาชิก</button>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">เพิ่มสมาชิก</button>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
 
     <!-- model edit-->
     <div class="modal fade model-edituser" id="model-edituser" tabindex="-1" role="dialog"
@@ -113,7 +112,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="adduser_form" method="post" autocomplete="off">
+                <form id="edituser" method="post" autocomplete="off">
                     <!-- body -->
                     <div class="modal-body" style="margin-top : -25px;">
                         <div class="form-group" style="margin-bottom : 3px;">
@@ -143,7 +142,7 @@
                             <input type="text" class="form-control input-sm" id="model-edituser-status" required>
                         </div>
                         <!-- checkbox -->
-                        <div class="form-group" style="margin-bottom : 3px;">
+                        <!-- <div class="form-group" style="margin-bottom : 3px;">
                             <label for="model-edituser-username" class="col-form-label">กำหนดสิทธิ์ :</label>
                             <div class="contrainer ml-3">
                                 <div class="row">
@@ -172,11 +171,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">แก้ไขสมาชิก</button>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">เพิ่มสมาชิก</button>
                     </div>
                 </form>
             </div>
@@ -187,9 +186,9 @@
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
+
     <!-- validated -->
     <script src="js/js_adduser.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>

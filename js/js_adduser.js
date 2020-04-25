@@ -85,22 +85,23 @@ function deleteUser(row_userid,row_no){
     });
 }
 function editUser(usercompany_id,row_no){
-    $('#model-edituser').modal('show')
-    // $.ajax({
-    //     type: 'POST',
-    //     url: 'php/php_edituser.php',
-    //     data: {
-    //         usercompany_id: usercompany_id
-    //     },
-    // success: function(response) {
-    //     if (response == 'success') {
-    //         // var row = row_no.parentNode.parentNode;
-    //         // row.parentNode.removeChild(row);
-    //     } else {
-                
-    //     }
-    // }
-    // });
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_edituser.php',
+        data: {
+            usercompany_id: usercompany_id
+        },
+    success: function(response) {
+        response = JSON.parse(response)
+        if (response.success) {
+            console.log('pass')
+            $('#model-edituser-username').text(response.name)
+            $('#model-edituser').modal('show');
+        } else {
+
+        }
+    }
+    });
 }
 $(document).ready(function() {
     $(document).ready(function(){
