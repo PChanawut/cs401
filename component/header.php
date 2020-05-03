@@ -1,6 +1,8 @@
 <?php
-	if(empty($_SESSION["company_id"])){  
-		Header("Location: ./");
+	if($_SESSION['type']!="admin"){
+		if(empty($_SESSION["company_id"])){  
+			Header("Location: ./");
+		}
 	}
 ?>
 <!-- style="background-color: #307BC0;" bg-light-->
