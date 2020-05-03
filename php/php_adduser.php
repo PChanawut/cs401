@@ -26,6 +26,7 @@
                     $response['id'] = mysqli_insert_id($conn);
                     $response['name'] = $name;
                     $response['status'] = $status;
+                    $response['permission'] = array($permission[0],$permission[1],$permission[2],$permission[3],$permission[4]);
                 } else {
                     $response['success'] = false;
                 }

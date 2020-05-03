@@ -8,7 +8,7 @@
             include('config/database.php');
             $usercompany_id = $_POST['usercompany_id'];
 
-            $sql = "SELECT * FROM usercompany WHERE usercompany_id = ".$usercompany_id." AND company_id = ".$_SESSION['company_id']."";
+            $sql = "SELECT * FROM usercompany WHERE usercompany_id = ".$usercompany_id." AND company_id = ".$_SESSION['company_id']." AND company_id = ".$_SESSION["user_id"]."";
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result)==1) {
                 $row = mysqli_fetch_array($result);
@@ -16,8 +16,9 @@
                     $response['company_id'] = $row['company_id'];
                     $response['user_id'] = $row['usercompany_id'];
                     $response['name'] = $row['usercompany_name'];
+                    $response['usercompany_username'] = $row['usercompany_username'];
                     $response['type'] = $row['usercompany_type'];
-    
+                    $response['usercompany_status'] = $row['usercompany_status'];
                     $response['permission'] = array();
                     for($i=0 ; $i < strlen($row['usercompany_permission']) ; $i++){
                         $response['permission'][$i] = $row['usercompany_permission'][$i];

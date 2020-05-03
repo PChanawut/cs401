@@ -32,7 +32,7 @@
         <?php
             include('php/config/database.php');
             $users = array();
-            $sql = "SELECT * FROM usercompany WHERE company_id=".$_SESSION["company_id"]." AND usercompany_ativate = 'ativate' AND NOT usercompany_id = ".$_SESSION["user_id"]."";  
+            $sql = "SELECT * FROM usercompany WHERE company_id=".$_SESSION["company_id"]." AND usercompany_ativate = 'ativate' AND NOT usercompany_id = ".$_SESSION["user_id"]." AND NOT usercompany_status = 'root'";  
             $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
             while ($user =  mysqli_fetch_assoc($user_query)){
                 $users[] = $user;
@@ -51,7 +51,7 @@
                 <?php
                     if($user['usercompany_permission'][0]){
                 ?>
-                    <span class="badge badge-success">ขอใบอนุญาต</span>
+                    <span class="badge badge-success" style="background: #2973CB;">ขอใบอนุญาต</span>
                 <?php
                     }else{
                 ?>
@@ -63,11 +63,11 @@
                 <?php
                     if($user['usercompany_permission'][1]){
                 ?>
-                    <span class="badge badge-success">ขอใบอนุญาต</span>
+                    <span class="badge badge-success" style="background: #2973CB;">ต่อใบอนุญาต</span>
                 <?php
                     }else{
                 ?>
-                    <span class="badge badge-secondary">ขอใบอนุญาต</span>
+                    <span class="badge badge-secondary">ต่อใบอนุญาต</span>
                 <?php
                     }
                 ?>
@@ -75,7 +75,7 @@
                 <?php
                     if($user['usercompany_permission'][2]){
                 ?>
-                    <span class="badge badge-success">ยกเลิกใบอนุญาต</span>
+                    <span class="badge badge-success" style="background: #2973CB;">ยกเลิกใบอนุญาต</span>
                 <?php
                     }else{
                 ?>
@@ -87,7 +87,7 @@
                 <?php
                     if($user['usercompany_permission'][3]){
                 ?>
-                    <span class="badge badge-success">ดูใบอนุญาต</span>
+                    <span class="badge badge-success" style="background: #2973CB;">ดูใบอนุญาต</span>
                 <?php
                     }else{
                 ?>

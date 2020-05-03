@@ -142,36 +142,36 @@
                             <input type="text" class="form-control input-sm" id="model-edituser-status" required>
                         </div>
                         <!-- checkbox -->
-                        <!-- <div class="form-group" style="margin-bottom : 3px;">
+                        <div class="form-group" style="margin-bottom : 3px;">
                             <label for="model-edituser-username" class="col-form-label">กำหนดสิทธิ์ :</label>
                             <div class="contrainer ml-3">
                                 <div class="row">
                                     <div class="col custom-control custom-checkbox mr-2">
                                         <input type="checkbox" class="custom-control-input"
-                                            id="checkPermission-request">
-                                        <label class="custom-control-label" for="checkPermission-request"
+                                            id="checkPermission-editrequest">
+                                        <label class="custom-control-label" for="checkPermission-editrequest"
                                             checked>ขอใบอนุญาต</label>
                                     </div>
                                     <div class="col custom-control custom-checkbox mr-2">
-                                        <input type="checkbox" class="custom-control-input" id="checkPermission-renew">
+                                        <input type="checkbox" class="custom-control-input" id="checkPermission-editrenew">
                                         <label class="custom-control-label"
-                                            for="checkPermission-renew">ต่อใบอนุญาต</label>
+                                            for="checkPermission-editrenew">ต่อใบอนุญาต</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col custom-control custom-checkbox mr-2">
                                         <input type="checkbox" class="custom-control-input"
-                                            id="checkPermission-dismiss">
+                                            id="checkPermission-editdismiss">
                                         <label class="custom-control-label"
-                                            for="checkPermission-dismiss">ยกเลิกใบอนุญาต</label>
+                                            for="checkPermission-editdismiss">ยกเลิกใบอนุญาต</label>
                                     </div>
                                     <div class="col custom-control custom-checkbox mr-2">
-                                        <input type="checkbox" class="custom-control-input" id="checkPermission-all">
-                                        <label class="custom-control-label" for="checkPermission-all">ดูใบอนุญาต</label>
+                                        <input type="checkbox" class="custom-control-input" id="checkPermission-editall">
+                                        <label class="custom-control-label" for="checkPermission-editall">ดูใบอนุญาต</label>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">แก้ไขสมาชิก</button>
