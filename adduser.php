@@ -121,13 +121,11 @@
                         </div>
                         <div class="form-group" style="margin-bottom : 3px;">
                             <label for="model-edituser-password" class="col-form-label">รหัสผ่าน :</label>
-                            <input type="password" class="form-control input-sm" id="model-edituser-password" required
-                                autocomplete>
+                            <input type="password" class="form-control input-sm" id="model-edituser-password">
                         </div>
                         <div class="form-group" style="margin-bottom : 3px;">
                             <label for="model-edituser-repassword" class="col-form-label">ยืนยันรหัสผ่าน :</label>
-                            <input type="password" class="form-control input-sm" id="model-edituser-repassword" required
-                                autocomplete>
+                            <input type="password" class="form-control input-sm" id="model-edituser-repassword">
                         </div>
                         <div class="form-group" style="margin-bottom : 3px;">
                             <label for="model-edituser-firstname" class="col-form-label">ชื่อ :</label>
@@ -172,6 +170,7 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" id="model-edituser-id" value="">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">แก้ไขสมาชิก</button>

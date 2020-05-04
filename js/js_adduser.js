@@ -1,4 +1,43 @@
-//add user;
+$('#edituser').submit(function(e) {
+    let username = $("#model-edituser-username").val();
+    let password = $("#model-edituser-password").val();
+    let firstname = $("#model-edituser-firstname").val();
+    let lastname = $("#model-edituser-lastname").val();
+    let status = $("#model-edituser-status").val();
+    let id = $("#model-edituser-id").val();
+    let permission = "";
+    $('#checkPermission-editrequest').is(":checked")?permission += "1":permission += "0";
+    $('#checkPermission-editrenew').is(":checked")?permission += "1":permission += "0";
+    $('#checkPermission-editdismiss').is(":checked")?permission += "1":permission += "0";
+    $('#checkPermission-editall').is(":checked")?permission += "1":permission += "0";
+    permission+="0"; //can add user(admin)
+
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_changeuser.php',
+        data: {
+            username: username,
+            password: password,
+            firstname: firstname,
+            lastname: lastname,
+            status: status,
+            id: id,
+            permission: permission
+        },
+        success: function(response) {
+            response = JSON.parse(response);
+            console.log(response)
+            if (response.success) {
+                $("#model-edituser-id").val("");
+                $('#model-edituser').modal('toggle');
+                location.reload();
+            } else {
+                alert("Fail");
+            }
+        }
+    });
+});
 $('#adduser_form').submit(function(e) {
     let username = $("#model-adduser-username").val();
     let password = $("#model-adduser-password").val();
@@ -12,60 +51,28 @@ $('#adduser_form').submit(function(e) {
     $('#checkPermission-all').is(":checked")?permission += "1":permission += "0";
     permission+="0"; //can add user(admin)
     // if (password == $("#model-adduser-repassword").val()) {
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: 'php/php_adduser.php',
-            data: {
-                username: username,
-                password: password,
-                firstname: firstname,
-                lastname: lastname,
-                status: status,
-                permission: permission
-            },
-            success: function(response) {
-                response = JSON.parse(response);
-                if (response.success) {
-                    // $('#table-adduser').append(
-                    //     "<tbody class=\"index\">"
-                    //         +"<th class=\"index\" id=\"id-row\" scope=\"row\"></td>"
-                    //         +"<td>"+response.name+"</td>"
-                    //         +"<td class=\"d-none d-sm-block\">"+response.status+"</td>"
-                    //         +"<td>"
-                    //             +"<span class=\"badge badge-"+response.permission[0]==1?"success":"secondary"+"\" style=\"background: #2973CB;\">ขอใบอนุญาต</span>"
-                    //             +"<span class=\"badge badge-"+response.permission[1]==1?"success":"secondary"+"\" style=\"background: #2973CB;\">ต่อใบอนุญาต</span>"
-                    //             +"<span class=\"badge badge-"+response.permission[2]==1?"success":"secondary"+"\" style=\"background: #2973CB;\">ยกเลิกใบอนุญาต</span>"
-                    //             +"<span class=\"badge badge-"+response.permission[3]==1?"success":"secondary"+"\" style=\"background: #2973CB;\">ดูใบอนุญาต</span>"
-                    //         +"</td>"
-                    //         +"<td class=\"text-right\">"
-                    //             +"<button type=\"submit\" onclick=\"editUser(<?php echo $user['usercompany_id']; ?>,this)\"class=\"btn btn-warning ml-2\">"
-                    //                 +"<i class=\"fa fa-edit\" style=\"font-size:20px;color:white\"></i>"
-                    //             +"</button>"
-                    //             +"<button type=\"submit\" id=\"removeid\" onclick=\"deleteUser("+response.id+",this)\" class=\"btn btn-danger ml-2\">ลบสมาชิก</button>"      
-                    //         +"</td>"
-                    //     +"</tbody>"
-                    // ); 
-
-                    //close model
-                    $('#model-adduser').modal('toggle');
-                    location.reload();
-                    // setIndex();
-                    // $("th.index").each(function(index) {
-                    //     $(this).text(++index);
-                    // });
-                    // setIdTbody();
-                    // $("tbody.index").each(function(index) {
-                    //     $(this).attr("id",++index);
-                    // }); 
-                } else {
-                    alert(response);
-                }
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_adduser.php',
+        data: {
+            username: username,
+            password: password,
+            firstname: firstname,
+            lastname: lastname,
+            status: status,
+            permission: permission
+        },
+        success: function(response) {
+            response = JSON.parse(response);
+            if (response.success) {
+                $('#model-adduser').modal('toggle');
+                location.reload();
+            } else {
+                alert(response);
             }
-        });
-    // } else {
-    // check;
-    // }
+        }
+    });
 });
 function deleteUser(row_userid,row_no){
     $.ajax({
@@ -103,7 +110,6 @@ function editUser(usercompany_id,row_no){
         },
     success: function(response) {
         response = JSON.parse(response)
-        console.log(response)
         if (response.success) {
             $('#model-edituser-username').val(response.usercompany_username)
             $('#model-edituser-firstname').val(response.name.split(" ")[0])
@@ -113,9 +119,10 @@ function editUser(usercompany_id,row_no){
             $("#checkPermission-editrenew").prop("checked", response.permission[1] == "1" ? true : false);
             $("#checkPermission-editdismiss").prop("checked", response.permission[2] == "1" ? true : false);
             $("#checkPermission-editall").prop("checked", response.permission[3] == "1" ? true : false);
+            $("#model-edituser-id").val(response.user_id)
             $('#model-edituser').modal('show');
         } else {
-            
+
         }
     }
     });
