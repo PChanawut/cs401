@@ -20,52 +20,52 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="person_storage_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
-                    <input type="text" class="form-control" id="person_storage_address">
+                    <input type="text" class="form-control">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col">
                     <label for="person_storage_district">ตำบล:</label>
-                    <input type="text" class="form-control" id="person_storage_district">
+                    <input type="text" class="form-control">
                 </div>
                 <div class="form-group col">
                     <label for="person_storage_amphoe">อำเภอ:</label>
-                    <input type="text" class="form-control" id="person_storage_amphoe">
+                    <input type="text" class="form-control">
                 </div>
                 <div class="form-group col">
                     <label for="person_storage_province">จังหวัด:</label>
-                    <input type="text" class="form-control" id="person_storage_province">
+                    <input type="text" class="form-control">
                 </div>
                 <div class="form-group col">
                     <label for="person_storage_zipcode">รหัสไปรษณีย์:</label>
-                    <input type="text" class="form-control" id="person_storage_zipcode">
+                    <input type="text" class="form-control">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-2">
                     <label for="person_storage_address">หมายเลขโทรศัพท์:</label>
                     <!-- Don't forget id -->
-                    <input type="text" class="form-control" id="person_storage_address">
+                    <input type="text" class="form-control">
                 </div>
                 <div class="form-group col">
                     <label for="person_storage_address">Email:</label>
                     <!-- Don't forget id -->
-                    <input type="text" class="form-control" id="person_storage_address">
+                    <input type="text" class="form-control">
                 </div>
                 <div class="form-group col">
                     <label for="person_nametitle">ประเภทการใช้ประโยชน์:</label>
-                    <select class="custom-select" id="person_nametitle">
-                        <option value="การแพทย์">เชื้อเพลิงนิวเคลียร์</option>
-                        <option value="อุตสาหกรรม">เครื่องกำบังรังสีทางการแพทย์</option>
-                        <option value="การแพทย์">เครื่องกำบังรังสีทางอุตสาหกรรม</option>
+                    <select class="custom-select">
+                        <option value="เชื้อเพลิงนิวเคลียร์">เชื้อเพลิงนิวเคลียร์</option>
+                        <option value="เครื่องกำบังรังสีทางการแพทย์">เครื่องกำบังรังสีทางการแพทย์</option>
+                        <option value="เครื่องกำบังรังสีทางอุตสาหกรรม">เครื่องกำบังรังสีทางอุตสาหกรรม</option>
                         <option value="ศึกษาวิจัย">ศึกษาวิจัย</option>
-                        <option value="อุตสาหกรรม">พัฒนาวัสดุนิวเคลียร์</option>
+                        <option value="พัฒนาวัสดุนิวเคลียร์">พัฒนาวัสดุนิวเคลียร์</option>
                         <option value="อื่นๆ">อื่นๆ</option>
                     </select>
                 </div>
                 <div class="form-group col">
                     <label for="person_nametitle">ขออนุญาตเพื่อ:</label>
-                    <select class="custom-select" id="person_nametitle">
+                    <select class="custom-select">
                         <option value="ผลิต">ผลิต</option>
                         <option value="มีไว้ในครอบครอง">มีไว้ในครอบครอง</option>
                         <option value="ใช้">ใช้</option>
@@ -118,80 +118,84 @@
         <div class="form-row">
             <div class="form-group col-2">
                 <label for="person_storage_amphoe">รหัสบริเวณตรวจนับ:</label>
-                <input type="text" class="form-control" id="person_storage_amphoe">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col">
                 <label for="person_storage_district">ชื่อสถานปฏิบัติการ:</label>
-                <input type="text" class="form-control" id="person_storage_district">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col-5">
                 <label for="person_nametitle">วัสดุนิวเคลียร์พิเศษ ชนิด:</label>
-                <select class="custom-select" id="person_nametitle">
-                    <option value="การแพทย์">01 พลูโตเนียมหรือสารประกอบของพลูโตเนียม</option>
-                    <option value="อุตสาหกรรม">02 ยูเรเนียม 233 หรือสารประกอบยูเรเนียม 233</option>
-                    <option value="การแพทย์">03 ยูเรเนียม 235 หรือสารประกอบยูเรเนียม 235</option>
-                    <option value="ศึกษาวิจัย">04 วัสดุใดๆ ที่มีวัสดุตามข้อ 01,02 หรือ 03 ผสมกัน</option>
+                <select class="custom-select">
+                    <option value="พลูโตเนียมหรือสารประกอบของพลูโตเนียม">01 พลูโตเนียมหรือสารประกอบของพลูโตเนียม
+                    </option>
+                    <option value="ยูเรเนียม 233 หรือสารประกอบยูเรเนียม 233">02 ยูเรเนียม 233 หรือสารประกอบยูเรเนียม 233
+                    </option>
+                    <option value="ยูเรเนียม 235 หรือสารประกอบยูเรเนียม 235">03 ยูเรเนียม 235 หรือสารประกอบยูเรเนียม 235
+                    </option>
+                    <option value="วัสดุใดๆ ที่มีวัสดุตามข้อ 01,02 หรือ 03 ผสมกัน">04 วัสดุใดๆ ที่มีวัสดุตามข้อ 01,02
+                        หรือ 03 ผสมกัน</option>
                 </select>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col">
                 <label for="person_storage_district">รหัสตำแหน่ง:</label>
-                <input type="text" class="form-control" id="person_storage_district">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col">
                 <label for="person_storage_amphoe">ชื่อ/หมายเลข Batch:</label>
-                <input type="text" class="form-control" id="person_storage_amphoe">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col">
                 <label for="person_storage_province">จำนวนในรุ่น:</label>
-                <input type="text" class="form-control" id="person_storage_province">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col-4">
                 <label for="person_nametitle">รายละเอียดวัสดุ:</label>
-                <select class="custom-select" id="person_nametitle">
-                    <option value="การแพทย์">Physical form</option>
-                    <option value="อุตสาหกรรม">Chemical form</option>
-                    <option value="การแพทย์">Containment</option>
-                    <option value="ศึกษาวิจัย">Irradiation status and quality</option>
+                <select class="custom-select">
+                    <option value="Physical form">Physical form</option>
+                    <option value="Chemical form">Chemical form</option>
+                    <option value="Containment">Containment</option>
+                    <option value="Irradiation status and quality">Irradiation status and quality</option>
                 </select>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-3">
                 <label for="person_nametitle">ประเภทวัสดุ:</label>
-                <select class="custom-select" id="person_nametitle">
-                    <option value="การแพทย์">P (รหัสวัสดุ 01) สำหรับพลูโตเนียมหรือสารประกอบของพลูโตเนียม</option>
-                    <option value="อุตสาหกรรม">E (รหัสวัสดุ 02,03) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม 233
+                <select class="custom-select">
+                    <option value="P">P (รหัสวัสดุ 01) สำหรับพลูโตเนียมหรือสารประกอบของพลูโตเนียม</option>
+                    <option value="E">E (รหัสวัสดุ 02,03) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม 233
                         และ/หรือ 235</option>
-                    <option value="การแพทย์">U (รหัสวัสดุ 05,06) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม</option>
-                    <option value="ศึกษาวิจัย">N (รหัสวัสดุ 05,06) สำหรับยูเรเนียมธรรมชาติ</option>
-                    <option value="อุตสาหกรรม">T (รหัสวัสดุ 07,08) สำหรับธอเรียมหรือสารประกอบธอเรรียม</option>
-                    <option value="การแพทย์">D (รหัสวัสดุ 09) สำหรับยูเรเนียมเสื่อมสมรรถนะ</option>
-                    <option value="ศึกษาวิจัย">รหัสวัสดุ 04 แยกระบุตัวอักษรตามแต่ละชนิดของไอโซโทปที่ผสมกัน</option>
+                    <option value="U">U (รหัสวัสดุ 05,06) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม</option>
+                    <option value="N">N (รหัสวัสดุ 05,06) สำหรับยูเรเนียมธรรมชาติ</option>
+                    <option value="T">T (รหัสวัสดุ 07,08) สำหรับธอเรียมหรือสารประกอบธอเรรียม</option>
+                    <option value="D">D (รหัสวัสดุ 09) สำหรับยูเรเนียมเสื่อมสมรรถนะ</option>
+                    <option value="รหัสวัสดุ 04">รหัสวัสดุ 04 แยกระบุตัวอักษรตามแต่ละชนิดของไอโซโทปที่ผสมกัน</option>
                 </select>
             </div>
             <div class="form-group col-2">
                 <label for="person_storage_province">น้ำหนักของวัสดุ:</label>
-                <input type="text" class="form-control" id="person_storage_province">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col-1">
                 <label for="person_nametitle">หน่วย:</label>
-                <select class="custom-select" id="person_nametitle">
+                <select class="custom-select">
                     <option value="การแพทย์">กิโลกรัม</option>
                     <option value="อุตสาหกรรม">กรัม</option>
                 </select>
             </div>
             <div class="form-group col-3">
                 <label for="person_storage_province">น้ำหนักของวัสดุนิวเคลียร์พิเศษ:</label>
-                <input type="text" class="form-control" id="person_storage_province">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col">
                 <label for="person_nametitle">รหัสไอโซโทป:</label>
-                <select class="custom-select" id="person_nametitle">
-                    <option value="การแพทย์">G วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235</option>
-                    <option value="อุตสาหกรรม">J วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235 และ 233</option>
-                    <option value="การแพทย์">K วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 233</option>
+                <select class="custom-select">
+                    <option value="G">G วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235</option>
+                    <option value="J">J วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235 และ 233</option>
+                    <option value="K">K วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 233</option>
                 </select>
             </div>
         </div>
@@ -200,51 +204,51 @@
         <div class="form-row">
             <div class="form-group col-2">
                 <label for="person_storage_amphoe">รหัสหน่วยงาน:</label>
-                <input type="text" class="form-control" id="person_storage_amphoe">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col">
                 <label for="person_storage_district">สถานที่ใช้งาน:</label>
-                <input type="text" class="form-control" id="person_storage_district">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col-3">
                 <label for="person_storage_district">การใช้ประโยชน์:</label>
-                <input type="text" class="form-control" id="person_storage_district">
+                <input type="text" class="form-control">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-4">
                 <label for="person_nametitle">วัสดุนิวเคลียร์พิเศษ ชนิด:</label>
-                <select class="custom-select" id="person_nametitle">
-                    <option value="การแพทย์">05 ยูเรเนียม</option>
-                    <option value="อุตสาหกรรม">06 สารประกอบยูเรเนียม</option>
-                    <option value="การแพทย์">07 ธอเรียม</option>
-                    <option value="ศึกษาวิจัย">08 สารประกอบธอเรียม</option>
-                    <option value="ศึกษาวิจัย">09 ยูเรเนียมเสื่อมสมรรถนะ</option>
+                <select class="custom-select">
+                    <option value="ยูเรเนียม">05 ยูเรเนียม</option>
+                    <option value="สารประกอบยูเรเนียม">06 สารประกอบยูเรเนียม</option>
+                    <option value="ธอเรียม">07 ธอเรียม</option>
+                    <option value="สารประกอบธอเรียม">08 สารประกอบธอเรียม</option>
+                    <option value="ยูเรเนียมเสื่อมสมรรถนะ">09 ยูเรเนียมเสื่อมสมรรถนะ</option>
                 </select>
             </div>
             <div class="form-group col-2">
                 <label for="person_storage_amphoe">น้ำหนัก(กิโลกรัม):</label>
-                <input type="text" class="form-control" id="person_storage_amphoe">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col">
                 <label for="person_storage_district">รุ่น/หมายเลขวัสดุ:</label>
-                <input type="text" class="form-control" id="person_storage_district">
+                <input type="text" class="form-control">
             </div>
             <div class="form-group col">
                 <label for="person_storage_district">อายุการใช้งาน(ปี):</label>
-                <input type="text" class="form-control" id="person_storage_district">
+                <input type="text" class="form-control">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col">
                 <label for="person_storage_amphoe">ที่อยู่บริษัทผู้ผลิต:</label>
-                <input type="text" class="form-control" id="person_storage_amphoe">
+                <input type="text" class="form-control">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col">
                 <label for="person_storage_amphoe">ที่อยู่บริษัทผู้แทนจำหน่าย:</label>
-                <input type="text" class="form-control" id="person_storage_amphoe">
+                <input type="text" class="form-control">
             </div>
         </div>
     </div>
@@ -286,91 +290,89 @@
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="name">ชื่อ:</label>
-                                <input type="name" class="form-control" id="name" placeholder="name">
+                                <input type="name" class="form-control" placeholder="name">
                             </div>
                             <div class="form-group col-md">
                                 <label for="lname">นามสกุล:</label>
-                                <input type="lname" class="form-control" id="lname" placeholder="lname">
+                                <input type="lname" class="form-control" placeholder="lname">
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                <input type="idcard" class="form-control" id="idcard" placeholder="idcard">
+                                <input type="idcard" class="form-control" placeholder="idcard">
                             </div>
                         </div>
                         <!--  -->
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="position">ตำแหน่ง:</label>
-                                <input type="position" class="form-control" id="position" placeholder="position">
+                                <input type="position" class="form-control" placeholder="position">
                             </div>
                             <div class="form-group col-md-1">
                                 <label for="age">อายุ:</label>
-                                <input type="age" class="form-control" id="age" placeholder="age">
+                                <input type="age" class="form-control" placeholder="age">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="nationality">สัญชาติ:</label>
-                                <input type="nationality" class="form-control" id="nationality"
-                                    placeholder="nationality">
+                                <input type="nationality" class="form-control" placeholder="nationality">
                             </div>
                             <div class="form-group col-md">
                                 <!-- Don't forget change type and id -->
                                 <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+                                <input type="birthday" class="form-control" placeholder="phonenumber">
                             </div>
                             <div class="form-group col-md">
                                 <label for="alley">Email:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="Email">
+                                <input type="alley" class="form-control" placeholder="Email">
                             </div>
                         </div>
                         <!--  -->
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="houseno">บ้านเลขที่:</label>
-                                <input type="houseno" class="form-control" id="houseno" placeholder="houseno">
+                                <input type="houseno" class="form-control" placeholder="houseno">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="villageno">หมู่:</label>
-                                <input type="villageno" class="form-control" id="villageno" placeholder="villageno">
+                                <input type="villageno" class="form-control" placeholder="villageno">
                             </div>
                             <div class="form-group col-md">
                                 <label for="alley">ตรอก / ซอย:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="alley">
+                                <input type="alley" class="form-control" placeholder="alley">
                             </div>
                             <div class="form-group col-md">
                                 <label for="road">ถนน:</label>
-                                <input type="road" class="form-control" id="road" placeholder="road">
+                                <input type="road" class="form-control" placeholder="road">
                             </div>
                         </div>
                         <!--  -->
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="subdistrict">ตำบล / แขวง:</label>
-                                <input type="subdistrict" class="form-control" id="subdistrict"
-                                    placeholder="subdistrict">
+                                <input type="subdistrict" class="form-control" placeholder="subdistrict">
                             </div>
                             <div class="form-group col-md">
                                 <label for="district">อำเภอ:</label>
-                                <input type="district" class="form-control" id="district" placeholder="district">
+                                <input type="district" class="form-control" placeholder="district">
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="alley">จังหวัด:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="จังหวัด">
+                                    <input type="alley" class="form-control" placeholder="จังหวัด">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="road">รหัสไปรษณีย์:</label>
-                                    <input type="road" class="form-control" id="road" placeholder="รหัสไปรษณีย์">
+                                    <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="alley">คุณวุฒิ:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="คุณวุฒิ">
+                                <input type="alley" class="form-control" placeholder="คุณวุฒิ">
                             </div>
                             <div class="form-group col-md">
                                 <label for="alley">หมายเลขทะเบียน:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="หมายเลขทะเบียน">
+                                <input type="alley" class="form-control" placeholder="หมายเลขทะเบียน">
                             </div>
                         </div>
                         <br>
@@ -380,10 +382,10 @@
                         <div class="form-row col-md-6">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    <span class="input-group-text">Upload</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                    <input type="file" class="custom-file-input"
                                         aria-describedby="inputGroupFileAddon01">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
@@ -400,91 +402,89 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="name">ชื่อ:</label>
-                                    <input type="name" class="form-control" id="name" placeholder="name">
+                                    <input type="name" class="form-control" placeholder="name">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="lname">นามสกุล:</label>
-                                    <input type="lname" class="form-control" id="lname" placeholder="lname">
+                                    <input type="lname" class="form-control" placeholder="lname">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                    <input type="idcard" class="form-control" id="idcard" placeholder="idcard">
+                                    <input type="idcard" class="form-control" placeholder="idcard">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="position">ตำแหน่ง:</label>
-                                    <input type="position" class="form-control" id="position" placeholder="position">
+                                    <input type="position" class="form-control" placeholder="position">
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="age">อายุ:</label>
-                                    <input type="age" class="form-control" id="age" placeholder="age">
+                                    <input type="age" class="form-control" placeholder="age">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="nationality">สัญชาติ:</label>
-                                    <input type="nationality" class="form-control" id="nationality"
-                                        placeholder="nationality">
+                                    <input type="nationality" class="form-control" placeholder="nationality">
                                 </div>
                                 <div class="form-group col-md">
                                     <!-- Don't forget change type and id -->
                                     <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                    <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+                                    <input type="birthday" class="form-control" placeholder="phonenumber">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="alley">Email:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="Email">
+                                    <input type="alley" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="houseno">บ้านเลขที่:</label>
-                                    <input type="houseno" class="form-control" id="houseno" placeholder="houseno">
+                                    <input type="houseno" class="form-control" placeholder="houseno">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="villageno">หมู่:</label>
-                                    <input type="villageno" class="form-control" id="villageno" placeholder="villageno">
+                                    <input type="villageno" class="form-control" placeholder="villageno">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="alley">ตรอก / ซอย:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="alley">
+                                    <input type="alley" class="form-control" placeholder="alley">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="road">ถนน:</label>
-                                    <input type="road" class="form-control" id="road" placeholder="road">
+                                    <input type="road" class="form-control" placeholder="road">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="subdistrict">ตำบล / แขวง:</label>
-                                    <input type="subdistrict" class="form-control" id="subdistrict"
-                                        placeholder="subdistrict">
+                                    <input type="subdistrict" class="form-control" placeholder="subdistrict">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="district">อำเภอ:</label>
-                                    <input type="district" class="form-control" id="district" placeholder="district">
+                                    <input type="district" class="form-control" placeholder="district">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md">
                                         <label for="alley">จังหวัด:</label>
-                                        <input type="alley" class="form-control" id="alley" placeholder="จังหวัด">
+                                        <input type="alley" class="form-control" placeholder="จังหวัด">
                                     </div>
                                     <div class="form-group col-md">
                                         <label for="road">รหัสไปรษณีย์:</label>
-                                        <input type="road" class="form-control" id="road" placeholder="รหัสไปรษณีย์">
+                                        <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="alley">คุณวุฒิ:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="คุณวุฒิ">
+                                    <input type="alley" class="form-control" placeholder="คุณวุฒิ">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="alley">หมายเลขทะเบียน:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="หมายเลขทะเบียน">
+                                    <input type="alley" class="form-control" placeholder="หมายเลขทะเบียน">
                                 </div>
                             </div>
                             <br>
@@ -494,10 +494,10 @@
                             <div class="form-row col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                        <span class="input-group-text">Upload</span>
                                     </div>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                        <input type="file" class="custom-file-input"
                                             aria-describedby="inputGroupFileAddon01">
                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                     </div>
@@ -521,59 +521,58 @@
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="name">ชื่อ:</label>
-                                <input type="name" class="form-control" id="name" placeholder="name">
+                                <input type="name" class="form-control" placeholder="name">
                             </div>
                             <div class="form-group col-md">
                                 <label for="lname">นามสกุล:</label>
-                                <input type="lname" class="form-control" id="lname" placeholder="lname">
+                                <input type="lname" class="form-control" placeholder="lname">
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                <input type="idcard" class="form-control" id="idcard" placeholder="idcard">
+                                <input type="idcard" class="form-control" placeholder="idcard">
                             </div>
                         </div>
                         <!--  -->
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="position">ตำแหน่ง:</label>
-                                <input type="position" class="form-control" id="position" placeholder="position">
+                                <input type="position" class="form-control" placeholder="position">
                             </div>
                             <div class="form-group col-md-1">
                                 <label for="age">อายุ:</label>
-                                <input type="age" class="form-control" id="age" placeholder="age">
+                                <input type="age" class="form-control" placeholder="age">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="nationality">สัญชาติ:</label>
-                                <input type="nationality" class="form-control" id="nationality"
-                                    placeholder="nationality">
+                                <input type="nationality" class="form-control" placeholder="nationality">
                             </div>
                             <div class="form-group col-md">
                                 <!-- Don't forget change type and id -->
                                 <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+                                <input type="birthday" class="form-control" placeholder="phonenumber">
                             </div>
                             <div class="form-group col-md">
                                 <label for="alley">Email:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="Email">
+                                <input type="alley" class="form-control" placeholder="Email">
                             </div>
                         </div>
                         <!--  -->
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="houseno">บ้านเลขที่:</label>
-                                <input type="houseno" class="form-control" id="houseno" placeholder="houseno">
+                                <input type="houseno" class="form-control" placeholder="houseno">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="villageno">หมู่:</label>
-                                <input type="villageno" class="form-control" id="villageno" placeholder="villageno">
+                                <input type="villageno" class="form-control" placeholder="villageno">
                             </div>
                             <div class="form-group col-md">
                                 <label for="alley">ตรอก / ซอย:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="alley">
+                                <input type="alley" class="form-control" placeholder="alley">
                             </div>
                             <div class="form-group col-md">
                                 <label for="road">ถนน:</label>
-                                <input type="road" class="form-control" id="road" placeholder="road">
+                                <input type="road" class="form-control" placeholder="road">
                             </div>
 
                         </div>
@@ -581,32 +580,31 @@
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="subdistrict">ตำบล / แขวง:</label>
-                                <input type="subdistrict" class="form-control" id="subdistrict"
-                                    placeholder="subdistrict">
+                                <input type="subdistrict" class="form-control" placeholder="subdistrict">
                             </div>
                             <div class="form-group col-md">
                                 <label for="district">อำเภอ:</label>
-                                <input type="district" class="form-control" id="district" placeholder="district">
+                                <input type="district" class="form-control" placeholder="district">
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="alley">จังหวัด:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="จังหวัด">
+                                    <input type="alley" class="form-control" placeholder="จังหวัด">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="road">รหัสไปรษณีย์:</label>
-                                    <input type="road" class="form-control" id="road" placeholder="รหัสไปรษณีย์">
+                                    <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="alley">คุณวุฒิ:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="คุณวุฒิ">
+                                <input type="alley" class="form-control" placeholder="คุณวุฒิ">
                             </div>
                             <div class="form-group col-md">
                                 <label for="alley">หมายเลขทะเบียน:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="หมายเลขทะเบียน">
+                                <input type="alley" class="form-control" placeholder="หมายเลขทะเบียน">
                             </div>
                         </div>
                         <br>
@@ -616,10 +614,10 @@
                         <div class="form-row col-md-6">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    <span class="input-group-text">Upload</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                    <input type="file" class="custom-file-input"
                                         aria-describedby="inputGroupFileAddon01">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
@@ -636,91 +634,89 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="name">ชื่อ:</label>
-                                    <input type="name" class="form-control" id="name" placeholder="name">
+                                    <input type="name" class="form-control" placeholder="name">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="lname">นามสกุล:</label>
-                                    <input type="lname" class="form-control" id="lname" placeholder="lname">
+                                    <input type="lname" class="form-control" placeholder="lname">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                    <input type="idcard" class="form-control" id="idcard" placeholder="idcard">
+                                    <input type="idcard" class="form-control" placeholder="idcard">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="position">ตำแหน่ง:</label>
-                                    <input type="position" class="form-control" id="position" placeholder="position">
+                                    <input type="position" class="form-control" placeholder="position">
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="age">อายุ:</label>
-                                    <input type="age" class="form-control" id="age" placeholder="age">
+                                    <input type="age" class="form-control" placeholder="age">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="nationality">สัญชาติ:</label>
-                                    <input type="nationality" class="form-control" id="nationality"
-                                        placeholder="nationality">
+                                    <input type="nationality" class="form-control" placeholder="nationality">
                                 </div>
                                 <div class="form-group col-md">
                                     <!-- Don't forget change type and id -->
                                     <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                    <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+                                    <input type="birthday" class="form-control" placeholder="phonenumber">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="alley">Email:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="Email">
+                                    <input type="alley" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="houseno">บ้านเลขที่:</label>
-                                    <input type="houseno" class="form-control" id="houseno" placeholder="houseno">
+                                    <input type="houseno" class="form-control" placeholder="houseno">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="villageno">หมู่:</label>
-                                    <input type="villageno" class="form-control" id="villageno" placeholder="villageno">
+                                    <input type="villageno" class="form-control" placeholder="villageno">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="alley">ตรอก / ซอย:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="alley">
+                                    <input type="alley" class="form-control" placeholder="alley">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="road">ถนน:</label>
-                                    <input type="road" class="form-control" id="road" placeholder="road">
+                                    <input type="road" class="form-control" placeholder="road">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="subdistrict">ตำบล / แขวง:</label>
-                                    <input type="subdistrict" class="form-control" id="subdistrict"
-                                        placeholder="subdistrict">
+                                    <input type="subdistrict" class="form-control" placeholder="subdistrict">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="district">อำเภอ:</label>
-                                    <input type="district" class="form-control" id="district" placeholder="district">
+                                    <input type="district" class="form-control" placeholder="district">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md">
                                         <label for="alley">จังหวัด:</label>
-                                        <input type="alley" class="form-control" id="alley" placeholder="จังหวัด">
+                                        <input type="alley" class="form-control" placeholder="จังหวัด">
                                     </div>
                                     <div class="form-group col-md">
                                         <label for="road">รหัสไปรษณีย์:</label>
-                                        <input type="road" class="form-control" id="road" placeholder="รหัสไปรษณีย์">
+                                        <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="alley">คุณวุฒิ:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="คุณวุฒิ">
+                                    <input type="alley" class="form-control" placeholder="คุณวุฒิ">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="alley">หมายเลขทะเบียน:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="หมายเลขทะเบียน">
+                                    <input type="alley" class="form-control" placeholder="หมายเลขทะเบียน">
                                 </div>
                             </div>
                             <br>
@@ -730,10 +726,10 @@
                             <div class="form-row col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                        <span class="input-group-text">Upload</span>
                                     </div>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                        <input type="file" class="custom-file-input"
                                             aria-describedby="inputGroupFileAddon01">
                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                     </div>
@@ -758,59 +754,58 @@
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="name">ชื่อแพทย์ผู้รับผิดชอบ:</label>
-                                <input type="name" class="form-control" id="name" placeholder="name">
+                                <input type="name" class="form-control" placeholder="name">
                             </div>
                             <div class="form-group col-md">
                                 <label for="lname">นามสกุล:</label>
-                                <input type="lname" class="form-control" id="lname" placeholder="lname">
+                                <input type="lname" class="form-control" placeholder="lname">
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                <input type="idcard" class="form-control" id="idcard" placeholder="idcard">
+                                <input type="idcard" class="form-control" placeholder="idcard">
                             </div>
                         </div>
                         <!--  -->
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="position">ตำแหน่ง:</label>
-                                <input type="position" class="form-control" id="position" placeholder="position">
+                                <input type="position" class="form-control" placeholder="position">
                             </div>
                             <div class="form-group col-md-1">
                                 <label for="age">อายุ:</label>
-                                <input type="age" class="form-control" id="age" placeholder="age">
+                                <input type="age" class="form-control" placeholder="age">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="nationality">สัญชาติ:</label>
-                                <input type="nationality" class="form-control" id="nationality"
-                                    placeholder="nationality">
+                                <input type="nationality" class="form-control" placeholder="nationality">
                             </div>
                             <div class="form-group col-md">
                                 <!-- Don't forget change type and id -->
                                 <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+                                <input type="birthday" class="form-control" placeholder="phonenumber">
                             </div>
                             <div class="form-group col-md">
                                 <label for="alley">Email:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="Email">
+                                <input type="alley" class="form-control" placeholder="Email">
                             </div>
                         </div>
                         <!--  -->
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="houseno">บ้านเลขที่:</label>
-                                <input type="houseno" class="form-control" id="houseno" placeholder="houseno">
+                                <input type="houseno" class="form-control" placeholder="houseno">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="villageno">หมู่:</label>
-                                <input type="villageno" class="form-control" id="villageno" placeholder="villageno">
+                                <input type="villageno" class="form-control" placeholder="villageno">
                             </div>
                             <div class="form-group col-md">
                                 <label for="alley">ตรอก / ซอย:</label>
-                                <input type="alley" class="form-control" id="alley" placeholder="alley">
+                                <input type="alley" class="form-control" placeholder="alley">
                             </div>
                             <div class="form-group col-md">
                                 <label for="road">ถนน:</label>
-                                <input type="road" class="form-control" id="road" placeholder="road">
+                                <input type="road" class="form-control" placeholder="road">
                             </div>
 
                         </div>
@@ -818,21 +813,20 @@
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="subdistrict">ตำบล / แขวง:</label>
-                                <input type="subdistrict" class="form-control" id="subdistrict"
-                                    placeholder="subdistrict">
+                                <input type="subdistrict" class="form-control" placeholder="subdistrict">
                             </div>
                             <div class="form-group col-md">
                                 <label for="district">อำเภอ:</label>
-                                <input type="district" class="form-control" id="district" placeholder="district">
+                                <input type="district" class="form-control" placeholder="district">
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="alley">จังหวัด:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="จังหวัด">
+                                    <input type="alley" class="form-control" placeholder="จังหวัด">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="road">รหัสไปรษณีย์:</label>
-                                    <input type="road" class="form-control" id="road" placeholder="รหัสไปรษณีย์">
+                                    <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
                                 </div>
                             </div>
                         </div>
@@ -840,18 +834,17 @@
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="name">ชื่อสถานที่ทำการ:</label>
-                                <input type="name" class="form-control" id="name" placeholder="ชื่อสถานที่ทำการ">
+                                <input type="name" class="form-control" placeholder="ชื่อสถานที่ทำการ">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md">
                                 <label for="alley">ใบอนุญาตประกอบโรคศิลปะเลขที่:</label>
-                                <input type="alley" class="form-control" id="alley"
-                                    placeholder="เลขที่ใบอนุญาตประกอบโรค">
+                                <input type="alley" class="form-control" placeholder="เลขที่ใบอนุญาตประกอบโรค">
                             </div>
                             <div class="form-group col-md">
                                 <label for="birthday">ออกให้ ณ วันที่:</label>
-                                <input type="birthday" class="form-control" id="birthday" placeholder="วว/ดด/ปป">
+                                <input type="birthday" class="form-control" placeholder="วว/ดด/ปป">
                             </div>
                         </div>
                         <br>
@@ -861,10 +854,10 @@
                         <div class="form-row col-md-6">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    <span class="input-group-text">Upload</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                    <input type="file" class="custom-file-input"
                                         aria-describedby="inputGroupFileAddon01">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
@@ -881,59 +874,58 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="name">ชื่อแพทย์ผู้รับผิดชอบ:</label>
-                                    <input type="name" class="form-control" id="name" placeholder="name">
+                                    <input type="name" class="form-control" placeholder="name">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="lname">นามสกุล:</label>
-                                    <input type="lname" class="form-control" id="lname" placeholder="lname">
+                                    <input type="lname" class="form-control" placeholder="lname">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                    <input type="idcard" class="form-control" id="idcard" placeholder="idcard">
+                                    <input type="idcard" class="form-control" placeholder="idcard">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="position">ตำแหน่ง:</label>
-                                    <input type="position" class="form-control" id="position" placeholder="position">
+                                    <input type="position" class="form-control" placeholder="position">
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="age">อายุ:</label>
-                                    <input type="age" class="form-control" id="age" placeholder="age">
+                                    <input type="age" class="form-control" placeholder="age">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="nationality">สัญชาติ:</label>
-                                    <input type="nationality" class="form-control" id="nationality"
-                                        placeholder="nationality">
+                                    <input type="nationality" class="form-control" placeholder="nationality">
                                 </div>
                                 <div class="form-group col-md">
                                     <!-- Don't forget change type and id -->
                                     <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                    <input type="birthday" class="form-control" id="birthday" placeholder="phonenumber">
+                                    <input type="birthday" class="form-control" placeholder="phonenumber">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="alley">Email:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="Email">
+                                    <input type="alley" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="houseno">บ้านเลขที่:</label>
-                                    <input type="houseno" class="form-control" id="houseno" placeholder="houseno">
+                                    <input type="houseno" class="form-control" placeholder="houseno">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="villageno">หมู่:</label>
-                                    <input type="villageno" class="form-control" id="villageno" placeholder="villageno">
+                                    <input type="villageno" class="form-control" placeholder="villageno">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="alley">ตรอก / ซอย:</label>
-                                    <input type="alley" class="form-control" id="alley" placeholder="alley">
+                                    <input type="alley" class="form-control" placeholder="alley">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="road">ถนน:</label>
-                                    <input type="road" class="form-control" id="road" placeholder="road">
+                                    <input type="road" class="form-control" placeholder="road">
                                 </div>
 
                             </div>
@@ -941,21 +933,20 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="subdistrict">ตำบล / แขวง:</label>
-                                    <input type="subdistrict" class="form-control" id="subdistrict"
-                                        placeholder="subdistrict">
+                                    <input type="subdistrict" class="form-control" placeholder="subdistrict">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="district">อำเภอ:</label>
-                                    <input type="district" class="form-control" id="district" placeholder="district">
+                                    <input type="district" class="form-control" placeholder="district">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md">
                                         <label for="alley">จังหวัด:</label>
-                                        <input type="alley" class="form-control" id="alley" placeholder="จังหวัด">
+                                        <input type="alley" class="form-control" placeholder="จังหวัด">
                                     </div>
                                     <div class="form-group col-md">
                                         <label for="road">รหัสไปรษณีย์:</label>
-                                        <input type="road" class="form-control" id="road" placeholder="รหัสไปรษณีย์">
+                                        <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
                                     </div>
                                 </div>
                             </div>
@@ -963,18 +954,17 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="name">ชื่อสถานที่ทำการ:</label>
-                                    <input type="name" class="form-control" id="name" placeholder="ชื่อสถานที่ทำการ">
+                                    <input type="name" class="form-control" placeholder="ชื่อสถานที่ทำการ">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="alley">ใบอนุญาตประกอบโรคศิลปะเลขที่:</label>
-                                    <input type="alley" class="form-control" id="alley"
-                                        placeholder="เลขที่ใบอนุญาตประกอบโรค">
+                                    <input type="alley" class="form-control" placeholder="เลขที่ใบอนุญาตประกอบโรค">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="birthday">ออกให้ ณ วันที่:</label>
-                                    <input type="birthday" class="form-control" id="birthday" placeholder="วว/ดด/ปป">
+                                    <input type="birthday" class="form-control" placeholder="วว/ดด/ปป">
                                 </div>
                             </div>
                             <br>
@@ -984,10 +974,10 @@
                             <div class="form-row col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                        <span class="input-group-text">Upload</span>
                                     </div>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                        <input type="file" class="custom-file-input"
                                             aria-describedby="inputGroupFileAddon01">
                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                     </div>
@@ -1011,7 +1001,7 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalScrollable3" tabindex="-1" role="dialog"
+        <!-- <div class="modal fade" id="exampleModalScrollable3" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -1022,7 +1012,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- ... -->
+                        
                         <div class="row-ml-3">
                             <h6>ชื่อผู้ขอใบอนุญาต:</h6>
                         </div>
@@ -1045,7 +1035,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <br>
 </div>
@@ -1139,10 +1129,10 @@ $(document).ready(function() {
 });
 </script>
 
-<script>
+<!-- <script>
 $(document).ready(function() {
     $('#confirm3').click(function() {
         $('#exampleModalScrollable3').modal('show');
     });
 });
-</script>
+</script> -->
