@@ -21,7 +21,7 @@
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="js/js_officer_comfirm_register.js" crossorigin="anonymous"></script>
+    <script src="js/js_officer_confirm_register.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

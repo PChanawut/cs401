@@ -22,15 +22,11 @@
                 //https://stackoverflow.com/questions/26435559/php-form-update-mysql-only-if-not-null
                     // make sure the user doesn't attempt to POST a column that doesn't exist in our table,
                     // which will lead to a SQL error, or worse, allow the user to run custom SQL.
-                // if($password != ""){
-                //     $sql = "UPDATE usercompany SET usercompany_username = $username, usercompany_password = $password, usercompany_name = $name, usercompany_status = $status, usercompany_permission = $permission, WHERE usercompany_id = $id AND company_id = $company_id";
-                    
-                // }else{
-                //     $sql = "UPDATE usercompany SET usercompany_username = $username, usercompany_name = $name, usercompany_status = $status, usercompany_permission = $permission, WHERE usercompany_id = $id AND company_id = $company_id";
-                // }
-                // $sql = "UPDATE usercompany SET usercompany_username = '$username', usercompany_name = '$name', usercompany_status = '$status', usercompany_permission = '$permission', WHERE usercompany_id = '$id' AND company_id = '$company_id'";
-                $sql = "UPDATE usercompany SET usercompany_username = '$username', usercompany_name = '$name', usercompany_status = '$status', usercompany_permission = '$permission' WHERE usercompany_id = '$id' AND company_id = '$company_id'";
-                $response['test'] = $sql;
+                if($password != ""){
+                    $sql = "UPDATE usercompany SET usercompany_username = '$username', usercompany_password = '$password', usercompany_name = '$name', usercompany_status = '$status', usercompany_permission = '$permission' WHERE usercompany_id = '$id' AND company_id = '$company_id'";
+                }else{
+                    $sql = "UPDATE usercompany SET usercompany_username = '$username', usercompany_name = '$name', usercompany_status = '$status', usercompany_permission = '$permission' WHERE usercompany_id = '$id' AND company_id = '$company_id'";
+                }
                 if (mysqli_query($conn, $sql)) {
                     $response['success'] = true;
                 } else {

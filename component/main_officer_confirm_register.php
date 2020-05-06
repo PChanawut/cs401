@@ -1,7 +1,6 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <!-- <h4 style="font-family:;">ต่อใบอนุญาต</h4> -->
             <h4>ยืนยันการสมัครสมาชิก</h4>
         </div>
         <div class="col">
@@ -16,8 +15,9 @@
         </div>
     </div>
     <hr>
-    <div id="detail_confirmregister">
+    <form id="form_confirm_register" method="post">
         <fieldset disabled>
+            <input type="hidden" id="info_register_id">
             <div class="alert alert-primary" role="alert">
                 <h5>ข้อมูลส่วนตัวของผู้ขออนุญาต</h5>
             </div>
@@ -61,8 +61,7 @@
         <div class="d-flex flex-row-reverse">
             <button class="btn btn-primary">ยืนยันการสมัครสมาชิก</button>
         </div>
-    </div>
-
+    </form>
     <div hidden>
         <div class="alert alert-primary alert-dismissible fade show" role="alert">
             <h5>ไม่พบข้อมูลผู้ขออนุญาต</h5>

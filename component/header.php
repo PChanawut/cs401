@@ -1,13 +1,9 @@
 <?php
-	if($_SESSION['type']!="admin"){
-		if(empty($_SESSION["company_id"])){  
-			Header("Location: ./");
-		}
+	if(empty($_SESSION["type"])){
+		Header("Location: ./");
 	}
 ?>
-<!-- style="background-color: #307BC0;" bg-light-->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color : #2D70B8;">
-	  <!-- <a class="navbar-brand" href="#">OAP</a> -->
 	  <nav class="navbar navbar-expand-sm">
 		<a class="navbar-brand text-light" href="index.php">
 			<img src="asset/config/logo.png" alt="logo" width="35" height="35" class="d-inline-block align-top">
@@ -66,7 +62,8 @@
 			<?php
 				}
 			?>
-
+			<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+			
 			<!-- officer_confirm_register -->
 			<?php
 				if($_SESSION["permission"][3] == 1 && ($_SESSION["type"] == "officer")){

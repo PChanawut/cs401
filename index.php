@@ -4,7 +4,7 @@
         <!-- config -->
         <?php include 'component/config.php' ?>
         <?php
-            if (isset($_SESSION["company_id"])) {
+            if (isset($_SESSION["type"])) {
               Header("Location: home");
             }
             ?>

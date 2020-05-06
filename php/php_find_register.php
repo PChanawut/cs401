@@ -6,9 +6,7 @@
     if(isset($_POST['id_enroll_no'])){
         include('config/database.php');
         $id_enroll_no = $_POST['id_enroll_no'];
-
-        $sql = "SELECT * FROM company 
-                WHERE enroll_no='".$id_enroll_no."'";
+        $sql = "SELECT * FROM company WHERE enroll_no='$id_enroll_no' AND company_status='wait'";
         $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result)==1){
             $row = mysqli_fetch_array($result);
@@ -24,7 +22,8 @@
                     'company_phone' => $row['company_phone'],
                     'company_fax' => $row['company_fax'],
                     'company_email' => $row['company_email'],
-                    'enroll_no' => $row['enroll_no']
+                    'enroll_no' => $row['enroll_no'],
+                    'company_id' => $row['company_id']
                 );
             }else{
                 $response['success'] = false;
