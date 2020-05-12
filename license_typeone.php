@@ -17,7 +17,7 @@
     <form id="request" action="./php/php_license_typeone.php" method="post">
         <?php include 'component/main_request_typeone.php' ?>
 
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+        <!-- <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -29,7 +29,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- ... -->
                         <div class="row-ml-3">
                             <h6>ชื่อผู้ขอใบอนุญาต:</h6>
                         </div>
@@ -52,7 +51,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
         <!-- footer -->
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

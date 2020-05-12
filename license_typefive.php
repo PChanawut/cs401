@@ -14,10 +14,10 @@
     <!-- header -->
     <?php include 'component/header.php' ?>
     <!-- main -->
-    <form id="request" action="./php/php_license.php" method="post">
+    <form id="request" action="./php/php_license_typefive.php" method="post">
         <?php include 'component/main_request_typefive.php' ?>
 
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+        <!-- <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -29,7 +29,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- ... -->
                         <div class="row-ml-3">
                             <h6>ชื่อผู้ขอใบอนุญาต:</h6>
                         </div>
@@ -52,13 +51,16 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
         <!-- footer -->
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
         <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
         <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
+
+        <script src="js/js_license_typefive.js" crossorigin="anonymous"></script>
     </form>
 </body>
 
