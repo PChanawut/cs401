@@ -5,7 +5,7 @@
     <!-- config -->
     <?php include 'component/config.php' ?>
     <?php
-        if ($_SESSION["permission"][4] != 1) {
+        if ($_SESSION["permission"][4] != 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany")) {
             Header("Location: home");
         }
             ?>

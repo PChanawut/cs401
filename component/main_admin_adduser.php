@@ -32,7 +32,7 @@
         <?php
             include('php/config/database.php');
             $users = array();
-            $sql = "SELECT * FROM usercompany WHERE company_id=".$_SESSION["company_id"]." AND usercompany_ativate = 'ativate' AND NOT usercompany_id = ".$_SESSION["user_id"]." AND NOT usercompany_status = 'root'";  
+            $sql = "SELECT * FROM usercompany WHERE (usercompany_type='officer' OR usercompany_type = 'subcommittee') AND usercompany_ativate = 'ativate'";  
             $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
             while ($user =  mysqli_fetch_assoc($user_query)){
                 $users[] = $user;
@@ -51,11 +51,13 @@
                 <?php
                     if($user['usercompany_permission'][0]){
                 ?>
-                    <span class="badge badge-success" style="background: #2973CB;">ขอใบอนุญาต</span>
+                    <?php if($user['usercompany_type'] == "officer"){ ?><span class="badge badge-success" style="background: #2973CB;">ยืนยันการสมัคร</span><?php } ?>
+                    <?php if($user['usercompany_type'] == "subcommittee"){ ?><span class="badge badge-success" style="background: #2973CB;">อนุมัติใบอนุญาต</span><?php } ?>
                 <?php
                     }else{
                 ?>
-                    <span class="badge badge-secondary">ขอใบอนุญาต</span>
+                    <?php if($user['usercompany_type'] == "officer"){ ?><span class="badge badge-secondary">ยืนยันการสมัคร</span><?php } ?>
+                    <?php if($user['usercompany_type'] == "subcommittee"){ ?><span class="badge badge-secondary">อนุมัติใบอนุญาต</span><?php } ?>
                 <?php
                     }
                 ?>
@@ -63,11 +65,13 @@
                 <?php
                     if($user['usercompany_permission'][1]){
                 ?>
-                    <span class="badge badge-success" style="background: #2973CB;">ต่อใบอนุญาต</span>
+                    <?php if($user['usercompany_type'] == "officer"){ ?><span class="badge badge-success" style="background: #2973CB;">ยืนยันการขออนุญาต</span><?php } ?>
+                    <?php if($user['usercompany_type'] == "subcommittee"){ ?><span class="badge badge-success" style="background: #2973CB;">ดูใบอนุญาต</span><?php } ?>
                 <?php
                     }else{
                 ?>
-                    <span class="badge badge-secondary">ต่อใบอนุญาต</span>
+                    <?php if($user['usercompany_type'] == "officer"){ ?><span class="badge badge-secondary">ยืนยันการขออนุญาต</span><?php } ?>
+                    <?php if($user['usercompany_type'] == "subcommittee"){ ?><span class="badge badge-secondary">ดูใบอนุญาต</span><?php } ?>
                 <?php
                     }
                 ?>
@@ -75,11 +79,11 @@
                 <?php
                     if($user['usercompany_permission'][2]){
                 ?>
-                    <span class="badge badge-success" style="background: #2973CB;">ยกเลิกใบอนุญาต</span>
+                    <?php if($user['usercompany_type'] == "officer"){ ?><span class="badge badge-success" style="background: #2973CB;">ยกเลิกใบอนุญาต</span><?php } ?>
                 <?php
                     }else{
                 ?>
-                    <span class="badge badge-secondary">ยกเลิกใบอนุญาต</span>
+                    <?php if($user['usercompany_type'] == "officer"){ ?><span class="badge badge-secondary">ยกเลิกใบอนุญาต</span><?php } ?>
                 <?php
                     }
                 ?>
@@ -87,11 +91,11 @@
                 <?php
                     if($user['usercompany_permission'][3]){
                 ?>
-                    <span class="badge badge-success" style="background: #2973CB;">ดูใบอนุญาต</span>
+                    <?php if($user['usercompany_type'] == "officer"){ ?><span class="badge badge-success" style="background: #2973CB;">ดูใบอนุญาต</span><?php } ?>
                 <?php
                     }else{
                 ?>
-                    <span class="badge badge-secondary">ดูใบอนุญาต</span>
+                    <?php if($user['usercompany_type'] == "officer"){ ?><span class="badge badge-secondary">ดูใบอนุญาต</span><?php } ?>
                 <?php
                     }
                 ?>

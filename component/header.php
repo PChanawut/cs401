@@ -86,6 +86,9 @@
 				<?php if($_SESSION['permission'][4] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany")){ ?>  
 					<a class="dropdown-item" href="adduser">เพิ่มสมาชิก</a>
 				<?php } ?>
+				<?php if($_SESSION['type'] == "admin"){ ?>  
+					<a class="dropdown-item" href="admin_adduser">เพิ่มสมาชิก</a>
+				<?php } ?>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="php/php_logout.php">ออกจากระบบ</a>
 				</div>
