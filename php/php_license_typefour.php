@@ -9,7 +9,7 @@
     && isset($_POST['handler_name']) && isset($_POST['handler_idcard_four']) && isset($_POST['handler_age_four']) && isset($_POST['handler_position_four']) && isset($_POST['handler_nationality_four']) && isset($_POST['handler_email_four']) && isset($_POST['handler_phone_four'])
     && isset($_POST['handler_work_name_four']) && isset($_POST['handler_address']) && isset($_POST['destination_work_name_four']) && isset($_POST['destination_address']) && isset($_POST['destination_work_phone_four']) && isset($_POST['destination_work_email_four'])
     && isset($_POST['style_four']) && isset($_POST['styletype_four']) && isset($_POST['unnumber_four']) && isset($_POST['import_address']) && isset($_POST['import_material_phone_four']) && isset($_POST['import_material_email_four']) && isset($_POST['export_address'])
-    && isset($_POST['export_material_phone_four']) && isset($_POST['export_material_email_four'])){
+    && isset($_POST['export_material_phone_four']) && isset($_POST['export_material_email_four']) && isset($_POST['location_material_licenseno_four']) && isset($_POST['location_material_licensedate_four']) && isset($_POST['location_material_startlicense_four'])){
 
         include('config/database.php');
 
@@ -37,6 +37,10 @@
         $workage_four = $_POST['workage_four'];
         $addressname_produce_four = $_POST['addressname_produce_four'];
         $addressname_sale_four = $_POST['addressname_sale_four'];
+
+        $location_material_licenseno_four = $_POST['location_material_licenseno_four'];
+        $location_material_licensedate_four = $_POST['location_material_licensedate_four'];
+        $location_material_startlicense_four = $_POST['location_material_startlicense_four'];
 
         // step two
         $sale_name = $_POST['sale_name'];
@@ -154,6 +158,26 @@
 
         $query8 = mysqli_query($conn,$sql8);
         if($query8){
+            $response['success'] = true;
+        }else{
+            $response['success'] = false;
+        }
+
+        $sql9 = "INSERT INTO document_relate(document_id,type_document,no_license,end_license,start_request)
+                VALUES(NULL,'HAVE','$location_material_licenseno_four','$location_material_licensedate_four','NULL')";
+
+        $query9 = mysqli_query($conn,$sql9);
+        if($query9){
+            $response['success'] = true;
+        }else{
+            $response['success'] = false;
+        }
+
+        $sql10 = "INSERT INTO document_relate(document_id,type_document,no_license,end_license,start_request)
+                VALUES(NULL,'NOT HAVE','NULL','NULL','$location_material_startlicense_four')";
+
+        $query10 = mysqli_query($conn,$sql10);
+        if($query10){
             $response['success'] = true;
         }else{
             $response['success'] = false;

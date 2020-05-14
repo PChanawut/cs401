@@ -9,6 +9,10 @@ $("#request").submit(function(e){
     let location_materialtwo_benefit = $("#location_materialtwo_benefit").val()
     let location_materialtwo_vehicle = $("#location_materialtwo_vehicle").val()
 
+    let location_materialtwo_licenseno = $("#location_materialtwo_licenseno").val()
+    let location_materialtwo_licensedate = $("#location_materialtwo_licensedate").val()
+    let location_materialtwo_startlicense = $("#location_materialtwo_startlicense").val()
+
     // step two
     let no_reference_two = $("#no_reference_two").val()
     let operation_type_two = $("#operation_type_two").val()
@@ -89,6 +93,9 @@ $("#request").submit(function(e){
             location_materialtwo_email: location_materialtwo_email,
             location_materialtwo_benefit: location_materialtwo_benefit,
             location_materialtwo_vehicle: location_materialtwo_vehicle,
+            location_materialtwo_licenseno: location_materialtwo_licenseno,
+            location_materialtwo_licensedate: location_materialtwo_licensedate,
+            location_materialtwo_startlicense: location_materialtwo_startlicense,
             no_reference_two: no_reference_two,
             operation_type_two: operation_type_two,
             element_two: element_two,

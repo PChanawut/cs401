@@ -120,10 +120,10 @@
                 <div class="form-group col-4">
                     <label for="material_detail_four">รายละเอียดวัสดุ:</label>
                     <select class="custom-select" id="material_detail_four">
-                        <option value="การแพทย์">Physical form</option>
-                        <option value="อุตสาหกรรม">Chemical form</option>
-                        <option value="การแพทย์">Containment</option>
-                        <option value="ศึกษาวิจัย">Irradiation status and quality</option>
+                        <option value="Physical form">Physical form</option>
+                        <option value="Chemical form">Chemical form</option>
+                        <option value="Containment">Containment</option>
+                        <option value="Irradiation status and quality">Irradiation status and quality</option>
                     </select>
                 </div>
             </div>
@@ -131,14 +131,20 @@
                 <div class="form-group col-3">
                     <label for="material_type_four">ประเภทวัสดุ:</label>
                     <select class="custom-select" id="material_type_four">
-                        <option value="P">P (รหัสวัสดุ 01) สำหรับพลูโตเนียมหรือสารประกอบของพลูโตเนียม</option>
-                        <option value="E">E (รหัสวัสดุ 02,03) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม 233
+                        <option value="P สำหรับพลูโตเนียมหรือสารประกอบของพลูโตเนียม">P (รหัสวัสดุ 01)
+                            สำหรับพลูโตเนียมหรือสารประกอบของพลูโตเนียม</option>
+                        <option value="E สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม 233
+                            และ/หรือ 235">E (รหัสวัสดุ 02,03) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม 233
                             และ/หรือ 235</option>
-                        <option value="U">U (รหัสวัสดุ 05,06) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม</option>
-                        <option value="N">N (รหัสวัสดุ 05,06) สำหรับยูเรเนียมธรรมชาติ</option>
-                        <option value="T">T (รหัสวัสดุ 07,08) สำหรับธอเรียมหรือสารประกอบธอเรรียม</option>
-                        <option value="D">D (รหัสวัสดุ 09) สำหรับยูเรเนียมเสื่อมสมรรถนะ</option>
-                        <option value="รหัสวัสดุ 04">รหัสวัสดุ 04 แยกระบุตัวอักษรตามแต่ละชนิดของไอโซโทปที่ผสมกัน
+                        <option value="U สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม">U (รหัสวัสดุ 05,06)
+                            สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม</option>
+                        <option value="N สำหรับยูเรเนียมธรรมชาติ">N (รหัสวัสดุ 05,06) สำหรับยูเรเนียมธรรมชาติ</option>
+                        <option value="T สำหรับธอเรียมหรือสารประกอบธอเรียม">T (รหัสวัสดุ 07,08)
+                            สำหรับธอเรียมหรือสารประกอบธอเรียม</option>
+                        <option value="D สำหรับยูเรเนียมเสื่อมสมรรถนะ">D (รหัสวัสดุ 09) สำหรับยูเรเนียมเสื่อมสมรรถนะ
+                        </option>
+                        <option value="รหัสวัสดุ 04 แยกระบุตัวอักษรตามแต่ละชนิดของไอโซโทปที่ผสมกัน">รหัสวัสดุ 04
+                            แยกระบุตัวอักษรตามแต่ละชนิดของไอโซโทปที่ผสมกัน
                         </option>
                     </select>
                 </div>
@@ -226,12 +232,12 @@
                 <div id="detailhave4" class="container" style="display:none;">
                     <div class="row">
                         <form class="form-inline">
-                            <div class="form-group">
+                            <div class="form-group col-4">
                                 <label for="location_material_licenseno_four">ใบอนุญาตเลขที่:</label>
                                 <input type="text" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"
                                     id="location_material_licenseno_four">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-4">
                                 <label for="location_material_licensedate_four">หมดอายุวันที่:</label>
                                 <input type="text" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"
                                     id="location_material_licensedate_four">
@@ -848,18 +854,28 @@
                     <div class="modal-body">
                         <div class="row-ml-3">
                             <h6>ชื่อผู้ขอใบอนุญาต:</h6>
+                            <p style="color:Gray;">รออัพเดต</p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>สถานที่ใช้และจัดเก็บวัสดุ:</h6>
+                            <p id="show_location_name" style="color:Gray;"></p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                            <p id="show_detail_material" style="color:Gray;"></p>
+                            <p id="show_transport_material" style="color:Gray;"></p>
+                            <p id="show_detail_of_material" style="color:Gray;"></p>
+                            <p id="show_type_material" style="color:Gray;"></p>
+                            <p id="show_weight_material" style="color:Gray;"></p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดเจ้าหน้าที่:</h6>
+                            <p id="show_safe_name" style="color:Gray;"></p>
+                            <p id="show_handler_name" style="color:Gray;"></p>
+                            <p id="show_destination_name" style="color:Gray;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -954,6 +970,47 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#confirm4').click(function() {
         $('#pageConfirm4').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#confirm4').click(function() {
+        var material_workname_four = document.getElementById("material_workname_four").value;
+        document.getElementById("show_location_name").innerHTML = "ชื่อสถานปฏิบัติการ: " +
+            material_workname_four;
+
+        var materialtype_allow_four = document.getElementById("materialtype_allow_four").value;
+        var type_transport_four = document.getElementById("type_transport_four").value;
+        var material_detail_four = document.getElementById("material_detail_four").value;
+        var material_type_four = document.getElementById("material_type_four").value;
+        var material_weight_four = document.getElementById("material_weight_four").value;
+        var material_unit_four = document.getElementById("material_unit_four").value;
+        document.getElementById("show_detail_material").innerHTML =
+            "ขออนุญาตวัสดุนิวเคลียร์หรือวัสดุต้นกำลังประเภท: " + materialtype_allow_four;
+        document.getElementById("show_transport_material").innerHTML = "พาหนะสำหรับการขนส่ง: " +
+            type_transport_four;
+        document.getElementById("show_detail_of_material").innerHTML = "รายละเอียดวัสดุ: " +
+            material_detail_four;
+        document.getElementById("show_type_material").innerHTML = "ประเภทวัสดุ: " + material_type_four;
+        document.getElementById("show_weight_material").innerHTML = "น้ำหนักของวัตถุ: " +
+            material_weight_four + " " + material_unit_four;
+
+        var sale_name_four = document.getElementById("sale_name_four").value;
+        var sale_lname_four = document.getElementById("sale_lname_four").value;
+        var sale_work_name_four = document.getElementById("sale_work_name_four").value;
+        var handler_name_four = document.getElementById("handler_name_four").value;
+        var handler_lname_four = document.getElementById("handler_lname_four").value;
+        var handler_work_name_four = document.getElementById("handler_work_name_four").value;
+        var destination_work_name_four = document.getElementById("destination_work_name_four").value;
+        document.getElementById("show_safe_name").innerHTML = "ผู้แทนจำหน่ายให้นำเข้าหรือส่งออก: " +
+            sale_name_four + " " + sale_lname_four + " ชื่อสถานที่ทำการ: " + sale_work_name_four;
+        document.getElementById("show_handler_name").innerHTML = "ผู้ดำเนินการตามพิธีศุลกากร: " +
+            handler_name_four + " " + handler_lname_four + " ชื่อสถานที่ทำการ: " +
+            handler_work_name_four;
+        document.getElementById("show_destination_name").innerHTML = "ผู้รับปลายทาง: " +
+            destination_work_name_four;
     });
 });
 </script>

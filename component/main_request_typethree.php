@@ -170,14 +170,20 @@
             <div class="form-group col-3">
                 <label for="material_type_three">ประเภทวัสดุ:</label>
                 <select class="custom-select" id="material_type_three">
-                    <option value="P">P (รหัสวัสดุ 01) สำหรับพลูโตเนียมหรือสารประกอบของพลูโตเนียม</option>
-                    <option value="E">E (รหัสวัสดุ 02,03) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม 233
+                    <option value="P สำหรับพลูโตเนียมหรือสารประกอบของพลูโตเนียม">P (รหัสวัสดุ 01)
+                        สำหรับพลูโตเนียมหรือสารประกอบของพลูโตเนียม</option>
+                    <option value="E สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม 233">E (รหัสวัสดุ 02,03)
+                        สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม 233
                         และ/หรือ 235</option>
-                    <option value="U">U (รหัสวัสดุ 05,06) สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม</option>
-                    <option value="N">N (รหัสวัสดุ 05,06) สำหรับยูเรเนียมธรรมชาติ</option>
-                    <option value="T">T (รหัสวัสดุ 07,08) สำหรับธอเรียมหรือสารประกอบธอเรรียม</option>
-                    <option value="D">D (รหัสวัสดุ 09) สำหรับยูเรเนียมเสื่อมสมรรถนะ</option>
-                    <option value="รหัสวัสดุ 04">รหัสวัสดุ 04 แยกระบุตัวอักษรตามแต่ละชนิดของไอโซโทปที่ผสมกัน</option>
+                    <option value="U สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม">U (รหัสวัสดุ 05,06)
+                        สำหรับยูเรเนียมหรือสารประกอบยูเรเนียม</option>
+                    <option value="N สำหรับยูเรเนียมธรรมชาติ">N (รหัสวัสดุ 05,06) สำหรับยูเรเนียมธรรมชาติ</option>
+                    <option value="T สำหรับธอเรียมหรือสารประกอบธอเรียม">T (รหัสวัสดุ 07,08)
+                        สำหรับธอเรียมหรือสารประกอบธอเรียม</option>
+                    <option value="D สำหรับยูเรเนียมเสื่อมสมรรถนะ">D (รหัสวัสดุ 09) สำหรับยูเรเนียมเสื่อมสมรรถนะ
+                    </option>
+                    <option value="รหัสวัสดุ 04 แยกระบุตัวอักษรตามแต่ละชนิดของไอโซโทปที่ผสมกัน">รหัสวัสดุ 04
+                        แยกระบุตัวอักษรตามแต่ละชนิดของไอโซโทปที่ผสมกัน</option>
                 </select>
             </div>
             <div class="form-group col-2">
@@ -187,8 +193,8 @@
             <div class="form-group col-1">
                 <label for="material_unit_three">หน่วย:</label>
                 <select class="custom-select" id="material_unit_three">
-                    <option value="การแพทย์">กิโลกรัม</option>
-                    <option value="อุตสาหกรรม">กรัม</option>
+                    <option value="กิโลกรัม">กิโลกรัม</option>
+                    <option value="กรัม">กรัม</option>
                 </select>
             </div>
             <div class="form-group col-3">
@@ -198,9 +204,12 @@
             <div class="form-group col">
                 <label for="material_code_ozotope_three">รหัสไอโซโทป:</label>
                 <select class="custom-select" id="material_code_ozotope_three">
-                    <option value="G">G วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235</option>
-                    <option value="J">J วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235 และ 233</option>
-                    <option value="K">K วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 233</option>
+                    <option value="G วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235">G
+                        วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235</option>
+                    <option value="J วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235 และ 233">J
+                        วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 235 และ 233</option>
+                    <option value="K วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 233">K
+                        วัสดุนิวเคลียร์พิเศษที่ประกอบด้วยยูเรเนียม 233</option>
                 </select>
             </div>
         </div>
@@ -1045,18 +1054,29 @@
                     <div class="modal-body">
                         <div class="row-ml-3">
                             <h6>ชื่อผู้ขอใบอนุญาต:</h6>
+                            <p style="color:Gray;">รออัพเดต</p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>สถานที่ใช้และจัดเก็บวัสดุ:</h6>
+                            <p id="show_location_name" style="color:Gray;"></p>
+                            <p id="show_worklocation_name" style="color:Gray;"></p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                            <p id="show_detail_material" style="color:Gray;"></p>
+                            <p id="show_benefit_material" style="color:Gray;"></p>
+                            <p id="show_detail_of_material" style="color:Gray;"></p>
+                            <p id="show_status_material" style="color:Gray;"></p>
+                            <p id="show_weight_material" style="color:Gray;"></p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดเจ้าหน้าที่:</h6>
+                            <p id="show_safe_name" style="color:Gray;"></p>
+                            <p id="show_make_name" style="color:Gray;"></p>
+                            <p id="show_doctor_name" style="color:Gray;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -1163,6 +1183,56 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#confirm3').click(function() {
         $('#pageConfirm3').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#confirm3').click(function() {
+        var material_address_three = document.getElementById("location_material_address_three").value;
+        var material_district_three = document.getElementById("location_material_district_three").value;
+        var material_amphoe_three = document.getElementById("location_material_amphoe_three").value;
+        var material_province_three = document.getElementById("location_material_province_three").value;
+        var material_zipcode_three = document.getElementById("location_material_zipcode_three").value;
+        var material_workname_three = document.getElementById("material_workname_three").value;
+        document.getElementById("show_location_name").innerHTML = material_address_three + " ต." +
+            material_district_three + " อ." + material_amphoe_three + " จ." + material_province_three +
+            " " + material_zipcode_three;
+        document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานปฏิบัติการ: " +
+            material_workname_three;
+
+        var material_request_three = document.getElementById("location_material_request_three").value;
+        var material_benefit_three = document.getElementById("location_material_benefit_three").value;
+        document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
+            material_request_three;
+        document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+            material_benefit_three;
+
+        var material_specialtype_three = document.getElementById("material_specialtype_three").value;
+        var material_detail_three = document.getElementById("material_detail_three").value;
+        var material_type_three = document.getElementById("material_type_three").value;
+        var material_weight_three = document.getElementById("material_weight_three").value;
+        var material_unit_three = document.getElementById("material_unit_three").value;
+        document.getElementById("show_detail_of_material").innerHTML = "วัสดุนิวเคลียร์พิเศษชนิด: " +
+            material_specialtype_three + " รายละเอียดวัสดุ: " + material_detail_three;
+        document.getElementById("show_status_material").innerHTML = "ประเภทวัสดุ: " +
+            material_type_three;
+        document.getElementById("show_weight_material").innerHTML = "น้ำหนักของวัสดุ: " +
+            material_weight_three + " " + material_unit_three;
+
+        var safe_name_three = document.getElementById("safe_name_three").value;
+        var safe_lname_three = document.getElementById("safe_lname_three").value;
+        var make_name_three = document.getElementById("make_name_three").value;
+        var make_lname_three = document.getElementById("make_lname_three").value;
+        var doctor_name_three = document.getElementById("doctor_name_three").value;
+        var doctor_lname_three = document.getElementById("doctor_lname_three").value;
+        document.getElementById("show_safe_name").innerHTML = "เจ้าหน้าที่ความปลอดภัยทางรังสี: " +
+            safe_name_three + " " + safe_lname_three;
+        document.getElementById("show_make_name").innerHTML = "ผู้ปฏิบัติงานทางรังสี: " +
+            make_name_three + " " + make_lname_three;
+        document.getElementById("show_doctor_name").innerHTML = "แพทย์ผู้้รับผิดชอบ: " +
+            doctor_name_three + " " + doctor_lname_three;
     });
 });
 </script>

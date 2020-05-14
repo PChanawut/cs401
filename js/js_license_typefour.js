@@ -25,6 +25,10 @@ $("#request").submit(function(e){
     let workage_four = $("#workage_four").val()
     let addressname_produce_four = $("#addressname_produce_four").val()
     let addressname_sale_four = $("#addressname_sale_four").val()
+
+    let location_material_licenseno_four = $("#location_material_licenseno_four").val()
+    let location_material_licensedate_four = $("#location_material_licensedate_four").val()
+    let location_material_startlicense_four = $("#location_material_startlicense_four").val()
     
     // step two
     // ผู้แทนจำหน่ายที่ได้รับมอบหมาย
@@ -97,6 +101,9 @@ $("#request").submit(function(e){
             workage_four: workage_four,
             addressname_produce_four: addressname_produce_four,
             addressname_sale_four: addressname_sale_four,
+            location_material_licenseno_four: location_material_licenseno_four,
+            location_material_licensedate_four: location_material_licensedate_four,
+            location_material_startlicense_four: location_material_startlicense_four,
             sale_name: sale_name,
             sale_idcard_four: sale_idcard_four,
             sale_age_four: sale_age_four,

@@ -695,18 +695,27 @@
                             <div class="modal-body">
                                 <div class="row-ml-3">
                                     <h6>ชื่อผู้ขอใบอนุญาต:</h6>
+                                    <p style="color:Gray;">รออัพเดต</p>
                                 </div>
                                 <hr>
                                 <div class="row-ml-3">
                                     <h6>สถานที่ใช้และจัดเก็บวัสดุ:</h6>
+                                    <p id="show_chemical_name" style="color:Gray;"></p>
+                                    <p id="show_notchemical_name" style="color:Gray;"></p>
                                 </div>
                                 <hr>
                                 <div class="row-ml-3">
                                     <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                                    <p id="show_benefit_material" style="color:Gray;"></p>
+                                    <p id="show_vehicle_material" style="color:Gray;"></p>
+                                    <p id="show_detail_of_material" style="color:Gray;"></p>
+                                    <p id="show_status_material" style="color:Gray;"></p>
                                 </div>
                                 <hr>
                                 <div class="row-ml-3">
                                     <h6>รายละเอียดเจ้าหน้าที่:</h6>
+                                    <p id="show_safe_name" style="color:Gray;"></p>
+                                    <p id="show_make_name" style="color:Gray;"></p>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -786,6 +795,44 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#confirm6').click(function() {
         $('#pageConfirm6').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#confirm6').click(function() {
+        var materialsix_address = document.getElementById("location_materialsix_address").value;
+        var materialsix_district = document.getElementById("location_materialsix_district").value;
+        var materialsix_amphoe = document.getElementById("location_materialsix_amphoe").value;
+        var materialsix_province = document.getElementById("location_materialsix_province").value;
+        var materialsix_zipcode = document.getElementById("location_materialsix_zipcode").value;
+        document.getElementById("show_chemical_name").innerHTML =
+            "สถานที่กระทำให้วัสดุพ้นสภาพจากสภาพตามธรรมชาติ: " + materialsix_address + " ต." +
+            materialsix_district + " อ." + materialsix_amphoe + " จ." + materialsix_province + " " +
+            materialsix_zipcode;
+
+        var location_not_six = document.getElementById("location_not_six").value;
+        var location_district_six = document.getElementById("location_district_six").value;
+        var location_amphoe_six = document.getElementById("location_amphoe_six").value;
+        var location_province_six = document.getElementById("location_province_six").value;
+        var location_zipcode_six = document.getElementById("location_zipcode_six").value;
+        document.getElementById("show_notchemical_name").innerHTML =
+            "สถานที่เก็บรักษาวัสดุที่พ้นสภาพ: " + location_not_six + " ต." + location_district_six +
+            " อ." + location_amphoe_six + " จ." + location_province_six + " " + location_zipcode_six;
+
+        var type_benefit_six = document.getElementById("type_benefit_six").value;
+        document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+            type_benefit_six;
+
+        var safe_name_six = document.getElementById("safe_name_six").value;
+        var safe_lname_six = document.getElementById("safe_lname_six").value;
+        var make_name_six = document.getElementById("make_name_six").value;
+        var make_lname_six = document.getElementById("make_lname_six").value;
+        document.getElementById("show_safe_name").innerHTML = "เจ้าหน้าที่ความปลอดภัยทางรังสี: " +
+            safe_name_six + " " + safe_lname_six;
+        document.getElementById("show_make_name").innerHTML = "ผู้ปฏิบัติงานรังสี: " + make_name_six +
+            " " + make_lname_six;
     });
 });
 </script>

@@ -959,18 +959,28 @@
                     <div class="modal-body">
                         <div class="row-ml-3">
                             <h6>ชื่อผู้ขอใบอนุญาต:</h6>
+                            <p style="color:Gray;">รออัพเดต</p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>สถานที่ใช้และจัดเก็บวัสดุ:</h6>
+                            <p id="show_location_name" style="color:Gray;"></p>
+                            <p id="show_worklocation_name" style="color:Gray;"></p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                            <p id="show_benefit_material" style="color:Gray;"></p>
+                            <p id="show_detail_of_material" style="color:Gray;"></p>
+                            <p id="show_code_type_material" style="color:Gray;"></p>
+                            <p id="show_number_material" style="color:Gray;"></p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดเจ้าหน้าที่:</h6>
+                            <p id="show_safe_name" style="color:Gray;"></p>
+                            <p id="show_make_name" style="color:Gray;"></p>
+                            <p id="show_doctor_name" style="color:Gray;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -1063,6 +1073,51 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#confirm7').click(function() {
         $('#pageConfirm7').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#confirm7').click(function() {
+        var materialseven_address = document.getElementById("location_materialseven_address").value;
+        var materialseven_district = document.getElementById("location_materialseven_district").value;
+        var materialseven_amphoe = document.getElementById("location_materialseven_amphoe").value;
+        var materialseven_province = document.getElementById("location_materialseven_province").value;
+        var materialseven_zipcode = document.getElementById("location_materialseven_zipcode").value;
+        document.getElementById("show_location_name").innerHTML = materialseven_address + " ต." +
+            materialseven_district + " อ." + materialseven_amphoe + " จ." + materialseven_province +
+            " " + materialseven_zipcode;
+
+        var material_seven = document.getElementById("locationname_material_seven").value;
+        document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานที่ติดตั้งหรือใช้งาน: " +
+            material_seven;
+
+        var materialseven_benefit = document.getElementById("location_materialseven_benefit").value;
+        var number_xray_seven = document.getElementById("number_xray_seven").value;
+        var work_style_seven = document.getElementById("work_style_seven").value;
+        var operation_type_seven = document.getElementById("operation_type_seven").value;
+        document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+            materialseven_benefit;
+        document.getElementById("show_detail_of_material").innerHTML = "ลักษณะการใช้งาน: " +
+            work_style_seven;
+        document.getElementById("show_code_type_material").innerHTML = "รหัสประเภทการใช้งาน: " +
+            operation_type_seven;
+        document.getElementById("show_number_material").innerHTML = "หมายเลขเครื่องกำเนิดรังสี: " +
+            number_xray_seven;
+
+        var safe_name_seven = document.getElementById("safe_name_seven").value;
+        var safe_lname_seven = document.getElementById("safe_lname_seven").value;
+        var make_name_seven = document.getElementById("make_name_seven").value;
+        var make_lname_seven = document.getElementById("make_lname_seven").value;
+        var doctor_name_seven = document.getElementById("doctor_name_seven").value;
+        var doctor_lname_seven = document.getElementById("doctor_lname_seven").value;
+        document.getElementById("show_safe_name").innerHTML = "เจ้าหน้าที่ความปลอดภัยทางรังสี: " +
+            safe_name_seven + " " + safe_lname_seven;
+        document.getElementById("show_make_name").innerHTML = "ผู้ปฏิบัติงานทางรังสี: " +
+            make_name_seven + " " + make_lname_seven;
+        document.getElementById("show_doctor_name").innerHTML = "แพทย์ผู้รับผิดชอบ: " +
+            doctor_name_seven + " " + doctor_lname_seven;
     });
 });
 </script>

@@ -949,18 +949,29 @@
                     <div class="modal-body">
                         <div class="row-ml-3">
                             <h6>ชื่อผู้ขอใบอนุญาต:</h6>
+                            <p style="color:Gray;">รออัพเดต</p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>สถานที่ใช้และจัดเก็บวัสดุ:</h6>
+                            <p id="show_location_name" style="color:Gray;"></p>
+                            <p id="show_worklocation_name" style="color:Gray;"></p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                            <p id="show_detail_material" style="color:Gray;"></p>
+                            <p id="show_benefit_material" style="color:Gray;"></p>
+                            <p id="show_vehicle_material" style="color:Gray;"></p>
+                            <p id="show_detail_of_material" style="color:Gray;"></p>
+                            <p id="show_status_material" style="color:Gray;"></p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดเจ้าหน้าที่:</h6>
+                            <p id="show_safe_name" style="color:Gray;"></p>
+                            <p id="show_handler_name" style="color:Gray;"></p>
+                            <p id="show_destination_name" style="color:Gray;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -1069,6 +1080,57 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#confirm2').click(function() {
         $('#pageConfirm2').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#confirm2').click(function() {
+        var materialtwo_address = document.getElementById("location_materialtwo_address").value;
+        var materialtwo_district = document.getElementById("location_materialtwo_district").value;
+        var materialtwo_amphoe = document.getElementById("location_materialtwo_amphoe").value;
+        var materialtwo_province = document.getElementById("location_materialtwo_province").value;
+        var materialtwo_zipcode = document.getElementById("location_materialtwo_zipcode").value;
+        var material_two = document.getElementById("locationname_material_two").value;
+        document.getElementById("show_location_name").innerHTML = materialtwo_address + " ต." +
+            materialtwo_district + " อ." + materialtwo_amphoe + " จ." + materialtwo_province + " " +
+            materialtwo_zipcode;
+        document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานที่ติดตั้งหรือใช้งาน: " +
+            material_two;
+
+        var type_request = document.getElementById("type_request").value;
+        var materialtwo_benefit = document.getElementById("location_materialtwo_benefit").value;
+        var materialtwo_vehicle = document.getElementById("location_materialtwo_vehicle").value;
+        var no_reference_two = document.getElementById("no_reference_two").value;
+        var operation_type_two = document.getElementById("operation_type_two").value;
+        var element_two = document.getElementById("element_two").value;
+        var product_model_two = document.getElementById("product_model_two").value;
+        var material_status_two = document.getElementById("material_status_two").value;
+        document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " + type_request;
+        document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+            materialtwo_benefit;
+        document.getElementById("show_vehicle_material").innerHTML = "พาหนะสำหรับการขนส่ง: " +
+            materialtwo_vehicle;
+        document.getElementById("show_detail_of_material").innerHTML = "ทะเบียนอ้างอิง: " +
+            no_reference_two + " รหัสการใช้งาน: " + operation_type_two + " ธาตุ-เลขมวล: " +
+            element_two + " รุ่นหรือรหัสสินค้า: " + product_model_two;
+        document.getElementById("show_status_material").innerHTML = "สภานภาพวัสดุ: " +
+            material_status_two;
+
+        var sale_name = document.getElementById("sale_name").value;
+        var sale_lname = document.getElementById("sale_lname").value;
+        var sale_work_name = document.getElementById("sale_work_name").value;
+        var handler_name = document.getElementById("handler_name").value;
+        var handler_lname = document.getElementById("handler_lname").value;
+        var handler_work_name = document.getElementById("handler_work_name").value;
+        var destination_work_name = document.getElementById("destination_work_name").value;
+        document.getElementById("show_safe_name").innerHTML = "ผู้แทนจำหน่ายให้นำเข้าหรือส่งออก: " +
+            sale_name + " " + sale_lname + " ชื่อสถานที่ทำการ: " + sale_work_name;
+        document.getElementById("show_handler_name").innerHTML = "ผู้ดำเนินการตามพิธีศุลกากร: " +
+            handler_name + " " + handler_lname + " ชื่อสถานที่ทำการ: " + handler_work_name;
+        document.getElementById("show_destination_name").innerHTML = "ผู้รับปลายทาง: " +
+            destination_work_name;
     });
 });
 </script>

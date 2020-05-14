@@ -9,7 +9,7 @@
     && isset($_POST['open_locationname_material_two']) && isset($_POST['open_company_sale_two']) && isset($_POST['style_two']) && isset($_POST['styletype_two']) && isset($_POST['unnumber_two']) && isset($_POST['sale_name']) && isset($_POST['sale_idcard']) && isset($_POST['sale_age']) && isset($_POST['sale_position']) && isset($_POST['sale_nationality'])
     && isset($_POST['sale_email']) && isset($_POST['sale_phone']) && isset($_POST['sale_work_name']) && isset($_POST['sale_address']) && isset($_POST['handler_name']) && isset($_POST['handler_idcard']) && isset($_POST['handler_age']) && isset($_POST['handler_position']) && isset($_POST['handler_nationality']) && isset($_POST['handler_email']) && isset($_POST['handler_phone'])
     && isset($_POST['handler_work_name']) && isset($_POST['handler_address']) && isset($_POST['destination_work_name']) && isset($_POST['destination_address']) && isset($_POST['destination_work_phone']) && isset($_POST['destination_work_email']) && isset($_POST['import_address']) && isset($_POST['import_material_phone_two']) && isset($_POST['import_material_email_two'])
-    && isset($_POST['export_address']) && isset($_POST['export_material_phone_two']) && isset($_POST['export_material_email_two'])){
+    && isset($_POST['export_address']) && isset($_POST['export_material_phone_two']) && isset($_POST['export_material_email_two']) && isset($_POST['location_materialtwo_licenseno']) && isset($_POST['location_materialtwo_licensedate']) && isset($_POST['location_materialtwo_startlicense'])){
 
         include('config/database.php');
 
@@ -20,6 +20,10 @@
         $location_materialtwo_email = $_POST['location_materialtwo_email'];
         $location_materialtwo_benefit = $_POST['location_materialtwo_benefit'];
         $location_materialtwo_vehicle = $_POST['location_materialtwo_vehicle'];
+
+        $location_materialtwo_licenseno = $_POST['location_materialtwo_licenseno'];
+        $location_materialtwo_licensedate = $_POST['location_materialtwo_licensedate'];
+        $location_materialtwo_startlicense = $_POST['location_materialtwo_startlicense'];
 
         // step two
         $no_reference_two = $_POST['no_reference_two'];
@@ -176,6 +180,26 @@
 
         $query9 = mysqli_query($conn,$sql9);
         if($query9){
+            $response['success'] = true;
+        }else{
+            $response['success'] = false;
+        }
+
+        $sql10 = "INSERT INTO document_relate(document_id,type_document,no_license,end_license,start_request)
+                VALUES(NULL,'HAVE','$location_materialtwo_licenseno','$location_materialtwo_licensedate','NULL')";
+
+        $query10 = mysqli_query($conn,$sql10);
+        if($query10){
+            $response['success'] = true;
+        }else{
+            $response['success'] = false;
+        }
+
+        $sql11 = "INSERT INTO document_relate(document_id,type_document,no_license,end_license,start_request)
+                VALUES(NULL,'NOT HAVE','NULL','NULL','$location_materialtwo_startlicense')";
+
+        $query11 = mysqli_query($conn,$sql11);
+        if($query11){
             $response['success'] = true;
         }else{
             $response['success'] = false;

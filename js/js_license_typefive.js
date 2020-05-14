@@ -1,6 +1,6 @@
 $("#request").submit(function(e){
     e.preventDefault();
-    // console.log("55555555");
+    
     let location_materialfive_request = $("#location_materialfive_request").val()
     let material_location = $("#location_materialfive_address").val()+" "+$("#location_materialfive_district").val()+" "+$("#location_materialfive_amphoe").val()+" "+$("#location_materialfive_province").val()+" "+$("#location_materialfive_zipcode").val()
     let location_materialfive_phone = $("#location_materialfive_phone").val()

@@ -105,18 +105,23 @@
                 <div class="modal-body">
                     <div class="row-ml-3">
                         <h6>ชื่อผู้ขอใบอนุญาต:</h6>
+                        <p style="color:Gray;">รออัพเดต</p>
                     </div>
                     <hr>
                     <div class="row-ml-3">
                         <h6>สถานที่ใช้และจัดเก็บวัสดุ:</h6>
+                        <p id="show_location_name" style="color:Gray;"></p>
                     </div>
                     <hr>
                     <div class="row-ml-3">
                         <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                        <p id="show_detail_material" style="color:Gray;"></p>
+                        <p id="show_type_material" style="color:Gray;"></p>
                     </div>
                     <hr>
                     <div class="row-ml-3">
                         <h6>รายละเอียดเจ้าหน้าที่:</h6>
+                        <p style="color:Gray;">---- ไม่มีเจ้าหน้าที่ที่เกี่ยวข้อง ----</p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -132,6 +137,28 @@
 $(document).ready(function() {
     $('#confirm5').click(function() {
         $('#pageConfirm5').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $("#confirm5").click(function() {
+        var location_name = document.getElementById("location_materialfive_address").value;
+        var materialfive_district = document.getElementById("location_materialfive_district").value;
+        var materialfive_amphoe = document.getElementById("location_materialfive_amphoe").value;
+        var materialfive_province = document.getElementById("location_materialfive_province").value;
+        var materialfive_zipcode = document.getElementById("location_materialfive_zipcode").value;
+        document.getElementById("show_location_name").innerHTML = location_name + " ต." +
+            materialfive_district + " อ." + materialfive_amphoe + " จ." + materialfive_province + " " +
+            materialfive_zipcode;
+
+        var materialfive_request = document.getElementById("location_materialfive_request").value;
+        var type_five = document.getElementById("type_five").value;
+        document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
+            materialfive_request;
+        document.getElementById("show_type_material").innerHTML = "ประเภทเครื่องปฏิกรณ์ปรมาณู: " +
+            type_five;
     });
 });
 </script>
