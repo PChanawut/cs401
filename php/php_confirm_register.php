@@ -13,7 +13,7 @@
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
-        $sql2 = "UPDATE usercompany SET usercompany_ativate='ativate' WHERE company_id='$info_register_id' AND (usercompany_type='company' OR usercompany_type='person')";
+        $sql2 = "UPDATE usercompany SET usercompany_ativate='ativate' WHERE company_id='$info_register_id' AND (usercompany_type='company' OR usercompany_type='personality')";
         if(!mysqli_query($conn,$sql2)){
             array_push($check,"error");
         }
