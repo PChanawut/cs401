@@ -7,7 +7,7 @@
     && isset($_POST['open_weight_material']) && isset($_POST['open_unit_weight']) && isset($_POST['open_physical_properties']) && isset($_POST['open_locationname_material']) && isset($_POST['open_company_sale']) && isset($_POST['safe_name']) && isset($_POST['safe_idcard']) && isset($_POST['safe_position']) && isset($_POST['safe_age']) && isset($_POST['safe_nationality']) && isset($_POST['safe_phone']) && isset($_POST['safe_email'])
     && isset($_POST['safe_address']) && isset($_POST['safe_qualification']) && isset($_POST['safe_number']) && isset($_POST['make_name']) && isset($_POST['make_idcard']) && isset($_POST['make_position']) && isset($_POST['make_age']) && isset($_POST['make_nationality']) && isset($_POST['make_phone']) && isset($_POST['make_email']) && isset($_POST['make_address']) && isset($_POST['make_qualification']) && isset($_POST['make_number']) 
     && isset($_POST['doctor_name']) && isset($_POST['doctor_idcard']) && isset($_POST['doctor_position']) && isset($_POST['doctor_age']) && isset($_POST['doctor_nationality']) && isset($_POST['doctor_phone']) && isset($_POST['doctor_email']) && isset($_POST['doctor_address'])
-    && isset($_POST['doctor_hospital_name']) && isset($_POST['doctor_artlicense']) && isset($_POST['doctor_date_start'])){
+    && isset($_POST['doctor_hospital_name']) && isset($_POST['doctor_artlicense']) && isset($_POST['doctor_date_start']) && isset($_POST['selected'])){
 
         include('config/database.php');
 
@@ -16,6 +16,9 @@
         $location_materialone_email = $_POST['location_materialone_email'];
         $location_materialone_benefit = $_POST['location_materialone_benefit'];
         $location_materialone_request = $_POST['location_materialone_request'];
+
+        $selected = $_POST['selected'];
+
         $no_reference = $_POST['no_reference'];
         $operation_type = $_POST['operation_type'];
         $element = $_POST['element'];
@@ -89,25 +92,31 @@
             $response['success'] = false;
         }
 
-        $sql2 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
-                VALUES(NULL,'ปิดผนึก','$no_reference','$operation_type','$element','$product_model','$material_status','$manufacturer_material','$material_number','$weight_material','$unit_weight','$manufacturer_container','$material_number_container','$container_number','$weight_container','$unit_container','$locationname_material','$company_sale')";
-
-        $query2 = mysqli_query($conn,$sql2);
-        if($query2){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        if($selected == "ปิดผนึก"){
+            $sql2 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
+                    VALUES(NULL,'ปิดผนึก','$no_reference','$operation_type','$element','$product_model','$material_status','$manufacturer_material','$material_number','$weight_material','$unit_weight','$manufacturer_container','$material_number_container','$container_number','$weight_container','$unit_container','$locationname_material','$company_sale')";
+    
+            $query2 = mysqli_query($conn,$sql2);
+            if($query2){
+                $response['success'] = true;
+            }else{
+                $response['success'] = false;
+            }
         }
 
-        $sql3 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
-                VALUES(NULL,'ไม่ปิดผนึก','$open_no_reference','$open_operation_type','$open_element','$open_product_model','$open_material_status','$open_manufacturer_material','NULL','$open_weight_material','$open_unit_weight','$open_physical_properties','NULL','NULL','$open_locationname_material','$open_company_sale')";
 
-        $query3 = mysqli_query($conn,$sql3);
-        if($query3){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        if($selected == "ไม่ปิดผนึก"){
+            $sql3 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
+                    VALUES(NULL,'ไม่ปิดผนึก','$open_no_reference','$open_operation_type','$open_element','$open_product_model','$open_material_status','$open_manufacturer_material','NULL','$open_weight_material','$open_unit_weight','$open_physical_properties','NULL','NULL','NULL','NULL','$open_locationname_material','$open_company_sale')";
+    
+            $query3 = mysqli_query($conn,$sql3);
+            if($query3){
+                $response['success'] = true;
+            }else{
+                $response['success'] = false;
+            }
         }
+
 
         $sql4 = "INSERT INTO companystaff(staff_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
                 VALUES(NULL,'เจ้าหน้าที่ความปลอดภัยทางรังสี','$safe_name','$safe_idcard','$safe_position','$safe_age','$safe_nationality','$safe_phone','$safe_email','$safe_address','$safe_qualification','$safe_number','NULL','NULL','NULL')";

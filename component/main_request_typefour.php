@@ -29,14 +29,16 @@
         <div class="row mx-auto">
             <div id="materialopen3" class="col px-md-5">
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline16" name="customRadioInline1" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadioInline16">นำหรือสั่งเข้ามาในราชอาณาจักร</label>
+                    <input type="radio" id="material_import" value="นำเข้าราชอาณาจักร" name="material_selected"
+                        class="custom-control-input">
+                    <label class="custom-control-label" for="material_import">นำหรือสั่งเข้ามาในราชอาณาจักร</label>
                 </div>
             </div>
             <div id="materialclose3" class="col px-md-5">
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline17" name="customRadioInline1" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadioInline17">นำหรือส่งออกนอกราชอาณาจักร</label>
+                    <input type="radio" id="material_export" value="ส่งออกราชอาณาจักร" name="material_selected"
+                        class="custom-control-input">
+                    <label class="custom-control-label" for="material_export">นำหรือส่งออกนอกราชอาณาจักร</label>
                 </div>
             </div>
         </div>
@@ -864,6 +866,7 @@
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                            <p id="show_imorex_material" style="color:Gray;"></p>
                             <p id="show_detail_material" style="color:Gray;"></p>
                             <p id="show_transport_material" style="color:Gray;"></p>
                             <p id="show_detail_of_material" style="color:Gray;"></p>
@@ -980,6 +983,19 @@ $(document).ready(function() {
         var material_workname_four = document.getElementById("material_workname_four").value;
         document.getElementById("show_location_name").innerHTML = "ชื่อสถานปฏิบัติการ: " +
             material_workname_four;
+
+        var select_import = document.getElementById('material_selected');
+        var select_export = document.getElementById('material_selected');
+
+        if (document.getElementById('material_import').checked) {
+            select_import = document.getElementById('material_import').value;
+            document.getElementById("show_imorex_material").innerHTML = "ขออนุญาตเพื่อ: " +
+                select_import;
+        } else if (document.getElementById('material_export').checked) {
+            select_export = document.getElementById('material_export').value;
+            document.getElementById("show_imorex_material").innerHTML = "ขออนุญาตเพื่อ: " +
+                select_export;
+        }
 
         var materialtype_allow_four = document.getElementById("materialtype_allow_four").value;
         var type_transport_four = document.getElementById("type_transport_four").value;

@@ -10,7 +10,7 @@
     && isset($_POST['safe_age_three']) && isset($_POST['safe_nationality_three']) && isset($_POST['safe_phone_three']) && isset($_POST['safe_email_three']) && isset($_POST['safe_address']) && isset($_POST['safe_qualification_three'])
     && isset($_POST['safe_number_three']) && isset($_POST['make_name']) && isset($_POST['make_idcard_three']) && isset($_POST['make_position_three']) && isset($_POST['make_age_three']) && isset($_POST['make_nationality_three']) && isset($_POST['make_phone_three'])
     && isset($_POST['make_email_three']) && isset($_POST['make_address']) && isset($_POST['make_qualification_three']) && isset($_POST['make_number_three']) && isset($_POST['doctor_name']) && isset($_POST['doctor_idcard_three']) && isset($_POST['doctor_position_three'])
-    && isset($_POST['doctor_age_three']) && isset($_POST['doctor_nationality_three']) && isset($_POST['doctor_phone_three']) && isset($_POST['doctor_email_three']) && isset($_POST['doctor_address']) && isset($_POST['doctor_hospital_name_three']) && isset($_POST['doctor_artlicense_three']) && isset($_POST['doctor_date_start_three'])){
+    && isset($_POST['doctor_age_three']) && isset($_POST['doctor_nationality_three']) && isset($_POST['doctor_phone_three']) && isset($_POST['doctor_email_three']) && isset($_POST['doctor_address']) && isset($_POST['doctor_hospital_name_three']) && isset($_POST['doctor_artlicense_three']) && isset($_POST['doctor_date_start_three']) && isset($_POST['selected'])){
 
         include('config/database.php');
 
@@ -20,6 +20,8 @@
         $location_material_email_three = $_POST['location_material_email_three'];
         $location_material_benefit_three = $_POST['location_material_benefit_three'];
         $location_material_request_three = $_POST['location_material_request_three'];
+
+        $selected = $_POST['selected'];
 
         // step two -- first
         $material_area_three = $_POST['material_area_three'];
@@ -94,24 +96,28 @@
             $response['success'] = false;
         }
 
-        $sql2 = "INSERT INTO materialnuclear(material_id,type_special,nuclear_purpose,no_check,name_work,type_nuclear_special,nuclear_vehicle,no_location,number_batch,model_number,detail_material,type_material,weight_material,unit,weight_nuclear,code_isotope)
-                VALUES(NULL,'วัสดุนิวเคลียร์พิเศษ','NULL','$material_area_three','$material_workname_three','$material_specialtype_three','NULL','$material_nolocation_three','$material_nobatch_three','$material_number_three','$material_detail_three','$material_type_three','$material_weight_three','$material_unit_three','$material_special_weight_three','$material_code_ozotope_three')";
-
-        $query2 = mysqli_query($conn,$sql2);
-        if($query2){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        if($selected == "วัสดุนิวเคลียร์พิเศษ"){
+            $sql2 = "INSERT INTO materialnuclear(material_id,type_special,nuclear_purpose,no_check,name_work,type_nuclear_special,nuclear_vehicle,no_location,number_batch,model_number,detail_material,type_material,weight_material,unit,weight_nuclear,code_isotope)
+                    VALUES(NULL,'วัสดุนิวเคลียร์พิเศษ','NULL','$material_area_three','$material_workname_three','$material_specialtype_three','NULL','$material_nolocation_three','$material_nobatch_three','$material_number_three','$material_detail_three','$material_type_three','$material_weight_three','$material_unit_three','$material_special_weight_three','$material_code_ozotope_three')";
+    
+            $query2 = mysqli_query($conn,$sql2);
+            if($query2){
+                $response['success'] = true;
+            }else{
+                $response['success'] = false;
+            }
         }
 
-        $sql3 = "INSERT INTO materialchemical(material_id,type_special,code_work,work_address,nuclear_benefit,nuclear_special,weight_kg,no_material,work_age,address_produce,address_sale)
-                VALUES(NULL,'วัสดุต้นกำลังซึ่งพ้นสภาพ','$material_code_work_three','$material_workaddress_three','$material_benefit_three','$material_special_type_three','$weight_kg_three','$nomaterial_three','$workage_three','$addressname_produce_three','$addressname_sale_three')";
-
-        $query3 = mysqli_query($conn,$sql3);
-        if($query3){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        if($selected == "วัสดุต้นกำลังซึ่งพ้นสภาพที่เป็นตามธรรมชาติในทางเคมี"){
+            $sql3 = "INSERT INTO materialchemical(material_id,type_special,code_work,work_address,nuclear_benefit,nuclear_special,weight_kg,no_material,work_age,address_produce,address_sale)
+                    VALUES(NULL,'วัสดุต้นกำลังซึ่งพ้นสภาพ','$material_code_work_three','$material_workaddress_three','$material_benefit_three','$material_special_type_three','$weight_kg_three','$nomaterial_three','$workage_three','$addressname_produce_three','$addressname_sale_three')";
+    
+            $query3 = mysqli_query($conn,$sql3);
+            if($query3){
+                $response['success'] = true;
+            }else{
+                $response['success'] = false;
+            }
         }
 
         $sql4 = "INSERT INTO companystaff(staff_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)

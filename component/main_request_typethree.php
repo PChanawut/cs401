@@ -105,15 +105,17 @@
     <div class="row mx-auto">
         <div id="materialopen3" class="col px-md-5">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline14" name="customRadioInline1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline14">วัสดุนิวเคลียร์พิเศษ</label>
+                <input type="radio" id="material_special" value="วัสดุนิวเคลียร์พิเศษ" name="material_selected"
+                    class="custom-control-input">
+                <label class="custom-control-label" for="material_special">วัสดุนิวเคลียร์พิเศษ</label>
             </div>
         </div>
         <div id="materialclose3" class="col px-md-5">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline15" name="customRadioInline1" class="custom-control-input">
+                <input type="radio" id="material_chemical" value="วัสดุต้นกำลังซึ่งพ้นสภาพที่เป็นตามธรรมชาติในทางเคมี"
+                    name="material_selected" class="custom-control-input">
                 <label class="custom-control-label"
-                    for="customRadioInline15">วัสดุต้นกำลังซึ่งพ้นสภาพที่เป็นตามธรรมชาติในทางเคมี</label>
+                    for="material_chemical">วัสดุต้นกำลังซึ่งพ้นสภาพที่เป็นตามธรรมชาติในทางเคมี</label>
             </div>
         </div>
     </div>
@@ -1065,6 +1067,7 @@
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                            <p id="show_type_material" style="color:Gray;"></p>
                             <p id="show_detail_material" style="color:Gray;"></p>
                             <p id="show_benefit_material" style="color:Gray;"></p>
                             <p id="show_detail_of_material" style="color:Gray;"></p>
@@ -1199,27 +1202,52 @@ $(document).ready(function() {
         document.getElementById("show_location_name").innerHTML = material_address_three + " ต." +
             material_district_three + " อ." + material_amphoe_three + " จ." + material_province_three +
             " " + material_zipcode_three;
-        document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานปฏิบัติการ: " +
-            material_workname_three;
 
+        var select_special = document.getElementById('material_selected');
         var material_request_three = document.getElementById("location_material_request_three").value;
         var material_benefit_three = document.getElementById("location_material_benefit_three").value;
-        document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
-            material_request_three;
-        document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
-            material_benefit_three;
-
         var material_specialtype_three = document.getElementById("material_specialtype_three").value;
         var material_detail_three = document.getElementById("material_detail_three").value;
         var material_type_three = document.getElementById("material_type_three").value;
         var material_weight_three = document.getElementById("material_weight_three").value;
         var material_unit_three = document.getElementById("material_unit_three").value;
-        document.getElementById("show_detail_of_material").innerHTML = "วัสดุนิวเคลียร์พิเศษชนิด: " +
-            material_specialtype_three + " รายละเอียดวัสดุ: " + material_detail_three;
-        document.getElementById("show_status_material").innerHTML = "ประเภทวัสดุ: " +
-            material_type_three;
-        document.getElementById("show_weight_material").innerHTML = "น้ำหนักของวัสดุ: " +
-            material_weight_three + " " + material_unit_three;
+
+        var select_chemical = document.getElementById('material_selected');
+        var material_workaddress_three = document.getElementById("material_workaddress_three").value;
+        var material_special_type_three = document.getElementById("material_special_type_three").value;
+        var weight_kg_three = document.getElementById("weight_kg_three").value;
+
+        if (document.getElementById('material_special').checked) {
+            select_special = document.getElementById('material_special').value;
+            document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานปฏิบัติการ: " +
+                material_workname_three;
+            document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
+                material_request_three;
+            document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+                material_benefit_three;
+            document.getElementById("show_type_material").innerHTML = "วัสดุชนิด: " + select_special;
+            document.getElementById("show_detail_of_material").innerHTML =
+                "วัสดุนิวเคลียร์พิเศษชนิด: " +
+                material_specialtype_three + " รายละเอียดวัสดุ: " + material_detail_three;
+            document.getElementById("show_status_material").innerHTML = "ประเภทวัสดุ: " +
+                material_type_three;
+            document.getElementById("show_weight_material").innerHTML = "น้ำหนักของวัสดุ: " +
+                material_weight_three + " " + material_unit_three;
+        } else if (document.getElementById('material_chemical').checked) {
+            select_chemical = document.getElementById('material_chemical').value;
+            document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานปฏิบัติการ: " +
+                material_workaddress_three;
+            document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
+                material_request_three;
+            document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+                material_benefit_three;
+            document.getElementById("show_type_material").innerHTML = "วัสดุชนิด: " + select_chemical;
+            document.getElementById("show_detail_of_material").innerHTML =
+                "วัสดุนิวเคลียร์พิเศษชนิด: " + material_special_type_three + " รายละเอียดวัสดุ: " +
+                material_detail_three;
+            document.getElementById("show_weight_material").innerHTML = "น้ำหนักของวัสดุ: " +
+                weight_kg_three + " kg";
+        }
 
         var safe_name_three = document.getElementById("safe_name_three").value;
         var safe_lname_three = document.getElementById("safe_lname_three").value;

@@ -13,6 +13,8 @@ $("#request").submit(function(e){
     let location_materialtwo_licensedate = $("#location_materialtwo_licensedate").val()
     let location_materialtwo_startlicense = $("#location_materialtwo_startlicense").val()
 
+    var selected = $("input[name='material_selected']:checked").val()
+
     // step two
     let no_reference_two = $("#no_reference_two").val()
     let operation_type_two = $("#operation_type_two").val()
@@ -37,7 +39,7 @@ $("#request").submit(function(e){
     let open_product_model_two = $("#open_product_model_two").val()
     let open_material_status_two = $("#open_material_status_two").val()
     let open_manufacturer_material_two = $("#open_manufacturer_material_two").val()
-    let open_number_two = $("#open_number_two").val()
+    let open_weight_material = $("#open_weight_material").val()
     let open_unit_weight_two = $("#open_unit_weight_two").val()
     let open_physical_properties_two = $("#open_physical_properties_two").val()
     let open_locationname_material_two = $("#open_locationname_material_two").val()
@@ -118,7 +120,7 @@ $("#request").submit(function(e){
             open_product_model_two: open_product_model_two,
             open_material_status_two: open_material_status_two,
             open_manufacturer_material_two: open_manufacturer_material_two,
-            open_number_two: open_number_two,
+            open_weight_material: open_weight_material,
             open_unit_weight_two: open_unit_weight_two,
             open_physical_properties_two: open_physical_properties_two,
             open_locationname_material_two: open_locationname_material_two,
@@ -153,16 +155,19 @@ $("#request").submit(function(e){
             import_material_email_two: import_material_email_two,
             export_address: export_address,
             export_material_phone_two: export_material_phone_two,
-            export_material_email_two: export_material_email_two
+            export_material_email_two: export_material_email_two,
+            selected: selected
         },
         success: function(response){
             response = JSON.parse(response);
             console.log(response);
             if(response.success == true){
                 console.log('Hello type two');
+                // document.location = 'license_all.php';
             }else{
                 console.log('So sad type two');
             }
+            console.log(selected);
         }
     });
 });

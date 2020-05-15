@@ -5,11 +5,11 @@
     && isset($_POST['location_materialtwo_vehicle']) && isset($_POST['no_reference_two']) && isset($_POST['operation_type_two']) && isset($_POST['element_two']) && isset($_POST['product_model_two']) && isset($_POST['material_status_two']) && isset($_POST['manufacturer_material_two'])
     && isset($_POST['material_number_two']) && isset($_POST['weight_material_two']) && isset($_POST['unit_weight_two']) && isset($_POST['manufacturer_container_two']) && isset($_POST['material_number_container_two']) && isset($_POST['container_number_two'])
     && isset($_POST['weight_container_two']) && isset($_POST['unit_container_two']) && isset($_POST['locationname_material_two']) && isset($_POST['company_sale_two']) && isset($_POST['open_no_reference_two']) && isset($_POST['open_operation_type_two']) && isset($_POST['open_element_two'])
-    && isset($_POST['open_product_model_two']) && isset($_POST['open_material_status_two']) && isset($_POST['open_manufacturer_material_two']) && isset($_POST['open_number_two']) && isset($_POST['open_unit_weight_two']) && isset($_POST['open_physical_properties_two'])
+    && isset($_POST['open_product_model_two']) && isset($_POST['open_material_status_two']) && isset($_POST['open_manufacturer_material_two']) && isset($_POST['open_weight_material']) && isset($_POST['open_unit_weight_two']) && isset($_POST['open_physical_properties_two'])
     && isset($_POST['open_locationname_material_two']) && isset($_POST['open_company_sale_two']) && isset($_POST['style_two']) && isset($_POST['styletype_two']) && isset($_POST['unnumber_two']) && isset($_POST['sale_name']) && isset($_POST['sale_idcard']) && isset($_POST['sale_age']) && isset($_POST['sale_position']) && isset($_POST['sale_nationality'])
     && isset($_POST['sale_email']) && isset($_POST['sale_phone']) && isset($_POST['sale_work_name']) && isset($_POST['sale_address']) && isset($_POST['handler_name']) && isset($_POST['handler_idcard']) && isset($_POST['handler_age']) && isset($_POST['handler_position']) && isset($_POST['handler_nationality']) && isset($_POST['handler_email']) && isset($_POST['handler_phone'])
     && isset($_POST['handler_work_name']) && isset($_POST['handler_address']) && isset($_POST['destination_work_name']) && isset($_POST['destination_address']) && isset($_POST['destination_work_phone']) && isset($_POST['destination_work_email']) && isset($_POST['import_address']) && isset($_POST['import_material_phone_two']) && isset($_POST['import_material_email_two'])
-    && isset($_POST['export_address']) && isset($_POST['export_material_phone_two']) && isset($_POST['export_material_email_two']) && isset($_POST['location_materialtwo_licenseno']) && isset($_POST['location_materialtwo_licensedate']) && isset($_POST['location_materialtwo_startlicense'])){
+    && isset($_POST['export_address']) && isset($_POST['export_material_phone_two']) && isset($_POST['export_material_email_two']) && isset($_POST['location_materialtwo_licenseno']) && isset($_POST['location_materialtwo_licensedate']) && isset($_POST['location_materialtwo_startlicense']) && isset($_POST['selected'])){
 
         include('config/database.php');
 
@@ -24,6 +24,8 @@
         $location_materialtwo_licenseno = $_POST['location_materialtwo_licenseno'];
         $location_materialtwo_licensedate = $_POST['location_materialtwo_licensedate'];
         $location_materialtwo_startlicense = $_POST['location_materialtwo_startlicense'];
+
+        $selected = $_POST['selected'];
 
         // step two
         $no_reference_two = $_POST['no_reference_two'];
@@ -49,7 +51,7 @@
         $open_product_model_two = $_POST['open_product_model_two'];
         $open_material_status_two = $_POST['open_material_status_two'];
         $open_manufacturer_material_two = $_POST['open_manufacturer_material_two'];
-        $open_number_two = $_POST['open_number_two'];
+        $open_weight_material = $_POST['open_weight_material'];
         $open_unit_weight_two = $_POST['open_unit_weight_two'];
         $open_physical_properties_two = $_POST['open_physical_properties_two'];
         $open_locationname_material_two = $_POST['open_locationname_material_two'];
@@ -105,25 +107,30 @@
             $response['success'] = false;
         }
 
-        $sql2 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
-                VALUES(NULL,'ปิดผนึก','$no_reference_two','$operation_type_two','$element_two','$product_model_two','$material_status_two','$manufacturer_material_two','$material_number_two','$weight_material_two','$unit_weight_two','$manufacturer_container_two','$material_number_container_two','$container_number_two','$weight_container_two','$unit_container_two','$locationname_material_two','$company_sale_two')";
-        
-        $query2 = mysqli_query($conn,$sql2);
-        if($query2){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        if($selected == "ปิดผนึก"){
+            $sql2 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
+                    VALUES(NULL,'ปิดผนึก','$no_reference_two','$operation_type_two','$element_two','$product_model_two','$material_status_two','$manufacturer_material_two','$material_number_two','$weight_material_two','$unit_weight_two','$manufacturer_container_two','$material_number_container_two','$container_number_two','$weight_container_two','$unit_container_two','$locationname_material_two','$company_sale_two')";
+            
+            $query2 = mysqli_query($conn,$sql2);
+            if($query2){
+                $response['success'] = true;
+            }else{
+                $response['success'] = false;
+            }
         }
 
-        $sql3 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
-                VALUES(NULL,'ไม่ปิดผนึก','$open_no_reference_two','$open_operation_type_two','$open_element_two','$open_product_model_two','$open_material_status_two','$open_manufacturer_material_two','$open_number_two','$open_unit_weight_two','$open_physical_properties_two','NULL','NULL','$open_locationname_material_two','$open_company_sale_two')";
-        
-        $query3 = mysqli_query($conn,$sql3);
-        if($query3){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        if($selected == "ไม่ปิดผนึก"){
+            $sql3 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
+                    VALUES(NULL,'ไม่ปิดผนึก','$open_no_reference_two','$open_operation_type_two','$open_element_two','$open_product_model_two','$open_material_status_two','$open_manufacturer_material_two','NULL','$open_weight_material','$open_unit_weight_two','$open_physical_properties_two','NULL','NULL','NULL','NULL','$open_locationname_material_two','$open_company_sale_two')";
+            
+            $query3 = mysqli_query($conn,$sql3);
+            if($query3){
+                $response['success'] = true;
+            }else{
+                $response['success'] = false;
+            }
         }
+
 
         $sql4 = "INSERT INTO materialpack(material_id,pack_style,pack_type,un_number)
                 VALUES(NULL,'$style_two','$styletype_two','$unnumber_two')";

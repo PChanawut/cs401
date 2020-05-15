@@ -8,6 +8,8 @@ $("#request").submit(function(e){
     let location_material_benefit_three = $("#location_material_benefit_three").val()
     let location_material_request_three = $("#location_material_request_three").val()
 
+    var selected = $("input[name='material_selected']:checked").val()
+
     // step two -- first
     let material_area_three = $("#material_area_three").val()
     let material_workname_three = $("#material_workname_three").val()
@@ -131,16 +133,19 @@ $("#request").submit(function(e){
             doctor_address: doctor_address,
             doctor_hospital_name_three: doctor_hospital_name_three,
             doctor_artlicense_three: doctor_artlicense_three,
-            doctor_date_start_three: doctor_date_start_three
+            doctor_date_start_three: doctor_date_start_three,
+            selected: selected
         },
         success: function(response){
             response = JSON.parse(response);
             console.log(response);
             if(response.success == true){
                 console.log('Hello type three');
+                document.location = 'license_all.php';
             }else{
                 console.log('So sad type three');
             }
+            // console.log(selected);
         }
     });
 });

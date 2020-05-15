@@ -165,16 +165,16 @@
             <div class="row mx-auto">
                 <div id="materialopen2" class="col px-md-5">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline12" name="customRadioInline1"
+                        <input type="radio" id="material_close" value="ปิดผนึก" name="material_selected"
                             class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline12">วัสดุชนิดปิดผนึก</label>
+                        <label class="custom-control-label" for="material_close">วัสดุชนิดปิดผนึก</label>
                     </div>
                 </div>
                 <div id="materialclose2" class="col px-md-5">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline13" name="customRadioInline1"
+                        <input type="radio" id="material_open" value="ไม่ปิดผนึก" name="material_selected"
                             class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline13">วัสดุชนิดไม่ปิดผนึก</label>
+                        <label class="custom-control-label" for="material_open">วัสดุชนิดไม่ปิดผนึก</label>
                     </div>
                 </div>
             </div>
@@ -353,9 +353,9 @@
                             placeholder="ระบุชื่อผู้ผลิตวัสดุกัมมันตรังสี">
                     </div>
                     <div class="form-group col-md">
-                        <label for="open_number_two">หมายเลข:</label>
-                        <input type="text" class="form-control" id="open_number_two"
-                            placeholder="ระบุหมายเลขหรือรหัสภาชนะบรรจุ">
+                        <label for="open_number_two">กัมมันตภาพสูงสุดหรือรังสี:</label>
+                        <input type="text" class="form-control" id="open_weight_material"
+                            placeholder="ระบุกัมมันตภาพสูงสุดหรือรังสี">
                     </div>
                     <div class="form-group col-1">
                         <label for="open_unit_weight_two">หน่วย:</label>
@@ -960,6 +960,7 @@
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                            <p id="show_type_material" style="color:Gray;"></p>
                             <p id="show_detail_material" style="color:Gray;"></p>
                             <p id="show_benefit_material" style="color:Gray;"></p>
                             <p id="show_vehicle_material" style="color:Gray;"></p>
@@ -1096,9 +1097,8 @@ $(document).ready(function() {
         document.getElementById("show_location_name").innerHTML = materialtwo_address + " ต." +
             materialtwo_district + " อ." + materialtwo_amphoe + " จ." + materialtwo_province + " " +
             materialtwo_zipcode;
-        document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานที่ติดตั้งหรือใช้งาน: " +
-            material_two;
 
+        var select_button_close = document.getElementById('material_selected');
         var type_request = document.getElementById("type_request").value;
         var materialtwo_benefit = document.getElementById("location_materialtwo_benefit").value;
         var materialtwo_vehicle = document.getElementById("location_materialtwo_vehicle").value;
@@ -1107,16 +1107,51 @@ $(document).ready(function() {
         var element_two = document.getElementById("element_two").value;
         var product_model_two = document.getElementById("product_model_two").value;
         var material_status_two = document.getElementById("material_status_two").value;
-        document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " + type_request;
-        document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
-            materialtwo_benefit;
-        document.getElementById("show_vehicle_material").innerHTML = "พาหนะสำหรับการขนส่ง: " +
-            materialtwo_vehicle;
-        document.getElementById("show_detail_of_material").innerHTML = "ทะเบียนอ้างอิง: " +
-            no_reference_two + " รหัสการใช้งาน: " + operation_type_two + " ธาตุ-เลขมวล: " +
-            element_two + " รุ่นหรือรหัสสินค้า: " + product_model_two;
-        document.getElementById("show_status_material").innerHTML = "สภานภาพวัสดุ: " +
-            material_status_two;
+
+        var select_button_open = document.getElementById('material_selected');
+        var open_locationname_material_two = document.getElementById('open_locationname_material_two')
+            .value;
+        var open_no_reference_two = document.getElementById('open_no_reference_two').value;
+        var open_operation_type_two = document.getElementById('open_operation_type_two').value;
+        var open_element_two = document.getElementById('open_element_two').value;
+        var open_product_model_two = document.getElementById('open_product_model_two').value;
+        var open_material_status_two = document.getElementById('open_material_status_two').value;
+
+        if (document.getElementById('material_close').checked) {
+            select_button_close = document.getElementById('material_close').value;
+            document.getElementById("show_worklocation_name").innerHTML =
+                "ชื่อสถานที่ติดตั้งหรือใช้งาน: " + material_two;
+            document.getElementById("show_type_material").innerHTML = "วัสดุชนิด: " +
+                select_button_close;
+            document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
+                type_request;
+            document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+                materialtwo_benefit;
+            document.getElementById("show_vehicle_material").innerHTML = "พาหนะสำหรับการขนส่ง: " +
+                materialtwo_vehicle;
+            document.getElementById("show_detail_of_material").innerHTML = "ทะเบียนอ้างอิง: " +
+                no_reference_two + " รหัสการใช้งาน: " + operation_type_two + " ธาตุ-เลขมวล: " +
+                element_two + " รุ่นหรือรหัสสินค้า: " + product_model_two;
+            document.getElementById("show_status_material").innerHTML = "สภานภาพวัสดุ: " +
+                material_status_two;
+        } else if (document.getElementById('material_open').checked) {
+            select_button_open = document.getElementById('material_open').value;
+            document.getElementById("show_worklocation_name").innerHTML =
+                "ชื่อสถานที่ติดตั้งหรือใช้งาน: " + open_locationname_material_two;
+            document.getElementById("show_type_material").innerHTML = "วัสดุชนิด: " +
+                select_button_open;
+            document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
+                type_request;
+            document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+                materialtwo_benefit;
+            document.getElementById("show_vehicle_material").innerHTML = "พาหนะสำหรับการขนส่ง: " +
+                materialtwo_vehicle;
+            document.getElementById("show_detail_of_material").innerHTML = "ทะเบียนอ้างอิง: " +
+                open_no_reference_two + " รหัสการใช้งาน: " + open_operation_type_two +
+                " ธาตุ-เลขมวล: " + open_element_two + " รุ่นหรือรหัสสินค้า: " + open_product_model_two;
+            document.getElementById("show_status_material").innerHTML = "สถานภาพวัสดุ: " +
+                open_material_status_two;
+        }
 
         var sale_name = document.getElementById("sale_name").value;
         var sale_lname = document.getElementById("sale_lname").value;

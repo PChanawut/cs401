@@ -141,6 +141,7 @@ $("#request").submit(function(e){
             console.log(response);
             if(response.success == true){
                 console.log('Hello type four');
+                document.location = 'license_all.php';
             }else{
                 console.log('So sad type four');
             }

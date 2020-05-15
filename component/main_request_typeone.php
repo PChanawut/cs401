@@ -103,14 +103,14 @@
         <div class="row mx-auto">
             <div id="materialopen1" class="col px-md-5">
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="material_close" value="close" name="material_selected"
+                    <input type="radio" id="material_close" value="ปิดผนึก" name="material_selected"
                         class="custom-control-input">
                     <label class="custom-control-label" for="material_close">วัสดุชนิดปิดผนึก</label>
                 </div>
             </div>
             <div id="materialclose1" class="col px-md-5">
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="material_open" value="open" name="material_selected"
+                    <input type="radio" id="material_open" value="ไม่ปิดผนึก" name="material_selected"
                         class="custom-control-input">
                     <label class="custom-control-label" for="material_open">วัสดุชนิดไม่ปิดผนึก</label>
                 </div>
@@ -1130,6 +1130,7 @@
                         <hr>
                         <div class="row-ml-3">
                             <h6>รายละเอียดวัสดุที่ขออนุญาต:</h6>
+                            <p id="show_type_material" style="color:Gray;"></p>
                             <p id="show_detail_material" style="color:Gray;"></p>
                             <p id="show_benefit_material" style="color:Gray;"></p>
                             <p id="show_detail_of_material" style="color:Gray;"></p>
@@ -1290,9 +1291,8 @@ $(document).ready(function() {
         document.getElementById("show_location_name").innerHTML = materialone_address + " ต." +
             materialone_district + " อ." + materialone_amphoe + " จ." + materialone_province + " " +
             materialone_zipcode;
-        document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานที่ติดตั้งหรือใช้งาน: " +
-            location_material;
 
+        var select_button_close = document.getElementById('material_selected');
         var materialone_request = document.getElementById("location_materialone_request").value;
         var materialone_benefit = document.getElementById("location_materialone_benefit").value;
         var no_reference = document.getElementById("no_reference").value;
@@ -1300,14 +1300,47 @@ $(document).ready(function() {
         var element = document.getElementById("element").value;
         var product_model = document.getElementById("product_model").value;
         var material_status = document.getElementById("material_status").value;
-        document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
-            materialone_request;
-        document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
-            materialone_benefit;
-        document.getElementById("show_detail_of_material").innerHTML = "ทะเบียนอ้างอิง: " +
-            no_reference + " รหัสการใช้งาน: " + operation_type + " ธาตุ-เลขมวล: " + element +
-            " รุ่นหรือรหัสสินค้า: " + product_model;
-        document.getElementById("show_status_material").innerHTML = "สถานภาพวัสดุ: " + material_status;
+
+        var select_button_open = document.getElementById('material_selected');
+        var open_locationname_material = document.getElementById("open_locationname_material").value;
+        var open_no_reference = document.getElementById("open_no_reference").value;
+        var open_operation_type = document.getElementById("open_operation_type").value;
+        var open_element = document.getElementById("open_element").value;
+        var open_product_model = document.getElementById("open_product_model").value;
+        var open_material_status = document.getElementById("open_material_status").value;
+
+        if (document.getElementById('material_close').checked) {
+            select_button_close = document.getElementById('material_close').value;
+            document.getElementById("show_worklocation_name").innerHTML =
+                "ชื่อสถานที่ติดตั้งหรือใช้งาน: " + location_material;
+            document.getElementById("show_type_material").innerHTML = "วัสดุชนิด: " +
+                select_button_close;
+            document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
+                materialone_request;
+            document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+                materialone_benefit;
+            document.getElementById("show_detail_of_material").innerHTML = "ทะเบียนอ้างอิง: " +
+                no_reference + " รหัสการใช้งาน: " + operation_type + " ธาตุ-เลขมวล: " + element +
+                " รุ่นหรือรหัสสินค้า: " + product_model;
+            document.getElementById("show_status_material").innerHTML = "สถานภาพวัสดุ: " +
+                material_status;
+        } else if (document.getElementById('material_open').checked) {
+            select_button_open = document.getElementById('material_open').value;
+            document.getElementById("show_worklocation_name").innerHTML =
+                "ชื่อสถานที่ติดตั้งหรือใช้งาน: " + open_locationname_material;
+            document.getElementById("show_type_material").innerHTML = "วัสดุชนิด: " +
+                select_button_open;
+            document.getElementById("show_detail_material").innerHTML = "ขออนุญาตเพื่อ: " +
+                materialone_request;
+            document.getElementById("show_benefit_material").innerHTML = "ประเภทการใช้ประโยชน์: " +
+                materialone_benefit;
+            document.getElementById("show_detail_of_material").innerHTML = "ทะเบียนอ้างอิง: " +
+                open_no_reference + " รหัสการใช้งาน: " + open_operation_type + " ธาตุ-เลขมวล: " +
+                open_element +
+                " รุ่นหรือรหัสสินค้า: " + open_product_model;
+            document.getElementById("show_status_material").innerHTML = "สถานภาพวัสดุ: " +
+                open_material_status;
+        }
 
         var safe_name = document.getElementById("safe_name").value;
         var safe_lname = document.getElementById("safe_lname").value;

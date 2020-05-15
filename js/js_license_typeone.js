@@ -7,6 +7,8 @@ $("#request").submit(function(e){
     let location_materialone_benefit = $("#location_materialone_benefit").val()
     let location_materialone_request = $("#location_materialone_request").val()
 
+    var selected = $("input[name='material_selected']:checked").val()
+
     // step two
     let no_reference = $("#no_reference").val()
     let operation_type = $("#operation_type").val()
@@ -140,16 +142,19 @@ $("#request").submit(function(e){
             doctor_address: doctor_address,
             doctor_hospital_name: doctor_hospital_name,
             doctor_artlicense: doctor_artlicense,
-            doctor_date_start: doctor_date_start
+            doctor_date_start: doctor_date_start,
+            selected: selected
         },
         success: function(response){
             response = JSON.parse(response);
             console.log(response);
             if(response.success == true){
                 console.log('Hello type one');
+                // document.location = 'license_all.php';
             }else{
                 console.log('So sad type one');
             }
+            console.log(selected);
         }
     });
 });
