@@ -63,13 +63,7 @@ $("#person_register").submit(function(e) {
     let person_username = $("#person_username").val()
     let person_password = $("#person_password").val()
 
-    let type;
-    if($("#type-person").prop("checked") == true){
-        type = 'personality'
-    }else{
-        type = 'company'
-    }
-     
+    let category  = 'personality'
     e.preventDefault();
     $.ajax({
         type: 'POST',
@@ -98,7 +92,7 @@ $("#person_register").submit(function(e) {
             person_username: person_username,
             person_password: person_password,
 
-            type: type
+            category: category
         },
         success: function(response) {
             response = JSON.parse(response);
@@ -133,13 +127,7 @@ $("#company_register").submit(function(e) {
 
     let company_username = $("#company_username").val()
     let company_password = $("#company_password").val()
-
-    let type;
-    if($("#type-person").prop("checked") == true){
-        type = 'personality'
-    }else{
-        type = 'company'
-    }
+    let category  = 'company'
     e.preventDefault();
     $.ajax({
         type: 'POST',
@@ -168,7 +156,7 @@ $("#company_register").submit(function(e) {
             person_username: company_username,
             person_password: company_password,
 
-            type: type
+            category: category
         },
         success: function(response) {
             console.log(response)
@@ -176,7 +164,6 @@ $("#company_register").submit(function(e) {
             if(response.success){
                 location.href="./"
             }else{
-                // error
             }
         }
     });
@@ -228,5 +215,61 @@ $("#check-address-storage").click(function(){
         // $("#person_storage_amphoe").removeAttr("disabled");
         // $("#person_storage_province").removeAttr("disabled");
         // $("#person_storage_zipcode").removeAttr("disabled");
+    }
+})
+
+//company check same storage
+$('#check-address-storage-company').click(function(){
+    if($(this).prop("checked") == true){
+        $("#company_storage_address").val($("#company_address").val())
+        $("#company_storage_district").val($("#company_district").val())
+        $("#company_storage_amphoe").val($("#company_amphoe").val())
+        $("#company_storage_province").val($("#company_province").val())
+        $("#company_storage_zipcode").val($("#company_zipcode").val())
+
+        $("#company_storage_address").prop('disabled', true)
+        $("#company_storage_district").prop('disabled', true)
+        $("#company_storage_amphoe").prop('disabled', true)
+        $("#company_storage_province").prop('disabled', true)
+        $("#company_storage_zipcode").prop('disabled', true)
+    }else{
+        $("#company_storage_address").val("")
+        $("#company_storage_district").val("")
+        $("#company_storage_amphoe").val("")
+        $("#company_storage_province").val("")
+        $("#company_storage_zipcode").val("")
+        $("#company_storage_address").prop('disabled', false)
+        $("#company_storage_district").prop('disabled', false)
+        $("#company_storage_amphoe").prop('disabled', false)
+        $("#company_storage_province").prop('disabled', false)
+        $("#company_storage_zipcode").prop('disabled', false)
+    }
+})
+
+//person check same storage
+$('#check-address-storage-person').click(function(){
+    if($(this).prop("checked") == true){
+        $("#person_storage_address").val($("#person_address").val())
+        $("#person_storage_district").val($("#person_district").val())
+        $("#person_storage_amphoe").val($("#person_amphoe").val())
+        $("#person_storage_province").val($("#person_province").val())
+        $("#person_storage_zipcode").val($("#person_zipcode").val())
+
+        $("#person_storage_address").prop('disabled', true)
+        $("#person_storage_district").prop('disabled', true)
+        $("#person_storage_amphoe").prop('disabled', true)
+        $("#person_storage_province").prop('disabled', true)
+        $("#person_storage_zipcode").prop('disabled', true)
+    }else{
+        $("#person_storage_address").val("")
+        $("#person_storage_district").val("")
+        $("#person_storage_amphoe").val("")
+        $("#person_storage_province").val("")
+        $("#person_storage_zipcode").val("")
+        $("#person_storage_address").prop('disabled', false)
+        $("#person_storage_district").prop('disabled', false)
+        $("#person_storage_amphoe").prop('disabled', false)
+        $("#person_storage_province").prop('disabled', false)
+        $("#person_storage_zipcode").prop('disabled', false)
     }
 })

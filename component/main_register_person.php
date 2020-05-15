@@ -84,8 +84,8 @@
         <h5>ข้อมูลที่อยู่สถานที่เก็บวัสดุขอรับใบอนุญาต</h5>
     </div>
     <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="check-address-storage">
-        <label class="form-check-label mb-3" for="check-address-storage">ใช้สถานที่เก็บเดียวกับที่อยู่</label>
+        <input type="checkbox" class="form-check-input" id="check-address-storage-person">
+        <label class="form-check-label mb-3" for="check-address-storage-person">ใช้สถานที่เก็บเดียวกับที่อยู่</label>
     </div>
     <div class="form-row">
         <div class="form-group col">
@@ -128,13 +128,13 @@
             <div class="form-group row justify-content-md-center">
                 <label for="person_password" class="col-sm-2 col-form-label">รหัสผ่าน:</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="person_password">
+                    <input type="password" class="form-control" id="person_password">
                 </div>
             </div>
             <div class="form-group row justify-content-md-center">
                 <label for="person_repassword" class="col-sm-2 col-form-label">ยืนยันรหัสผ่าน:</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="person_repassword">
+                    <input type="password" class="form-control" id="person_repassword">
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@
     </div>
     <div class="form-row">
         <div class="form-group col">
-            <label for="company_date_enroll">วันเดือนปีเกิด:</label>
+            <label for="company_date_enroll">วันจดใบอนุญาต:</label>
             <input type="date" aria-describedby="dateHelp" id="company_date_enroll" class="form-control">
             <small id="dateHelp" class="form-text text-danger">*ใส่ปีเป็น คศ.</small>
         </div>
