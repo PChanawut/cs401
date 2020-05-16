@@ -83,7 +83,7 @@
 				<div class="dropdown-menu" style="right: 0;
 				left: auto;" aria-labelledby="profileDropdown">
 				<a class="dropdown-item" href="#">ข้อมูลส่วนตัว</a>
-				<?php if($_SESSION['permission'][4] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany")){ ?>  
+				<?php if($_SESSION['permission'][4] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany" || $_SESSION["type"] == "personality" || $_SESSION["type"] == "userpersonality")){ ?>  
 					<a class="dropdown-item" href="adduser">เพิ่มสมาชิก</a>
 				<?php } ?>
 				<?php if($_SESSION['type'] == "admin"){ ?>  

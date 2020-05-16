@@ -14,8 +14,10 @@
                 $lastname = $_POST['lastname'];
                 $status = $_POST['status'];
                 $permission = $_POST['permission'];
-                if($_SESSION['type'] == 'company'){
+                if($_SESSION['type'] == 'company' || $_SESSION['type'] == 'usercompany'){
                     $type = 'usercompany';
+                }else if($_SESSION['type'] == 'personality' || $_SESSION['type'] == 'userpersonality'){
+                    $type = 'userpersonality';
                 }
                 $company_id = $_SESSION["company_id"];
                 $name = $firstname." ".$lastname;
