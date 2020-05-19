@@ -114,7 +114,7 @@ $("#request").submit(function(e){
             console.log(response);
             if(response.success == true){
                 console.log('Hello type seven');
-                document.location = 'license_all.php';
+                document.location = 'license_last_request.php';
             }else{
                 console.log('So sad type seven');
             }

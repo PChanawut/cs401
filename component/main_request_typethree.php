@@ -1056,7 +1056,12 @@
                     <div class="modal-body">
                         <div class="row-ml-3">
                             <h6>ชื่อผู้ขอใบอนุญาต:</h6>
-                            <p style="color:Gray;">รออัพเดต</p>
+                            <p id="show_person_request" style="color:Gray;">
+                                <?php
+                                    $usercompany_name = $_SESSION["name"];
+                                    echo ($usercompany_name);
+                                ?>
+                            </p>
                         </div>
                         <hr>
                         <div class="row-ml-3">
