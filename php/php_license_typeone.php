@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $response = array();
 
     if(isset($_POST['material_location']) && isset($_POST['location_materialone_phone']) && isset($_POST['location_materialone_email']) && isset($_POST['location_materialone_benefit']) && isset($_POST['location_materialone_request']) && isset($_POST['no_reference']) && isset($_POST['operation_type']) && isset($_POST['element'])
@@ -82,75 +84,72 @@
         $doctor_artlicense = $_POST['doctor_artlicense'];
         $doctor_date_start = $_POST['doctor_date_start'];
 
-        $sql =  "INSERT INTO materiallocation(material_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
-                VALUES(NULL,'$material_location','$location_materialone_phone','$location_materialone_email','$location_materialone_benefit','$location_materialone_request','NULL','NULL')";
+        $company_id = $_SESSION["company_id"];
+        $user_request = $_SESSION["user_id"];
 
-        $query = mysqli_query($conn,$sql);
-        if($query){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        $check = array();
+        mysqli_autocommit($conn, FALSE);
+
+        $sql1 = "INSERT INTO license(license_id,type_license,request_number,license_number,company_id,license_applicant,license_approve_person,license_status,start_license,end_license)
+                VALUES(NULL,'1','RE','NULL','$company_id','$user_request','NULL','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql1)){
+            array_push($check,"error");
+        }
+
+        $license_id = mysqli_insert_id($conn);
+        $sql =  "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
+                VALUES(NULL,'$license_id','$material_location','$location_materialone_phone','$location_materialone_email','$location_materialone_benefit','$location_materialone_request','NULL','NULL')";
+        if(!mysqli_query($conn,$sql)){
+            array_push($check,"error");
         }
 
         if($selected == "ปิดผนึก"){
-            $sql2 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
-                    VALUES(NULL,'ปิดผนึก','$no_reference','$operation_type','$element','$product_model','$material_status','$manufacturer_material','$material_number','$weight_material','$unit_weight','$manufacturer_container','$material_number_container','$container_number','$weight_container','$unit_container','$locationname_material','$company_sale')";
-    
-            $query2 = mysqli_query($conn,$sql2);
-            if($query2){
-                $response['success'] = true;
-            }else{
-                $response['success'] = false;
+            $sql2 = "INSERT INTO materialrequest(material_request_id,license_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
+                    VALUES(NULL,'$license_id','ปิดผนึก','$no_reference','$operation_type','$element','$product_model','$material_status','$manufacturer_material','$material_number','$weight_material','$unit_weight','$manufacturer_container','$material_number_container','$container_number','$weight_container','$unit_container','$locationname_material','$company_sale')";
+            if(!mysqli_query($conn,$sql2)){
+                array_push($check,"error");
             }
         }
 
 
         if($selected == "ไม่ปิดผนึก"){
-            $sql3 = "INSERT INTO materialrequest(material_request_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
-                    VALUES(NULL,'ไม่ปิดผนึก','$open_no_reference','$open_operation_type','$open_element','$open_product_model','$open_material_status','$open_manufacturer_material','NULL','$open_weight_material','$open_unit_weight','$open_physical_properties','NULL','NULL','NULL','NULL','$open_locationname_material','$open_company_sale')";
-    
-            $query3 = mysqli_query($conn,$sql3);
-            if($query3){
-                $response['success'] = true;
-            }else{
-                $response['success'] = false;
+            $sql3 = "INSERT INTO materialrequest(material_request_id,license_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
+                    VALUES(NULL,'$license_id','ไม่ปิดผนึก','$open_no_reference','$open_operation_type','$open_element','$open_product_model','$open_material_status','$open_manufacturer_material','NULL','$open_weight_material','$open_unit_weight','$open_physical_properties','NULL','NULL','NULL','NULL','$open_locationname_material','$open_company_sale')";
+            if(!mysqli_query($conn,$sql3)){
+                array_push($check,"error");
             }
         }
 
 
-        $sql4 = "INSERT INTO companystaff(staff_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
-                VALUES(NULL,'เจ้าหน้าที่ความปลอดภัยทางรังสี','$safe_name','$safe_idcard','$safe_position','$safe_age','$safe_nationality','$safe_phone','$safe_email','$safe_address','$safe_qualification','$safe_number','NULL','NULL','NULL')";
-
-        $query4 = mysqli_query($conn,$sql4);
-        if($query4){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        $sql4 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
+                VALUES(NULL,'$license_id','เจ้าหน้าที่ความปลอดภัยทางรังสี','$safe_name','$safe_idcard','$safe_position','$safe_age','$safe_nationality','$safe_phone','$safe_email','$safe_address','$safe_qualification','$safe_number','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql4)){
+            array_push($check,"error");
         }
 
-        $sql5 = "INSERT INTO companystaff(staff_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
-                VALUES(NULL,'ผู้ปฏิบัติงานทางรังสี','$make_name','$make_idcard','$make_position','$make_age','$make_nationality','$make_phone','$make_email','$make_address','$make_qualification','$make_number','NULL','NULL','NULL')";
-
-        $query5 = mysqli_query($conn,$sql5);
-        if($query5){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        $sql5 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
+                VALUES(NULL,'$license_id','ผู้ปฏิบัติงานทางรังสี','$make_name','$make_idcard','$make_position','$make_age','$make_nationality','$make_phone','$make_email','$make_address','$make_qualification','$make_number','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql5)){
+            array_push($check,"error");
         }
 
-        $sql6 = "INSERT INTO companystaff(staff_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
-                VALUES(NULL,'แพทย์ผู้รับผิดชอบ','$doctor_name','$doctor_idcard','$doctor_position','$doctor_age','$doctor_nationality','$doctor_phone','$doctor_email','$doctor_address','NULL','NULL','$doctor_hospital_name','$doctor_artlicense','$doctor_date_start')";
-
-        $query6 = mysqli_query($conn,$sql6);
-        if($query5){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        $sql6 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
+                VALUES(NULL,'$license_id','แพทย์ผู้รับผิดชอบ','$doctor_name','$doctor_idcard','$doctor_position','$doctor_age','$doctor_nationality','$doctor_phone','$doctor_email','$doctor_address','NULL','NULL','$doctor_hospital_name','$doctor_artlicense','$doctor_date_start')";
+        if(!mysqli_query($conn,$sql6)){
+            array_push($check,"error");
         }
 
-        mysqli_close($conn);
-    }else{
-        $response['not if'] = false;
+        if(!empty($check)){
+            mysqli_rollback($conn);
+            $response['success'] = false;
+            echo json_encode($response);
+            mysqli_close($conn);
+            exit();
+        }
+        $response['success'] = true;
+        mysqli_commit($conn);
     }
+    $response['success'] = true;
     echo json_encode($response);
+    mysqli_close($conn);
 ?>

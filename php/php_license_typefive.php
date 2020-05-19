@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $response = array();
 
     if(isset($_POST['location_materialfive_request']) && isset($_POST['material_location']) && isset($_POST['location_materialfive_phone'])
@@ -17,29 +19,42 @@
         $name_produce_equipment_five = $_POST['name_produce_equipment_five'];
         $country_produce_equipment_five = $_POST['country_produce_equipment_five'];
 
-        $sql = "INSERT INTO materiallocation(material_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
-                VALUES(NULL,'$material_location','$location_materialfive_phone','$location_materialfive_email','NULL','$location_materialfive_request','NULL','NULL')";
-        
-        $query = mysqli_query($conn,$sql);
-        if($query){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        $company_id = $_SESSION["company_id"];
+        $user_request = $_SESSION["user_id"];
+
+        $check = array();
+        mysqli_autocommit($conn, FALSE);
+
+        $sql1 = "INSERT INTO license(license_id,type_license,request_number,license_number,company_id,license_applicant,license_approve_person,license_status,start_license,end_license)
+                VALUES(NULL,'5','RE','NULL','$company_id','$user_request','NULL','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql1)){
+            array_push($check,"error");
         }
 
-        $sql2 = "INSERT INTO materialspecial(material_id,type_atomic,power_heat,type_atomic_reactor,producename_atomic,country_produce_atomic)
-                VALUES(NULL,'$type_equipment_five','$make_heat_five','$type_five','$name_produce_equipment_five','$country_produce_equipment_five')";
-        
-        $query2 = mysqli_query($conn,$sql2);
-        if($query2){
-            $response['success'] = true;
-        }else{
-            $response['success'] = false;
+        $license_id = mysqli_insert_id($conn);
+        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
+                VALUES(NULL,'$license_id','$material_location','$location_materialfive_phone','$location_materialfive_email','NULL','$location_materialfive_request','NULL','NULL')";
+        if(!mysqli_query($conn,$sql)){
+            array_push($check,"error");
         }
 
-        mysqli_close($conn);
-    }else{
-        $response['not if 555555'] = false;
+        $sql2 = "INSERT INTO materialspecial(material_id,license_id,type_atomic,power_heat,type_atomic_reactor,producename_atomic,country_produce_atomic)
+                VALUES(NULL,'$license_id','$type_equipment_five','$make_heat_five','$type_five','$name_produce_equipment_five','$country_produce_equipment_five')";
+        if(!mysqli_query($conn,$sql2)){
+            array_push($check,"error");
+        }
+
+        if(!empty($check)){
+            mysqli_rollback($conn);
+            $response['success'] = false;
+            echo json_encode($response);
+            mysqli_close($conn);
+            exit();
+        }
+        $response['success'] = true;
+        mysqli_commit($conn);
     }
+    $response['success'] = true;
     echo json_encode($response);
+    mysqli_close($conn);
 ?>
