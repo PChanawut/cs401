@@ -95,7 +95,7 @@
         mysqli_autocommit($conn, FALSE);
 
         $sql1 = "INSERT INTO license(license_id,type_license,request_number,license_number,company_id,license_applicant,license_approve_person,license_status,start_license,end_license)
-                VALUES(NULL,'3','RE','NULL','$company_id','$user_request','NULL','NULL','NULL','NULL')";
+                VALUES(NULL,'3','RE','NULL','$company_id','$user_request','NULL','NULL',CURRENT_TIMESTAMP,'NULL')";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }

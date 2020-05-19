@@ -26,23 +26,23 @@
         mysqli_autocommit($conn, FALSE);
 
         $sql1 = "INSERT INTO license(license_id,type_license,request_number,license_number,company_id,license_applicant,license_approve_person,license_status,start_license,end_license)
-                VALUES(NULL,'5','RE','NULL','$company_id','$user_request','NULL','NULL','NULL','NULL')";
+                VALUES(NULL,'5','RE','NULL','$company_id','$user_request','NULL','NULL',CURRENT_TIMESTAMP,'NULL')";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
 
-        $license_id = mysqli_insert_id($conn);
-        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
-                VALUES(NULL,'$license_id','$material_location','$location_materialfive_phone','$location_materialfive_email','NULL','$location_materialfive_request','NULL','NULL')";
-        if(!mysqli_query($conn,$sql)){
-            array_push($check,"error");
-        }
+        // $license_id = mysqli_insert_id($conn);
+        // $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
+        //         VALUES(NULL,'$license_id','$material_location','$location_materialfive_phone','$location_materialfive_email','NULL','$location_materialfive_request','NULL','NULL')";
+        // if(!mysqli_query($conn,$sql)){
+        //     array_push($check,"error");
+        // }
 
-        $sql2 = "INSERT INTO materialspecial(material_id,license_id,type_atomic,power_heat,type_atomic_reactor,producename_atomic,country_produce_atomic)
-                VALUES(NULL,'$license_id','$type_equipment_five','$make_heat_five','$type_five','$name_produce_equipment_five','$country_produce_equipment_five')";
-        if(!mysqli_query($conn,$sql2)){
-            array_push($check,"error");
-        }
+        // $sql2 = "INSERT INTO materialspecial(material_id,license_id,type_atomic,power_heat,type_atomic_reactor,producename_atomic,country_produce_atomic)
+        //         VALUES(NULL,'$license_id','$type_equipment_five','$make_heat_five','$type_five','$name_produce_equipment_five','$country_produce_equipment_five')";
+        // if(!mysqli_query($conn,$sql2)){
+        //     array_push($check,"error");
+        // }
 
         if(!empty($check)){
             mysqli_rollback($conn);
