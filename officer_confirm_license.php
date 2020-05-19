@@ -16,7 +16,7 @@
     <?php include 'component/header.php' ?>
 
     <!-- main -->
-    <?php include 'component/main_officer_confirm_register.php' ?>
+    <?php include 'component/main_officer_confirm_license.php' ?>
 
     <!-- footer -->
 
@@ -26,7 +26,7 @@
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="js/js_officer_confirm_register.js" crossorigin="anonymous"></script>
+    <!-- <script src="js/js_officer_confirm_register.js" crossorigin="anonymous"></script> -->
 </body>
 
 </html>

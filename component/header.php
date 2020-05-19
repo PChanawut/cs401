@@ -77,16 +77,48 @@
 			?>
             <!-- --------------------------------------------------------------------------------------------------------------------------- -->
 
-            <!-- officer_confirm_register -->
-            <?php
-				if($_SESSION["permission"][3] == 1 && ($_SESSION["type"] == "officer")){
-			?>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="officer_confirm_register">ยืนยันการสมัคร</a>
-            </li>
+            <!-- officer -->
+            <?php if(($_SESSION["type"] == "officer")){ ?>
+                <?php if($_SESSION["permission"][0] == 1){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="officer_confirm_register">ยืนยันการสมัคร</a>
+                    </li>
+                <?php } ?>
+                <?php if($_SESSION["permission"][1] == 1){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="officer_comfirm_license">อนุมัติใบอนุญาต</a>
+                    </li>
+                <?php } ?>    
+                <?php if($_SESSION["permission"][2] == 1){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="officer_comfirm_license">ยกเลิกใบอนุญาต</a>
+                    </li>
+                <?php } ?>    
+                <?php if($_SESSION["permission"][3] == 1){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="officer_comfirm_license">ดูใบอนุญาต</a>
+                    </li>
+                <?php } ?>    
             <?php
 				}
-			?>
+            ?>
+            
+            <!-- --------------------------------------------------------------------------------------------------------------------------- -->
+            <!-- subcommittee -->
+            <?php if(($_SESSION["type"] == "subcommittee")){ ?>
+                <?php if($_SESSION["permission"][0] == 1){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="committee_confirm_license">อนุมัติใบอนุญาต</a>
+                    </li>
+                <?php } ?>
+                <?php if($_SESSION["permission"][1] == 1){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="officer_confirm_license">ดูใบอนุญาต</a>
+                    </li>
+                <?php } ?>      
+            <?php
+				}
+            ?>
         </ul>
 
         <div class="dropdown">
