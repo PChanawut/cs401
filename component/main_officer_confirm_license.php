@@ -14,7 +14,7 @@
             <div class="float-right">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".model-adduser"><i
                         class="fa fa-plus-circle" style="font-size:20px;color:white" aria-hidden="true"
-                        data-toggle="modal" data-target=".model-adduser"></i> เพิ่มสมาชิก</button>
+                        data-toggle="modal" data-target=".model-adduser"></i>เพิ่มสมาชิก</button>
             </div>
         </div>
     </div>

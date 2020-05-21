@@ -15,59 +15,42 @@
         </div>
     </div>
     <hr>
-    <form id="form_confirm_register" method="post">
-        <fieldset disabled>
-            <input type="hidden" id="info_register_id">
-            <div class="alert alert-primary" role="alert">
-                <h5>ข้อมูลส่วนตัวของผู้ขออนุญาต</h5>
-            </div>
-            <div class="form-row">
-                <div class="form-group col">
-                    <label for="info_register_namelname">ชื่อ / นามสกุล:</label>
-                    <label class="form-control" id="info_register_namelname"></label>
-                </div>
-                <div class="form-group col-4">
-                    <label for="info_register_birthday">วันเดือนปีเกิด:</label>
-                    <label class="form-control" id="info_register_birthday"></label>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-4">
-                    <label for="info_register_citicenid">เลขบัตรประจำตัวประชาชน:</label>
-                    <label class="form-control" id="info_register_citicenid"></label>
-                </div>
-                <div class="form-group col-3">
-                    <label for="inputAddress">เบอร์โทรศัพท์:</label>
-                    <label class="form-control" id="info_register_phonenumber"></label>
-                </div>
-                <div class="form-group col-5">
-                    <label for="inputAddress">E-Mail:</label>
-                    <label class="form-control" id="info_register_email"></label>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col">
-                    <label for="inputAddress2">ที่อยู่ผู้ขออนุญาต:</label>
-                    <label class="form-control" id="info_register_address"></label>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col">
-                    <label for="inputAddress2">ที่อยู่สถานที่จัดเก็บ:</label>
-                    <label class="form-control" id="info_register_address_storage"></label>
-                </div>
-            </div>
-        </fieldset>
-        <div class="d-flex flex-row-reverse">
-            <button class="btn btn-primary">ยืนยันการสมัครสมาชิก</button>
-        </div>
-    </form>
-    <div hidden>
-        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-            <h5>ไม่พบข้อมูลผู้ขออนุญาต</h5>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    </div>
+    <table class="table" id="table-adduser">
+        <thead class="alert alert-primary">
+            <tr>
+                <th style="width:15%">ลำดับ</th>
+                <th style="width:20%">ประเภท</th>
+                <th style="width:30%">ชื่อ-นามสกุล / ชื่อบริษัท</th>
+                <th>สถานะบริษัท</th>
+                <th></th>
+            </tr>
+        </thead>
+        <?php
+            include('php/config/database.php');
+            $users = array();
+            $sql = "SELECT * FROM company WHERE company_status = 'wait'";  
+            $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
+            while ($user =  mysqli_fetch_assoc($user_query)){
+                $users[] = $user;
+            }
+                $i = 1;
+                if (is_array($users) || is_object($users)){
+                    foreach($users as $user){
+        ?>
+        <tbody class="index">
+            <th class="index" id="id-row" scope="row"></th>
+            <td><?php echo($user['company_type'] == 'company' ? 'นิติบุคคล' : 'บุคคลธรรมดา'); ?></td>
+            <td><?php echo $user['company_name']; ?></td>
+            <td>รอการอนุมัติ</td>
+            <td class="text-right">
+                <button type="submit" onclick="detailcompany(<?php echo $user['company_id']; ?>)" class="btn btn-warning ml-2">
+                        <i class="fa fa-calendar-check-o" style="font-size:20px;color:white"></i>
+                </button>
+            </td>
+        </tbody>
+        <?php
+                    }
+                }
+        ?>
+    </table>
 </div>
