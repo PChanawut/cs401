@@ -86,17 +86,17 @@
                 <?php } ?>
                 <?php if($_SESSION["permission"][1] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_comfirm_license">อนุมัติใบอนุญาต</a>
+                        <a class="nav-link text-light" href="officer_confirm_license">อนุมัติใบอนุญาต</a>
                     </li>
                 <?php } ?>    
                 <?php if($_SESSION["permission"][2] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_comfirm_license">ยกเลิกใบอนุญาต</a>
+                        <a class="nav-link text-light" href="officer_confirm_license">ยกเลิกใบอนุญาต</a>
                     </li>
                 <?php } ?>    
                 <?php if($_SESSION["permission"][3] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_comfirm_license">ดูใบอนุญาต</a>
+                        <a class="nav-link text-light" href="officer_confirm_license">ดูใบอนุญาต</a>
                     </li>
                 <?php } ?>    
             <?php

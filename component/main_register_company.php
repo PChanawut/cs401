@@ -9,17 +9,13 @@
             <label for="company_name">ชื่อบริษัท:</label>
             <input type="text" class="form-control" id="company_name">
         </div>
-        <div class="form-group col">
-            <label for="company_office_name">ชื่อสถานที่ทำการ(ที่สามารถติดต่อได้):</label>
-            <input type="text" class="form-control" id="company_office_name">
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col">
+        <div class="form-group col-3">
             <label for="company_date_enroll">วันจดใบอนุญาต:</label>
             <input type="date" aria-describedby="dateHelp" id="company_date_enroll" class="form-control">
             <small id="dateHelp" class="form-text text-danger">*ใส่ปีเป็น คศ.</small>
         </div>
+    </div>
+    <div class="form-row">
         <div class="form-group col">
             <label for="company_enrollno">เลขทะเบียนบริษัท:</label>
             <input type="text" class="form-control" id="company_enrollno">
@@ -65,39 +61,6 @@
         <div class="form-group col">
             <label for="company_zipcode">รหัสไปรษณีย์:</label>
             <input type="text" class="form-control" id="company_zipcode">
-        </div>
-    </div>
-    <br>
-    <!-- สถานที่เก็บ -->
-    <div class="alert alert-primary" role="alert">
-        <h5>ข้อมูลที่อยู่สถานที่เก็บวัสดุบริษัทขอรับใบอนุญาต</h5>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="check-address-storage-company">
-        <label class="form-check-label mb-3" for="check-address-storage-company">ใช้สถานที่เก็บเดียวกับที่อยู่</label>
-    </div>
-    <div class="form-row">
-        <div class="form-group col">
-            <label for="company_storage_address">รายละเอียดที่อยู่ (ห้องเลขที่, บ้านเลขที่, หมู่, ตึก, ถนน)</label>
-            <input type="text" class="form-control" id="company_storage_address">
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col">
-            <label for="company_storage_district">ตำบล:</label>
-            <input type="text" class="form-control" id="company_storage_district">
-        </div>
-        <div class="form-group col">
-            <label for="company_storage_amphoe">อำเภอ:</label>
-            <input type="text" class="form-control" id="company_storage_amphoe">
-        </div>
-        <div class="form-group col">
-            <label for="company_storage_province">จังหวัด:</label>
-            <input type="text" class="form-control" id="company_storage_province">
-        </div>
-        <div class="form-group col">
-            <label for="company_storage_zipcode">รหัสไปรษณีย์:</label>
-            <input type="text" class="form-control" id="company_storage_zipcode">
         </div>
     </div>
     <br>

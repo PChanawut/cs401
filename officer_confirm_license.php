@@ -9,6 +9,7 @@
             Header("Location: home");
         }
             ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
-    <!-- <script src="js/js_officer_confirm_register.js" crossorigin="anonymous"></script> -->
+    <script src="js/js_officer_confirm_license.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
