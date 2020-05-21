@@ -94,8 +94,8 @@
         $check = array();
         mysqli_autocommit($conn, FALSE);
 
-        $sql1 = "INSERT INTO license(license_id,type_license,request_number,license_number,company_id,license_applicant,license_approve_person,license_status,start_license,end_license)
-                VALUES(NULL,'3','RE','NULL','$company_id','$user_request','NULL','NULL',CURRENT_TIMESTAMP,'NULL')";
+        $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
+                VALUES(NULL,'ขออนุญาตฯ วัสดุนิวเคลียร์พิเศษ','RE','$company_id','$user_request','NULL','รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,'NULL','NULL','NULL')";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
@@ -108,7 +108,7 @@
         }
 
         if($selected == "วัสดุนิวเคลียร์พิเศษ"){
-            $sql2 = "INSERT INTO materialnuclear(material_id,license_id,license_id,type_special,nuclear_purpose,no_check,name_work,type_nuclear_special,nuclear_vehicle,no_location,number_batch,model_number,detail_material,type_material,weight_material,unit,weight_nuclear,code_isotope)
+            $sql2 = "INSERT INTO materialnuclear(material_id,license_id,type_special,nuclear_purpose,no_check,name_work,type_nuclear_special,nuclear_vehicle,no_location,number_batch,model_number,detail_material,type_material,weight_material,unit,weight_nuclear,code_isotope)
                     VALUES(NULL,'$license_id','วัสดุนิวเคลียร์พิเศษ','NULL','$material_area_three','$material_workname_three','$material_specialtype_three','NULL','$material_nolocation_three','$material_nobatch_three','$material_number_three','$material_detail_three','$material_type_three','$material_weight_three','$material_unit_three','$material_special_weight_three','$material_code_ozotope_three')";
             if(!mysqli_query($conn,$sql2)){
                 array_push($check,"error");

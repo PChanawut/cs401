@@ -60,8 +60,8 @@
         $check = array();
         mysqli_autocommit($conn, FALSE);
 
-        $sql1 = "INSERT INTO license(license_id,type_license,request_number,license_number,company_id,license_applicant,license_approve_person,license_status,start_license,end_license)
-                VALUES(NULL,'6','RE','NULL','$company_id','$user_request','NULL','NULL',CURRENT_TIMESTAMP,'NULL')";
+        $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
+                VALUES(NULL,'ทำให้วัสดุต้นกำลังพ้นสภาพฯ','RE','$company_id','$user_request','NULL','รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,'NULL','NULL','NULL')";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
