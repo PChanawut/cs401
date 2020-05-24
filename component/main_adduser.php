@@ -97,12 +97,13 @@
                 ?>
             </td>
             <td class="text-right">
-                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"
-                    class="btn btn-warning ml-2">
+                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)" class="btn btn-warning ml-2">
                     <i class="fa fa-edit" style="font-size:20px;color:white"></i>
                 </button>
-                <button type="submit" id="removeid" onclick="deleteUser(<?php echo $user['usercompany_id']; ?>,this)"
-                    class="btn btn-danger ml-2">
+                <!-- https://stackoverflow.com/questions/4885737/pass-a-php-array-to-a-javascript-function -->
+                <!-- https://stackoverflow.com/questions/16498286/why-does-the-php-json-encode-function-convert-utf-8-strings-to-hexadecimal-entit -->
+                <!-- Quentin https://quabr.com/60313504/trying-to-send-a-json-encoded-array-from-php-to-a-js-file-unexpected-end-of-in -->
+                <button type="submit" onclick="deleteUser(<?php echo htmlspecialchars(json_encode($user,JSON_UNESCAPED_UNICODE)); ?>);" class="btn btn-danger ml-2">
                     <i class="fa fa-trash" style="font-size:20px;color:white"></i>
                 </button>
             </td>

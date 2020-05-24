@@ -228,6 +228,30 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="model-confirm" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert alert-primary">
+                    <h5 class="modal-title">ยืนยันการลบสมาชิก</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="model-confirm-form">
+                    <div class="modal-body">
+                        <input type="hidden" id="model-confirm-id">
+                        <h6>ชื่อ / นามสกุล</h6>
+                        <h6 style="color: gray" id="model-confirm-name"></h6>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                        <button type="submit" class="btn btn-primary">ยืนยันการลบสมาชิก</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>

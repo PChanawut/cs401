@@ -101,12 +101,10 @@
                 ?>
             </td>
             <td class="text-right">
-                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"
-                    class="btn btn-warning ml-2">
+                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)" class="btn btn-warning ml-2">
                     <i class="fa fa-edit" style="font-size:20px;color:white"></i>
                 </button>
-                <button type="submit" id="removeid" onclick="deleteUser(<?php echo $user['usercompany_id']; ?>,this)"
-                    class="btn btn-danger ml-2">
+                <button type="submit" onclick="deleteUser(<?php echo htmlspecialchars(json_encode($user,JSON_UNESCAPED_UNICODE)); ?>)" class="btn btn-danger ml-2">
                     <i class="fa fa-trash" style="font-size:20px;color:white"></i>
                 </button>
             </td>

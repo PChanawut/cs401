@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
                             <button type="submit" class="btn btn-primary">เพิ่มสมาชิก</button>
                         </div>
                     </div>
@@ -151,7 +151,8 @@
                                             checked>ขอใบอนุญาต</label>
                                     </div>
                                     <div class="col custom-control custom-checkbox mr-2">
-                                        <input type="checkbox" class="custom-control-input" id="checkPermission-editrenew">
+                                        <input type="checkbox" class="custom-control-input"
+                                            id="checkPermission-editrenew">
                                         <label class="custom-control-label"
                                             for="checkPermission-editrenew">ต่อใบอนุญาต</label>
                                     </div>
@@ -164,15 +165,17 @@
                                             for="checkPermission-editdismiss">ยกเลิกใบอนุญาต</label>
                                     </div>
                                     <div class="col custom-control custom-checkbox mr-2">
-                                        <input type="checkbox" class="custom-control-input" id="checkPermission-editall">
-                                        <label class="custom-control-label" for="checkPermission-editall">ดูใบอนุญาต</label>
+                                        <input type="checkbox" class="custom-control-input"
+                                            id="checkPermission-editall">
+                                        <label class="custom-control-label"
+                                            for="checkPermission-editall">ดูใบอนุญาต</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <input type="hidden" id="model-edituser-id" value="">
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
                             <button type="submit" class="btn btn-primary">แก้ไขสมาชิก</button>
                         </div>
                     </div>
@@ -180,6 +183,31 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="model-confirm" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert alert-primary">
+                    <h5 class="modal-title">ยืนยันการลบสมาชิก</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="model-confirm-form">
+                    <div class="modal-body">
+                        <input type="hidden" id="model-confirm-id">
+                        <h6>ชื่อ / นามสกุล</h6>
+                        <h6 style="color: gray" id="model-confirm-name"></h6>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                        <button type="submit" class="btn btn-primary">ยืนยันการลบสมาชิก</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>

@@ -154,34 +154,41 @@ function editUser(usercompany_id,row_no){
     });
 }
 
-function deleteUser(row_userid,row_no){
-    $.ajax({
-    type: 'POST',
-    url: 'php/php_disableuser.php',
-    data: {
-        row_userid: row_userid
-    },
-    success: function(response) {
-        response = JSON.parse(response);
-        console.log(response)
-        if (response.success) {
-            var row = row_no.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-
-            // setIndex();
-            $("th.index").each(function(index) {
-                $(this).text(++index);
-            });
-            // setIdTbody();
-            $("tbody.index").each(function(index) {
-            $(this).attr("id",++index);
-        });
-        } else {
-            
-        }
-    }
-    });
+//delete model
+function deleteUser(userArray){
+    $('#model-confirm-id').val(userArray.usercompany_id)
+    $('#model-confirm-name').text(userArray.usercompany_name);
+    $('#model-confirm').modal('toggle')
+    
 }
+//delete ajax
+$('#model-confirm-form').submit(function(e){
+    let id = $('#model-confirm-id').val()
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_disableuser.php',
+        data: {
+            row_userid: id
+        },
+        success: function(response) {
+            response = JSON.parse(response);
+            if (response.success) {
+                // setIndex();
+                $("th.index").each(function(index) {
+                    $(this).text(++index);
+                });
+                // setIdTbody();
+                $("tbody.index").each(function(index) {
+                $(this).attr("id",++index);
+            });
+            } else {
+                
+            }
+        }
+    });
+})
+
+
 $( document ).ready(function() {
     $("#admin-subcommittee-check").hide();
     $("#admin-officer-check").show();
