@@ -314,42 +314,39 @@
                             <div class="form-row">
                                 <div class="form-group col-md-3">
                                     <label for="sale_name_four">ชื่อ:</label>
-                                    <input type="text" class="form-control" id="sale_name_four" placeholder="name">
+                                    <input type="text" class="form-control" id="sale_name_four">
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="sale_lname_four">นามสกุล:</label>
-                                    <input type="text" class="form-control" id="sale_lname_four" placeholder="lname">
+                                    <input type="text" class="form-control" id="sale_lname_four">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="sale_idcard_four">เลขประจำตัวประชาชน:</label>
-                                    <input type="text" class="form-control" id="sale_idcard_four" placeholder="idcard">
+                                    <input type="text" class="form-control" id="sale_idcard_four">
                                 </div>
                                 <div class="form-group col-2">
                                     <label for="sale_age_four">อายุ:</label>
-                                    <input type="text" class="form-control" id="sale_age_four" placeholder="age">
+                                    <input type="text" class="form-control" id="sale_age_four">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="sale_position_four">ตำแหน่ง:</label>
-                                    <input type="text" class="form-control" id="sale_position_four"
-                                        placeholder="position">
+                                    <input type="text" class="form-control" id="sale_position_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="sale_nationality_four">สัญชาติ:</label>
-                                    <input type="text" class="form-control" id="sale_nationality_four"
-                                        placeholder="nationality">
+                                    <input type="text" class="form-control" id="sale_nationality_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="sale_email_four">Email:</label>
-                                    <input type="text" class="form-control" id="sale_email_four" placeholder="Email">
+                                    <input type="text" class="form-control" id="sale_email_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <!-- Don't forget change type and id -->
                                     <label for="sale_phone_four">หมายเลขโทรศัพท์:</label>
-                                    <input type="text" class="form-control" id="sale_phone_four"
-                                        placeholder="phonenumber">
+                                    <input type="text" class="form-control" id="sale_phone_four">
                                 </div>
                             </div>
                             <!--  -->
@@ -361,29 +358,25 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="sale_work_name_four">ชื่อสถานที่ทำการ:</label>
-                                    <input type="text" class="form-control" id="sale_work_name_four"
-                                        placeholder="ชื่อสถานที่ทำการ">
+                                    <input type="text" class="form-control" id="sale_work_name_four">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="sale_work_houseno_four">บ้านเลขที่:</label>
-                                    <input type="text" class="form-control" id="sale_work_houseno_four"
-                                        placeholder="houseno">
+                                    <input type="text" class="form-control" id="sale_work_houseno_four">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="sale_work_villageno_four">หมู่:</label>
-                                    <input type="text" class="form-control" id="sale_work_villageno_four"
-                                        placeholder="villageno">
+                                    <input type="text" class="form-control" id="sale_work_villageno_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="sale_work_alley_four">ตรอก / ซอย:</label>
-                                    <input type="text" class="form-control" id="sale_work_alley_four"
-                                        placeholder="alley">
+                                    <input type="text" class="form-control" id="sale_work_alley_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="sale_work_road_four">ถนน:</label>
-                                    <input type="text" class="form-control" id="sale_work_road_four" placeholder="road">
+                                    <input type="text" class="form-control" id="sale_work_road_four">
                                 </div>
 
                             </div>
@@ -391,24 +384,20 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="sale_work_subdistrict_four">ตำบล / แขวง:</label>
-                                    <input type="text" class="form-control" id="sale_work_subdistrict_four"
-                                        placeholder="subdistrict">
+                                    <input type="text" class="form-control" id="sale_work_subdistrict_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="sale_work_district_four">อำเภอ:</label>
-                                    <input type="text" class="form-control" id="sale_work_district_four"
-                                        placeholder="district">
+                                    <input type="text" class="form-control" id="sale_work_district_four">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md">
                                         <label for="sale_work_province_four">จังหวัด:</label>
-                                        <input type="text" class="form-control" id="sale_work_province_four"
-                                            placeholder="จังหวัด">
+                                        <input type="text" class="form-control" id="sale_work_province_four">
                                     </div>
                                     <div class="form-group col-md">
                                         <label for="sale_work_zipcode_four">รหัสไปรษณีย์:</label>
-                                        <input type="text" class="form-control" id="sale_work_zipcode_four"
-                                            placeholder="รหัสไปรษณีย์">
+                                        <input type="text" class="form-control" id="sale_work_zipcode_four">
                                     </div>
                                 </div>
                             </div>
@@ -442,43 +431,39 @@
                             <div class="form-row">
                                 <div class="form-group col-md-3">
                                     <label for="handler_name_four">ชื่อ:</label>
-                                    <input type="text" class="form-control" id="handler_name_four" placeholder="name">
+                                    <input type="text" class="form-control" id="handler_name_four">
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="handler_lname_four">นามสกุล:</label>
-                                    <input type="text" class="form-control" id="handler_lname_four" placeholder="lname">
+                                    <input type="text" class="form-control" id="handler_lname_four">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="handler_idcard_four">เลขประจำตัวประชาชน:</label>
-                                    <input type="text" class="form-control" id="handler_idcard_four"
-                                        placeholder="idcard">
+                                    <input type="text" class="form-control" id="handler_idcard_four">
                                 </div>
                                 <div class="form-group col-2">
                                     <label for="handler_age_four">อายุ:</label>
-                                    <input type="text" class="form-control" id="handler_age_four" placeholder="age">
+                                    <input type="text" class="form-control" id="handler_age_four">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="handler_position_four">ตำแหน่ง:</label>
-                                    <input type="text" class="form-control" id="handler_position_four"
-                                        placeholder="position">
+                                    <input type="text" class="form-control" id="handler_position_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="handler_nationality_four">สัญชาติ:</label>
-                                    <input type="text" class="form-control" id="handler_nationality_four"
-                                        placeholder="nationality">
+                                    <input type="text" class="form-control" id="handler_nationality_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="handler_email_four">Email:</label>
-                                    <input type="text" class="form-control" id="handler_email_four" placeholder="Email">
+                                    <input type="text" class="form-control" id="handler_email_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <!-- Don't forget change type and id -->
                                     <label for="handler_phone_four">หมายเลขโทรศัพท์:</label>
-                                    <input type="text" class="form-control" id="handler_phone_four"
-                                        placeholder="phonenumber">
+                                    <input type="text" class="form-control" id="handler_phone_four">
                                 </div>
                             </div>
                             <!--  -->
@@ -491,30 +476,25 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="handler_work_name_four">ชื่อสถานที่ทำการ:</label>
-                                    <input type="text" class="form-control" id="handler_work_name_four"
-                                        placeholder="ชื่อสถานที่ทำการ">
+                                    <input type="text" class="form-control" id="handler_work_name_four">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="handler_work_houseno_four">บ้านเลขที่:</label>
-                                    <input type="text" class="form-control" id="handler_work_houseno_four"
-                                        placeholder="houseno">
+                                    <input type="text" class="form-control" id="handler_work_houseno_four">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="handler_work_villageno_four">หมู่:</label>
-                                    <input type="text" class="form-control" id="handler_work_villageno_four"
-                                        placeholder="villageno">
+                                    <input type="text" class="form-control" id="handler_work_villageno_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="handler_work_alley_four">ตรอก / ซอย:</label>
-                                    <input type="text" class="form-control" id="handler_work_alley_four"
-                                        placeholder="alley">
+                                    <input type="text" class="form-control" id="handler_work_alley_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="handler_work_road_four">ถนน:</label>
-                                    <input type="text" class="form-control" id="handler_work_road_four"
-                                        placeholder="road">
+                                    <input type="text" class="form-control" id="handler_work_road_four">
                                 </div>
 
                             </div>
@@ -522,24 +502,20 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="handler_work_subdistrict_four">ตำบล / แขวง:</label>
-                                    <input type="text" class="form-control" id="handler_work_subdistrict_four"
-                                        placeholder="subdistrict">
+                                    <input type="text" class="form-control" id="handler_work_subdistrict_four">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="handler_work_district_four">อำเภอ:</label>
-                                    <input type="text" class="form-control" id="handler_work_district_four"
-                                        placeholder="district">
+                                    <input type="text" class="form-control" id="handler_work_district_four">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md">
                                         <label for="handler_work_province_four">จังหวัด:</label>
-                                        <input type="text" class="form-control" id="handler_work_province_four"
-                                            placeholder="จังหวัด">
+                                        <input type="text" class="form-control" id="handler_work_province_four">
                                     </div>
                                     <div class="form-group col-md">
                                         <label for="handler_work_zipcode_four">รหัสไปรษณีย์:</label>
-                                        <input type="text" class="form-control" id="handler_work_zipcode_four"
-                                            placeholder="รหัสไปรษณีย์">
+                                        <input type="text" class="form-control" id="handler_work_zipcode_four">
                                     </div>
                                 </div>
                             </div>
@@ -573,8 +549,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="destination_work_name_four">ชื่อสถานที่ทำการ:</label>
-                                    <input type="text" class="form-control" id="destination_work_name_four"
-                                        placeholder="ชื่อสถานที่ทำการ">
+                                    <input type="text" class="form-control" id="destination_work_name_four">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -650,7 +625,7 @@
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="style_four">ลักษณะและขนาดของหีบห่อ:</label>
-                    <input type="text" class="form-control" id="style_four" placeholder="ชื่อสถานที่ทำการ">
+                    <input type="text" class="form-control" id="style_four">
                 </div>
             </div>
             <div class="form-row">
