@@ -5,7 +5,7 @@
 
     if(isset($_POST['location_materialfive_request']) && isset($_POST['material_location']) && isset($_POST['location_materialfive_phone'])
     && isset($_POST['location_materialfive_email']) && isset($_POST['type_equipment_five']) && isset($_POST['make_heat_five'])
-    && isset($_POST['type_five']) && isset($_POST['name_produce_equipment_five']) && isset($_POST['country_produce_equipment_five'])){
+    && isset($_POST['type_five']) && isset($_POST['name_produce_equipment_five']) && isset($_POST['country_produce_equipment_five']) && isset($_POST['selected_five'])){
 
         include('config/database.php');
         
@@ -18,6 +18,7 @@
         $type_five = $_POST['type_five'];
         $name_produce_equipment_five = $_POST['name_produce_equipment_five'];
         $country_produce_equipment_five = $_POST['country_produce_equipment_five'];
+        $selected_five = $_POST['selected_five'];
 
         $company_id = $_SESSION["company_id"];
         $user_request = $_SESSION["user_id"];
@@ -26,14 +27,14 @@
         mysqli_autocommit($conn, FALSE);
 
         $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
-                VALUES(NULL,'ขออนุญาตพลังงานปรมาณูจากเครื่องปฏิกรณ์ปรมาณู','RE','$company_id','$user_request','NULL','รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,'NULL','NULL','NULL')";
+                VALUES(NULL,'ขออนุญาตพลังงานปรมาณูจากเครื่องปฏิกรณ์ปรมาณู','RE','$company_id','$user_request',NULL,'รอตรวจสอบคำขอ',NULL,NULL,NULL,NULL)";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
 
         $license_id = mysqli_insert_id($conn);
-        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
-                VALUES(NULL,'$license_id','$material_location','$location_materialfive_phone','$location_materialfive_email','NULL','$location_materialfive_request','NULL','NULL')";
+        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$material_location','$location_materialfive_phone','$location_materialfive_email',NULL,'$location_materialfive_request',NULL,NULL,'$selected_five')";
         if(!mysqli_query($conn,$sql)){
             array_push($check,"error");
         }

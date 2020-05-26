@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2020 at 01:28 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Generation Time: May 25, 2020 at 03:30 AM
+-- Server version: 10.3.15-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,9 +32,7 @@ CREATE TABLE `company` (
   `company_id` int(8) NOT NULL,
   `company_type` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `company_name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `office_name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `company_address` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
-  `company_address_storage` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `company_phone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `company_fax` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `company_email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -47,9 +45,10 @@ CREATE TABLE `company` (
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`company_id`, `company_type`, `company_name`, `office_name`, `company_address`, `company_address_storage`, `company_phone`, `company_fax`, `company_email`, `enroll_start`, `enroll_no`, `company_status`) VALUES
-(1, 'company', 'บริษัท ปตท. จำกัด (มหาชน)', 'คลังก๊าซปิโตรเลียมเหลวนครสวรรค', '555 ถนนวิภาวดีรังสิต,จตุจักร,จตุจักร,กรุงเทพมหานคร,10900', '629 ม.2 ถนนนครสวรรค์-ท่าตะโก,หนองปลิง,เมืองนครสวรรค์,นครสวรรค์,60000', '025372000', '0253734989', 'corporate@pttplc.com', '2001-10-01', '0107544000108', 'success'),
-(2, 'personality', 'นายชนะวุฒิ มหัทธนาคุณ', 'ผู้จัดการ', '424 หมู่ 7,สีคิ้ว,สีคิ้ว,นครราชสีมา,30140', '424 หมู่ 7,สีคิ้ว,สีคิ้ว,นครราชสีมา,30140', '0861111111', '044411111', 'chanawut@hotmail.com', '2540-11-02', '1309902511111', 'success');
+INSERT INTO `company` (`company_id`, `company_type`, `company_name`, `company_address`, `company_phone`, `company_fax`, `company_email`, `enroll_start`, `enroll_no`, `company_status`) VALUES
+(1, 'company', 'บริษัท ปตท. จำกัด (มหาชน)', '555 ถนนวิภาวดีรังสิต,จตุจักร,จตุจักร,กรุงเทพมหานคร,10900', '025372000', '0253734989', '-', '2001-10-01', '0107544000108', 'success'),
+(2, 'personality', 'นายชนา ซอรัส', '191 หมู่ 4,สีคิ้ว,สีคิ้ว,นครราชสีมา,30140', '0864563642', '044412356', 'chanasaurus@hotmail.com', '1997-11-02', '1309902517382', 'success'),
+(3, 'company', 'บริษัท ปตท. จำกัด (มหาชน)', '555 ถนนวิภาวดีรังสิต,บ้านเกาะ,เมืองนครราชสีมา,นครราชสีมา,30000', '0864562222', '0253734989', 'corporate@pttplc.com', '2001-10-01', '0107544000107', 'wait');
 
 -- --------------------------------------------------------
 
@@ -60,21 +59,21 @@ INSERT INTO `company` (`company_id`, `company_type`, `company_name`, `office_nam
 CREATE TABLE `companystaff` (
   `staff_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `type_authorities` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_idcard` varchar(13) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_position` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_age` varchar(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_nationality` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_phone` varchar(13) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_email` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_qualification` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_no_regis` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `staff_work_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `staff_art_license` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `type_authorities` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_idcard` varchar(13) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_position` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_age` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_nationality` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_phone` varchar(13) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_qualification` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_no_regis` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `staff_work_name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `staff_art_license` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `staff_start_work` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -85,11 +84,28 @@ CREATE TABLE `companystaff` (
 CREATE TABLE `document_relate` (
   `document_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `type_document` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `no_license` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `type_document` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `no_license` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `end_license` date NOT NULL,
   `start_request` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inspectionreport`
+--
+
+CREATE TABLE `inspectionreport` (
+  `inspect_id` int(30) NOT NULL,
+  `license_id` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `inspect1_id` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `inspect2_id` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `inspect3_id` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `inspect_date` date NOT NULL,
+  `inspect_status` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `inspect_pdf` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -99,16 +115,17 @@ CREATE TABLE `document_relate` (
 
 CREATE TABLE `license` (
   `license_id` int(11) NOT NULL,
-  `type_license` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `request_number` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `license_number` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `company_id` int(11) NOT NULL,
-  `license_applicant` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `license_approve_person` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `license_status` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `start_license` date NOT NULL,
-  `end_license` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `license_type` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `license_number` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `place_id` int(11) NOT NULL,
+  `sid` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `license_approve_person` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `license_status` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `start_date` date NOT NULL,
+  `expire_date` date NOT NULL,
+  `latest_inspect_date` date NOT NULL,
+  `next_inspect_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -119,17 +136,17 @@ CREATE TABLE `license` (
 CREATE TABLE `materialchemical` (
   `material_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `type_special` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `code_work` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `work_address` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `nuclear_benefit` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `nuclear_special` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `weight_kg` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `no_material` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `work_age` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `address_produce` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `address_sale` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `type_special` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `code_work` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `work_address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `nuclear_benefit` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nuclear_special` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `weight_kg` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `no_material` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `work_age` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `address_produce` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `address_sale` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -140,14 +157,14 @@ CREATE TABLE `materialchemical` (
 CREATE TABLE `materiallocation` (
   `material_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `material_address` varchar(300) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `material_phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `material_email` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type_benefit` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type_request` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type_vehicle` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type_location_material` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `material_address` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `material_phone` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `material_email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `type_benefit` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `type_request` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `type_vehicle` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `type_location_material` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -158,14 +175,14 @@ CREATE TABLE `materiallocation` (
 CREATE TABLE `materialnatural` (
   `material_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `type_benefit` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `material_special` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `material_num` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `unit` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `changeto` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `changeto_num` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `unit_changeto` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `type_benefit` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `material_special` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `material_num` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `unit` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `changeto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `changeto_num` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `unit_changeto` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -176,22 +193,22 @@ CREATE TABLE `materialnatural` (
 CREATE TABLE `materialnuclear` (
   `material_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `type_special` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `nuclear_purpose` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `no_check` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `name_work` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type_nuclear_special` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `nuclear_vehicle` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `no_location` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `number_batch` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `model_number` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `detail_material` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type_material` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `weight_material` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `unit` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `weight_nuclear` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `code_isotope` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `type_special` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `nuclear_purpose` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `no_check` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `name_work` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `type_nuclear_special` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `nuclear_vehicle` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `no_location` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `number_batch` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `model_number` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `detail_material` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `type_material` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `weight_material` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `unit` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `weight_nuclear` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `code_isotope` varchar(40) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -202,10 +219,10 @@ CREATE TABLE `materialnuclear` (
 CREATE TABLE `materialpack` (
   `material_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `pack_style` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `pack_type` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `un_number` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pack_style` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `pack_type` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `un_number` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -216,24 +233,24 @@ CREATE TABLE `materialpack` (
 CREATE TABLE `materialrequest` (
   `material_request_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `material_type` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `no_reference` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `operation_type` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `element` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `product_model` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `material_type` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `no_reference` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `operation_type` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `element` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `product_model` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `material_status` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `manufacturer_material` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `material_number` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `weight_material` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `unit_weight` varchar(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `manufacturer_container` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `material_number_container` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `container_number` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `weight_container` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `unit_container` varchar(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `locationname_material` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `company_sale` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `manufacturer_material` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `material_number` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `weight_material` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `unit_weight` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `manufacturer_container` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `material_number_container` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `container_number` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `weight_container` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `unit_container` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `locationname_material` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `company_sale` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -244,12 +261,12 @@ CREATE TABLE `materialrequest` (
 CREATE TABLE `materialspecial` (
   `material_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `type_atomic` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `power_heat` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type_atomic_reactor` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `producename_atomic` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `country_produce_atomic` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `type_atomic` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `power_heat` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `type_atomic_reactor` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `producename_atomic` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `country_produce_atomic` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -260,18 +277,38 @@ CREATE TABLE `materialspecial` (
 CREATE TABLE `materialxray` (
   `material_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
-  `no_reference` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `operation_type` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `manufacturer_material` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `material_number` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `number_xray` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `style_work` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `power_kgv` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `power_mgv` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `power_mma` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `locationname_material` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `company_sale` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `no_reference` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `operation_type` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `manufacturer_material` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `material_number` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `number_xray` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `style_work` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `power_kgv` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `power_mgv` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `power_mma` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `locationname_material` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `company_sale` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `place`
+--
+
+CREATE TABLE `place` (
+  `place_id` int(30) NOT NULL,
+  `department_name` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `department_id` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `fax` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `place_type` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `department_type` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `zone` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `risk_group` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -297,12 +334,11 @@ CREATE TABLE `usercompany` (
 
 INSERT INTO `usercompany` (`usercompany_id`, `company_id`, `usercompany_username`, `usercompany_password`, `usercompany_name`, `usercompany_status`, `usercompany_type`, `usercompany_ativate`, `usercompany_permission`) VALUES
 (1, NULL, 'admin', '25f9e794323b453885f5181f1b624d0b', 'Power Admin', 'admin', 'admin', 'ativate', '11111'),
-(2, 1, 'company_ptt', '25f9e794323b453885f5181f1b624d0b', 'บริษัท ปตท. จำกัด (มหาชน)', 'admin', 'company', 'ativate', '11111'),
-(3, 2, 'person_chanawut', '25f9e794323b453885f5181f1b624d0b', 'นายชนะวุฒิ มหัทธนาคุณ', 'admin', 'personality', 'ativate', '11111'),
-(4, 0, 'office_pchana', '25f9e794323b453885f5181f1b624d0b', 'เจ้าหน้าที่ชนา นามสกุล', 'พ่อบ้าน', 'officer', 'ativate', '11110'),
-(5, 0, 'committee_pchana', '25f9e794323b453885f5181f1b624d0b', 'อนุกรรมการชนา นามสกุล', 'คนสวน', 'subcommittee', 'ativate', '11000'),
-(6, 1, 'ptt_user1', 'd41d8cd98f00b204e9800998ecf8427e', 'พนักงาน นามสกุล', 'ชาวสวน', 'usercompany', 'ativate', '11110'),
-(7, 2, 'personuser_chanawut', 'd41d8cd98f00b204e9800998ecf8427e', 'personuser1 lastname', 'แทงค์', 'userpersonality', 'ativate', '10100');
+(2, 1, 'admin_ptt', '25f9e794323b453885f5181f1b624d0b', 'บริษัท ปตท. จำกัด (มหาชน)', 'admin', 'company', 'ativate', '11111'),
+(3, 2, 'admin_chana', '25f9e794323b453885f5181f1b624d0b', 'นายชนา ซอรัส', 'admin', 'personality', 'ativate', '11111'),
+(4, 0, 'officer1', '25f9e794323b453885f5181f1b624d0b', 'เจ้าหน้าที่หนึ่ง นามสกุล', 'พ่อบ้านปีศาจ', 'officer', 'ativate', '11110'),
+(5, 0, 'subcom1', 'd41d8cd98f00b204e9800998ecf8427e', 'อนุกรรมการหนึ่ง นามสกุล', 'คนชงชา', 'subcommittee', 'ativate', '11000'),
+(7, 3, 'company_ptt1', '25f9e794323b453885f5181f1b624d0b', 'บริษัท ปตท. จำกัด (มหาชน)', 'admin', 'company', 'deativate', '11111');
 
 --
 -- Indexes for dumped tables
@@ -326,6 +362,12 @@ ALTER TABLE `companystaff`
 --
 ALTER TABLE `document_relate`
   ADD PRIMARY KEY (`document_id`);
+
+--
+-- Indexes for table `inspectionreport`
+--
+ALTER TABLE `inspectionreport`
+  ADD PRIMARY KEY (`inspect_id`);
 
 --
 -- Indexes for table `license`
@@ -382,6 +424,12 @@ ALTER TABLE `materialxray`
   ADD PRIMARY KEY (`material_id`);
 
 --
+-- Indexes for table `place`
+--
+ALTER TABLE `place`
+  ADD PRIMARY KEY (`place_id`);
+
+--
 -- Indexes for table `usercompany`
 --
 ALTER TABLE `usercompany`
@@ -398,73 +446,19 @@ ALTER TABLE `usercompany`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `company_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `company_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `companystaff`
+-- AUTO_INCREMENT for table `inspectionreport`
 --
-ALTER TABLE `companystaff`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `inspectionreport`
+  MODIFY `inspect_id` int(30) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `document_relate`
+-- AUTO_INCREMENT for table `place`
 --
-ALTER TABLE `document_relate`
-  MODIFY `document_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `license`
---
-ALTER TABLE `license`
-  MODIFY `license_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `materialchemical`
---
-ALTER TABLE `materialchemical`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `materiallocation`
---
-ALTER TABLE `materiallocation`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `materialnatural`
---
-ALTER TABLE `materialnatural`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `materialnuclear`
---
-ALTER TABLE `materialnuclear`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `materialpack`
---
-ALTER TABLE `materialpack`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `materialrequest`
---
-ALTER TABLE `materialrequest`
-  MODIFY `material_request_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `materialspecial`
---
-ALTER TABLE `materialspecial`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `materialxray`
---
-ALTER TABLE `materialxray`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `place`
+  MODIFY `place_id` int(30) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usercompany`

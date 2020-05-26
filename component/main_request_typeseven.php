@@ -21,7 +21,13 @@
             <div class="row alert alert-primary" role="alert" style="height:45px">
                 <h5>สถานที่ใช้และจัดเก็บวัสดุ</h5>
             </div>
-
+            <div class="form-row">
+                <div class="form-group col">
+                    <button id="fav_seven_location" type="button" class="btn btn-outline-info btn-sm"
+                        style="float:right;"><i class="fas fa-star">
+                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                </div>
+            </div>
             <div class="form-row">
                 <div class="form-group col">
                     <label for="location_materialseven_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
@@ -67,6 +73,11 @@
                         <option value="อื่นๆ">อื่นๆ</option>
                     </select>
                 </div>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save_locationseven_stepone">
+                <label class="custom-control-label"
+                    for="save_locationseven_stepone">จัดเก็บสถานที่ไว้เป็นรายการโปรด</label>
             </div>
         </div>
 
@@ -198,6 +209,13 @@
                         data-parent="#accordionExample">
                         <div class="card-body">
                             <div class="form-row">
+                                <div class="form-group col">
+                                    <button id="fav_seven_safe" type="button" class="btn btn-outline-info btn-sm"
+                                        style="float:right;"><i class="fas fa-star">
+                                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                                </div>
+                            </div>
+                            <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="safe_name_seven">ชื่อ:</label>
                                     <input type="text" class="form-control" id="safe_name_seven" placeholder="name">
@@ -296,7 +314,7 @@
                                         placeholder="หมายเลขทะเบียน">
                                 </div>
                             </div>
-                            <br>
+                            <!-- <br>
                             <div class="form-row text-danger">
                                 <h6>แนบเอกสารเพิ่มเติม เช่น สำเนาบัตรประชาชน, หนังสือมอบอำนาจ และเอกสารอื่นๆ</h6>
                             </div>
@@ -311,120 +329,17 @@
                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                     </div>
                                 </div>
+                            </div> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save_safeseven">
+                                <label class="custom-control-label"
+                                    for="save_safeseven">จัดเก็บข้อมูลเจ้าหน้าที่ความปลอดภัยทางรังสีเป็นรายการโปรด</label>
                             </div>
-
                             <br>
                             <h6>กรณีที่มีเจ้าหน้าที่ความปลอดภัยทางรังสีมากกว่า 1 คน **กรุณากรอกข้อมูลเพิ่มเติม**</h6>
                             <button id="addsafety7" type="button" style='font-size:16px'
                                 class="btn btn-outline-primary"><i class='fas fa-plus-circle'></i>
                                 เพิ่ม</button>
-                            <div id="detailsafety7" style="display:none;">
-                                <br>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="name">ชื่อ:</label>
-                                        <input type="name" class="form-control" placeholder="name">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="lname">นามสกุล:</label>
-                                        <input type="lname" class="form-control" placeholder="lname">
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                        <input type="idcard" class="form-control" placeholder="idcard">
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="position">ตำแหน่ง:</label>
-                                        <input type="position" class="form-control" placeholder="position">
-                                    </div>
-                                    <div class="form-group col-md-1">
-                                        <label for="age">อายุ:</label>
-                                        <input type="age" class="form-control" placeholder="age">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="nationality">สัญชาติ:</label>
-                                        <input type="nationality" class="form-control" placeholder="nationality">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <!-- Don't forget change type and id -->
-                                        <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                        <input type="birthday" class="form-control" placeholder="phonenumber">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="alley">Email:</label>
-                                        <input type="alley" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="houseno">บ้านเลขที่:</label>
-                                        <input type="houseno" class="form-control" placeholder="houseno">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="villageno">หมู่:</label>
-                                        <input type="villageno" class="form-control" placeholder="villageno">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="alley">ตรอก / ซอย:</label>
-                                        <input type="alley" class="form-control" placeholder="alley">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="road">ถนน:</label>
-                                        <input type="road" class="form-control" placeholder="road">
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="subdistrict">ตำบล / แขวง:</label>
-                                        <input type="subdistrict" class="form-control" placeholder="subdistrict">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="district">อำเภอ:</label>
-                                        <input type="district" class="form-control" placeholder="district">
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md">
-                                            <label for="alley">จังหวัด:</label>
-                                            <input type="alley" class="form-control" placeholder="จังหวัด">
-                                        </div>
-                                        <div class="form-group col-md">
-                                            <label for="road">รหัสไปรษณีย์:</label>
-                                            <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="alley">คุณวุฒิ:</label>
-                                        <input type="alley" class="form-control" placeholder="คุณวุฒิ">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="alley">หมายเลขทะเบียน:</label>
-                                        <input type="alley" class="form-control" placeholder="หมายเลขทะเบียน">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="form-row text-danger">
-                                    <h6>แนบเอกสารเพิ่มเติม เช่น สำเนาบัตรประชาชน, หนังสือมอบอำนาจ และเอกสารอื่นๆ</h6>
-                                </div>
-                                <div class="form-row col-md-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Upload</span>
-                                        </div>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input"
-                                                aria-describedby="inputGroupFileAddon01">
-                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -440,6 +355,13 @@
                     <div id="collapseTwo7" class="collapse" aria-labelledby="headingTwo"
                         data-parent="#accordionExample">
                         <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <button id="fav_seven_make" type="button" class="btn btn-outline-info btn-sm"
+                                        style="float:right;"><i class="fas fa-star">
+                                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="make_name_seven">ชื่อ:</label>
@@ -540,7 +462,7 @@
                                         placeholder="หมายเลขทะเบียน">
                                 </div>
                             </div>
-                            <br>
+                            <!-- <br>
                             <div class="form-row text-danger">
                                 <h6>แนบเอกสารเพิ่มเติม เช่น สำเนาบัตรประชาชน, หนังสือมอบอำนาจ และเอกสารอื่นๆ</h6>
                             </div>
@@ -555,120 +477,17 @@
                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                     </div>
                                 </div>
+                            </div> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save_makeseven">
+                                <label class="custom-control-label"
+                                    for="save_makeseven">จัดเก็บข้อมูลผู้ปฏิบัติงานทางรังสีเป็นรายการโปรด</label>
                             </div>
                             <br>
                             <h6>กรณีที่มีผู้ปฎิบัติงานรังสีมากกว่า 1 คน **กรุณากรอกข้อมูลเพิ่มเติม**</h6>
                             <button id="addmake7" type="button" style='font-size:16px'
                                 class="btn btn-outline-primary"><i class='fas fa-plus-circle'></i>
                                 เพิ่ม</button>
-
-                            <div id="detailmake7" style="display:none;">
-                                <br>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="name">ชื่อ:</label>
-                                        <input type="name" class="form-control" placeholder="name">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="lname">นามสกุล:</label>
-                                        <input type="lname" class="form-control" placeholder="lname">
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                        <input type="idcard" class="form-control" placeholder="idcard">
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="position">ตำแหน่ง:</label>
-                                        <input type="position" class="form-control" placeholder="position">
-                                    </div>
-                                    <div class="form-group col-md-1">
-                                        <label for="age">อายุ:</label>
-                                        <input type="age" class="form-control" placeholder="age">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="nationality">สัญชาติ:</label>
-                                        <input type="nationality" class="form-control" placeholder="nationality">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <!-- Don't forget change type and id -->
-                                        <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                        <input type="birthday" class="form-control" placeholder="phonenumber">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="alley">Email:</label>
-                                        <input type="alley" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="houseno">บ้านเลขที่:</label>
-                                        <input type="houseno" class="form-control" placeholder="houseno">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="villageno">หมู่:</label>
-                                        <input type="villageno" class="form-control" placeholder="villageno">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="alley">ตรอก / ซอย:</label>
-                                        <input type="alley" class="form-control" placeholder="alley">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="road">ถนน:</label>
-                                        <input type="road" class="form-control" placeholder="road">
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="subdistrict">ตำบล / แขวง:</label>
-                                        <input type="subdistrict" class="form-control" placeholder="subdistrict">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="district">อำเภอ:</label>
-                                        <input type="district" class="form-control" placeholder="district">
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md">
-                                            <label for="alley">จังหวัด:</label>
-                                            <input type="alley" class="form-control" placeholder="จังหวัด">
-                                        </div>
-                                        <div class="form-group col-md">
-                                            <label for="road">รหัสไปรษณีย์:</label>
-                                            <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="alley">คุณวุฒิ:</label>
-                                        <input type="alley" class="form-control" placeholder="คุณวุฒิ">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="alley">หมายเลขทะเบียน:</label>
-                                        <input type="alley" class="form-control" placeholder="หมายเลขทะเบียน">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="form-row text-danger">
-                                    <h6>แนบเอกสารเพิ่มเติม เช่น สำเนาบัตรประชาชน, หนังสือมอบอำนาจ และเอกสารอื่นๆ</h6>
-                                </div>
-                                <div class="form-row col-md-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Upload</span>
-                                        </div>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input"
-                                                aria-describedby="inputGroupFileAddon01">
-                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -684,6 +503,13 @@
                     <div id="collapseThree7" class="collapse" aria-labelledby="headingThree"
                         data-parent="#accordionExample">
                         <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <button id="fav_seven_doctor" type="button" class="btn btn-outline-info btn-sm"
+                                        style="float:right;"><i class="fas fa-star">
+                                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="doctor_name_seven">ชื่อแพทย์ผู้รับผิดชอบ:</label>
@@ -793,8 +619,8 @@
                                         placeholder="วว/ดด/ปป">
                                 </div>
                             </div>
-                            <br>
-                            <div class="form-row text-danger">
+                            <!-- <br> -->
+                            <!-- <div class="form-row text-danger">
                                 <h6>แนบเอกสารเพิ่มเติม เช่น สำเนาบัตรประชาชน, สำเนาใบประกอบโรคศิลปะ และเอกสารอื่นๆ</h6>
                             </div>
                             <div class="form-row col-md-6">
@@ -808,129 +634,17 @@
                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                     </div>
                                 </div>
+                            </div> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save_doctorseven">
+                                <label class="custom-control-label"
+                                    for="save_doctorseven">จัดเก็บข้อมูลแพทย์ผู้รับผิดชอบเป็นรายการโปรด</label>
                             </div>
                             <br>
                             <h6>กรณีที่มีแพทย์ผู้รับผิดชอบมากกว่า 1 คน **กรุณากรอกข้อมูลเพิ่มเติม**</h6>
                             <button id="adddoctor7" type="button" style='font-size:16px'
                                 class="btn btn-outline-primary"><i class='fas fa-plus-circle'></i>
                                 เพิ่ม</button>
-
-                            <div id="detaildoctor7" style="display:none;">
-                                <br>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="name">ชื่อแพทย์ผู้รับผิดชอบ:</label>
-                                        <input type="name" class="form-control" placeholder="name">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="lname">นามสกุล:</label>
-                                        <input type="lname" class="form-control" placeholder="lname">
-                                    </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="idcard">เลขประจำตัวประชาชน:</label>
-                                        <input type="idcard" class="form-control" placeholder="idcard">
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="position">ตำแหน่ง:</label>
-                                        <input type="position" class="form-control" placeholder="position">
-                                    </div>
-                                    <div class="form-group col-md-1">
-                                        <label for="age">อายุ:</label>
-                                        <input type="age" class="form-control" placeholder="age">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="nationality">สัญชาติ:</label>
-                                        <input type="nationality" class="form-control" placeholder="nationality">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <!-- Don't forget change type and id -->
-                                        <label for="birthday">หมายเลขโทรศัพท์:</label>
-                                        <input type="birthday" class="form-control" placeholder="phonenumber">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="alley">Email:</label>
-                                        <input type="alley" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="houseno">บ้านเลขที่:</label>
-                                        <input type="houseno" class="form-control" placeholder="houseno">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="villageno">หมู่:</label>
-                                        <input type="villageno" class="form-control" placeholder="villageno">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="alley">ตรอก / ซอย:</label>
-                                        <input type="alley" class="form-control" placeholder="alley">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="road">ถนน:</label>
-                                        <input type="road" class="form-control" placeholder="road">
-                                    </div>
-
-                                </div>
-                                <!--  -->
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="subdistrict">ตำบล / แขวง:</label>
-                                        <input type="subdistrict" class="form-control" placeholder="subdistrict">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="district">อำเภอ:</label>
-                                        <input type="district" class="form-control" placeholder="district">
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md">
-                                            <label for="alley">จังหวัด:</label>
-                                            <input type="alley" class="form-control" placeholder="จังหวัด">
-                                        </div>
-                                        <div class="form-group col-md">
-                                            <label for="road">รหัสไปรษณีย์:</label>
-                                            <input type="road" class="form-control" placeholder="รหัสไปรษณีย์">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="name">ชื่อสถานที่ทำการ:</label>
-                                        <input type="name" class="form-control" placeholder="ชื่อสถานที่ทำการ">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="alley">ใบอนุญาตประกอบโรคศิลปะเลขที่:</label>
-                                        <input type="alley" class="form-control" placeholder="เลขที่ใบอนุญาตประกอบโรค">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="birthday">ออกให้ ณ วันที่:</label>
-                                        <input type="birthday" class="form-control" placeholder="วว/ดด/ปป">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="form-row text-danger">
-                                    <h6>แนบเอกสารเพิ่มเติม เช่น สำเนาบัตรประชาชน, สำเนาใบประกอบโรคศิลปะ และเอกสารอื่นๆ
-                                    </h6>
-                                </div>
-                                <div class="form-row col-md-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Upload</span>
-                                        </div>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input"
-                                                aria-describedby="inputGroupFileAddon01">
-                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -996,6 +710,318 @@
             </div>
         </div>
     </div>
+
+    <!-- หน้าแสดงรายการโปรดที่บันทึกไว้ -->
+    <div class="modal fade" id="show_favseven_location" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดสถานที่จัดเก็บวัสดุ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                                <th scope="col">เบอร์โทรศัพท์</th>
+                                <th scope="col">E-mail</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests = array();
+
+                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
+                            $query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request = mysqli_fetch_assoc($query)){
+                                $requests[] = $request;
+                            }
+                                $i = 1;
+                                if(is_array($requests) || is_object($requests)){
+                                    foreach($requests as $request){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1"
+                                            onclick="select_fav(<?php echo $request['material_id']; ?>,this)">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request['material_address']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request['material_phone'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request['material_email'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button id="select_fav_location" type="button" class="btn btn-primary">เลือก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- รายการโปรดเจ้าหน้าที่ทางรังสี -->
+    <div class="modal fade" id="show_favseven_safe" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดเจ้าหน้าที่ทางรังสี</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">ชื่อ-นามสกุล</th>
+                                <th scope="col">ตำแหน่ง</th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests1 = array();
+
+                            $sql1 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'เจ้าหน้าที่ความปลอดภัยทางรังสี' AND fav_staff = 'select'";
+                            $query1 = mysqli_query($conn,$sql1) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request1 = mysqli_fetch_assoc($query1)){
+                                $requests1[] = $request1;
+                            }
+                                $i = 1;
+                                if(is_array($requests1) || is_object($requests1)){
+                                    foreach($requests1 as $request1){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1"
+                                            onclick="select_fav_staff(<?php echo $request1['staff_id']; ?>,this)">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request1['staff_name']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request1['staff_position'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request1['staff_address'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button id="select_fav_safeseven" type="button" class="btn btn-primary">เลือก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- รายการโปรดผู้ปฏิบัติงานทางรังสี -->
+    <div class="modal fade" id="show_favseven_make" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดผู้ปฎิบัติงานทางรังสี</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">ชื่อ-นามสกุล</th>
+                                <th scope="col">ตำแหน่ง</th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests2 = array();
+
+                            $sql2 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้ปฏิบัติงานทางรังสี' AND fav_staff = 'select'";
+                            $query2 = mysqli_query($conn,$sql2) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request2 = mysqli_fetch_assoc($query2)){
+                                $requests2[] = $request2;
+                            }
+                                $i = 1;
+                                if(is_array($requests2) || is_object($requests2)){
+                                    foreach($requests2 as $request2){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1"
+                                            onclick="select_fav_staff(<?php echo $request2['staff_id']; ?>,this)">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request2['staff_name']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request2['staff_position'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request2['staff_address'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button id="select_fav_makeseven" type="button" class="btn btn-primary">เลือก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- รายการโปรดแพทย์ผู้รับผิดชอบ -->
+    <div class="modal fade" id="show_favseven_doctor" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดแพทย์ผู้รับผิดชอบ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">ชื่อ-นามสกุล</th>
+                                <th scope="col">ตำแหน่ง</th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests3 = array();
+
+                            $sql3 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'แพทย์ผู้รับผิดชอบ' AND fav_staff = 'select'";
+                            $query3 = mysqli_query($conn,$sql3) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request3 = mysqli_fetch_assoc($query3)){
+                                $requests3[] = $request3;
+                            }
+                                $i = 1;
+                                if(is_array($requests3) || is_object($requests3)){
+                                    foreach($requests3 as $request3){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1"
+                                            onclick="select_fav_staff(<?php echo $request3['staff_id']; ?>,this)">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request3['staff_name']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request3['staff_position'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request3['staff_address'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button id="select_fav_doctorseven" type="button" class="btn btn-primary">เลือก</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- script have or nothave permission -->
@@ -1030,7 +1056,7 @@ $(document).ready(function() {
 });
 </script>
 
-<script>
+<!-- <script>
 $(document).ready(function() {
     $("#addsafety7").click(function() {
         $("#detailsafety7").show();
@@ -1052,7 +1078,7 @@ $(document).ready(function() {
         $("#detaildoctor7").show();
     });
 });
-</script>
+</script> -->
 
 <script>
 $(document).ready(function() {
@@ -1084,18 +1110,53 @@ $(document).ready(function() {
 
 <script>
 $(document).ready(function() {
+    $('#fav_seven_location').click(function() {
+        $('#show_favseven_location').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_seven_safe').click(function() {
+        $('#show_favseven_safe').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_seven_make').click(function() {
+        $('#show_favseven_make').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_seven_doctor').click(function() {
+        $('#show_favseven_doctor').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
     $('#confirm7').click(function() {
         var materialseven_address = document.getElementById("location_materialseven_address").value;
-        var materialseven_district = document.getElementById("location_materialseven_district").value;
+        var materialseven_district = document.getElementById("location_materialseven_district")
+            .value;
         var materialseven_amphoe = document.getElementById("location_materialseven_amphoe").value;
-        var materialseven_province = document.getElementById("location_materialseven_province").value;
+        var materialseven_province = document.getElementById("location_materialseven_province")
+            .value;
         var materialseven_zipcode = document.getElementById("location_materialseven_zipcode").value;
         document.getElementById("show_location_name").innerHTML = materialseven_address + " ต." +
             materialseven_district + " อ." + materialseven_amphoe + " จ." + materialseven_province +
             " " + materialseven_zipcode;
 
         var material_seven = document.getElementById("locationname_material_seven").value;
-        document.getElementById("show_worklocation_name").innerHTML = "ชื่อสถานที่ติดตั้งหรือใช้งาน: " +
+        document.getElementById("show_worklocation_name").innerHTML =
+            "ชื่อสถานที่ติดตั้งหรือใช้งาน: " +
             material_seven;
 
         var materialseven_benefit = document.getElementById("location_materialseven_benefit").value;

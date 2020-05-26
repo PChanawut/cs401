@@ -11,7 +11,8 @@
     && isset($_POST['open_locationname_material_two']) && isset($_POST['open_company_sale_two']) && isset($_POST['style_two']) && isset($_POST['styletype_two']) && isset($_POST['unnumber_two']) && isset($_POST['sale_name']) && isset($_POST['sale_idcard']) && isset($_POST['sale_age']) && isset($_POST['sale_position']) && isset($_POST['sale_nationality'])
     && isset($_POST['sale_email']) && isset($_POST['sale_phone']) && isset($_POST['sale_work_name']) && isset($_POST['sale_address']) && isset($_POST['handler_name']) && isset($_POST['handler_idcard']) && isset($_POST['handler_age']) && isset($_POST['handler_position']) && isset($_POST['handler_nationality']) && isset($_POST['handler_email']) && isset($_POST['handler_phone'])
     && isset($_POST['handler_work_name']) && isset($_POST['handler_address']) && isset($_POST['destination_work_name']) && isset($_POST['destination_address']) && isset($_POST['destination_work_phone']) && isset($_POST['destination_work_email']) && isset($_POST['import_address']) && isset($_POST['import_material_phone_two']) && isset($_POST['import_material_email_two'])
-    && isset($_POST['export_address']) && isset($_POST['export_material_phone_two']) && isset($_POST['export_material_email_two']) && isset($_POST['location_materialtwo_licenseno']) && isset($_POST['location_materialtwo_licensedate']) && isset($_POST['location_materialtwo_startlicense']) && isset($_POST['selected'])){
+    && isset($_POST['export_address']) && isset($_POST['export_material_phone_two']) && isset($_POST['export_material_email_two']) && isset($_POST['location_materialtwo_licenseno']) && isset($_POST['location_materialtwo_licensedate']) && isset($_POST['location_materialtwo_startlicense']) && isset($_POST['selected']) && isset($_POST['selected_two'])
+    && isset($_POST['sale_location_salework_two']) && isset($_POST['handler_location_handlerwork_two']) && isset($_POST['destination_location_destinationwork_two']) && isset($_POST['import_location_two']) && isset($_POST['export_location_two'])){
 
         include('config/database.php');
 
@@ -26,6 +27,7 @@
         $location_materialtwo_licenseno = $_POST['location_materialtwo_licenseno'];
         $location_materialtwo_licensedate = $_POST['location_materialtwo_licensedate'];
         $location_materialtwo_startlicense = $_POST['location_materialtwo_startlicense'];
+        $selected_two = $_POST['selected_two'];
 
         $selected = $_POST['selected'];
 
@@ -74,6 +76,7 @@
         $sale_phone = $_POST['sale_phone'];
         $sale_work_name = $_POST['sale_work_name'];
         $sale_address = $_POST['sale_address'];
+        $sale_location_salework_two = $_POST['sale_location_salework_two'];
 
         $handler_name = $_POST['handler_name'];
         $handler_idcard = $_POST['handler_idcard'];
@@ -84,20 +87,24 @@
         $handler_phone = $_POST['handler_phone'];
         $handler_work_name = $_POST['handler_work_name'];
         $handler_address = $_POST['handler_address'];
+        $handler_location_handlerwork_two = $_POST['handler_location_handlerwork_two'];
 
         $destination_work_name = $_POST['destination_work_name'];
         $destination_address = $_POST['destination_address'];
         $destination_work_phone = $_POST['destination_work_phone'];
         $destination_work_email = $_POST['destination_work_email'];
+        $destination_location_destinationwork_two = $_POST['destination_location_destinationwork_two'];
 
         // step four
         $import_address = $_POST['import_address'];
         $import_material_phone_two = $_POST['import_material_phone_two'];
         $import_material_email_two = $_POST['import_material_email_two'];
+        $import_location_two = $_POST['import_location_two'];
 
         $export_address = $_POST['export_address'];
         $export_material_phone_two = $_POST['export_material_phone_two'];
         $export_material_email_two = $_POST['export_material_email_two'];
+        $export_location_two = $_POST['export_location_two'];
 
         $company_id = $_SESSION["company_id"];
         $user_request = $_SESSION["user_id"];
@@ -106,14 +113,14 @@
         mysqli_autocommit($conn, FALSE);
 
         $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
-                VALUES(NULL,'นำเข้า-ส่งออกวัสดุพลอยได้','RE','$company_id','$user_request','NULL','รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,'NULL','NULL','NULL')";
+                VALUES(NULL,'นำเข้า-ส่งออกวัสดุพลอยได้','RE','$company_id','$user_request',NULL,'รอตรวจสอบคำขอ',NULL,NULL,NULL,NULL)";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
 
         $license_id = mysqli_insert_id($conn);
-        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
-                VALUES(NULL,'$license_id','$location_address','$location_materialtwo_phone','$location_materialtwo_email','$location_materialtwo_benefit','$type_request','$location_materialtwo_vehicle','NULL')";
+        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$location_address','$location_materialtwo_phone','$location_materialtwo_email','$location_materialtwo_benefit','$type_request','$location_materialtwo_vehicle',NULL,'$selected_two')";
         if(!mysqli_query($conn,$sql)){
             array_push($check,"error");
         }
@@ -128,12 +135,11 @@
 
         if($selected == "ไม่ปิดผนึก"){
             $sql3 = "INSERT INTO materialrequest(material_request_id,license_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
-                    VALUES(NULL,'$license_id','ไม่ปิดผนึก','$open_no_reference_two','$open_operation_type_two','$open_element_two','$open_product_model_two','$open_material_status_two','$open_manufacturer_material_two','NULL','$open_weight_material','$open_unit_weight_two','$open_physical_properties_two','NULL','NULL','NULL','NULL','$open_locationname_material_two','$open_company_sale_two')";
+                    VALUES(NULL,'$license_id','ไม่ปิดผนึก','$open_no_reference_two','$open_operation_type_two','$open_element_two','$open_product_model_two','$open_material_status_two','$open_manufacturer_material_two',NULL,'$open_weight_material','$open_unit_weight_two','$open_physical_properties_two',NULL,NULL,NULL,NULL,'$open_locationname_material_two','$open_company_sale_two')";
             if(!mysqli_query($conn,$sql3)){
                 array_push($check,"error");
             }
         }
-
 
         $sql4 = "INSERT INTO materialpack(material_id,license_id,pack_style,pack_type,un_number)
                 VALUES(NULL,'$license_id','$style_two','$styletype_two','$unnumber_two')";
@@ -141,44 +147,44 @@
             array_push($check,"error");
         }
 
-        $sql5 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
-                VALUES(NULL,'$license_id','ผู้แทนจำหน่ายที่ได้รับมอบหมายให้นำเข้าหรือส่งออก','$sale_name','$sale_idcard','$sale_position','$sale_age','$sale_nationality','$sale_phone','$sale_email','$sale_address','NULL','NULL','$sale_work_name','NULL','NULL')";
+        $sql5 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','ผู้แทนจำหน่ายที่ได้รับมอบหมายให้นำเข้าหรือส่งออก','$sale_name','$sale_idcard','$sale_position','$sale_age','$sale_nationality','$sale_phone','$sale_email','$sale_address',NULL,NULL,'$sale_work_name',NULL,NULL,'$sale_location_salework_two')";
         if(!mysqli_query($conn,$sql5)){
             array_push($check,"error");
         }
 
-        $sql6 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
-                VALUES(NULL,'$license_id','ผู้ดำเนินการตามพิธีศุลกากร','$handler_name','$handler_idcard','$handler_position','$handler_age','$handler_nationality','$handler_phone','$handler_email','$handler_address','NULL','NULL','$handler_work_name','NULL','NULL')";
+        $sql6 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','ผู้ดำเนินการตามพิธีศุลกากร','$handler_name','$handler_idcard','$handler_position','$handler_age','$handler_nationality','$handler_phone','$handler_email','$handler_address',NULL,NULL,'$handler_work_name',NULL,NULL,'$handler_location_handlerwork_two')";
         if(!mysqli_query($conn,$sql6)){
             array_push($check,"error");
         }
         
-        $sql7 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work)
-                VALUES(NULL,'$license_id','ผู้รับปลายทางนำเข้าหรือส่งออก','NULL','NULL','NULL','NULL','NULL','$destination_work_phone','$destination_work_email','$destination_address','NULL','NULL','$destination_work_name','NULL','NULL')";
+        $sql7 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','ผู้รับปลายทางนำเข้าหรือส่งออก',NULL,NULL,NULL,NULL,NULL,'$destination_work_phone','$destination_work_email','$destination_address',NULL,NULL,'$destination_work_name',NULL,NULL,'$destination_location_destinationwork_two')";
         if(!mysqli_query($conn,$sql7)){
             array_push($check,"error");
         }
 
-        $sql8 = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
-                VALUES(NULL,'$license_id','$import_address','$import_material_phone_two','$import_material_email_two','NULL','NULL','NULL','IMPORT MATERIAL')";
+        $sql8 = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$import_address','$import_material_phone_two','$import_material_email_two',NULL,NULL,NULL,'IMPORT MATERIAL','$import_location_two')";
         if(!mysqli_query($conn,$sql8)){
             array_push($check,"error");
         }
 
-        $sql9 = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material)
-                VALUES(NULL,'$license_id','$export_address','$export_material_phone_two','$export_material_email_two','NULL','NULL','NULL','EXPORT MATERIAL')";
+        $sql9 = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$export_address','$export_material_phone_two','$export_material_email_two',NULL,NULL,NULL,'EXPORT MATERIAL','$export_location_two')";
         if(!mysqli_query($conn,$sql9)){
             array_push($check,"error");
         }
 
         $sql10 = "INSERT INTO document_relate(document_id,license_id,type_document,no_license,end_license,start_request)
-                VALUES(NULL,'$license_id','HAVE','$location_materialtwo_licenseno','$location_materialtwo_licensedate','NULL')";
+                VALUES(NULL,'$license_id','HAVE','$location_materialtwo_licenseno','$location_materialtwo_licensedate',NULL)";
         if(!mysqli_query($conn,$sql10)){
             array_push($check,"error");
         }
 
         $sql11 = "INSERT INTO document_relate(document_id,license_id,type_document,no_license,end_license,start_request)
-                VALUES(NULL,'$license_id','NOT HAVE','NULL','NULL','$location_materialtwo_startlicense')";
+                VALUES(NULL,'$license_id','NOT HAVE',NULL,NULL,'$location_materialtwo_startlicense')";
         if(!mysqli_query($conn,$sql11)){
             array_push($check,"error");
         }

@@ -112,7 +112,7 @@
                         }else if(strlen($request['license_id']) == 4){
                             echo $request['license_number']."-06-".$request['license_id'];
                         }
-                    }else if($request['license_tyoe'] == 'ขออนุญาตฯ เครื่องกำเนิดรังสี'){
+                    }else if($request['license_type'] == 'ขออนุญาตฯ เครื่องกำเนิดรังสี'){
                         if(strlen($request['license_id']) == 1){
                             echo $request['license_number']."-07-000".$request['license_id'];
                         }else if(strlen($request['license_id']) == 2){

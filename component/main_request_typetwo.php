@@ -25,7 +25,13 @@
             <div class="row alert alert-primary" role="alert" style="height:45px">
                 <h5>สถานที่ใช้และจัดเก็บวัสดุ</h5>
             </div>
-
+            <div class="form-row">
+                <div class="form-group col">
+                    <button id="fav_two_location" type="button" class="btn btn-outline-info btn-sm"
+                        style="float:right;"><i class="fas fa-star">
+                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                </div>
+            </div>
             <div class="form-row">
                 <div class="form-group col-4">
                     <label for="type_request">ขออนุญาตเพื่อ:</label>
@@ -85,6 +91,11 @@
                         <option value="อื่นๆ...">อื่นๆ...</option>
                     </select>
                 </div>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save_locationtwo_stepone">
+                <label class="custom-control-label"
+                    for="save_locationtwo_stepone">จัดเก็บสถานที่ไว้เป็นรายการโปรด</label>
             </div>
             <hr>
             <div class="row alert alert-light" role="alert" style="height:45px">
@@ -455,10 +466,16 @@
                             </button>
                         </h2>
                     </div>
-
                     <div id="collapseOne2" class="collapse show" aria-labelledby="headingOne"
                         data-parent="#accordionExample">
                         <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <button id="fav_two_sale" type="button" class="btn btn-outline-info btn-sm"
+                                        style="float:right;"><i class="fas fa-star">
+                                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md-3">
                                     <label for="sale_name">ชื่อ:</label>
@@ -499,49 +516,6 @@
                                 </div>
                             </div>
                             <!--  -->
-                            <!-- <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label for="sale_houseno">บ้านเลขที่:</label>
-                                    <input type="text" class="form-control" id="sale_houseno" placeholder="houseno">
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <label for="sale_villageno">หมู่:</label>
-                                    <input type="text" class="form-control" id="sale_villageno" placeholder="villageno">
-                                </div>
-                                <div class="form-group col-md">
-                                    <label for="sale_alley">ตรอก / ซอย:</label>
-                                    <input type="text" class="form-control" id="sale_alley" placeholder="alley">
-                                </div>
-                                <div class="form-group col-md">
-                                    <label for="sale_road">ถนน:</label>
-                                    <input type="text" class="form-control" id="sale_road" placeholder="road">
-                                </div>
-
-                            </div> -->
-                            <!--  -->
-                            <!-- <div class="form-row">
-                                <div class="form-group col-md">
-                                    <label for="sale_subdistrict">ตำบล / แขวง:</label>
-                                    <input type="text" class="form-control" id="sale_subdistrict"
-                                        placeholder="subdistrict">
-                                </div>
-                                <div class="form-group col-md">
-                                    <label for="sale_district">อำเภอ:</label>
-                                    <input type="text" class="form-control" id="sale_district" placeholder="district">
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="sale_province">จังหวัด:</label>
-                                        <input type="text" class="form-control" id="sale_province"
-                                            placeholder="จังหวัด">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="sale_zipcode">รหัสไปรษณีย์:</label>
-                                        <input type="text" class="form-control" id="sale_zipcode"
-                                            placeholder="รหัสไปรษณีย์">
-                                    </div>
-                                </div>
-                            </div> -->
 
                             <div class="container">
                                 <div class="row alert alert-light" role="alert" style="height:45px">
@@ -601,6 +575,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save_location_salework_two">
+                                <label class="custom-control-label"
+                                    for="save_location_salework_two">จัดเก็บข้อมูลผู้แทนจำหน่ายเป็นรายการโปรด</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -616,6 +595,13 @@
                     <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo"
                         data-parent="#accordionExample">
                         <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <button id="fav_two_handler" type="button" class="btn btn-outline-info btn-sm"
+                                        style="float:right;"><i class="fas fa-star">
+                                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md-3">
                                     <label for="handler_name">ชื่อ:</label>
@@ -658,51 +644,7 @@
                                 </div>
                             </div>
                             <!--  -->
-                            <!-- <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label for="handler_houseno">บ้านเลขที่:</label>
-                                    <input type="text" class="form-control" id="handler_houseno" placeholder="houseno">
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <label for="handler_villageno">หมู่:</label>
-                                    <input type="text" class="form-control" id="handler_villageno"
-                                        placeholder="villageno">
-                                </div>
-                                <div class="form-group col-md">
-                                    <label for="handler_alley">ตรอก / ซอย:</label>
-                                    <input type="text" class="form-control" id="handler_alley" placeholder="alley">
-                                </div>
-                                <div class="form-group col-md">
-                                    <label for="handler_road">ถนน:</label>
-                                    <input type="text" class="form-control" id="handler_road" placeholder="road">
-                                </div>
 
-                            </div> -->
-                            <!--  -->
-                            <!-- <div class="form-row">
-                                <div class="form-group col-md">
-                                    <label for="handler_subdistrict">ตำบล / แขวง:</label>
-                                    <input type="text" class="form-control" id="handler_subdistrict"
-                                        placeholder="subdistrict">
-                                </div>
-                                <div class="form-group col-md">
-                                    <label for="handler_district">อำเภอ:</label>
-                                    <input type="text" class="form-control" id="handler_district"
-                                        placeholder="district">
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md">
-                                        <label for="handler_province">จังหวัด:</label>
-                                        <input type="text" class="form-control" id="handler_province"
-                                            placeholder="จังหวัด">
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <label for="handler_zipcode">รหัสไปรษณีย์:</label>
-                                        <input type="text" class="form-control" id="handler_zipcode"
-                                            placeholder="รหัสไปรษณีย์">
-                                    </div>
-                                </div>
-                            </div> -->
 
                             <div class="container">
                                 <div class="row alert alert-light" role="alert" style="height:45px">
@@ -762,6 +704,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save_location_handlerwork_two">
+                                <label class="custom-control-label"
+                                    for="save_location_handlerwork_two">จัดเก็บข้อมูลผู้ดำเนินการตามพิธีศุลกากรเป็นรายการโปรด</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -777,6 +724,13 @@
                     <div id="collapseThree2" class="collapse" aria-labelledby="headingThree"
                         data-parent="#accordionExample">
                         <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <button id="fav_two_destination" type="button" class="btn btn-outline-info btn-sm"
+                                        style="float:right;"><i class="fas fa-star">
+                                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="destination_work_name">ชื่อสถานที่ทำการ:</label>
@@ -811,6 +765,12 @@
                                     <label for="destination_work_email">Email:</label>
                                     <input type="text" class="form-control" id="destination_work_email">
                                 </div>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input"
+                                    id="save_location_destinationwork_two">
+                                <label class="custom-control-label"
+                                    for="save_location_destinationwork_two">จัดเก็บข้อมูลผู้รับปลายทางเป็นรายการโปรด</label>
                             </div>
                         </div>
                     </div>
@@ -849,6 +809,13 @@
             </div>
             <div class="form-row">
                 <div class="form-group col">
+                    <button id="fav_importtwo_location" type="button" class="btn btn-outline-info btn-sm"
+                        style="float:right;"><i class="fas fa-star">
+                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
                     <label for="import_material_addrress_two">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
                     <input type="text" class="form-control" id="import_material_addrress_two">
                 </div>
@@ -883,13 +850,24 @@
                     <input type="text" class="form-control" id="import_material_email_two">
                 </div>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save_location_import_two">
+                <label class="custom-control-label"
+                    for="save_location_import_two">จัดเก็บข้อมูลสถานที่เก็บรักษานำเข้าหรือส่งออกเป็นรายการโปรด</label>
+            </div>
         </div>
-
+        <br>
         <div class="container">
             <div class="row alert alert-primary" role="alert" style="height:45px">
                 <h5>สถานที่เก็บรักษาวัสดุพลอยได้ขณะรอดำเนินการนำหรือส่งออกนอกราชอาณาจักร</h5>
             </div>
-
+            <div class="form-row">
+                <div class="form-group col">
+                    <button id="fav_exporttwo_location" type="button" class="btn btn-outline-info btn-sm"
+                        style="float:right;"><i class="fas fa-star">
+                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                </div>
+            </div>
             <div class="form-row">
                 <div class="form-group col">
                     <label for="export_material_address_two">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
@@ -925,6 +903,11 @@
                     <!-- Don't forget id -->
                     <input type="text" class="form-control" id="export_material_email_two">
                 </div>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save_location_export_two">
+                <label class="custom-control-label"
+                    for="save_location_export_two">จัดเก็บข้อมูลสถานที่เก็บรักษาขณะรอดำเนินการเป็นรายการโปรด</label>
             </div>
         </div>
         <br>
@@ -985,6 +968,469 @@
                         <button id="confirm2" type="submit" class="btn btn-primary">ยืนยันคำขอ</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- รายละเอียดที่อยู่ -->
+<div class="modal fade" id="show_favtwo_location" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดสถานที่จัดเก็บวัสดุ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">รายละเอียดที่อยู่</th>
+                            <th scope="col">เบอร์โทรศัพท์</th>
+                            <th scope="col">E-mail</th>
+                        </tr>
+                    </thead>
+                    <?php
+                            include('php/config/database.php');
+                            $requests = array();
+
+                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
+                            $query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request = mysqli_fetch_assoc($query)){
+                                $requests[] = $request;
+                            }
+                                $i = 1;
+                                if(is_array($requests) || is_object($requests)){
+                                    foreach($requests as $request){
+                        ?>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1"
+                                        onclick="select_fav(<?php echo $request['material_id']; ?>,this)">
+                                    <label class="form-check-label" for="exampleRadios1">
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <?php 
+                                        echo $request['material_address']; 
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request['material_phone'];
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request['material_email'];
+                                    ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php
+                                }
+                            }
+                        ?>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                <button id="select_fav_location" type="button" class="btn btn-primary">เลือก</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ผู้แทนจำหน่ายให้นำเข้าหรือส่งออก -->
+<div class="modal fade" id="show_two_sale" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดผู้แทนจำหน่ายนำเข้าหรือส่งออก</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">ชื่อ-นามสกุล</th>
+                            <th scope="col">สถานที่ทำการ</th>
+                            <th scope="col">รายละเอียดที่อยู่</th>
+                        </tr>
+                    </thead>
+                    <?php
+                            include('php/config/database.php');
+                            $requests1 = array();
+
+                            $sql1 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้แทนจำหน่ายที่ได้รับมอบหมายให้นำเข้าหรือส่งออก' AND fav_staff = 'select'";
+                            $query1 = mysqli_query($conn,$sql1) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request1 = mysqli_fetch_assoc($query1)){
+                                $requests1[] = $request1;
+                            }
+                                $i = 1;
+                                if(is_array($requests1) || is_object($requests1)){
+                                    foreach($requests1 as $request1){
+                        ?>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <?php 
+                                        echo $request1['staff_name']; 
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request1['staff_work_name'];
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request1['staff_address'];
+                                    ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php
+                                }
+                            }
+                        ?>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                <button type="button" class="btn btn-primary">เลือก</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ผู้ดำเนินการตามพิธีศุลกากร -->
+<div class="modal fade" id="show_two_handler" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดผู้ดำเนินตามพิธีศุลกากร</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">รายละเอียดที่อยู่</th>
+                            <th scope="col">เบอร์โทรศัพท์</th>
+                            <th scope="col">E-mail</th>
+                        </tr>
+                    </thead>
+                    <?php
+                            include('php/config/database.php');
+                            $requests2 = array();
+
+                            $sql2 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้ดำเนินการตามพิธีศุลกากร' AND fav_staff = 'select'";
+                            $query2 = mysqli_query($conn,$sql2) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request2 = mysqli_fetch_assoc($query2)){
+                                $requests2[] = $request2;
+                            }
+                                $i = 1;
+                                if(is_array($requests2) || is_object($requests2)){
+                                    foreach($requests2 as $request2){
+                        ?>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <?php 
+                                        echo $request2['staff_name']; 
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request2['staff_work_name'];
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request2['staff_address'];
+                                    ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php
+                                }
+                            }
+                        ?>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                <button type="button" class="btn btn-primary">เลือก</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ผู้รับปลายทาง -->
+<div class="modal fade" id="show_two_destination" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดผู้รับปลายทาง</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">ชื่อสถานที่ทำการ</th>
+                            <th scope="col">รายละเอียดที่อยู่</th>
+                            <th scope="col">หมายเลขโทรศัพท์</th>
+                        </tr>
+                    </thead>
+                    <?php
+                            include('php/config/database.php');
+                            $requests3 = array();
+
+                            $sql3 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_phone
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้รับปลายทางนำเข้าหรือส่งออก' AND fav_staff = 'select'";
+                            $query3 = mysqli_query($conn,$sql3) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request3 = mysqli_fetch_assoc($query3)){
+                                $requests3[] = $request3;
+                            }
+                                $i = 1;
+                                if(is_array($requests3) || is_object($requests3)){
+                                    foreach($requests3 as $request3){
+                        ?>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <?php 
+                                        echo $request3['staff_work_name']; 
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request3['staff_address'];
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request3['staff_phone'];
+                                    ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php
+                                }
+                            }
+                        ?>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                <button type="button" class="btn btn-primary">เลือก</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- import -->
+<div class="modal fade" id="show_two_import" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดสถานที่เก็บรักษาวัสดุนำเข้า</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">รายละเอียดที่อยู่</th>
+                            <th scope="col">เบอร์โทรศัพท์</th>
+                            <th scope="col">E-mail</th>
+                        </tr>
+                    </thead>
+                    <?php
+                            include('php/config/database.php');
+                            $requests4 = array();
+
+                            $sql4 = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.type_location_material
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select' AND type_location_material = 'IMPORT MATERIAL'";
+                            $query4 = mysqli_query($conn,$sql4) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request4 = mysqli_fetch_assoc($query4)){
+                                $requests4[] = $request4;
+                            }
+                                $i = 1;
+                                if(is_array($requests4) || is_object($requests4)){
+                                    foreach($requests4 as $request4){
+                        ?>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <?php 
+                                        echo $request4['material_address']; 
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request4['material_phone'];
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request4['material_email'];
+                                    ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php
+                                }
+                            }
+                        ?>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                <button type="button" class="btn btn-primary">เลือก</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- export -->
+<div class="modal fade" id="show_two_export" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดสถานที่เก็บรักษาวัสดุส่งออก</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">รายละเอียดที่อยู่</th>
+                            <th scope="col">เบอร์โทรศัพท์</th>
+                            <th scope="col">E-mail</th>
+                        </tr>
+                    </thead>
+                    <?php
+                            include('php/config/database.php');
+                            $requests5 = array();
+
+                            $sql5 = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.type_location_material
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select' AND type_location_material = 'EXPORT MATERIAL'";
+                            $query5 = mysqli_query($conn,$sql5) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request5 = mysqli_fetch_assoc($query5)){
+                                $requests5[] = $request5;
+                            }
+                                $i = 1;
+                                if(is_array($requests5) || is_object($requests5)){
+                                    foreach($requests5 as $request5){
+                        ?>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                    </label>
+                                </div>
+                            </th>
+                            <td>
+                                <?php 
+                                        echo $request5['material_address']; 
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request5['material_phone'];
+                                    ?>
+                            </td>
+                            <td>
+                                <?php
+                                        echo $request5['material_email'];
+                                    ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php
+                                }
+                            }
+                        ?>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                <button type="button" class="btn btn-primary">เลือก</button>
             </div>
         </div>
     </div>
@@ -1086,6 +1532,54 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#confirm2').click(function() {
         $('#pageConfirm2').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_two_location').click(function() {
+        $('#show_favtwo_location').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_two_sale').click(function() {
+        $('#show_two_sale').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_two_handler').click(function() {
+        $('#show_two_handler').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_two_destination').click(function() {
+        $('#show_two_destination').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_importtwo_location').click(function() {
+        $('#show_two_import').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_exporttwo_location').click(function() {
+        $('#show_two_export').modal('show');
     });
 });
 </script>
