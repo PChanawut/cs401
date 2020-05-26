@@ -73,6 +73,7 @@ function detailcompany(company_id){
         },
         success: function(response) {
             response = JSON.parse(response);
+            console.log(response)
             if (response.success == true) {
                 $('#show_company_id').val(response.company.company_id);
                 $('#show_enroll_date').text("วันจดทะเบียน : "+response.company.enroll_start);
@@ -82,6 +83,8 @@ function detailcompany(company_id){
                 $('#show_company_email').text(response.company.company_email)
                 $('#show_company_phone').text("เบอร์ : "+response.company.company_phone)
                 $('#show_company_fax').text("แฟกซ์ : "+response.company.company_fax)
+                $("#tag").attr("href", response.company.company_file)
+                console.log(response.company.company_file)
                 $('#model-company-detail').modal('show')
             } else {
                 

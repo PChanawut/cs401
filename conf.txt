@@ -1,0 +1,2 @@
+https://www.netsparker.com/blog/web-security/disable-directory-listing-web-servers/
+https://stackoverflow.com/questions/3843967/forbid-access-to-files-in-a-simple-php-login-system

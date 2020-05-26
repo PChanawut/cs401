@@ -20,3 +20,13 @@ RewriteRule ^license_typesix  license_typesix.php [NC,L]
 RewriteRule ^license_typeseven  license_typeseven.php [NC,L]
 RewriteRule ^officer_confirm_license officer_confirm_license.php [NC,L]
 RewriteRule ^committee_confirm_license committee_confirm_license.php [NC,L]
+
+#https://stackoverflow.com/questions/10086989/htaccess-file-to-allow-access-to-images-folder-to-view-pictures
+Options -Indexes
+
+#https://stackoverflow.com/questions/11728976/how-to-deny-access-to-a-file-in-htaccess
+#https://linuxconfig.org/how-to-deny-allow-access-to-files-using-htaccess-file
+#<FilesMatch "\.(txt|pdf)$">  
+   #Order Allow,Deny
+   #Deny from All
+#</FilesMatch>

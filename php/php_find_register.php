@@ -21,7 +21,8 @@
                     'company_fax' => $row['company_fax'],
                     'company_email' => $row['company_email'],
                     'enroll_start' => date("d-m-Y", strtotime($row['enroll_start'])),   
-                    'enroll_no' => $row['enroll_no']   
+                    'enroll_no' => $row['enroll_no'],
+                    'company_file' => $upload.$row['company_file'] 
                 );
             }else{ 
                 $response['success'] = false;
@@ -48,7 +49,8 @@
                     'company_fax' => $row['company_fax'],
                     'company_email' => $row['company_email'],
                     'enroll_start' => date("d-m-Y", strtotime($row['enroll_start'])),   
-                    'enroll_no' => $row['enroll_no']   
+                    'enroll_no' => $row['enroll_no'],   
+                    'company_file' => $upload.$row['company_file']
                 );
             }else{ 
                 $response['success'] = false;

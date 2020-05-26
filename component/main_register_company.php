@@ -90,7 +90,18 @@
             </div>
         </div>
     </div>
-    <div id="nextBack" class="mb-4" style="float:right;">
+    <div class="alert alert-primary" role="alert">
+        <h5>ไฟล์ใบอนุญาต</h5>
+    </div>
+    <div class="container">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="filepdf-upload" required>
+            <label class="custom-file-label" for="validatedCustomFile">ไฟล์ใบอนุญาต</label>
+            <div class="invalid-feedback">ไฟล์ใบอนุญาตไม่ถูกต้อง</div>
+        </div>
+        <!-- <a href="php/php_filedownload.php">aaa</a> -->
+    </div>
+    <div id="nextBack" class="mb-4 mt-4" style="float:right;">
         <button onclick='document.location.href="./";' type="button" class="btn">ย้อนกลับ</button>
         <button class="btn btn-primary" type="submit">ถัดไป</button>
     </div>

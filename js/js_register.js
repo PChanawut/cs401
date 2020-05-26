@@ -40,6 +40,7 @@ $.Thailand({
     $zipcode: $('#company_storage_zipcode'),
 });
 $("#person_register").submit(function(e) {
+    
     let person_name = $("#person_nametitle").val()+""+$("#person_firstname").val()+" "+$("#person_lastname").val()
     let person_birthday = $("#person_birthday").val()
     let person_identification = $("#person_identification").val()
@@ -55,81 +56,88 @@ $("#person_register").submit(function(e) {
 
     let person_username = $("#person_username").val()
     let person_password = $("#person_password").val()
-
     let category  = 'personality'
+
+    var file_pdf = $("#filepdf-person-upload").prop('files')[0];
+    var formData = new FormData();
+    var dataJson = {
+        'person_name': person_name,
+        'person_identification': person_identification,
+        'person_birthday': person_birthday,
+        'person_phonenumber': person_phonenumber,
+        'person_fax': person_fax,
+        'person_email': person_email,
+        'person_address': person_address,
+        'person_district': person_district,
+        'person_amphoe': person_amphoe,
+        'person_province': person_province,
+        'person_zipcode': person_zipcode,
+        'person_username': person_username,
+        'person_password': person_password,
+        'category': category
+    }
+    formData.append('file', file_pdf);
+    formData.append('data',JSON.stringify(dataJson));
     e.preventDefault();
     $.ajax({
         type: 'POST',
         url: 'php/php_register.php',
-        data: {
-            person_name: person_name,
-            person_birthday: person_birthday,
-            person_identification: person_identification,
-            person_phonenumber: person_phonenumber,
-            person_fax: person_fax,
-            person_email: person_email,
-
-            person_address: person_address,
-            person_district: person_district,
-            person_amphoe: person_amphoe,
-            person_province: person_province,
-            person_zipcode: person_zipcode,
-
-            person_username: person_username,
-            person_password: person_password,
-
-            category: category
-        },
+        processData:false,
+        contentType: false,
+        data: formData,
         success: function(response) {
-            response = JSON.parse(response);
+            console.log(response)
+            response = JSON.parse(response)
             if(response.success){
                 location.href="./"
             }else{
-                // error
             }
         }
     });
 });
 $("#company_register").submit(function(e) {
     let company_name = $("#company_name").val()
-    let company_enrollno = $("#company_enrollno").val()
-    let company_date_enroll = $("#company_date_enroll").val()
+    let company_no = $("#company_enrollno").val()
+    let company_date = $("#company_date_enroll").val()
     let company_phone = $("#company_phone").val()
     let company_fax = $("#company_fax").val()
     let company_email = $('#company_email').val()
-
     let company_address = $("#company_address").val()
     let company_district = $("#company_district").val()
     let company_amphoe = $("#company_amphoe").val()
     let company_province = $("#company_province").val()
     let company_zipcode = $("#company_zipcode").val()
-
     let company_username = $("#company_username").val()
     let company_password = $("#company_password").val()
     let category  = 'company'
+
+    var file_pdf = $("#filepdf-upload").prop('files')[0];
+    var formData = new FormData();
+    var dataJson = {
+        'person_name': company_name,
+        'person_identification': company_no,
+        'person_birthday': company_date,
+        'person_phonenumber': company_phone,
+        'person_fax': company_fax,
+        'person_email': company_email,
+        'person_address': company_address,
+        'person_district': company_district,
+        'person_amphoe': company_amphoe,
+        'person_province': company_province,
+        'person_zipcode': company_zipcode,
+        'person_username': company_username,
+        'person_password': company_password,
+        'category': category
+    }
+    formData.append('file', file_pdf);
+    formData.append('data',JSON.stringify(dataJson));
     e.preventDefault();
     $.ajax({
         type: 'POST',
         url: 'php/php_register.php',
-        data: {
-            person_name: company_name,
-            person_identification: company_enrollno,
-            person_birthday: company_date_enroll,
-            person_phonenumber: company_phone,
-            person_fax: company_fax,
-            person_email: company_email,
-
-            person_address: company_address,
-            person_district: company_district,
-            person_amphoe: company_amphoe,
-            person_province: company_province,
-            person_zipcode: company_zipcode,
-
-            person_username: company_username,
-            person_password: company_password,
-
-            category: category
-        },
+        processData:false,
+        contentType: false,
+        data: formData,
         success: function(response) {
             console.log(response)
             response = JSON.parse(response)
@@ -245,3 +253,17 @@ $('#check-address-storage-person').click(function(){
         $("#person_storage_zipcode").prop('disabled', false)
     }
 })
+
+//file validate
+//https://www.codexworld.com/ajax-file-upload-with-form-data-jquery-php-mysql/
+// $("#filepdf-upload").change(function() {
+//     var file = this.files[0];
+//     var fileType = file.type;
+    // var match = ['application/pdf', 'application/msword', 'application/vnd.ms-office', 'image/jpeg', 'image/png', 'image/jpg'];
+//     var match = ['application/pdf'];
+//     if(!((fileType == match[0]) || (fileType == match[1]) || (fileType == match[2]) || (fileType == match[3]) || (fileType == match[4]) || (fileType == match[5]))){
+//         alert('Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.');
+//         $("#file").val('');
+//         return false;
+//     }
+// });

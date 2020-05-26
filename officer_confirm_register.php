@@ -58,6 +58,13 @@
                         <p id="show_company_phone" style="color:Gray;"></p>
                         <p id="show_company_fax" style="color:Gray;"></p>
                     </div>
+                    <hr>
+                    <div class="row-ml-3">
+                    <i class="fa fa-file-pdf-o" style="font-size:36px;color:#EB5D3E"></i>
+
+                    <a href="php/php_filedownload.php" style="color:Gray;" id="tag">ใบอนุญาต / บัตรประจำตัวประชาชน</a>
+                    </div>
+                    
                 </div>
                 <form id="form_company_id">
                     <input type="hidden" id="show_company_id">
