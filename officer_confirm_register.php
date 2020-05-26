@@ -61,8 +61,8 @@
                     <hr>
                     <div class="row-ml-3">
                     <i class="fa fa-file-pdf-o" style="font-size:36px;color:#EB5D3E"></i>
-
-                    <a href="php/php_filedownload.php" style="color:Gray;" id="tag">ใบอนุญาต / บัตรประจำตัวประชาชน</a>
+                    <!-- https://www.thesitewizard.com/html-tutorial/open-links-in-new-window-or-tab.shtml -->
+                    <a href="php/php_filedownload.php" style="color:Gray;" id="tag" target="_blank">ใบอนุญาต / บัตรประจำตัวประชาชน</a>
                     </div>
                     
                 </div>

@@ -267,3 +267,20 @@ $('#check-address-storage-person').click(function(){
 //         return false;
 //     }
 // });
+
+
+// https://stackoverflow.com/questions/48613992/bootstrap-4-file-input-doesnt-show-the-file-name
+$('#filepdf-upload').on('change',function(){
+    //get the file name
+    var fileName = $(this).val();
+    var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(cleanFileName);
+})
+$('#filepdf-person-upload').on('change',function(){
+    //get the file name
+    var fileName = $(this).val();
+    var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(cleanFileName);
+})

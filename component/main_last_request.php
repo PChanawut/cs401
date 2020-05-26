@@ -132,7 +132,7 @@
             </td>
             <td>
                 <?php
-                    echo $request['start_date'];
+                    echo date("d-m-Y", strtotime($request['start_date']));
                 ?>
             </td>
             <td>
