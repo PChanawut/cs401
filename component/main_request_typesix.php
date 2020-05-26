@@ -88,6 +88,13 @@
             </div>
             <div class="form-row">
                 <div class="form-group col">
+                    <button id="fav_chemicalsix_location" type="button" class="btn btn-outline-info btn-sm"
+                        style="float:right;"><i class="fas fa-star">
+                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
                     <label for="location_materialsix_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
                     <input type="text" class="form-control" id="location_materialsix_address">
                 </div>
@@ -122,9 +129,21 @@
                     <input type="text" class="form-control" id="location_materialsix_email">
                 </div>
             </div>
-
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="materialsix_location">
+                <label class="custom-control-label"
+                    for="materialsix_location">จัดเก็บข้อมูลสถานที่เป็นรายการโปรด</label>
+            </div>
+            <br>
             <div class="row alert alert-primary" role="alert" style="height:45px">
                 <h5>สถานที่เก็บรักษาวัสดุที่พ้นสภาพแล้ว</h5>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <button id="fav_notsix_location" type="button" class="btn btn-outline-info btn-sm"
+                        style="float:right;"><i class="fas fa-star">
+                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-group col">
@@ -162,6 +181,11 @@
                     <input type="text" class="form-control" id="location_email_six">
                 </div>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="materialsix_location_not">
+                <label class="custom-control-label"
+                    for="materialsix_location_not">จัดเก็บข้อมูลสถานที่เป็นรายการโปรด</label>
+            </div>
         </div>
 
         <div class="float-right">
@@ -198,6 +222,13 @@
                     <div id="collapseOne6" class="collapse show" aria-labelledby="headingOne"
                         data-parent="#accordionExample">
                         <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <button id="fav_six_safe" type="button" class="btn btn-outline-info btn-sm"
+                                        style="float:right;"><i class="fas fa-star">
+                                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="safe_name_six">ชื่อ:</label>
@@ -312,7 +343,11 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save_safesix">
+                                <label class="custom-control-label"
+                                    for="save_safesix">จัดเก็บข้อมูลเจ้าหน้าที่ความปลอดภัยทางรังสีเป็นรายการโปรด</label>
+                            </div>
                             <br>
                             <h6>กรณีที่มีเจ้าหน้าที่ความปลอดภัยทางรังสีมากกว่า 1 คน **กรุณากรอกข้อมูลเพิ่มเติม**</h6>
                             <button id="addsafety6" type="button" style='font-size:16px'
@@ -441,6 +476,13 @@
                         data-parent="#accordionExample">
                         <div class="card-body">
                             <div class="form-row">
+                                <div class="form-group col">
+                                    <button id="fav_six_make" type="button" class="btn btn-outline-info btn-sm"
+                                        style="float:right;"><i class="fas fa-star">
+                                            ใช้ข้อมูลจากรายการโปรด</i></button>
+                                </div>
+                            </div>
+                            <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="make_name_six">ชื่อ:</label>
                                     <input type="text" class="form-control" id="make_name_six" placeholder="name">
@@ -554,6 +596,11 @@
                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save_makesix">
+                                <label class="custom-control-label"
+                                    for="save_makesix">จัดเก็บข้อมูลผู้ปฏิบัติงานทางรังสีเป็นรายการโปรด</label>
                             </div>
                             <br>
                             <h6>กรณีที่มีผู้ปฎิบัติงานรังสีมากกว่า 1 คน **กรุณากรอกข้อมูลเพิ่มเติม**</h6>
@@ -733,6 +780,314 @@
             </div>
         </div>
     </div>
+
+    <!-- สถานที่กระทำด้วยประการใดๆ -->
+    <div class="modal fade" id="show_chemicalsix_location" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดสถานที่กระทำวัสดุทางเคมี</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                                <th scope="col">เบอร์โทรศัพท์</th>
+                                <th scope="col">E-mail</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests = array();
+
+                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.type_location_material
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select' AND type_location_material = 'CHEMICAL'";
+                            $query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request = mysqli_fetch_assoc($query)){
+                                $requests[] = $request;
+                            }
+                                $i = 1;
+                                if(is_array($requests) || is_object($requests)){
+                                    foreach($requests as $request){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request['material_address']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request['material_phone'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request['material_email'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary">เลือก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- สถานที่เก็บรักษาวัสดุที่พ้นสภาพแล้ว -->
+    <div class="modal fade" id="show_notsix_location" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดสถานที่เก็บรักษาวัสดุที่พ้นสภาพ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                                <th scope="col">เบอร์โทรศัพท์</th>
+                                <th scope="col">E-mail</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests = array();
+
+                            $sql1 = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.type_location_material
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select' AND type_location_material = 'NOT CHEMICAL'";
+                            $query1 = mysqli_query($conn,$sql1) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request1 = mysqli_fetch_assoc($query1)){
+                                $requests1[] = $request1;
+                            }
+                                $i = 1;
+                                if(is_array($requests1) || is_object($requests1)){
+                                    foreach($requests1 as $request1){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request1['material_address']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request1['material_phone'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request1['material_email'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary">เลือก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- รายการโปรดเจ้าหน้าที่ทางรังสี -->
+    <div class="modal fade" id="show_favsix_safe" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดเจ้าหน้าที่ทางรังสี</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">ชื่อ-นามสกุล</th>
+                                <th scope="col">ตำแหน่ง</th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests2 = array();
+
+                            $sql2 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'เจ้าหน้าที่ความปลอดภัยทางรังสี' AND fav_staff = 'select'";
+                            $query2 = mysqli_query($conn,$sql2) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request2 = mysqli_fetch_assoc($query2)){
+                                $requests2[] = $request2;
+                            }
+                                $i = 1;
+                                if(is_array($requests2) || is_object($requests2)){
+                                    foreach($requests2 as $request2){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request2['staff_name']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request2['staff_position'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request2['staff_address'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary">เลือก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- รายการโปรดผู้ปฏิบัติงานทางรังสี -->
+    <div class="modal fade" id="show_favsix_make" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดผู้ปฎิบัติงานทางรังสี</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">ชื่อ-นามสกุล</th>
+                                <th scope="col">ตำแหน่ง</th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests3 = array();
+
+                            $sql3 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้ปฏิบัติงานทางรังสี' AND fav_staff = 'select'";
+                            $query3 = mysqli_query($conn,$sql3) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request3 = mysqli_fetch_assoc($query3)){
+                                $requests3[] = $request3;
+                            }
+                                $i = 1;
+                                if(is_array($requests3) || is_object($requests3)){
+                                    foreach($requests3 as $request3){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request3['staff_name']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request3['staff_position'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request3['staff_address'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary">เลือก</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- script have or nothave permission -->
@@ -800,6 +1155,38 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#confirm6').click(function() {
         $('#pageConfirm6').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_chemicalsix_location').click(function() {
+        $('#show_chemicalsix_location').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_notsix_location').click(function() {
+        $('#show_notsix_location').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_six_safe').click(function() {
+        $('#show_favsix_safe').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_six_make').click(function() {
+        $('#show_favsix_make').modal('show');
     });
 });
 </script>

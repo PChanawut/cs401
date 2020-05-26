@@ -4,9 +4,16 @@
     </div>
     <hr>
 
-    <div class="container">
+    <div class="container" id="detail_location">
         <div class="row alert alert-primary" role="alert" style="height:45px">
             <h5>สถานที่และรายละเอียดของวัสดุที่ขออนุญาต</h5>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <button id="fav_five_location" type="button" class="btn btn-outline-info btn-sm" style="float:right;"><i
+                        class="fas fa-star">
+                        ใช้ข้อมูลจากรายการโปรด</i></button>
+            </div>
         </div>
 
         <div class="form-row">
@@ -82,6 +89,10 @@
                 <input type="text" class="form-control" id="country_produce_equipment_five">
             </div>
         </div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="save_locationfive_stepone">
+            <label class="custom-control-label" for="save_locationfive_stepone">จัดเก็บสถานที่ไว้เป็นรายการโปรด</label>
+        </div>
     </div>
 
     <div class="container">
@@ -131,7 +142,85 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                    <button id="confirm5" type="submit" class="btn btn-primary">ยืนยันคำขอ</button>
+                    <button id="confirm5_submit" type="submit" class="btn btn-primary">ยืนยันคำขอ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- หน้าแสดงรายการโปรดที่บันทึกไว้ -->
+    <div class="modal fade" id="show_favfive_location" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">รายการโปรดสถานที่จัดเก็บวัสดุ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">รายละเอียดที่อยู่</th>
+                                <th scope="col">เบอร์โทรศัพท์</th>
+                                <th scope="col">E-mail</th>
+                            </tr>
+                        </thead>
+                        <?php
+                            include('php/config/database.php');
+                            $requests = array();
+
+                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
+                            $query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
+
+                            while($request = mysqli_fetch_assoc($query)){
+                                $requests[] = $request;
+                            }
+                                $i = 1;
+                                if(is_array($requests) || is_object($requests)){
+                                    foreach($requests as $request){
+                        ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1"
+                                            onclick="select_fav(<?php echo $request['material_id']; ?>,this)">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        </label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <?php 
+                                        echo $request['material_address']; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request['material_phone'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $request['material_email'];
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button id="select_fav_location" type="button" class="btn btn-primary">เลือก</button>
                 </div>
             </div>
         </div>
@@ -142,6 +231,14 @@
 $(document).ready(function() {
     $('#confirm5').click(function() {
         $('#pageConfirm5').modal('show');
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#fav_five_location').click(function() {
+        $('#show_favfive_location').modal('show');
     });
 });
 </script>

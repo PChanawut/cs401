@@ -1,3 +1,40 @@
+// ที่อยู่ของผู้แทนจำหน่าย
+$.Thailand({
+    database: './js/jquery.Thailand.js/database/db.json',
+
+    $district: $('#sale_work_subdistrict_four'),
+    $amphoe: $('#sale_work_district_four'),
+    $province: $('#sale_work_province_four'),
+    $zipcode: $('#sale_work_zipcode_four'),
+});
+// ที่อยู่ผู้ดำเนินการทางศุลกากร
+$.Thailand({
+    database: './js/jquery.Thailand.js/database/db.json',
+
+    $district: $('#handler_work_subdistrict_four'),
+    $amphoe: $('#handler_work_district_four'),
+    $province: $('#handler_work_province_four'),
+    $zipcode: $('#handler_work_zipcode_four'),
+});
+// ที่อยู่สถานที่เก็บรักษาวัสดุ
+$.Thailand({
+    database: './js/jquery.Thailand.js/database/db.json',
+
+    $district: $('#import_material_district_four'),
+    $amphoe: $('#import_material_amphoe_four'),
+    $province: $('#import_material_province_four'),
+    $zipcode: $('#import_material_zipcode_four'),
+});
+// ที่อยู่สถานที่เก็บรักษาขณะรอดำเนินการ
+$.Thailand({
+    database: './js/jquery.Thailand.js/database/db.json',
+
+    $district: $('#export_material_district_four'),
+    $amphoe: $('#export_material_amphoe_four'),
+    $province: $('#export_material_province_four'),
+    $zipcode: $('#export_material_zipcode_four'),
+});
+
 $("#request").submit(function(e){
     e.preventDefault();
 
@@ -40,7 +77,13 @@ $("#request").submit(function(e){
     let sale_email_four = $("#sale_email_four").val()
     let sale_phone_four = $("#sale_phone_four").val()
     let sale_work_name_four = $("#sale_work_name_four").val()
-    let sale_address = $("#sale_work_houseno_four").val()+" "+$("#sale_work_villageno_four").val()+" "+$("#sale_work_alley_four").val()+" "+$("#sale_work_road_four").val()+" "+$("#sale_work_subdistrict_four").val()+" "+$("#sale_work_district_four").val()+" "+$("#sale_work_province_four").val()+" "+$("#sale_work_zipcode_four").val()
+    let sale_address = $("#sale_work_houseno_four").val()+" ม."+$("#sale_work_villageno_four").val()+" "+$("#sale_work_alley_four").val()+" "+$("#sale_work_road_four").val()+" ต."+$("#sale_work_subdistrict_four").val()+" อ."+$("#sale_work_district_four").val()+" จ."+$("#sale_work_province_four").val()+" "+$("#sale_work_zipcode_four").val()
+    let sale_location_salework_four = "";
+    if($("#save_location_salework_four").is(':checked')){
+        sale_location_salework_four = "select";
+    }else{
+        sale_location_salework_four = "not";
+    }
 
     // ผู้ดำเนินการตามพิธรศุลกากร
     let handler_name = $("#handler_name_four").val()+" "+$("#handler_lname_four").val()
@@ -51,13 +94,25 @@ $("#request").submit(function(e){
     let handler_email_four = $("#handler_email_four").val()
     let handler_phone_four = $("#handler_phone_four").val()
     let handler_work_name_four = $("#handler_work_name_four").val()
-    let handler_address = $("#handler_work_houseno_four").val()+" "+$("#handler_work_villageno_four").val()+" "+$("#handler_work_alley_four").val()+" "+$("#handler_work_road_four").val()+" "+$("#handler_work_subdistrict_four").val()+" "+$("#handler_work_district_four").val()+" "+$("#handler_work_province_four").val()+" "+$("#handler_work_zipcode_four").val()
+    let handler_address = $("#handler_work_houseno_four").val()+" ม."+$("#handler_work_villageno_four").val()+" "+$("#handler_work_alley_four").val()+" "+$("#handler_work_road_four").val()+" ต."+$("#handler_work_subdistrict_four").val()+" อ."+$("#handler_work_district_four").val()+" จ."+$("#handler_work_province_four").val()+" "+$("#handler_work_zipcode_four").val()
+    let handler_location_handlerwork_four = "";
+    if($("#save_location_handlerwork_four").is(':checked')){
+        handler_location_handlerwork_four = "select";
+    }else{
+        handler_location_handlerwork_four = "not";
+    }
 
     // ผู้รับปลายทางนำเข้าหรือส่งออก
     let destination_work_name_four = $("#destination_work_name_four").val()
     let destination_address = $("#destination_work_houseno_four").val()+" "+$("#destination_work_road_four").val()+" "+$("#destination_work_city_four").val()+" "+$("#destination_work_country_four").val()
     let destination_work_phone_four = $("#destination_work_phone_four").val()
     let destination_work_email_four = $("#destination_work_email_four").val()
+    let destination_location_destinationwork_four = "";
+    if($("#save_location_destinationwork_four").is(':checked')){
+        destination_location_destinationwork_four = "select";
+    }else{
+        destination_location_destinationwork_four = "not";
+    }
 
     // การบรรจุหีบห่อ
     let style_four = $("#style_four").val()
@@ -65,14 +120,26 @@ $("#request").submit(function(e){
     let unnumber_four = $("#unnumber_four").val()
 
     // สถานที่เก็บรักษานำเข้า
-    let import_address = $("#import_material_addrress_four").val()+" "+$("#import_material_district_four").val()+" "+$("#import_material_amphoe_four").val()+" "+$("#import_material_province_four").val()+" "+$("#import_material_zipcode_fourimport_material_zipcode_four").val()
+    let import_address = $("#import_material_addrress_four").val()+" ต."+$("#import_material_district_four").val()+" อ."+$("#import_material_amphoe_four").val()+" จ."+$("#import_material_province_four").val()+" "+$("#import_material_zipcode_four").val()
     let import_material_phone_four = $("#import_material_phone_four").val()
     let import_material_email_four = $("#import_material_email_four").val()
+    let import_location_four = "";
+    if($("#save_location_import_four").is(':checked')){
+        import_location_four = "select";
+    }else{
+        import_location_four = "not";
+    }
 
     // สถานที่เก็บรักษาส่งออก
-    let export_address = $("#export_material_address_four").val()+" "+$("#export_material_district_four").val()+" "+$("#export_material_amphoe_four").val()+" "+$("#export_material_province_four").val()+" "+$("#export_material_zipcode_four").val()
+    let export_address = $("#export_material_address_four").val()+" ต."+$("#export_material_district_four").val()+" อ."+$("#export_material_amphoe_four").val()+" จ."+$("#export_material_province_four").val()+" "+$("#export_material_zipcode_four").val()
     let export_material_phone_four = $("#export_material_phone_four").val()
     let export_material_email_four = $("#export_material_email_four").val()
+    let export_location_four = "";
+    if($("#save_location_export_four").is(':checked')){
+        export_location_four = "select";
+    }else{
+        export_location_four = "not";
+    }
 
     $.ajax({
         url: 'php/php_license_typefour.php',
@@ -134,7 +201,12 @@ $("#request").submit(function(e){
             import_material_email_four: import_material_email_four,
             export_address: export_address,
             export_material_phone_four: export_material_phone_four,
-            export_material_email_four: export_material_email_four
+            export_material_email_four: export_material_email_four,
+            sale_location_salework_four: sale_location_salework_four,
+            handler_location_handlerwork_four: handler_location_handlerwork_four,
+            destination_location_destinationwork_four: destination_location_destinationwork_four,
+            import_location_four: import_location_four,
+            export_location_four: export_location_four
         },
         success: function(response){
             response = JSON.parse(response);
