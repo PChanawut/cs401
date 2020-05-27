@@ -147,7 +147,7 @@ $("#request").submit(function(e){
     }
 
     // step four
-    let import_address = $("#import_material_addrress_two").val()+" ต."+$("#import_material_district_two").val()+" อ."+$("#import_material_amphoe_two").val()+" จ."+$("#import_material_province_two").val()+" "+$("#import_material_zipcode_two").val()
+    let import_address = $("#import_material_addrress_two").val()+" "+$("#import_material_district_two").val()+" "+$("#import_material_amphoe_two").val()+" "+$("#import_material_province_two").val()+" "+$("#import_material_zipcode_two").val()
     let import_material_phone_two = $("#import_material_phone_two").val()
     let import_material_email_two = $("#import_material_email_two").val()
     let import_location_two = "";
@@ -157,7 +157,7 @@ $("#request").submit(function(e){
         import_location_two = "not";
     }
 
-    let export_address = $("#export_material_address_two").val()+" ต."+$("#export_material_district_two").val()+" อ."+$("#export_material_amphoe_two").val()+" จ."+$("#export_material_province_two").val()+" "+$("#export_material_zipcode_two").val()
+    let export_address = $("#export_material_address_two").val()+" "+$("#export_material_district_two").val()+" "+$("#export_material_amphoe_two").val()+" "+$("#export_material_province_two").val()+" "+$("#export_material_zipcode_two").val()
     let export_material_phone_two = $("#export_material_phone_two").val()
     let export_material_email_two = $("#export_material_email_two").val()
     let export_location_two = "";
@@ -286,3 +286,13 @@ function select_fav(material_id,row_no){
         }
     });
 }
+
+// function select_fav_staff(staff_id,row_no){
+//     $.ajax({
+//         type: 'POST',
+//         url: 'php/php_favorite_staff.php',
+//         data: {
+//             staff_id: staff_id
+//         },
+//     });
+// }

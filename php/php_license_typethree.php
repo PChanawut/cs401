@@ -100,8 +100,15 @@
         $check = array();
         mysqli_autocommit($conn, FALSE);
 
+        $sql7 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
+                VALUES(NULL,'$company_name','$company_id','$material_location','$location_material_phone_three','NULL','$location_material_email_three','01','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql7)){
+            array_push($check,"error");
+        }
+
+        $place_id = mysqli_insert_id($conn);
         $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
-                VALUES(NULL,'ขออนุญาตฯ วัสดุนิวเคลียร์พิเศษ','RE','$company_id','$user_request',NULL,'รอตรวจสอบคำขอ',NULL,NULL,NULL,NULL)";
+                VALUES(NULL,'ขออนุญาตฯ วัสดุนิวเคลียร์พิเศษ','RE','$place_id','$user_request',NULL,'รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,NULL,NULL,NULL)";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
@@ -144,12 +151,6 @@
         $sql6 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
                 VALUES(NULL,'$license_id','แพทย์ผู้รับผิดชอบ','$doctor_name','$doctor_idcard_three','$doctor_position_three','$doctor_age_three','$doctor_nationality_three','$doctor_phone_three','$doctor_email_three','$doctor_address',NULL,NULL,'$doctor_hospital_name_three','$doctor_artlicense_three',NULL,'$doctor_selected_three')";
         if(!mysqli_query($conn,$sql6)){
-            array_push($check,"error");
-        }
-
-        $sql7 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
-                VALUES(NULL,'$company_name','$company_id','$material_location','$location_material_phone_three','NULL','$location_material_email_three','01','NULL','NULL','NULL')";
-        if(!mysqli_query($conn,$sql7)){
             array_push($check,"error");
         }
 

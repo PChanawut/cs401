@@ -99,7 +99,7 @@
         mysqli_autocommit($conn, FALSE);
 
         $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
-                VALUES(NULL,'นำเข้า-ส่งออกวัสดุนิวเคลียร์-วัสดุต้นกำลัง','RE','$company_id','$user_request',NULL,'รอตรวจสอบคำขอ',NULL,NULL,NULL,NULL)";
+                VALUES(NULL,'นำเข้า-ส่งออกวัสดุนิวเคลียร์-วัสดุต้นกำลัง','RE','NULL','$user_request',NULL,'รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,NULL,NULL,NULL)";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
@@ -162,18 +162,6 @@
         $sql10 = "INSERT INTO document_relate(document_id,license_id,type_document,no_license,end_license,start_request)
                 VALUES(NULL,'$license_id','NOT HAVE',NULL,NULL,'$location_material_startlicense_four')";
         if(!mysqli_query($conn,$sql10)){
-            array_push($check,"error");
-        }
-
-        $sql11 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
-                VALUES(NULL,'$company_name','$company_id','$import_address','$import_material_phone_four','NULL','$import_material_email_four','01','NULL','NULL','NULL')";
-        if(!mysqli_query($conn,$sql11)){
-            array_push($check,"error");
-        }
-
-        $sql12 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
-                VALUES(NULL,'$company_name','$company_id','$export_address','$export_material_phone_four','NULL','$export_material_email_four','01','NULL','NULL','NULL')";
-        if(!mysqli_query($conn,$sql12)){
             array_push($check,"error");
         }
 

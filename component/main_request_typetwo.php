@@ -1042,7 +1042,7 @@
                             include('php/config/database.php');
                             $requests1 = array();
 
-                            $sql1 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities
+                            $sql1 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id
                                     FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้แทนจำหน่ายที่ได้รับมอบหมายให้นำเข้าหรือส่งออก' AND fav_staff = 'select'";
                             $query1 = mysqli_query($conn,$sql1) or die ("Query fail: " . mysqli_error($conn));
 
@@ -1058,7 +1058,8 @@
                             <th scope="row">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+                                        id="exampleRadios1"
+                                        onclick="select_fav_staff(<?php echo $request1['staff_id']; ?>,this)">
                                     <label class="form-check-label" for="exampleRadios1">
                                     </label>
                                 </div>
@@ -1088,7 +1089,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                <button type="button" class="btn btn-primary">เลือก</button>
+                <button id="select_fav_saletwo" type="button" class="btn btn-primary">เลือก</button>
             </div>
         </div>
     </div>
