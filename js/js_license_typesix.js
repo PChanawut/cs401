@@ -159,3 +159,99 @@ $("#request").submit(function(e){
         }
     });
 });
+
+function select_fav(material_id,row_no){
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_favorite_location.php',
+        data: {
+            material_id: material_id
+        },
+        success: function(response){
+            response = JSON.parse(response);
+            if(response.success){
+                $("#select_fav_locationchemical").click(function(){
+                    $('#show_chemicalsix_location').modal('hide')
+                    $('#location_materialsix_address').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
+                    $('#location_materialsix_district').val(response.address.split(" ")[2])
+                    $('#location_materialsix_amphoe').val(response.address.split(" ")[3])
+                    $('#location_materialsix_province').val(response.address.split(" ")[4])
+                    $('#location_materialsix_zipcode').val(response.address.split(" ")[5])
+                    $('#location_materialsix_phone').val(response.phone)
+                    $('#location_materialsix_email').val(response.email)
+                    // $('#detail_location').show();
+                });
+                $("#select_fav_locationnot").click(function(){
+                    $('#show_notsix_location').modal('hide')
+                    $('#location_not_six').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
+                    $('#location_district_six').val(response.address.split(" ")[2])
+                    $('#location_amphoe_six').val(response.address.split(" ")[3])
+                    $('#location_province_six').val(response.address.split(" ")[4])
+                    $('#location_zipcode_six').val(response.address.split(" ")[5])
+                    $('#location_phone_six').val(response.phone)
+                    $('#location_email_six').val(response.email)
+                    // $('#detail_location').show();
+                });
+            }
+            console.log(material_id);
+        }
+    });
+}
+
+function select_fav_staff(staff_id,row_no){
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_favorite_staff.php',
+        data: {
+            staff_id: staff_id
+        },
+        success: function(response){
+            response = JSON.parse(response);
+            if(response.success){
+                $("#select_fav_safesix").click(function(){
+                    $('#show_favsix_safe').modal('hide')
+                    $('#safe_name_six').val(response.name.split(" ")[0])
+                    $('#safe_lname_six').val(response.name.split(" ")[1])
+                    $('#safe_idcard_six').val(response.idcard)
+                    $('#safe_position_six').val(response.position)
+                    $('#safe_age_six').val(response.age)
+                    $('#safe_nationality_six').val(response.nationality)
+                    $('#safe_phone_six').val(response.phone)
+                    $('#safe_email_six').val(response.email)
+                    $('#safe_houseno_six').val(response.address.split(" ")[0])
+                    $('#safe_villageno_six').val(response.address.split(" ")[1])
+                    $('#safe_alley_six').val(response.address.split(" ")[2])
+                    $('#safe_road_six').val(response.address.split(" ")[3])
+                    $('#safe_subdistrict_six').val(response.address.split(" ")[4])
+                    $('#safe_district_six').val(response.address.split(" ")[5])
+                    $('#safe_province_six').val(response.address.split(" ")[6])
+                    $('#safe_zipcode_six').val(response.address.split(" ")[7])
+                    $('#safe_qualification_six').val(response.qualification)
+                    $('#safe_number_six').val(response.no_regis)
+                });
+                $("#select_fav_makesix").click(function(){
+                    $('#show_favsix_make').modal('hide')
+                    $('#make_name_six').val(response.name.split(" ")[0])
+                    $('#make_lname_six').val(response.name.split(" ")[1])
+                    $('#make_idcard_six').val(response.idcard)
+                    $('#make_position_six').val(response.position)
+                    $('#make_age_six').val(response.age)
+                    $('#make_nationality_six').val(response.nationality)
+                    $('#make_phone_six').val(response.phone)
+                    $('#make_email_six').val(response.email)
+                    $('#make_houseno_six').val(response.address.split(" ")[0])
+                    $('#make_villageno_six').val(response.address.split(" ")[1])
+                    $('#make_alley_six').val(response.address.split(" ")[2])
+                    $('#make_road_six').val(response.address.split(" ")[3])
+                    $('#make_subdistrict_six').val(response.address.split(" ")[4])
+                    $('#make_district_six').val(response.address.split(" ")[5])
+                    $('#make_province_six').val(response.address.split(" ")[6])
+                    $('#make_zipcode_six').val(response.address.split(" ")[7])
+                    $('#make_qualification_six').val(response.qualification)
+                    $('#make_number_six').val(response.no_regis)
+                });
+            }
+            console.log(staff_id);
+        }
+    });
+}

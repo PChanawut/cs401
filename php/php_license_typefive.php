@@ -41,8 +41,8 @@
         }
 
         $license_id = mysqli_insert_id($conn);
-        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
-                VALUES(NULL,'$license_id','$material_location','$location_materialfive_phone','$location_materialfive_email',NULL,'$location_materialfive_request',NULL,NULL,'$selected_five')";
+        $sql = "INSERT INTO materiallocation(material_id,license_id,company_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$company_id','$material_location','$location_materialfive_phone','$location_materialfive_email',NULL,'$location_materialfive_request',NULL,NULL,'$selected_five')";
         if(!mysqli_query($conn,$sql)){
             array_push($check,"error");
         }

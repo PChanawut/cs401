@@ -173,8 +173,8 @@
                             include('php/config/database.php');
                             $requests = array();
 
-                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id
-                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
+                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id, materiallocation.company_id
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE company_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
                             $query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request = mysqli_fetch_assoc($query)){

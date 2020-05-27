@@ -78,14 +78,14 @@
             array_push($check,"error");
         }
 
-        $sql2 = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
-                VALUES(NULL,'$license_id','$material_location_chemical','$location_materialsix_phone','$location_materialsix_email',NULL,NULL,NULL,'CHEMICAL','$materialsix_location')";
+        $sql2 = "INSERT INTO materiallocation(material_id,license_id,company_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$company_id','$material_location_chemical','$location_materialsix_phone','$location_materialsix_email',NULL,NULL,NULL,'CHEMICAL','$materialsix_location')";
         if(!mysqli_query($conn,$sql2)){
             array_push($check,"error");
         }
 
-        $sql3 = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
-                VALUES(NULL,'$license_id','$material_location','$location_phone_six','$location_email_six',NULL,NULL,NULL,'NOT CHEMICAL','$materialsix_location_not')";
+        $sql3 = "INSERT INTO materiallocation(material_id,license_id,company_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$company_id','$material_location','$location_phone_six','$location_email_six',NULL,NULL,NULL,'NOT CHEMICAL','$materialsix_location_not')";
         if(!mysqli_query($conn,$sql3)){
             array_push($check,"error");
         }

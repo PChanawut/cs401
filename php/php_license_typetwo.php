@@ -127,8 +127,8 @@
         }
 
         $license_id = mysqli_insert_id($conn);
-        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
-                VALUES(NULL,'$license_id','$location_address','$location_materialtwo_phone','$location_materialtwo_email','$location_materialtwo_benefit','$type_request','$location_materialtwo_vehicle',NULL,'$selected_two')";
+        $sql = "INSERT INTO materiallocation(material_id,license_id,company_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$company_id','$location_address','$location_materialtwo_phone','$location_materialtwo_email','$location_materialtwo_benefit','$type_request','$location_materialtwo_vehicle',NULL,'$selected_two')";
         if(!mysqli_query($conn,$sql)){
             array_push($check,"error");
         }
@@ -155,32 +155,32 @@
             array_push($check,"error");
         }
 
-        $sql5 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
-                VALUES(NULL,'$license_id','ผู้แทนจำหน่ายที่ได้รับมอบหมายให้นำเข้าหรือส่งออก','$sale_name','$sale_idcard','$sale_position','$sale_age','$sale_nationality','$sale_phone','$sale_email','$sale_address',NULL,NULL,'$sale_work_name',NULL,NULL,'$sale_location_salework_two')";
+        $sql5 = "INSERT INTO companystaff(staff_id,license_id,company_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','$company_id','ผู้แทนจำหน่ายที่ได้รับมอบหมายให้นำเข้าหรือส่งออก','$sale_name','$sale_idcard','$sale_position','$sale_age','$sale_nationality','$sale_phone','$sale_email','$sale_address',NULL,NULL,'$sale_work_name',NULL,NULL,'$sale_location_salework_two')";
         if(!mysqli_query($conn,$sql5)){
             array_push($check,"error");
         }
 
-        $sql6 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
-                VALUES(NULL,'$license_id','ผู้ดำเนินการตามพิธีศุลกากร','$handler_name','$handler_idcard','$handler_position','$handler_age','$handler_nationality','$handler_phone','$handler_email','$handler_address',NULL,NULL,'$handler_work_name',NULL,NULL,'$handler_location_handlerwork_two')";
+        $sql6 = "INSERT INTO companystaff(staff_id,license_id,company_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','$company_id','ผู้ดำเนินการตามพิธีศุลกากร','$handler_name','$handler_idcard','$handler_position','$handler_age','$handler_nationality','$handler_phone','$handler_email','$handler_address',NULL,NULL,'$handler_work_name',NULL,NULL,'$handler_location_handlerwork_two')";
         if(!mysqli_query($conn,$sql6)){
             array_push($check,"error");
         }
         
-        $sql7 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
-                VALUES(NULL,'$license_id','ผู้รับปลายทางนำเข้าหรือส่งออก',NULL,NULL,NULL,NULL,NULL,'$destination_work_phone','$destination_work_email','$destination_address',NULL,NULL,'$destination_work_name',NULL,NULL,'$destination_location_destinationwork_two')";
+        $sql7 = "INSERT INTO companystaff(staff_id,license_id,company_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','$company_id','ผู้รับปลายทางนำเข้าหรือส่งออก',NULL,NULL,NULL,NULL,NULL,'$destination_work_phone','$destination_work_email','$destination_address',NULL,NULL,'$destination_work_name',NULL,NULL,'$destination_location_destinationwork_two')";
         if(!mysqli_query($conn,$sql7)){
             array_push($check,"error");
         }
 
-        $sql8 = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
-                VALUES(NULL,'$license_id','$import_address','$import_material_phone_two','$import_material_email_two',NULL,NULL,NULL,'IMPORT MATERIAL','$import_location_two')";
+        $sql8 = "INSERT INTO materiallocation(material_id,license_id,company_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$company_id','$import_address','$import_material_phone_two','$import_material_email_two',NULL,NULL,NULL,'IMPORT MATERIAL','$import_location_two')";
         if(!mysqli_query($conn,$sql8)){
             array_push($check,"error");
         }
 
-        $sql9 = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
-                VALUES(NULL,'$license_id','$export_address','$export_material_phone_two','$export_material_email_two',NULL,NULL,NULL,'EXPORT MATERIAL','$export_location_two')";
+        $sql9 = "INSERT INTO materiallocation(material_id,license_id,company_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$company_id','$export_address','$export_material_phone_two','$export_material_email_two',NULL,NULL,NULL,'EXPORT MATERIAL','$export_location_two')";
         if(!mysqli_query($conn,$sql9)){
             array_push($check,"error");
         }
