@@ -43,6 +43,7 @@ $("#request").submit(function(e){
             selected_five: selected_five
         },
         success: function(response){
+            console.log(response)
             response = JSON.parse(response);
             console.log(response);
             if(response.success == true){

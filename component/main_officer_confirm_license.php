@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h4>คำขออนุญาตล่าสุด</h4>
+            <h4>ยกเลิกคำขออนุญาต</h4>
         </div>
         <div class="col">
             <div class="input-group">
@@ -50,10 +50,32 @@
                     <i class="fa fa-calendar-check-o" style="font-size:20px;color:white"></i>
                 </button>
             </td>
+            <td><?php echo "1" ?></td>
+            <td class="d-none d-sm-block"><?php echo "สุจารี ไทยรัตน์"; ?></td>
+            <td><?php echo "ขออนุญาตพลังงานปรมาณูจากเครื่องปฎิกรณ์ปรมาณู"; ?></td>
+            <td><?php echo "01-01-2020"; ?></td>
+            <td class="text-right">
+                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"
+                    class="btn btn-warning ml-2">
+                    <i class="fa fa-calendar-check-o" style="font-size:20px;color:white"></i>
+                </button>
+            </td>
         </tbody>
         <?php
                     }
                 }
         ?>
+        <tbody class="index">
+            <td><?php echo "1" ?></td>
+            <td class="d-none d-sm-block"><?php echo "สุจารี ไทยรัตน์"; ?></td>
+            <td><?php echo "ขออนุญาตพลังงานปรมาณูจากเครื่องปฎิกรณ์ปรมาณู"; ?></td>
+            <td><?php echo "01-01-2020"; ?></td>
+            <td class="text-right">
+                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"
+                    class="btn btn-warning ml-2">
+                    <i class="fa fa-calendar-check-o" style="font-size:20px;color:white"></i>
+                </button>
+            </td>
+        </tbody>
     </table>
 </div>
