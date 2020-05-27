@@ -78,6 +78,7 @@
 
         $company_id = $_SESSION["company_id"];
         $user_request = $_SESSION["user_id"];
+        $company_name = $_SESSION["name"];
 
         $check = array();
         mysqli_autocommit($conn, FALSE);
@@ -116,6 +117,12 @@
         $sql5 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
                 VALUES(NULL,'$license_id','แพทย์ผู้รับผิดชอบ','$doctor_name','$doctor_idcard_seven','$doctor_position_seven','$doctor_age_seven','$doctor_nationality_seven','$doctor_phone_seven','$doctor_email_seven','$doctor_address',NULL,NULL,'$doctor_hospital_name_seven','$doctor_artlicense_seven','$doctor_date_start_seven','$doctor_selected_seven')";
         if(!mysqli_query($conn,$sql5)){
+            array_push($check,"error");
+        }
+
+        $sql6 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
+                VALUES(NULL,'$company_name','$company_id','$material_location','$location_materialseven_phone','NULL','$location_materialseven_email','01','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql6)){
             array_push($check,"error");
         }
 
