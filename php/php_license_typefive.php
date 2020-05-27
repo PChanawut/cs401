@@ -22,6 +22,7 @@
 
         $company_id = $_SESSION["company_id"];
         $user_request = $_SESSION["user_id"];
+        $company_name = $_SESSION["name"];
 
         $check = array();
         mysqli_autocommit($conn, FALSE);
@@ -42,6 +43,12 @@
         $sql2 = "INSERT INTO materialspecial(material_id,license_id,type_atomic,power_heat,type_atomic_reactor,producename_atomic,country_produce_atomic)
                 VALUES(NULL,'$license_id','$type_equipment_five','$make_heat_five','$type_five','$name_produce_equipment_five','$country_produce_equipment_five')";
         if(!mysqli_query($conn,$sql2)){
+            array_push($check,"error");
+        }
+
+        $sql3 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
+                VALUES(NULL,'$company_name','$company_id','$material_location','$location_materialfive_phone','NULL','$location_materialfive_email','01','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql3)){
             array_push($check,"error");
         }
 

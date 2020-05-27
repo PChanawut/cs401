@@ -60,6 +60,7 @@
 
         $company_id = $_SESSION["company_id"];
         $user_request = $_SESSION["user_id"];
+        $company_name = $_SESSION["name"];
 
         $check = array();
         mysqli_autocommit($conn, FALSE);
@@ -98,6 +99,18 @@
         $sql5 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
                 VALUES(NULL,'$license_id','ผู้ปฏิบัติงานทางรังสี','$make_name','$make_idcard_six','$make_position_six','$make_age_six','$make_nationality_six','$make_phone_six','$make_email_six','$make_address','$make_qualification_six','$make_number_six',NULL,NULL,NULL,'$make_selected_six')";
         if(!mysqli_query($conn,$sql5)){
+            array_push($check,"error");
+        }
+
+        $sql6 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
+                VALUES(NULL,'$company_name','$company_id','$material_location_chemical','$location_materialsix_phone','NULL','$location_materialsix_email','01','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql6)){
+            array_push($check,"error");
+        }
+
+        $sql7 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
+                VALUES(NULL,'$company_name','$company_id','$material_location','$location_phone_six','NULL','$location_email_six','01','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql7)){
             array_push($check,"error");
         }
 
