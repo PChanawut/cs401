@@ -147,7 +147,7 @@ $("#request").submit(function(e){
     }
 
     // step four
-    let import_address = $("#import_material_addrress_two").val()+" ต."+$("#import_material_district_two").val()+" อ."+$("#import_material_amphoe_two").val()+" จ."+$("#import_material_province_two").val()+" "+$("#import_material_zipcode_two").val()
+    let import_address = $("#import_material_addrress_two").val()+" "+$("#import_material_district_two").val()+" "+$("#import_material_amphoe_two").val()+" "+$("#import_material_province_two").val()+" "+$("#import_material_zipcode_two").val()
     let import_material_phone_two = $("#import_material_phone_two").val()
     let import_material_email_two = $("#import_material_email_two").val()
     let import_location_two = "";
@@ -157,7 +157,7 @@ $("#request").submit(function(e){
         import_location_two = "not";
     }
 
-    let export_address = $("#export_material_address_two").val()+" ต."+$("#export_material_district_two").val()+" อ."+$("#export_material_amphoe_two").val()+" จ."+$("#export_material_province_two").val()+" "+$("#export_material_zipcode_two").val()
+    let export_address = $("#export_material_address_two").val()+" "+$("#export_material_district_two").val()+" "+$("#export_material_amphoe_two").val()+" "+$("#export_material_province_two").val()+" "+$("#export_material_zipcode_two").val()
     let export_material_phone_two = $("#export_material_phone_two").val()
     let export_material_email_two = $("#export_material_email_two").val()
     let export_location_two = "";
@@ -269,7 +269,7 @@ function select_fav(material_id,row_no){
         },
         success: function(response){
             response = JSON.parse(response);
-            if(material_id != ""){
+            if(response.success){
                 $("#select_fav_location").click(function(){
                     $('#show_favtwo_location').modal('hide')
                     $('#location_materialtwo_address').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
@@ -281,8 +281,93 @@ function select_fav(material_id,row_no){
                     $('#location_materialtwo_email').val(response.email)
                     // $('#detail_location').show();
                 });
+                $("#select_fav_import_two").click(function(){
+                    $('#show_two_import').modal('hide')
+                    $('#import_material_addrress_two').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
+                    $('#import_material_district_two').val(response.address.split(" ")[2])
+                    $('#import_material_amphoe_two').val(response.address.split(" ")[3])
+                    $('#import_material_province_two').val(response.address.split(" ")[4])
+                    $('#import_material_zipcode_two').val(response.address.split(" ")[5])
+                    $('#import_material_phone_two').val(response.phone)
+                    $('#import_material_email_two').val(response.email)
+                });
+                $("#select_fav_export_two").click(function(){
+                    $('#show_two_export').modal('hide')
+                    $('#export_material_address_two').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
+                    $('#export_material_district_two').val(response.address.split(" ")[2])
+                    $('#export_material_amphoe_two').val(response.address.split(" ")[3])
+                    $('#export_material_province_two').val(response.address.split(" ")[4])
+                    $('#export_material_zipcode_two').val(response.address.split(" ")[5])
+                    $('#export_material_phone_two').val(response.phone)
+                    $('#export_material_email_two').val(response.email)
+                });
             }
             console.log(material_id);
+        }
+    });
+}
+
+function select_fav_staff(staff_id,row_no){
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_favorite_staff.php',
+        data: {
+            staff_id: staff_id
+        },
+        success: function(response){
+            response = JSON.parse(response);
+            if(response.success){
+                $("#select_fav_saletwo").click(function(){
+                    $('#show_two_sale').modal('hide')
+                    $('#sale_name').val(response.name.split(" ")[0])
+                    $('#sale_lname').val(response.name.split(" ")[1])
+                    $('#sale_idcard').val(response.idcard)
+                    $('#sale_position').val(response.position)
+                    $('#sale_age').val(response.age)
+                    $('#sale_nationality').val(response.nationality)
+                    $('#sale_phone').val(response.phone)
+                    $('#sale_email').val(response.email)
+                    $('#sale_work_name').val(response.staff_work_name)
+                    $('#sale_work_houseno').val(response.address.split(" ")[0])
+                    $('#sale_work_villageno').val(response.address.split(" ")[1])
+                    $('#sale_work_alley').val(response.address.split(" ")[2])
+                    $('#sale_work_road').val(response.address.split(" ")[3])
+                    $('#sale_work_subdistrict').val(response.address.split(" ")[4])
+                    $('#sale_work_district').val(response.address.split(" ")[5])
+                    $('#sale_work_province').val(response.address.split(" ")[6])
+                    $('#sale_work_zipcode').val(response.address.split(" ")[7])
+                });
+                $("#select_fav_handlertwo").click(function(){
+                    $('#show_two_handler').modal('hide')
+                    $('#handler_name').val(response.name.split(" ")[0])
+                    $('#handler_lname').val(response.name.split(" ")[1])
+                    $('#handler_idcard').val(response.idcard)
+                    $('#handler_position').val(response.position)
+                    $('#handler_age').val(response.age)
+                    $('#handler_nationality').val(response.nationality)
+                    $('#handler_phone').val(response.phone)
+                    $('#handler_email').val(response.email)
+                    $('#handler_work_name').val(response.staff_work_name)
+                    $('#handler_work_houseno').val(response.address.split(" ")[0])
+                    $('#handler_work_villageno').val(response.address.split(" ")[1])
+                    $('#handler_work_alley').val(response.address.split(" ")[2])
+                    $('#handler_work_road').val(response.address.split(" ")[3])
+                    $('#handler_work_subdistrict').val(response.address.split(" ")[4])
+                    $('#handler_work_district').val(response.address.split(" ")[5])
+                    $('#handler_work_province').val(response.address.split(" ")[6])
+                    $('#handler_work_zipcode').val(response.address.split(" ")[7])
+                });
+                $("#select_fav_destinationtwo").click(function(){
+                    $('#show_two_destination').modal('hide')
+                    $('#destination_work_name').val(response.staff_work_name)
+                    $('#destination_work_houseno').val(response.address.split(" ")[0])
+                    $('#destination_work_road').val(response.address.split(" ")[2])
+                    $('#destination_work_city').val(response.address.split(" ")[3])
+                    $('#destination_work_country').val(response.address.split(" ")[4])
+                    $('#destination_work_phone').val(response.phone)
+                    $('#destination_work_email').val(response.email)
+                });
+            }
         }
     });
 }

@@ -65,7 +65,7 @@ function select_fav(material_id,row_no){
             },
             success: function(response){
                 response = JSON.parse(response);
-                if(material_id != ""){
+                if(response.success){
                     $("#select_fav_location").click(function(){
                         $('#show_favfive_location').modal('hide')
                         $('#location_materialfive_address').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])

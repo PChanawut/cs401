@@ -27,15 +27,22 @@
         $check = array();
         mysqli_autocommit($conn, FALSE);
 
+        $sql3 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
+                VALUES(NULL,'$company_name','$company_id','$material_location','$location_materialfive_phone','NULL','$location_materialfive_email','01','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql3)){
+            array_push($check,"error");
+        }
+
+        $place_id = mysqli_insert_id($conn);
         $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
-                VALUES(NULL,'ขออนุญาตพลังงานปรมาณูจากเครื่องปฏิกรณ์ปรมาณู','RE','$company_id','$user_request',NULL,'รอตรวจสอบคำขอ',NULL,NULL,NULL,NULL)";
+                VALUES(NULL,'ขออนุญาตพลังงานปรมาณูจากเครื่องปฏิกรณ์ปรมาณู','RE','$place_id','$user_request',NULL,'รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,NULL,NULL,NULL)";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
 
         $license_id = mysqli_insert_id($conn);
-        $sql = "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
-                VALUES(NULL,'$license_id','$material_location','$location_materialfive_phone','$location_materialfive_email',NULL,'$location_materialfive_request',NULL,NULL,'$selected_five')";
+        $sql = "INSERT INTO materiallocation(material_id,license_id,company_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$company_id','$material_location','$location_materialfive_phone','$location_materialfive_email',NULL,'$location_materialfive_request',NULL,NULL,'$selected_five')";
         if(!mysqli_query($conn,$sql)){
             array_push($check,"error");
         }
@@ -43,12 +50,6 @@
         $sql2 = "INSERT INTO materialspecial(material_id,license_id,type_atomic,power_heat,type_atomic_reactor,producename_atomic,country_produce_atomic)
                 VALUES(NULL,'$license_id','$type_equipment_five','$make_heat_five','$type_five','$name_produce_equipment_five','$country_produce_equipment_five')";
         if(!mysqli_query($conn,$sql2)){
-            array_push($check,"error");
-        }
-
-        $sql3 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
-                VALUES(NULL,'$company_name','$company_id','$material_location','$location_materialfive_phone','NULL','$location_materialfive_email','01','NULL','NULL','NULL')";
-        if(!mysqli_query($conn,$sql3)){
             array_push($check,"error");
         }
 

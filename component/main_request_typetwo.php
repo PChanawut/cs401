@@ -964,8 +964,8 @@
                             include('php/config/database.php');
                             $requests = array();
 
-                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id
-                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
+                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id, materiallocation.company_id
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE company_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
                             $query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request = mysqli_fetch_assoc($query)){
@@ -1042,8 +1042,8 @@
                             include('php/config/database.php');
                             $requests1 = array();
 
-                            $sql1 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities
-                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้แทนจำหน่ายที่ได้รับมอบหมายให้นำเข้าหรือส่งออก' AND fav_staff = 'select'";
+                            $sql1 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id, companystaff.company_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE company_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้แทนจำหน่ายที่ได้รับมอบหมายให้นำเข้าหรือส่งออก' AND fav_staff = 'select'";
                             $query1 = mysqli_query($conn,$sql1) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request1 = mysqli_fetch_assoc($query1)){
@@ -1058,7 +1058,8 @@
                             <th scope="row">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+                                        id="exampleRadios1"
+                                        onclick="select_fav_staff(<?php echo $request1['staff_id']; ?>,this)">
                                     <label class="form-check-label" for="exampleRadios1">
                                     </label>
                                 </div>
@@ -1088,7 +1089,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                <button type="button" class="btn btn-primary">เลือก</button>
+                <button id="select_fav_saletwo" type="button" class="btn btn-primary">เลือก</button>
             </div>
         </div>
     </div>
@@ -1119,8 +1120,8 @@
                             include('php/config/database.php');
                             $requests2 = array();
 
-                            $sql2 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities
-                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้ดำเนินการตามพิธีศุลกากร' AND fav_staff = 'select'";
+                            $sql2 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id, companystaff.company_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE company_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้ดำเนินการตามพิธีศุลกากร' AND fav_staff = 'select'";
                             $query2 = mysqli_query($conn,$sql2) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request2 = mysqli_fetch_assoc($query2)){
@@ -1135,7 +1136,8 @@
                             <th scope="row">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+                                        id="exampleRadios1"
+                                        onclick="select_fav_staff(<?php echo $request2['staff_id']; ?>,this)">
                                     <label class="form-check-label" for="exampleRadios1">
                                     </label>
                                 </div>
@@ -1165,7 +1167,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                <button type="button" class="btn btn-primary">เลือก</button>
+                <button id="select_fav_handlertwo" type="button" class="btn btn-primary">เลือก</button>
             </div>
         </div>
     </div>
@@ -1196,8 +1198,8 @@
                             include('php/config/database.php');
                             $requests3 = array();
 
-                            $sql3 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_phone
-                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้รับปลายทางนำเข้าหรือส่งออก' AND fav_staff = 'select'";
+                            $sql3 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_work_name, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_phone, companystaff.staff_id, companystaff.company_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE company_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้รับปลายทางนำเข้าหรือส่งออก' AND fav_staff = 'select'";
                             $query3 = mysqli_query($conn,$sql3) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request3 = mysqli_fetch_assoc($query3)){
@@ -1212,7 +1214,8 @@
                             <th scope="row">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+                                        id="exampleRadios1"
+                                        onclick="select_fav_staff(<?php echo $request3['staff_id']; ?>,this)">
                                     <label class="form-check-label" for="exampleRadios1">
                                     </label>
                                 </div>
@@ -1242,7 +1245,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                <button type="button" class="btn btn-primary">เลือก</button>
+                <button id="select_fav_destinationtwo" type="button" class="btn btn-primary">เลือก</button>
             </div>
         </div>
     </div>
@@ -1273,8 +1276,8 @@
                             include('php/config/database.php');
                             $requests4 = array();
 
-                            $sql4 = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.type_location_material
-                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select' AND type_location_material = 'IMPORT MATERIAL'";
+                            $sql4 = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.type_location_material, materiallocation.company_id, materiallocation.material_id
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE company_id = ".$_SESSION["company_id"]." AND fav_location = 'select' AND type_location_material = 'IMPORT MATERIAL'";
                             $query4 = mysqli_query($conn,$sql4) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request4 = mysqli_fetch_assoc($query4)){
@@ -1289,7 +1292,8 @@
                             <th scope="row">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+                                        id="exampleRadios1"
+                                        onclick="select_fav(<?php echo $request4['material_id']; ?>,this)">
                                     <label class="form-check-label" for="exampleRadios1">
                                     </label>
                                 </div>
@@ -1319,7 +1323,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                <button type="button" class="btn btn-primary">เลือก</button>
+                <button id="select_fav_import_two" type="button" class="btn btn-primary">เลือก</button>
             </div>
         </div>
     </div>
@@ -1350,8 +1354,8 @@
                             include('php/config/database.php');
                             $requests5 = array();
 
-                            $sql5 = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.type_location_material
-                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select' AND type_location_material = 'EXPORT MATERIAL'";
+                            $sql5 = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.type_location_material, materiallocation.company_id, materiallocation.material_id
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE company_id = ".$_SESSION["company_id"]." AND fav_location = 'select' AND type_location_material = 'EXPORT MATERIAL'";
                             $query5 = mysqli_query($conn,$sql5) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request5 = mysqli_fetch_assoc($query5)){
@@ -1366,7 +1370,8 @@
                             <th scope="row">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+                                        id="exampleRadios1"
+                                        onclick="select_fav(<?php echo $request5['material_id']; ?>,this)">
                                     <label class="form-check-label" for="exampleRadios1">
                                     </label>
                                 </div>
@@ -1396,7 +1401,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                <button type="button" class="btn btn-primary">เลือก</button>
+                <button id="select_fav_export_two" type="button" class="btn btn-primary">เลือก</button>
             </div>
         </div>
     </div>

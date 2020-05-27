@@ -95,15 +95,22 @@
         $check = array();
         mysqli_autocommit($conn, FALSE);
 
+        $sql7 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
+                VALUES(NULL,'$company_name','$company_id','$material_location','$location_materialone_phone','NULL','$location_materialone_email','01','NULL','NULL','NULL')";
+        if(!mysqli_query($conn,$sql7)){
+            array_push($check,"error");
+        }
+
+        $place_id = mysqli_insert_id($conn);
         $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
-                VALUES(NULL,'ขออนุญาตฯ วัสดุพลอยได้','RE','$company_id','$user_request',NULL,'รอตรวจสอบคำขอ',NULL,NULL,NULL,NULL)";
+                VALUES(NULL,'ขออนุญาตฯ วัสดุพลอยได้','RE','$place_id','$user_request',NULL,'รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,NULL,NULL,NULL)";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
 
         $license_id = mysqli_insert_id($conn);
-        $sql =  "INSERT INTO materiallocation(material_id,license_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
-                VALUES(NULL,'$license_id','$material_location','$location_materialone_phone','$location_materialone_email','$location_materialone_benefit','$location_materialone_request',NULL,NULL,'$selected_one')";
+        $sql =  "INSERT INTO materiallocation(material_id,license_id,company_id,material_address,material_phone,material_email,type_benefit,type_request,type_vehicle,type_location_material,fav_location)
+                VALUES(NULL,'$license_id','$company_id','$material_location','$location_materialone_phone','$location_materialone_email','$location_materialone_benefit','$location_materialone_request',NULL,NULL,'$selected_one')";
         if(!mysqli_query($conn,$sql)){
             array_push($check,"error");
         }
@@ -116,7 +123,6 @@
             }
         }
 
-
         if($selected == "ไม่ปิดผนึก"){
             $sql3 = "INSERT INTO materialrequest(material_request_id,license_id,material_type,no_reference,operation_type,element,product_model,material_status,manufacturer_material,material_number,weight_material,unit_weight,manufacturer_container,material_number_container,container_number,weight_container,unit_container,locationname_material,company_sale)
                     VALUES(NULL,'$license_id','ไม่ปิดผนึก','$open_no_reference','$open_operation_type','$open_element','$open_product_model','$open_material_status','$open_manufacturer_material',NULL,'$open_weight_material','$open_unit_weight','$open_physical_properties',NULL,NULL,NULL,NULL,'$open_locationname_material','$open_company_sale')";
@@ -125,27 +131,21 @@
             }
         }
 
-        $sql4 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
-                VALUES(NULL,'$license_id','เจ้าหน้าที่ความปลอดภัยทางรังสี','$safe_name','$safe_idcard','$safe_position','$safe_age','$safe_nationality','$safe_phone','$safe_email','$safe_address','$safe_qualification','$safe_number',NULL,NULL,NULL,'$safe_selected_one')";
+        $sql4 = "INSERT INTO companystaff(staff_id,license_id,company_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','$company_id','เจ้าหน้าที่ความปลอดภัยทางรังสี','$safe_name','$safe_idcard','$safe_position','$safe_age','$safe_nationality','$safe_phone','$safe_email','$safe_address','$safe_qualification','$safe_number',NULL,NULL,NULL,'$safe_selected_one')";
         if(!mysqli_query($conn,$sql4)){
             array_push($check,"error");
         }
 
-        $sql5 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
-                VALUES(NULL,'$license_id','ผู้ปฏิบัติงานทางรังสี','$make_name','$make_idcard','$make_position','$make_age','$make_nationality','$make_phone','$make_email','$make_address','$make_qualification','$make_number',NULL,NULL,NULL,'$make_selected_one')";
+        $sql5 = "INSERT INTO companystaff(staff_id,license_id,company_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','$company_id','ผู้ปฏิบัติงานทางรังสี','$make_name','$make_idcard','$make_position','$make_age','$make_nationality','$make_phone','$make_email','$make_address','$make_qualification','$make_number',NULL,NULL,NULL,'$make_selected_one')";
         if(!mysqli_query($conn,$sql5)){
             array_push($check,"error");
         }
 
-        $sql6 = "INSERT INTO companystaff(staff_id,license_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
-                VALUES(NULL,'$license_id','แพทย์ผู้รับผิดชอบ','$doctor_name','$doctor_idcard','$doctor_position','$doctor_age','$doctor_nationality','$doctor_phone','$doctor_email','$doctor_address',NULL,NULL,'$doctor_hospital_name','$doctor_artlicense','$doctor_date_start','$doctor_selected_one')";
+        $sql6 = "INSERT INTO companystaff(staff_id,license_id,company_id,type_authorities,staff_name,staff_idcard,staff_position,staff_age,staff_nationality,staff_phone,staff_email,staff_address,staff_qualification,staff_no_regis,staff_work_name,staff_art_license,staff_start_work,fav_staff)
+                VALUES(NULL,'$license_id','$company_id','แพทย์ผู้รับผิดชอบ','$doctor_name','$doctor_idcard','$doctor_position','$doctor_age','$doctor_nationality','$doctor_phone','$doctor_email','$doctor_address',NULL,NULL,'$doctor_hospital_name','$doctor_artlicense','$doctor_date_start','$doctor_selected_one')";
         if(!mysqli_query($conn,$sql6)){
-            array_push($check,"error");
-        }
-
-        $sql7 = "INSERT INTO place(place_id,department_name,department_id,address,tel,fax,email,place_type,department_type,zone,risk_group)
-                VALUES(NULL,'$company_name','$company_id','$material_location','$location_materialone_phone','NULL','$location_materialone_email','01','NULL','NULL','NULL')";
-        if(!mysqli_query($conn,$sql7)){
             array_push($check,"error");
         }
 

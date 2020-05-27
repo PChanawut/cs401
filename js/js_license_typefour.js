@@ -220,3 +220,104 @@ $("#request").submit(function(e){
         }
     });
 });
+
+function select_fav_staff(staff_id,row_no){
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_favorite_staff.php',
+        data: {
+            staff_id: staff_id
+        },
+        success: function(response){
+            response = JSON.parse(response);
+            if(response.success){
+                $("#select_fav_salefour").click(function(){
+                    $('#show_four_sale').modal('hide')
+                    $('#sale_name_four').val(response.name.split(" ")[0])
+                    $('#sale_lname_four').val(response.name.split(" ")[1])
+                    $('#sale_idcard_four').val(response.idcard)
+                    $('#sale_position_four').val(response.position)
+                    $('#sale_age_four').val(response.age)
+                    $('#sale_nationality_four').val(response.nationality)
+                    $('#sale_phone_four').val(response.phone)
+                    $('#sale_email_four').val(response.email)
+                    $('#sale_work_name_four').val(response.staff_work_name)
+                    $('#sale_work_houseno_four').val(response.address.split(" ")[0])
+                    $('#sale_work_villageno_four').val(response.address.split(" ")[1])
+                    $('#sale_work_alley_four').val(response.address.split(" ")[2])
+                    $('#sale_work_road_four').val(response.address.split(" ")[3])
+                    $('#sale_work_subdistrict_four').val(response.address.split(" ")[4])
+                    $('#sale_work_district_four').val(response.address.split(" ")[5])
+                    $('#sale_work_province_four').val(response.address.split(" ")[6])
+                    $('#sale_work_zipcode_four').val(response.address.split(" ")[7])
+                });
+                $("#select_fav_handlerfour").click(function(){
+                    $('#show_four_handler').modal('hide')
+                    $('#handler_name_four').val(response.name.split(" ")[0])
+                    $('#handler_lname_four').val(response.name.split(" ")[1])
+                    $('#handler_idcard_four').val(response.idcard)
+                    $('#handler_position_four').val(response.position)
+                    $('#handler_age_four').val(response.age)
+                    $('#handler_nationality_four').val(response.nationality)
+                    $('#handler_phone_four').val(response.phone)
+                    $('#handler_email_four').val(response.email)
+                    $('#handler_work_name_four').val(response.staff_work_name)
+                    $('#handler_work_houseno_four').val(response.address.split(" ")[0])
+                    $('#handler_work_villageno_four').val(response.address.split(" ")[1])
+                    $('#handler_work_alley_four').val(response.address.split(" ")[2])
+                    $('#handler_work_road_four').val(response.address.split(" ")[3])
+                    $('#handler_work_subdistrict_four').val(response.address.split(" ")[4])
+                    $('#handler_work_district_four').val(response.address.split(" ")[5])
+                    $('#handler_work_province_four').val(response.address.split(" ")[6])
+                    $('#handler_work_zipcode_four').val(response.address.split(" ")[7])
+                });
+                $("#select_fav_destinationfour").click(function(){
+                    $('#show_four_destination').modal('hide')
+                    $('#destination_work_name_four').val(response.staff_work_name)
+                    $('#destination_work_houseno_four').val(response.address.split(" ")[0])
+                    $('#destination_work_road_four').val(response.address.split(" ")[2])
+                    $('#destination_work_city_four').val(response.address.split(" ")[3])
+                    $('#destination_work_country_four').val(response.address.split(" ")[4])
+                    $('#destination_work_phone_four').val(response.phone)
+                    $('#destination_work_email_four').val(response.email)
+                });
+            }
+        }
+    });
+}
+
+function select_fav(material_id,row_no){
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_favorite_location.php',
+        data: {
+            material_id: material_id
+        },
+        success: function(response){
+            response = JSON.parse(response);
+            if(response.success){
+                $("#select_fav_import_four").click(function(){
+                    $('#show_four_import').modal('hide')
+                    $('#import_material_addrress_four').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
+                    $('#import_material_district_four').val(response.address.split(" ")[2])
+                    $('#import_material_amphoe_four').val(response.address.split(" ")[3])
+                    $('#import_material_province_four').val(response.address.split(" ")[4])
+                    $('#import_material_zipcode_four').val(response.address.split(" ")[5])
+                    $('#import_material_phone_four').val(response.phone)
+                    $('#import_material_email_four').val(response.email)
+                });
+                $("#select_fav_export_four").click(function(){
+                    $('#show_four_export').modal('hide')
+                    $('#export_material_address_four').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
+                    $('#export_material_district_four').val(response.address.split(" ")[2])
+                    $('#export_material_amphoe_four').val(response.address.split(" ")[3])
+                    $('#export_material_province_four').val(response.address.split(" ")[4])
+                    $('#export_material_zipcode_four').val(response.address.split(" ")[5])
+                    $('#export_material_phone_four').val(response.phone)
+                    $('#export_material_email_four').val(response.email)
+                });
+            }
+            console.log(material_id);
+        }
+    });
+}

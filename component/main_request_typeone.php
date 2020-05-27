@@ -862,8 +862,8 @@
                             include('php/config/database.php');
                             $requests = array();
 
-                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id
-                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE place_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
+                            $sql = "SELECT license.license_id, license.place_id, materiallocation.material_address, materiallocation.material_phone, materiallocation.material_email, materiallocation.fav_location, materiallocation.material_id, materiallocation.company_id
+                                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE company_id = ".$_SESSION["company_id"]." AND fav_location = 'select'";
                             $query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request = mysqli_fetch_assoc($query)){
@@ -940,8 +940,8 @@
                             include('php/config/database.php');
                             $requests3 = array();
 
-                            $sql3 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id
-                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'เจ้าหน้าที่ความปลอดภัยทางรังสี' AND fav_staff = 'select'";
+                            $sql3 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id, companystaff.company_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE company_id = ".$_SESSION["company_id"]." AND type_authorities = 'เจ้าหน้าที่ความปลอดภัยทางรังสี' AND fav_staff = 'select'";
                             $query3 = mysqli_query($conn,$sql3) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request3 = mysqli_fetch_assoc($query3)){
@@ -1018,8 +1018,8 @@
                             include('php/config/database.php');
                             $requests1 = array();
 
-                            $sql1 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id
-                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้ปฏิบัติงานทางรังสี' AND fav_staff = 'select'";
+                            $sql1 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id, companystaff.company_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE company_id = ".$_SESSION["company_id"]." AND type_authorities = 'ผู้ปฏิบัติงานทางรังสี' AND fav_staff = 'select'";
                             $query1 = mysqli_query($conn,$sql1) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request1 = mysqli_fetch_assoc($query1)){
@@ -1096,8 +1096,8 @@
                             include('php/config/database.php');
                             $requests2 = array();
 
-                            $sql2 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id
-                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE place_id = ".$_SESSION["company_id"]." AND type_authorities = 'แพทย์ผู้รับผิดชอบ' AND fav_staff = 'select'";
+                            $sql2 = "SELECT license.license_id, license.place_id, companystaff.staff_name, companystaff.staff_position, companystaff.staff_address, companystaff.fav_staff, companystaff.type_authorities, companystaff.staff_id, companystaff.company_id
+                                    FROM license INNER JOIN companystaff ON license.license_id = companystaff.license_id WHERE company_id = ".$_SESSION["company_id"]." AND type_authorities = 'แพทย์ผู้รับผิดชอบ' AND fav_staff = 'select'";
                             $query2 = mysqli_query($conn,$sql2) or die ("Query fail: " . mysqli_error($conn));
 
                             while($request2 = mysqli_fetch_assoc($query2)){
