@@ -108,7 +108,7 @@
 
         $place_id = mysqli_insert_id($conn);
         $sql1 = "INSERT INTO license(license_id,license_type,license_number,place_id,sid,license_approve_person,license_status,start_date,expire_date,latest_inspect_date,next_inspect_date)
-                VALUES(NULL,'ขออนุญาตฯ วัสดุนิวเคลียร์พิเศษ','RE','$place_id','$user_request',NULL,'รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,NULL,NULL,NULL)";
+                VALUES(NULL,'ขออนุญาตฯ วัสดุนิวเคลียร์พิเศษ','RE','$place_id','$company_id',NULL,'รอตรวจสอบคำขอ',CURRENT_TIMESTAMP,NULL,NULL,NULL)";
         if(!mysqli_query($conn,$sql1)){
             array_push($check,"error");
         }
