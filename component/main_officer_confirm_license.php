@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h4>ยกเลิกคำขออนุญาต</h4>
+            <h4>อนุมัติใบอนุญาต</h4>
         </div>
         <div class="col">
             <div class="input-group">
@@ -40,22 +40,12 @@
                         
         ?>
         <tbody class="index">
-            <td><?php echo $user['license_id']; ?></td>
+            <th class="index" id="id-row" scope="row">
             <td class="d-none d-sm-block"><?php echo $user['company_name']; ?></td>
             <td><?php echo $user['license_type']; ?></td>
             <td><?php echo date("d-m-Y", strtotime($user['start_date'])); ?></td>
             <td class="text-right">
-                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"
-                    class="btn btn-warning ml-2">
-                    <i class="fa fa-calendar-check-o" style="font-size:20px;color:white"></i>
-                </button>
-            </td>
-            <td><?php echo "1" ?></td>
-            <td class="d-none d-sm-block"><?php echo "สุจารี ไทยรัตน์"; ?></td>
-            <td><?php echo "ขออนุญาตพลังงานปรมาณูจากเครื่องปฎิกรณ์ปรมาณู"; ?></td>
-            <td><?php echo "01-01-2020"; ?></td>
-            <td class="text-right">
-                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"
+                <button type="submit" onclick="detailLicense(<?php echo $user['license_id']; ?>,'<?php echo $user['license_type']; ?>')"
                     class="btn btn-warning ml-2">
                     <i class="fa fa-calendar-check-o" style="font-size:20px;color:white"></i>
                 </button>
@@ -65,17 +55,5 @@
                     }
                 }
         ?>
-        <tbody class="index">
-            <td><?php echo "1" ?></td>
-            <td class="d-none d-sm-block"><?php echo "สุจารี ไทยรัตน์"; ?></td>
-            <td><?php echo "ขออนุญาตพลังงานปรมาณูจากเครื่องปฎิกรณ์ปรมาณู"; ?></td>
-            <td><?php echo "01-01-2020"; ?></td>
-            <td class="text-right">
-                <button type="submit" onclick="editUser(<?php echo $user['usercompany_id']; ?>,this)"
-                    class="btn btn-warning ml-2">
-                    <i class="fa fa-calendar-check-o" style="font-size:20px;color:white"></i>
-                </button>
-            </td>
-        </tbody>
     </table>
 </div>
