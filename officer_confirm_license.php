@@ -51,10 +51,11 @@
                         <div id="model_detail_license_staff"></div>
                     </div>
                 </div>
-                
+                <input type="hidden" id="license_id" value="">
                 <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="confirm_license">ยื่นยันใบอนุญาต</button>
+                    <button type="submit" class="btn btn-danger" id="dismiss_license">ยื่นใบอนุญาตใหม่</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                    <button type="button" class="btn btn-primary">ยืนยันใบอนุญาต</button>
                 </div>
             </div>
         </div>

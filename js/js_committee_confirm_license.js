@@ -70,31 +70,10 @@ function detailLicense(id_license,type_license){
 
 $("#confirm_license").click(function(e){
     let license_id = $("#license_id").val()
-    $.ajax({
-        type: 'POST',
-        url: 'php/php_officer_license.php',
-        data: {
-            license_id : license_id
-        },
-        success: function(response) {
-            console.log(response)
-            response = JSON.parse(response);
-            if (response.success) {
-                $("#detail_license").modal('hide');
-                location.reload();
-            } else {
-                
-            }
-        }
-    });
-})
-
-$("#confirm_license").click(function(e){
-    let license_id = $("#license_id").val()
     let type = "confirm"
     $.ajax({
         type: 'POST',
-        url: 'php/php_officer_license.php',
+        url: 'php/php_commit_license.php',
         data: {
             license_id : license_id,
             type : type
@@ -117,7 +96,7 @@ $("#dismiss_license").click(function(e){
     let type = "dismiss"
     $.ajax({
         type: 'POST',
-        url: 'php/php_officer_license.php',
+        url: 'php/php_commit_license.php',
         data: {
             license_id : license_id,
             type : type

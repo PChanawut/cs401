@@ -21,13 +21,51 @@
 
     <!-- footer -->
 
-
+    <div class="modal fade bd-example-modal-lg" id="detail_license" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header alert-primary">
+                    <h5 class="modal-title" id="exampleModalLabel">รายละเอียดใบอนุญาต</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row-ml-3">
+                        <h6>ประเภทใบอนุญาต:</h6>
+                        <p id="model_detail_license_licensetype" style="color:Gray;"></p>
+                    </div>
+                    <div class="row-ml-3">
+                        <h6>ชื่อบริษัท / ชื่อ-นามสกุล:</h6>
+                        <p id="model_detail_license_company1" style="color:Gray;"></p>
+                        <p id="model_detail_license_company2" style="color:Gray;"></p>
+                    </div>
+                    <div class="row-ml-3" id="model_detail_license_stock">
+                        <h6>สถานที่จัดเก็บ:</h6>
+                        <div id="model_detail_license_location"></div>
+                    </div>
+                    <div class="row-ml-3">
+                        <h6>รายละเอียดใบอนุญาต:</h6>
+                        <div id="model_detail_license_detail"></div>
+                    </div>
+                    <div class="row-ml-3">
+                        <h6>เจ้าหน้าที่:</h6>
+                        <div id="model_detail_license_staff"></div>
+                    </div>
+                </div>
+                <input type="hidden" id="license_id" value="">
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="confirm_license">ยื่นยันใบอนุญาต</button>
+                    <button type="submit" class="btn btn-danger" id="dismiss_license">ยื่นใบอนุญาตใหม่</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="stylesheet/jquery.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/popper.min.js" crossorigin="anonymous"></script>
     <script src="stylesheet/bootstrap.min.js" crossorigin="anonymous"></script>
-    <!-- <script src="js/js_officer_confirm_register.js" crossorigin="anonymous"></script> -->
+    <script src="js/js_committee_confirm_license.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
