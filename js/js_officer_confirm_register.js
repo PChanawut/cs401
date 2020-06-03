@@ -47,6 +47,9 @@ $('#form_confirm_register').submit(function(e) {
 });
 $('#form_company_id').submit(function(e){
     let id_confirm = $('#show_company_id').val()
+    $(this).html(
+        `<span class="spinner-border" role="status" aria-hidden="true"></span> กรุณารอสักครู่...`
+      );
     $.ajax({
         type: 'POST',
         url: 'php/php_confirm_register.php',
@@ -57,7 +60,8 @@ $('#form_company_id').submit(function(e){
             response = JSON.parse(response);
             if (response.success == true) {
                 $('#model-company-detail').modal('toggle');
-                location.reload();
+                console.log(response)
+                window.location.reload(false);
             } else {
                 
             }

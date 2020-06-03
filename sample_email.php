@@ -1,39 +1,6 @@
 <?php
-    session_start();
-
-    $response = array();
-    
-    if(isset($_POST['info_register_id'])){
-        include('config/database.php');
-        $info_register_id = $_POST['info_register_id'];
-
-        $check = array();
-        mysqli_autocommit($conn, FALSE);
-        $sql1 = "UPDATE company SET company_status='success' WHERE company_id='$info_register_id'";
-        if(!mysqli_query($conn,$sql1)){
-            array_push($check,"error");
-        }
-        $sql2 = "UPDATE usercompany SET usercompany_ativate='ativate' WHERE company_id='$info_register_id' AND (usercompany_type='company' OR usercompany_type='personality')";
-        if(!mysqli_query($conn,$sql2)){
-            array_push($check,"error");
-        }
-        if(!empty($check)){
-            mysqli_rollback($conn);
-            $response['success'] = false;
-            echo json_encode($response);
-            mysqli_close($conn);
-            exit();
-        }
-
-    $sql = "SELECT * FROM company WHERE company_id = ".$info_register_id."";
-    $result = mysqli_query($conn,$sql);
-    if (mysqli_num_rows($result)==1) {
-        $row = mysqli_fetch_array($result);
-        $email = $row['company_email'];
-    }
-        //sent email
-        	//https://www.youtube.com/watch?v=jrwFt3FBsQk
-	include('../phpmailer/PHPMailerAutoload.php');
+	//https://www.youtube.com/watch?v=jrwFt3FBsQk
+	include('phpmailer/PHPMailerAutoload.php');
 	header('Content-Type: text/html; charset=utf-8');
 	$mail = new PHPMailer;
 	$mail->CharSet = "utf-8";
@@ -48,7 +15,7 @@
 
 	$sender = "สํานักงานปรมาณูเพื่อสันติ ตัวอย่าง"; // ชื่อผู้ส่ง
 	$email_sender = "cs401demoproject@gmail.com"; // เมล์ผู้ส่ง 
-	$email_receiver = $email; // เมล์ผู้รับ ***
+	$email_receiver = "superhipee@hotmail.com"; // เมล์ผู้รับ ***
 	$subject = "ยืนยันการสมัครสมาชิก"; // หัวข้อเมล์
 	$mail->Username = $gmail_username;
 	$mail->Password = $gmail_password;
@@ -81,12 +48,5 @@
 			// กรณีส่ง email สำเร็จ
 			// echo "ระบบได้ส่งข้อความไปเรียบร้อย";
 		}	
-    }
-    ////////////////////////////////////////////////////////////////////////
-        $response['success'] = true;
-        mysqli_commit($conn);
-    }else{
-        $response['success'] = false;
-    }
-    echo json_encode($response);
+	}
 ?>

@@ -1,8 +1,4 @@
 function showdetailLicense(license_id,row_no){
-    alert("55555555");
-    alert(license_id);
-    console.log(license_id);
-
     $.ajax({
         url: 'php/php_all.php',
         type: 'POST',
@@ -17,14 +13,16 @@ function showdetailLicense(license_id,row_no){
         }
     });
 }
-
-$(document).ready(function(){
+$(document).ready(function() {
     $(document).ready(function(){
-        $("th.index").each(function(index){
+        $("th.index").each(function(index) {
             $(this).text(++index);
         });
-        $("tbody.index").each(function(index){
+        $("tbody.index").each(function(index) {
             $(this).attr("id",++index);
         });
-    });
+    })
+});
+$('#show_detail').click(function() {
+    $('#detail_license').modal('show');
 });

@@ -1,13 +1,12 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <!-- <h4 style="font-family:;">ต่อใบอนุญาต</h4> -->
-            <h4>คำขอยกเลิกใบอนุญาต</h4>
+            <h4>ใบอนุญาตทั้งหมด</h4>
         </div>
         <div class="col">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="เลขใบอนุญาต" aria-label="Recipient's username"
-                    aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="เลขที่ใบอนุญาตบริษัท / เลขประจำตัวประชาชน"
+                    aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button">ค้นหา</button>
                 </div>
@@ -15,59 +14,74 @@
         </div>
     </div>
     <hr>
-    <table class="table text-center" id="table-request">
+    <table class="table" id="table-adduser">
         <thead class="alert alert-primary">
             <tr>
-                <th scope="col">ลำดับที่</th>
-                <th scope="col">ประเภทใบอนุญาต</th>
-                <th scope="col">ระยะเวลาที่เหลือ</th>
-                <th scope="col">รายละเอียดใบอนุญาต</th>
+                <th style="width:10%">ลำดับ</th>
+                <th style="width:40%">ประเภทใบอนุญาต</th>
+                <th style="width:25%">สถาณะใบอนุญาต</th>
+                <th>วันที่เหลือ</th>
+                <th></th>
             </tr>
         </thead>
         <?php
             include('php/config/database.php');
-            $requests = array();
-
-            $sql = "SELECT license.license_number, license.license_type, license.license_id, usercompany.usercompany_name, license.start_date, license.license_status
-                    FROM license INNER JOIN usercompany ON license.place_id = usercompany.company_id AND license.sid = usercompany.usercompany_id WHERE place_id = ".$_SESSION["company_id"]." AND license_number = 'LI'";
-            $request_query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
-            // echo $sql;
-
-            while($request = mysqli_fetch_assoc($request_query)){
-                $requests[] = $request;
+            //https://www.tutorialrepublic.com/faq/how-to-convert-a-date-from-yyyy-mm-dd-to-dd-mm-yyyy-format-in-php.php
+            $users = array();
+            $company_id = $_SESSION['company_id'];
+            $sql = "SELECT * 
+                    FROM license
+                    WHERE sid = '$company_id'
+                    ";
+            $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
+            while ($user =  mysqli_fetch_assoc($user_query)){
+                $users[] = $user;
             }
-            
-            $requests = array_reverse($requests,true);
-            // echo count($requests);
-            // $request = array_reverse($requests);
-                $i = 1;
-                // if(is_array($requests) || is_object($requests)){
-                    // foreach($requests as $request){
+                if (is_array($users) || is_object($users)){
+                    foreach($users as $user){
+                        
         ?>
         <tbody class="index">
-            <!-- <tr> -->
-            <th>RE-05-0002</th>
-            <td>สำหรับขออนุญาตพลังงานปรมาณูจากเครื่องปฎิกรณ์ปรมาณู</td>
-            <td>154 วัน</td>
-            <!-- showdetailLicense(<?php //echo $request['license_id']; ?>,this) -->
-            <td><button id="show_detail" type="submit" class="btn btn-danger" data-toggle="modal">
+            <th class="index" id="id-row" scope="row">
+            <td class="d-none d-sm-block"><?php echo $user['license_type']; ?></td>
+            <td><?php echo $user['license_status']; ?></td>
+            <?php 
+                //https://stackoverflow.com/questions/37342254/set-expiry-dates-on-php-application
+                if($user['expire_date']==NULL){
+                    $out = '-';
+                }else{
+                    $start_date = date("Y-m-d", strtotime(date("d.m.Y")));
+                    $end_date = date("Y-m-d", strtotime($user['expire_date']));
+                    $diff = abs(strtotime($end_date) - strtotime($start_date));
+
+                    if($diff <= 0){
+                        $out = '-';
+                    }else{
+                        $years = floor($diff / (365*60*60*24));
+                        $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                        $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                            
+                        if($years > 0){
+                            $out = 'มากกว่า '.$years.' ปี';
+                        }else if($months > 0){
+                            $out = 'มากกว่า '.$months.' เดือน';
+                        }else{
+                            $out = ''.$days.' วัน';
+                        }
+                    }
+                }
+            ?>
+            <td><?php echo $out ?></td>
+            <td class="text-right">
+                <button type="submit" onclick="detailLicense(<?php echo $user['license_id']; ?>,'<?php echo $user['license_type']; ?>')"
+                    class="btn btn-warning ml-2">
                     <i class="fa fa-calendar-check-o" style="font-size:20px;color:white"></i>
                 </button>
             </td>
-            <!-- </tr> -->
         </tbody>
         <?php
-                    // }
-                // }
+                    }
+                }
         ?>
     </table>
-    <!-- </div> -->
 </div>
-
-<script>
-$(document).ready(function() {
-    $('#show_detail').click(function() {
-        $('#detail_license').modal('show');
-    });
-});
-</script>

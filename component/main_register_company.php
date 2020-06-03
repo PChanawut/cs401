@@ -103,6 +103,6 @@
     </div>
     <div id="nextBack" class="mb-4 mt-4" style="float:right;">
         <button onclick='document.location.href="./";' type="button" class="btn">ย้อนกลับ</button>
-        <button class="btn btn-primary" type="submit">ถัดไป</button>
+        <button class="btn btn-primary" type="submit">ยืนยันการสมัคร</button>
     </div>
 </form>
