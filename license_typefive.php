@@ -15,6 +15,19 @@
     <!-- header -->
     <?php include 'component/header.php' ?>
     <!-- main -->
+    <?php
+        if(isset($_GET['data'])){
+            $arrayData = json_decode($_GET['data'], true);
+            // print_r($arrayData);
+
+            $add_address = explode(",",$arrayData['material_address'])[0];
+            $add_district = explode(",",$arrayData['material_address'])[1];
+            $add_amphoe = explode(",",$arrayData['material_address'])[2];
+            $add_province = explode(",",$arrayData['material_address'])[3];
+            $add_zipcode = explode(",",$arrayData['material_address'])[4];
+            // echo $add_address;
+        }
+    ?>
     <form id="request" action="./php/php_license_typeone.php" method="post">
         <?php include 'component/main_request_typefive.php' ?>
     </form>
@@ -31,6 +44,7 @@
     <script type="text/javascript" src="./js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
 
     <script src="js/js_license_typefive.js" crossorigin="anonymous"></script>
+    <script src="js/js_renew.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

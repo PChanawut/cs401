@@ -31,6 +31,7 @@
     <script type="text/javascript" src="./js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
 
     <script src="js/js_license_typeseven.js" crossorigin="anonymous"></script>
+    <script src="js/js_renew.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

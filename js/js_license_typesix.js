@@ -152,7 +152,7 @@ $("#request").submit(function(e){
             console.log(response);
             if(response.success == true){
                 console.log('Hello type six');
-                document.location = 'license_last_request.php';
+                document.location = 'license_all.php';
             }else{
                 console.log('So sad type six');
             }

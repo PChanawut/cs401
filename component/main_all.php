@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <!-- <h4 style="font-family:;">ต่อใบอนุญาต</h4> -->
-            <h4>คำขอยกเลิกใบอนุญาต</h4>
+            <h4>ใบอนุญาตทั้งหมด</h4>
         </div>
         <div class="col">
             <div class="input-group">

@@ -19,7 +19,8 @@
         <div class="form-row">
             <div class="form-group col-2">
                 <label for="location_materialfive_request">ขออนุญาตเพื่อ:</label>
-                <select class="custom-select" id="location_materialfive_request">
+                <select class="custom-select" id="location_materialfive_request"
+                    value="<?php echo isset($_GET['data']) ? $arrayData["type_request"] : ""; ?>">
                     <option value="ผลิต">ผลิต</option>
                     <option value="มีไว้ในครอบครอง">มีไว้ในครอบครอง</option>
                     <option value="ใช้">ใช้</option>
@@ -27,53 +28,63 @@
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
-                <input type="text" class="form-control" id="location_materialfive_address">
+                <input type="text" class="form-control" id="location_materialfive_address"
+                    value="<?php echo isset($_GET['data']) ? $add_address : ""; ?>">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col">
                 <label for="location_materialfive_district">ตำบล:</label>
-                <input type="text" class="form-control" id="location_materialfive_district">
+                <input type="text" class="form-control" id="location_materialfive_district"
+                    value="<?php echo isset($_GET['data']) ? $add_district : ""; ?>">
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_amphoe">อำเภอ:</label>
-                <input type="text" class="form-control" id="location_materialfive_amphoe">
+                <input type="text" class="form-control" id="location_materialfive_amphoe"
+                    value="<?php echo isset($_GET['data']) ? $add_amphoe : ""; ?>">
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_province">จังหวัด:</label>
-                <input type="text" class="form-control" id="location_materialfive_province">
+                <input type="text" class="form-control" id="location_materialfive_province"
+                    value="<?php echo isset($_GET['data']) ? $add_province : ""; ?>">
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_zipcode">รหัสไปรษณีย์:</label>
-                <input type="text" class="form-control" id="location_materialfive_zipcode">
+                <input type="text" class="form-control" id="location_materialfive_zipcode"
+                    value="<?php echo isset($_GET['data']) ? $add_zipcode : ""; ?>">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-2">
                 <label for="location_materialfive_phone">หมายเลขโทรศัพท์:</label>
                 <!-- Don't forget id -->
-                <input type="text" class="form-control" id="location_materialfive_phone">
+                <input type="text" class="form-control" id="location_materialfive_phone"
+                    value="<?php echo isset($_GET['data']) ? $arrayData["material_phone"] : ""; ?>">
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_email">Email:</label>
                 <!-- Don't forget id -->
-                <input type="text" class="form-control" id="location_materialfive_email">
+                <input type="text" class="form-control" id="location_materialfive_email"
+                    value="<?php echo isset($_GET['data']) ? $arrayData["material_email"] : ""; ?>">
             </div>
             <div class="form-group col">
                 <label for="type_equipment_five">ชนิดของเครื่องปฏิกรณ์ปรมาณู:</label>
                 <!-- Don't forget id -->
-                <input type="text" class="form-control" id="type_equipment_five">
+                <input type="text" class="form-control" id="type_equipment_five"
+                    value="<?php echo isset($_GET['data']) ? $arrayData["type_atomic"] : ""; ?>">
             </div>
             <div class="form-group col">
                 <label for="make_heat_five">กำลังผลิตความร้อนสูงสุด:</label>
                 <!-- Don't forget id -->
-                <input type="text" class="form-control" id="make_heat_five">
+                <input type="text" class="form-control" id="make_heat_five"
+                    value="<?php echo isset($_GET['data']) ? $arrayData["power_heat"] : ""; ?>">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-3">
                 <label for="type_five">ประเภทของเครื่องปฏิกรณ์ปรมาณู:</label>
-                <select class="custom-select" id="type_five">
+                <select class="custom-select" id="type_five"
+                    value="<?php echo isset($_GET['data']) ? $arrayData["type_atomic_reactor"] : ""; ?>">
                     <option value="เครื่องปฏิกรณ์ปรมาณูวิจัย">เครื่องปฏิกรณ์ปรมาณูวิจัย</option>
                     <option value="เครื่องปฏิกรณ์ปรมาณูกำลัง">เครื่องปฏิกรณ์ปรมาณูกำลัง</option>
                 </select>
@@ -81,12 +92,14 @@
             <div class="form-group col">
                 <label for="name_produce_equipment_five">ชื่อบริษัทผู้ผลิตเครื่องปฏิกรณ์ปรมาณู:</label>
                 <!-- Don't forget id -->
-                <input type="text" class="form-control" id="name_produce_equipment_five">
+                <input type="text" class="form-control" id="name_produce_equipment_five"
+                    value="<?php echo isset($_GET['data']) ? $arrayData["producename_atomic"] : ""; ?>">
             </div>
             <div class="form-group col-2">
                 <label for="country_produce_equipment_five">ประเทศผู้ผลิต:</label>
                 <!-- Don't forget id -->
-                <input type="text" class="form-control" id="country_produce_equipment_five">
+                <input type="text" class="form-control" id="country_produce_equipment_five"
+                    value="<?php echo isset($_GET['data']) ? $arrayData["country_produce_atomic"] : ""; ?>">
             </div>
         </div>
         <div class="custom-control custom-checkbox">
@@ -197,7 +210,13 @@
                                 </th>
                                 <td>
                                     <?php 
-                                        echo $request['material_address']; 
+                                        // echo $request['material_address'];
+                                        $material_address = explode(",",$request['material_address'])[0];
+                                        $material_address1 = explode(",",$request['material_address'])[1];
+                                        $material_address2 = explode(",",$request['material_address'])[2];
+                                        $material_address3 = explode(",",$request['material_address'])[3];
+                                        $material_address4 = explode(",",$request['material_address'])[4];
+                                        echo $material_address." ต.".$material_address1." อ.".$material_address2." จ.".$material_address3." ".$material_address4;
                                     ?>
                                 </td>
                                 <td>

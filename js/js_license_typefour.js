@@ -77,7 +77,7 @@ $("#request").submit(function(e){
     let sale_email_four = $("#sale_email_four").val()
     let sale_phone_four = $("#sale_phone_four").val()
     let sale_work_name_four = $("#sale_work_name_four").val()
-    let sale_address = $("#sale_work_houseno_four").val()+" ม."+$("#sale_work_villageno_four").val()+" "+$("#sale_work_alley_four").val()+" "+$("#sale_work_road_four").val()+" ต."+$("#sale_work_subdistrict_four").val()+" อ."+$("#sale_work_district_four").val()+" จ."+$("#sale_work_province_four").val()+" "+$("#sale_work_zipcode_four").val()
+    let sale_address = $("#sale_work_houseno_four").val()+","+$("#sale_work_villageno_four").val()+","+$("#sale_work_alley_four").val()+","+$("#sale_work_road_four").val()+","+$("#sale_work_subdistrict_four").val()+","+$("#sale_work_district_four").val()+","+$("#sale_work_province_four").val()+","+$("#sale_work_zipcode_four").val()
     let sale_location_salework_four = "";
     if($("#save_location_salework_four").is(':checked')){
         sale_location_salework_four = "select";
@@ -94,7 +94,7 @@ $("#request").submit(function(e){
     let handler_email_four = $("#handler_email_four").val()
     let handler_phone_four = $("#handler_phone_four").val()
     let handler_work_name_four = $("#handler_work_name_four").val()
-    let handler_address = $("#handler_work_houseno_four").val()+" ม."+$("#handler_work_villageno_four").val()+" "+$("#handler_work_alley_four").val()+" "+$("#handler_work_road_four").val()+" ต."+$("#handler_work_subdistrict_four").val()+" อ."+$("#handler_work_district_four").val()+" จ."+$("#handler_work_province_four").val()+" "+$("#handler_work_zipcode_four").val()
+    let handler_address = $("#handler_work_houseno_four").val()+","+$("#handler_work_villageno_four").val()+","+$("#handler_work_alley_four").val()+","+$("#handler_work_road_four").val()+","+$("#handler_work_subdistrict_four").val()+","+$("#handler_work_district_four").val()+","+$("#handler_work_province_four").val()+","+$("#handler_work_zipcode_four").val()
     let handler_location_handlerwork_four = "";
     if($("#save_location_handlerwork_four").is(':checked')){
         handler_location_handlerwork_four = "select";
@@ -104,7 +104,7 @@ $("#request").submit(function(e){
 
     // ผู้รับปลายทางนำเข้าหรือส่งออก
     let destination_work_name_four = $("#destination_work_name_four").val()
-    let destination_address = $("#destination_work_houseno_four").val()+" "+$("#destination_work_road_four").val()+" "+$("#destination_work_city_four").val()+" "+$("#destination_work_country_four").val()
+    let destination_address = $("#destination_work_houseno_four").val()+","+$("#destination_work_road_four").val()+","+$("#destination_work_city_four").val()+","+$("#destination_work_country_four").val()
     let destination_work_phone_four = $("#destination_work_phone_four").val()
     let destination_work_email_four = $("#destination_work_email_four").val()
     let destination_location_destinationwork_four = "";
@@ -120,7 +120,7 @@ $("#request").submit(function(e){
     let unnumber_four = $("#unnumber_four").val()
 
     // สถานที่เก็บรักษานำเข้า
-    let import_address = $("#import_material_addrress_four").val()+" ต."+$("#import_material_district_four").val()+" อ."+$("#import_material_amphoe_four").val()+" จ."+$("#import_material_province_four").val()+" "+$("#import_material_zipcode_four").val()
+    let import_address = $("#import_material_addrress_four").val()+","+$("#import_material_district_four").val()+","+$("#import_material_amphoe_four").val()+","+$("#import_material_province_four").val()+","+$("#import_material_zipcode_four").val()
     let import_material_phone_four = $("#import_material_phone_four").val()
     let import_material_email_four = $("#import_material_email_four").val()
     let import_location_four = "";
@@ -131,7 +131,7 @@ $("#request").submit(function(e){
     }
 
     // สถานที่เก็บรักษาส่งออก
-    let export_address = $("#export_material_address_four").val()+" ต."+$("#export_material_district_four").val()+" อ."+$("#export_material_amphoe_four").val()+" จ."+$("#export_material_province_four").val()+" "+$("#export_material_zipcode_four").val()
+    let export_address = $("#export_material_address_four").val()+","+$("#export_material_district_four").val()+","+$("#export_material_amphoe_four").val()+","+$("#export_material_province_four").val()+","+$("#export_material_zipcode_four").val()
     let export_material_phone_four = $("#export_material_phone_four").val()
     let export_material_email_four = $("#export_material_email_four").val()
     let export_location_four = "";
@@ -213,7 +213,7 @@ $("#request").submit(function(e){
             console.log(response);
             if(response.success == true){
                 console.log('Hello type four');
-                document.location = 'license_last_request.php';
+                document.location = 'license_all.php';
             }else{
                 console.log('So sad type four');
             }
@@ -242,14 +242,14 @@ function select_fav_staff(staff_id,row_no){
                     $('#sale_phone_four').val(response.phone)
                     $('#sale_email_four').val(response.email)
                     $('#sale_work_name_four').val(response.staff_work_name)
-                    $('#sale_work_houseno_four').val(response.address.split(" ")[0])
-                    $('#sale_work_villageno_four').val(response.address.split(" ")[1])
-                    $('#sale_work_alley_four').val(response.address.split(" ")[2])
-                    $('#sale_work_road_four').val(response.address.split(" ")[3])
-                    $('#sale_work_subdistrict_four').val(response.address.split(" ")[4])
-                    $('#sale_work_district_four').val(response.address.split(" ")[5])
-                    $('#sale_work_province_four').val(response.address.split(" ")[6])
-                    $('#sale_work_zipcode_four').val(response.address.split(" ")[7])
+                    $('#sale_work_houseno_four').val(response.address.split(",")[0])
+                    $('#sale_work_villageno_four').val(response.address.split(",")[1])
+                    $('#sale_work_alley_four').val(response.address.split(",")[2])
+                    $('#sale_work_road_four').val(response.address.split(",")[3])
+                    $('#sale_work_subdistrict_four').val(response.address.split(",")[4])
+                    $('#sale_work_district_four').val(response.address.split(",")[5])
+                    $('#sale_work_province_four').val(response.address.split(",")[6])
+                    $('#sale_work_zipcode_four').val(response.address.split(",")[7])
                 });
                 $("#select_fav_handlerfour").click(function(){
                     $('#show_four_handler').modal('hide')
@@ -262,22 +262,22 @@ function select_fav_staff(staff_id,row_no){
                     $('#handler_phone_four').val(response.phone)
                     $('#handler_email_four').val(response.email)
                     $('#handler_work_name_four').val(response.staff_work_name)
-                    $('#handler_work_houseno_four').val(response.address.split(" ")[0])
-                    $('#handler_work_villageno_four').val(response.address.split(" ")[1])
-                    $('#handler_work_alley_four').val(response.address.split(" ")[2])
-                    $('#handler_work_road_four').val(response.address.split(" ")[3])
-                    $('#handler_work_subdistrict_four').val(response.address.split(" ")[4])
-                    $('#handler_work_district_four').val(response.address.split(" ")[5])
-                    $('#handler_work_province_four').val(response.address.split(" ")[6])
-                    $('#handler_work_zipcode_four').val(response.address.split(" ")[7])
+                    $('#handler_work_houseno_four').val(response.address.split(",")[0])
+                    $('#handler_work_villageno_four').val(response.address.split(",")[1])
+                    $('#handler_work_alley_four').val(response.address.split(",")[2])
+                    $('#handler_work_road_four').val(response.address.split(",")[3])
+                    $('#handler_work_subdistrict_four').val(response.address.split(",")[4])
+                    $('#handler_work_district_four').val(response.address.split(",")[5])
+                    $('#handler_work_province_four').val(response.address.split(",")[6])
+                    $('#handler_work_zipcode_four').val(response.address.split(",")[7])
                 });
                 $("#select_fav_destinationfour").click(function(){
                     $('#show_four_destination').modal('hide')
                     $('#destination_work_name_four').val(response.staff_work_name)
-                    $('#destination_work_houseno_four').val(response.address.split(" ")[0])
-                    $('#destination_work_road_four').val(response.address.split(" ")[2])
-                    $('#destination_work_city_four').val(response.address.split(" ")[3])
-                    $('#destination_work_country_four').val(response.address.split(" ")[4])
+                    $('#destination_work_houseno_four').val(response.address.split(",")[0])
+                    $('#destination_work_road_four').val(response.address.split(",")[2])
+                    $('#destination_work_city_four').val(response.address.split(",")[3])
+                    $('#destination_work_country_four').val(response.address.split(",")[4])
                     $('#destination_work_phone_four').val(response.phone)
                     $('#destination_work_email_four').val(response.email)
                 });
@@ -295,24 +295,25 @@ function select_fav(material_id,row_no){
         },
         success: function(response){
             response = JSON.parse(response);
+            console.log(response);
             if(response.success){
                 $("#select_fav_import_four").click(function(){
                     $('#show_four_import').modal('hide')
-                    $('#import_material_addrress_four').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
-                    $('#import_material_district_four').val(response.address.split(" ")[2])
-                    $('#import_material_amphoe_four').val(response.address.split(" ")[3])
-                    $('#import_material_province_four').val(response.address.split(" ")[4])
-                    $('#import_material_zipcode_four').val(response.address.split(" ")[5])
+                    $('#import_material_addrress_four').val(response.address.split(",")[0])
+                    $('#import_material_district_four').val(response.address.split(",")[1])
+                    $('#import_material_amphoe_four').val(response.address.split(",")[2])
+                    $('#import_material_province_four').val(response.address.split(",")[3])
+                    $('#import_material_zipcode_four').val(response.address.split(",")[4])
                     $('#import_material_phone_four').val(response.phone)
                     $('#import_material_email_four').val(response.email)
                 });
                 $("#select_fav_export_four").click(function(){
                     $('#show_four_export').modal('hide')
-                    $('#export_material_address_four').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
-                    $('#export_material_district_four').val(response.address.split(" ")[2])
-                    $('#export_material_amphoe_four').val(response.address.split(" ")[3])
-                    $('#export_material_province_four').val(response.address.split(" ")[4])
-                    $('#export_material_zipcode_four').val(response.address.split(" ")[5])
+                    $('#export_material_address_four').val(response.address.split(",")[0])
+                    $('#export_material_district_four').val(response.address.split(",")[1])
+                    $('#export_material_amphoe_four').val(response.address.split(",")[2])
+                    $('#export_material_province_four').val(response.address.split(",")[3])
+                    $('#export_material_zipcode_four').val(response.address.split(",")[4])
                     $('#export_material_phone_four').val(response.phone)
                     $('#export_material_email_four').val(response.email)
                 });
