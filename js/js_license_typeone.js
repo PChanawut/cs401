@@ -38,7 +38,7 @@ $.Thailand({
 $("#request").submit(function(e){
     e.preventDefault();
     // step one
-    let material_location = $("#location_materialone_address").val()+" "+$("#location_materialone_district").val()+" "+$("#location_materialone_amphoe").val()+" "+$("#location_materialone_province").val()+" "+$("#location_materialone_zipcode").val()
+    let material_location = $("#location_materialone_address").val()+","+$("#location_materialone_district").val()+","+$("#location_materialone_amphoe").val()+","+$("#location_materialone_province").val()+","+$("#location_materialone_zipcode").val()
     let location_materialone_phone = $("#location_materialone_phone").val()
     let location_materialone_email = $("#location_materialone_email").val()
     let location_materialone_benefit = $("#location_materialone_benefit").val()
@@ -90,7 +90,7 @@ $("#request").submit(function(e){
     let safe_nationality = $("#safe_nationality").val()
     let safe_phone = $("#safe_phone").val()
     let safe_email = $("#safe_email").val()
-    let safe_address = $("#safe_houseno").val()+" "+$("#safe_villageno").val()+" "+$("#safe_alley").val()+" "+$("#safe_road").val()+" "+$("#safe_subdistrict").val()+" "+$("#safe_district").val()+" "+$("#safe_province").val()+" "+$("#safe_zipcode").val()
+    let safe_address = $("#safe_houseno").val()+","+$("#safe_villageno").val()+","+$("#safe_alley").val()+","+$("#safe_road").val()+","+$("#safe_subdistrict").val()+","+$("#safe_district").val()+","+$("#safe_province").val()+","+$("#safe_zipcode").val()
     let safe_qualification = $("#safe_qualification").val()
     let safe_number = $("#safe_number").val()
     let safe_selected_one = "";
@@ -108,7 +108,7 @@ $("#request").submit(function(e){
     let make_nationality = $("#make_nationality").val()
     let make_phone = $("#make_phone").val()
     let make_email = $("#make_email").val()
-    let make_address = $("#make_houseno").val()+" "+$("#make_villageno").val()+" "+$("#make_alley").val()+" "+$("#make_road").val()+" "+$("#make_subdistrict").val()+" "+$("#make_district").val()+" "+$("#make_province").val()+" "+$("#make_zipcode").val()
+    let make_address = $("#make_houseno").val()+","+$("#make_villageno").val()+","+$("#make_alley").val()+","+$("#make_road").val()+","+$("#make_subdistrict").val()+","+$("#make_district").val()+","+$("#make_province").val()+","+$("#make_zipcode").val()
     let make_qualification = $("#make_qualification").val()
     let make_number = $("#make_number").val()
     let make_selected_one = "";
@@ -126,7 +126,7 @@ $("#request").submit(function(e){
     let doctor_nationality = $("#doctor_nationality").val()
     let doctor_phone = $("#doctor_phone").val()
     let doctor_email = $("#doctor_email").val()
-    let doctor_address =$("#doctor_houseno").val()+" "+$("#doctor_villageno").val()+" "+$("#doctor_alley").val()+" "+$("#doctor_road").val()+" "+$("#doctor_subdistrict").val()+" "+$("#doctor_district").val()+" "+$("#doctor_province").val()+" "+$("#doctor_zipcode").val()
+    let doctor_address =$("#doctor_houseno").val()+","+$("#doctor_villageno").val()+","+$("#doctor_alley").val()+","+$("#doctor_road").val()+","+$("#doctor_subdistrict").val()+","+$("#doctor_district").val()+","+$("#doctor_province").val()+","+$("#doctor_zipcode").val()
     let doctor_hospital_name = $("#doctor_hospital_name").val()
     let doctor_artlicense = $("#doctor_artlicense").val()
     let doctor_date_start = $("#doctor_date_start").val()
@@ -215,7 +215,7 @@ $("#request").submit(function(e){
             console.log(response);
             if(response.success == true){
                 console.log('Hello type one');
-                document.location = 'license_last_request.php';
+                document.location = 'license_all.php';
             }else{
                 console.log('So sad type one');
             }
@@ -236,11 +236,11 @@ function select_fav(material_id,row_no){
             if(response.success){
                 $("#select_fav_location").click(function(){
                     $('#show_favone_location').modal('hide')
-                    $('#location_materialone_address').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
-                    $('#location_materialone_district').val(response.address.split(" ")[2])
-                    $('#location_materialone_amphoe').val(response.address.split(" ")[3])
-                    $('#location_materialone_province').val(response.address.split(" ")[4])
-                    $('#location_materialone_zipcode').val(response.address.split(" ")[5])
+                    $('#location_materialone_address').val(response.address.split(",")[0])
+                    $('#location_materialone_district').val(response.address.split(",")[1])
+                    $('#location_materialone_amphoe').val(response.address.split(",")[2])
+                    $('#location_materialone_province').val(response.address.split(",")[3])
+                    $('#location_materialone_zipcode').val(response.address.split(",")[4])
                     $('#location_materialone_phone').val(response.phone)
                     $('#location_materialone_email').val(response.email)
                 });
@@ -270,14 +270,14 @@ function select_fav_staff(staff_id,row_no){
                     $('#safe_nationality').val(response.nationality)
                     $('#safe_phone').val(response.phone)
                     $('#safe_email').val(response.email)
-                    $('#safe_houseno').val(response.address.split(" ")[0])
-                    $('#safe_villageno').val(response.address.split(" ")[1])
-                    $('#safe_alley').val(response.address.split(" ")[2])
-                    $('#safe_road').val(response.address.split(" ")[3])
-                    $('#safe_subdistrict').val(response.address.split(" ")[4])
-                    $('#safe_district').val(response.address.split(" ")[5])
-                    $('#safe_province').val(response.address.split(" ")[6])
-                    $('#safe_zipcode').val(response.address.split(" ")[7])
+                    $('#safe_houseno').val(response.address.split(",")[0])
+                    $('#safe_villageno').val(response.address.split(",")[1])
+                    $('#safe_alley').val(response.address.split(",")[2])
+                    $('#safe_road').val(response.address.split(",")[3])
+                    $('#safe_subdistrict').val(response.address.split(",")[4])
+                    $('#safe_district').val(response.address.split(",")[5])
+                    $('#safe_province').val(response.address.split(",")[6])
+                    $('#safe_zipcode').val(response.address.split(",")[7])
                     $('#safe_qualification').val(response.qualification)
                     $('#safe_number').val(response.no_regis)
                 });
@@ -291,14 +291,14 @@ function select_fav_staff(staff_id,row_no){
                     $('#make_nationality').val(response.nationality)
                     $('#make_phone').val(response.phone)
                     $('#make_email').val(response.email)
-                    $('#make_houseno').val(response.address.split(" ")[0])
-                    $('#make_villageno').val(response.address.split(" ")[1])
-                    $('#make_alley').val(response.address.split(" ")[2])
-                    $('#make_road').val(response.address.split(" ")[3])
-                    $('#make_subdistrict').val(response.address.split(" ")[4])
-                    $('#make_district').val(response.address.split(" ")[5])
-                    $('#make_province').val(response.address.split(" ")[6])
-                    $('#make_zipcode').val(response.address.split(" ")[7])
+                    $('#make_houseno').val(response.address.split(",")[0])
+                    $('#make_villageno').val(response.address.split(",")[1])
+                    $('#make_alley').val(response.address.split(",")[2])
+                    $('#make_road').val(response.address.split(",")[3])
+                    $('#make_subdistrict').val(response.address.split(",")[4])
+                    $('#make_district').val(response.address.split(",")[5])
+                    $('#make_province').val(response.address.split(",")[6])
+                    $('#make_zipcode').val(response.address.split(",")[7])
                     $('#make_qualification').val(response.qualification)
                     $('#make_number').val(response.no_regis)
                 });
@@ -312,14 +312,14 @@ function select_fav_staff(staff_id,row_no){
                     $('#doctor_nationality').val(response.nationality)
                     $('#doctor_phone').val(response.phone)
                     $('#doctor_email').val(response.email)
-                    $('#doctor_houseno').val(response.address.split(" ")[0])
-                    $('#doctor_villageno').val(response.address.split(" ")[1])
-                    $('#doctor_alley').val(response.address.split(" ")[2])
-                    $('#doctor_road').val(response.address.split(" ")[3])
-                    $('#doctor_subdistrict').val(response.address.split(" ")[4])
-                    $('#doctor_district').val(response.address.split(" ")[5])
-                    $('#doctor_province').val(response.address.split(" ")[6])
-                    $('#doctor_zipcode').val(response.address.split(" ")[7])
+                    $('#doctor_houseno').val(response.address.split(",")[0])
+                    $('#doctor_villageno').val(response.address.split(",")[1])
+                    $('#doctor_alley').val(response.address.split(",")[2])
+                    $('#doctor_road').val(response.address.split(",")[3])
+                    $('#doctor_subdistrict').val(response.address.split(",")[4])
+                    $('#doctor_district').val(response.address.split(",")[5])
+                    $('#doctor_province').val(response.address.split(",")[6])
+                    $('#doctor_zipcode').val(response.address.split(",")[7])
                     $('#doctor_hospital_name').val(response.staff_work_name)
                     $('#doctor_artlicense').val(response.art_license)
                     $('#doctor_date_start').val(response.start_work)
