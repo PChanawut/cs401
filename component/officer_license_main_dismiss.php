@@ -28,10 +28,8 @@
             include('php/config/database.php');
             //https://www.tutorialrepublic.com/faq/how-to-convert-a-date-from-yyyy-mm-dd-to-dd-mm-yyyy-format-in-php.php
             $users = array();
-            $company_id = $_SESSION['company_id'];
             $sql = "SELECT * 
-                    FROM license
-                    WHERE sid = '$company_id' AND NOT license_status = 'ใบอนุญาตถูกยกเลิก'
+                    FROM license WHERE NOT license_status = 'ใบอนุญาตถูกยกเลิก'
                     ";
             $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
             while ($user =  mysqli_fetch_assoc($user_query)){

@@ -91,7 +91,7 @@
                 <?php } ?>    
                 <?php if($_SESSION["permission"][2] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_confirm_license">ยกเลิกใบอนุญาต</a>
+                        <a class="nav-link text-light" href="officer_license_dismiss">ยกเลิกใบอนุญาต</a>
                     </li>
                 <?php } ?>    
                 <?php if($_SESSION["permission"][3] == 1){ ?>

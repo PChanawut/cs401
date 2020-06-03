@@ -20,6 +20,7 @@ RewriteRule ^license_typesix  license_typesix.php [NC,L]
 RewriteRule ^license_typeseven  license_typeseven.php [NC,L]
 RewriteRule ^officer_confirm_license officer_confirm_license.php [NC,L]
 RewriteRule ^committee_confirm_license committee_confirm_license.php [NC,L]
+RewriteRule ^officer_license_dismiss officer_license_dismiss.php [NC,L]
 
 #https://stackoverflow.com/questions/10086989/htaccess-file-to-allow-access-to-images-folder-to-view-pictures
 Options -Indexes

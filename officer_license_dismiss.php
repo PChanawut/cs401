@@ -11,7 +11,7 @@
     <?php include 'component/header.php' ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- main -->
-    <?php include 'component/main_dismiss.php' ?>
+    <?php include 'component/officer_license_main_dismiss.php' ?>
     <!-- footer -->
 
     <div class="modal fade bd-example-modal-lg" id="detail_license" tabindex="-1" role="dialog"
