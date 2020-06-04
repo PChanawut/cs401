@@ -30,7 +30,7 @@
             $requests = array();
 
             $sql = "SELECT license.license_id, license.license_type, license.license_number, license.sid, license.license_status, license.start_date, license.expire_date, materiallocation.license_id, materiallocation.material_address, materiallocation.type_location_material
-                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE sid = ".$_SESSION["company_id"]." AND license_status = 'ปกติ' AND license_number = 'LI'";
+                    FROM license INNER JOIN materiallocation ON license.license_id = materiallocation.license_id WHERE sid = ".$_SESSION["company_id"]." AND license_status = 'สำเร็จ'";
             $query = mysqli_query($conn,$sql) or die ("Query fail: " . mysqli_error($conn));
 
             while($request = mysqli_fetch_assoc($query)){
@@ -52,7 +52,7 @@
                 $end_date = strtotime($request['expire_date']);
                 $day_off = $end_date - $start_date;
                 $ndays = round(($day_off/86400));
-                    if($ndays<=7){
+                    if($ndays<=30){
                         if($request['license_type'] == 'ขออนุญาตฯ วัสดุพลอยได้'){
                             if(strlen($request['license_id']) == 1){
                                 echo $request['license_number']."-01-000".$request['license_id'];

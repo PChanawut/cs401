@@ -18,7 +18,7 @@
         <thead class="alert alert-primary">
             <tr>
                 <th style="width:10%">ลำดับ</th>
-                <th style="width:25%">สถาณะใบอนุญาต</th>
+                <th style="width:25%">สถานะใบอนุญาต</th>
                 <th style="width:40%">ประเภทใบอนุญาต</th>
                 <th>วันที่ยื่นขอ</th>
                 <th></th>

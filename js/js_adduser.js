@@ -67,7 +67,7 @@ $('#adduser_form').submit(function(e) {
             response = JSON.parse(response);
             if (response.success) {
                 $('#model-adduser').modal('toggle');
-                location.reload();
+                window.location.reload(false); 
             } else {
                 alert(response);
             }
