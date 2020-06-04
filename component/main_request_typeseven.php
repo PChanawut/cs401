@@ -31,37 +31,44 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="location_materialseven_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
-                    <input type="text" class="form-control" id="location_materialseven_address">
+                    <input type="text" class="form-control" id="location_materialseven_address"
+                        value="<?php echo isset($_GET['data']) ? $add_address : ""; ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col">
                     <label for="location_materialseven_district">ตำบล:</label>
-                    <input type="text" class="form-control" id="location_materialseven_district">
+                    <input type="text" class="form-control" id="location_materialseven_district"
+                        value="<?php echo isset($_GET['data']) ? $add_district : ""; ?>">
                 </div>
                 <div class="form-group col">
                     <label for="location_materialseven_amphoe">อำเภอ:</label>
-                    <input type="text" class="form-control" id="location_materialseven_amphoe">
+                    <input type="text" class="form-control" id="location_materialseven_amphoe"
+                        value="<?php echo isset($_GET['data']) ? $add_amphoe : ""; ?>">
                 </div>
                 <div class="form-group col">
                     <label for="location_materialseven_province">จังหวัด:</label>
-                    <input type="text" class="form-control" id="location_materialseven_province">
+                    <input type="text" class="form-control" id="location_materialseven_province"
+                        value="<?php echo isset($_GET['data']) ? $add_province : ""; ?>">
                 </div>
                 <div class="form-group col">
                     <label for="location_materialseven_zipcode">รหัสไปรษณีย์:</label>
-                    <input type="text" class="form-control" id="location_materialseven_zipcode">
+                    <input type="text" class="form-control" id="location_materialseven_zipcode"
+                        value="<?php echo isset($_GET['data']) ? $add_zipcode : ""; ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col">
                     <label for="location_materialseven_phone">หมายเลขโทรศัพท์:</label>
                     <!-- Don't forget id -->
-                    <input type="text" class="form-control" id="location_materialseven_phone">
+                    <input type="text" class="form-control" id="location_materialseven_phone"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["material_phone"] : ""; ?>">
                 </div>
                 <div class="form-group col">
                     <label for="location_materialseven_email">Email:</label>
                     <!-- Don't forget id -->
-                    <input type="text" class="form-control" id="location_materialseven_email">
+                    <input type="text" class="form-control" id="location_materialseven_email"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["material_email"] : ""; ?>">
                 </div>
                 <div class="form-group col">
                     <label for="location_materialseven_benefit">ประเภทการใช้ประโยชน์:</label>
@@ -106,7 +113,8 @@
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="no_reference_seven">ทะเบียนอ้างอิง:</label>
-                    <input type="text" class="form-control" id="no_reference_seven">
+                    <input type="text" class="form-control" id="no_reference_seven"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["no_reference"] : ""; ?>">
                 </div>
                 <div class="form-group col">
                     <label for="operation_type_seven">รหัสประเภทการใช้งาน:</label>
@@ -124,17 +132,20 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="manufacturer_material_seven">ผู้ผลิต:</label>
-                    <input type="text" class="form-control" id="manufacturer_material_seven">
+                    <input type="text" class="form-control" id="manufacturer_material_seven"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["manufacturer_material"] : ""; ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="material_number_seven">รุ่น:</label>
-                    <input type="text" class="form-control" id="material_number_seven">
+                    <input type="text" class="form-control" id="material_number_seven"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["material_number"] : ""; ?>">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="number_xray_seven">หมายเลขเครื่องกำเนิดรังสี:</label>
-                    <input type="text" class="form-control" id="number_xray_seven">
+                    <input type="text" class="form-control" id="number_xray_seven"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["number_xray"] : ""; ?>">
                 </div>
                 <div class="form-group col">
                     <label for="work_style_seven">ลักษณะการใช้งาน:</label>
@@ -149,27 +160,32 @@
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="high_power_kgv">กำลัง/พลังงานสูงสุด (กิโลโวลต์):</label>
-                    <input type="text" class="form-control" id="high_power_kgv">
+                    <input type="text" class="form-control" id="high_power_kgv"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["power_kgv"] : ""; ?>">
                 </div>
                 <div class="form-group col-md">
                     <label for="high_power_mgv">กำลัง/พลังงานสูงสุด (เมกกะอิเลคตรอนโวล์):</label>
-                    <input type="text" class="form-control" id="high_power_mgv">
+                    <input type="text" class="form-control" id="high_power_mgv"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["power_mgv"] : ""; ?>">
                 </div>
                 <div class="form-group col-md">
                     <label for="high_power_mma">กำลัง/พลังงานสูงสุด (มิลลิแอมแปร์):</label>
-                    <input type="text" class="form-control" id="high_power_mma">
+                    <input type="text" class="form-control" id="high_power_mma"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["power_mma"] : ""; ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="locationname_material_seven">ชื่อสถานที่เก็บ ติดตั้งหรือใช้งาน:</label>
-                    <input type="text" class="form-control" id="locationname_material_seven">
+                    <input type="text" class="form-control" id="locationname_material_seven"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["locationname_material"] : ""; ?>">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="company_sale_seven">ชื่อบริษัทผู้แทนจำหน่าย(ที่อยู่):</label>
-                    <input type="text" class="form-control" id="company_sale_seven">
+                    <input type="text" class="form-control" id="company_sale_seven"
+                        value="<?php echo isset($_GET['data']) ? $arrayData["company_sale"] : ""; ?>">
                 </div>
             </div>
         </div>
@@ -218,89 +234,107 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="safe_name_seven">ชื่อ:</label>
-                                    <input type="text" class="form-control" id="safe_name_seven">
+                                    <input type="text" class="form-control" id="safe_name_seven"
+                                        value="<?php echo isset($_GET['data']) ? $safe_name : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="safe_lname_seven">นามสกุล:</label>
-                                    <input type="text" class="form-control" id="safe_lname_seven">
+                                    <input type="text" class="form-control" id="safe_lname_seven"
+                                        value="<?php echo isset($_GET['data']) ? $safe_lname : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="safe_idcard_seven">เลขประจำตัวประชาชน:</label>
-                                    <input type="text" class="form-control" id="safe_idcard_seven">
+                                    <input type="text" class="form-control" id="safe_idcard_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["safe_idcard"] : ""; ?>">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="safe_position_seven">ตำแหน่ง:</label>
-                                    <input type="text" class="form-control" id="safe_position_seven">
+                                    <input type="text" class="form-control" id="safe_position_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["safe_position"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="safe_age_seven">อายุ:</label>
-                                    <input type="text" class="form-control" id="safe_age_seven">
+                                    <input type="text" class="form-control" id="safe_age_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["safe_age"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="safe_nationality_seven">สัญชาติ:</label>
-                                    <input type="text" class="form-control" id="safe_nationality_seven">
+                                    <input type="text" class="form-control" id="safe_nationality_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["safe_nationality"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <!-- Don't forget change type and id -->
                                     <label for="safe_phone_seven">หมายเลขโทรศัพท์:</label>
-                                    <input type="text" class="form-control" id="safe_phone_seven">
+                                    <input type="text" class="form-control" id="safe_phone_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["safe_phone"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="safe_email_seven">Email:</label>
-                                    <input type="text" class="form-control" id="safe_email_seven">
+                                    <input type="text" class="form-control" id="safe_email_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["safe_email"] : ""; ?>">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="safe_houseno_seven">บ้านเลขที่:</label>
-                                    <input type="text" class="form-control" id="safe_houseno_seven">
+                                    <input type="text" class="form-control" id="safe_houseno_seven"
+                                        value="<?php echo isset($_GET['data']) ? $safe_address_house : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="safe_villageno_seven">หมู่:</label>
-                                    <input type="text" class="form-control" id="safe_villageno_seven">
+                                    <input type="text" class="form-control" id="safe_villageno_seven"
+                                        value="<?php echo isset($_GET['data']) ? $safe_address_house1 : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="safe_alley_seven">ตรอก / ซอย:</label>
-                                    <input type="text" class="form-control" id="safe_alley_seven">
+                                    <input type="text" class="form-control" id="safe_alley_seven"
+                                        value="<?php echo isset($_GET['data']) ? $safe_address_house2 : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="safe_road_seven">ถนน:</label>
-                                    <input type="text" class="form-control" id="safe_road_seven">
+                                    <input type="text" class="form-control" id="safe_road_seven"
+                                        value="<?php echo isset($_GET['data']) ? $safe_address_house3 : ""; ?>">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="safe_subdistrict_seven">ตำบล / แขวง:</label>
-                                    <input type="text" class="form-control" id="safe_subdistrict_seven">
+                                    <input type="text" class="form-control" id="safe_subdistrict_seven"
+                                        value="<?php echo isset($_GET['data']) ? $safe_address_district : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="safe_district_seven">อำเภอ:</label>
-                                    <input type="text" class="form-control" id="safe_district_seven">
+                                    <input type="text" class="form-control" id="safe_district_seven"
+                                        value="<?php echo isset($_GET['data']) ? $safe_address_amphoe : ""; ?>">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md">
                                         <label for="safe_province_seven">จังหวัด:</label>
-                                        <input type="text" class="form-control" id="safe_province_seven">
+                                        <input type="text" class="form-control" id="safe_province_seven"
+                                            value="<?php echo isset($_GET['data']) ? $safe_address_province : ""; ?>">
                                     </div>
                                     <div class="form-group col-md">
                                         <label for="safe_zipcode_seven">รหัสไปรษณีย์:</label>
-                                        <input type="text" class="form-control" id="safe_zipcode_seven">
+                                        <input type="text" class="form-control" id="safe_zipcode_seven"
+                                            value="<?php echo isset($_GET['data']) ? $safe_address_zipcode : ""; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="safe_qualification_seven">คุณวุฒิ:</label>
-                                    <input type="text" class="form-control" id="safe_qualification_seven">
+                                    <input type="text" class="form-control" id="safe_qualification_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["safe_qualification"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="safe_number_seven">หมายเลขทะเบียน:</label>
-                                    <input type="text" class="form-control" id="safe_number_seven">
+                                    <input type="text" class="form-control" id="safe_number_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["safe_no_regis"] : ""; ?>">
                                 </div>
                             </div>
                             <!-- <br>
@@ -324,11 +358,11 @@
                                 <label class="custom-control-label"
                                     for="save_safeseven">จัดเก็บข้อมูลเจ้าหน้าที่ความปลอดภัยทางรังสีเป็นรายการโปรด</label>
                             </div>
-                            <br>
+                            <!-- <br>
                             <h6>กรณีที่มีเจ้าหน้าที่ความปลอดภัยทางรังสีมากกว่า 1 คน **กรุณากรอกข้อมูลเพิ่มเติม**</h6>
                             <button id="addsafety7" type="button" style='font-size:16px'
                                 class="btn btn-outline-primary"><i class='fas fa-plus-circle'></i>
-                                เพิ่ม</button>
+                                เพิ่ม</button> -->
                         </div>
                     </div>
                 </div>
@@ -354,58 +388,70 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="make_name_seven">ชื่อ:</label>
-                                    <input type="text" class="form-control" id="make_name_seven">
+                                    <input type="text" class="form-control" id="make_name_seven"
+                                        value="<?php echo isset($_GET['data']) ? $make_name : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="make_lname_seven">นามสกุล:</label>
-                                    <input type="text" class="form-control" id="make_lname_seven">
+                                    <input type="text" class="form-control" id="make_lname_seven"
+                                        value="<?php echo isset($_GET['data']) ? $make_lname : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="make_idcard_seven">เลขประจำตัวประชาชน:</label>
-                                    <input type="text" class="form-control" id="make_idcard_seven">
+                                    <input type="text" class="form-control" id="make_idcard_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["make_idcard"] : ""; ?>">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="make_position_seven">ตำแหน่ง:</label>
-                                    <input type="text" class="form-control" id="make_position_seven">
+                                    <input type="text" class="form-control" id="make_position_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["make_position"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="make_age_seven">อายุ:</label>
-                                    <input type="text" class="form-control" id="make_age_seven">
+                                    <input type="text" class="form-control" id="make_age_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["make_age"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="make_nationality_seven">สัญชาติ:</label>
-                                    <input type="text" class="form-control" id="make_nationality_seven">
+                                    <input type="text" class="form-control" id="make_nationality_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["make_nationality"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <!-- Don't forget change type and id -->
                                     <label for="make_phone_seven">หมายเลขโทรศัพท์:</label>
-                                    <input type="text" class="form-control" id="make_phone_seven">
+                                    <input type="text" class="form-control" id="make_phone_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["make_phone"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="make_email_seven">Email:</label>
-                                    <input type="text" class="form-control" id="make_email_seven">
+                                    <input type="text" class="form-control" id="make_email_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["make_email"] : ""; ?>">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="make_houseno_seven">บ้านเลขที่:</label>
-                                    <input type="text" class="form-control" id="make_houseno_seven">
+                                    <input type="text" class="form-control" id="make_houseno_seven"
+                                        value="<?php echo isset($_GET['data']) ? $make_address_house : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="make_villageno_seven">หมู่:</label>
-                                    <input type="text" class="form-control" id="make_villageno_seven">
+                                    <input type="text" class="form-control" id="make_villageno_seven"
+                                        value="<?php echo isset($_GET['data']) ? $make_address_house1 : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="make_alley_seven">ตรอก / ซอย:</label>
-                                    <input type="text" class="form-control" id="make_alley_seven">
+                                    <input type="text" class="form-control" id="make_alley_seven"
+                                        value="<?php echo isset($_GET['data']) ? $make_address_house2 : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="make_road_seven">ถนน:</label>
-                                    <input type="text" class="form-control" id="make_road_seven">
+                                    <input type="text" class="form-control" id="make_road_seven"
+                                        value="<?php echo isset($_GET['data']) ? $make_address_house3 : ""; ?>">
                                 </div>
 
                             </div>
@@ -413,31 +459,37 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="make_subdistrict_seven">ตำบล / แขวง:</label>
-                                    <input type="text" class="form-control" id="make_subdistrict_seven">
+                                    <input type="text" class="form-control" id="make_subdistrict_seven"
+                                        value="<?php echo isset($_GET['data']) ? $make_address_district : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="make_district_seven">อำเภอ:</label>
-                                    <input type="text" class="form-control" id="make_district_seven">
+                                    <input type="text" class="form-control" id="make_district_seven"
+                                        value="<?php echo isset($_GET['data']) ? $make_address_amphoe : ""; ?>">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md">
                                         <label for="make_province_seven">จังหวัด:</label>
-                                        <input type="text" class="form-control" id="make_province_seven">
+                                        <input type="text" class="form-control" id="make_province_seven"
+                                            value="<?php echo isset($_GET['data']) ? $make_address_province : ""; ?>">
                                     </div>
                                     <div class="form-group col-md">
                                         <label for="make_zipcode_seven">รหัสไปรษณีย์:</label>
-                                        <input type="text" class="form-control" id="make_zipcode_seven">
+                                        <input type="text" class="form-control" id="make_zipcode_seven"
+                                            value="<?php echo isset($_GET['data']) ? $make_address_zipcode : ""; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="make_qualification_seven">คุณวุฒิ:</label>
-                                    <input type="text" class="form-control" id="make_qualification_seven">
+                                    <input type="text" class="form-control" id="make_qualification_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["make_qualification"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="make_number_seven">หมายเลขทะเบียน:</label>
-                                    <input type="text" class="form-control" id="make_number_seven">
+                                    <input type="text" class="form-control" id="make_number_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["make_no_regis"] : ""; ?>">
                                 </div>
                             </div>
                             <!-- <br>
@@ -461,11 +513,11 @@
                                 <label class="custom-control-label"
                                     for="save_makeseven">จัดเก็บข้อมูลผู้ปฏิบัติงานทางรังสีเป็นรายการโปรด</label>
                             </div>
-                            <br>
+                            <!-- <br>
                             <h6>กรณีที่มีผู้ปฎิบัติงานรังสีมากกว่า 1 คน **กรุณากรอกข้อมูลเพิ่มเติม**</h6>
                             <button id="addmake7" type="button" style='font-size:16px'
                                 class="btn btn-outline-primary"><i class='fas fa-plus-circle'></i>
-                                เพิ่ม</button>
+                                เพิ่ม</button> -->
                         </div>
                     </div>
                 </div>
@@ -491,58 +543,70 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="doctor_name_seven">ชื่อแพทย์ผู้รับผิดชอบ:</label>
-                                    <input type="text" class="form-control" id="doctor_name_seven">
+                                    <input type="text" class="form-control" id="doctor_name_seven"
+                                        value="<?php echo isset($_GET['data']) ? $doctor_name : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="doctor_lname_seven">นามสกุล:</label>
-                                    <input type="text" class="form-control" id="doctor_lname_seven">
+                                    <input type="text" class="form-control" id="doctor_lname_seven"
+                                        value="<?php echo isset($_GET['data']) ? $doctor_lname : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label for="doctor_idcard_seven">เลขประจำตัวประชาชน:</label>
-                                    <input type="text" class="form-control" id="doctor_idcard_seven">
+                                    <input type="text" class="form-control" id="doctor_idcard_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["doctor_idcard"] : ""; ?>">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="doctor_position_seven">ตำแหน่ง:</label>
-                                    <input type="text" class="form-control" id="doctor_position_seven">
+                                    <input type="text" class="form-control" id="doctor_position_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["doctor_position"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-1">
                                     <label for="doctor_age_seven">อายุ:</label>
-                                    <input type="text" class="form-control" id="doctor_age_seven">
+                                    <input type="text" class="form-control" id="doctor_age_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["doctor_age"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="doctor_nationality_seven">สัญชาติ:</label>
-                                    <input type="text" class="form-control" id="doctor_nationality_seven">
+                                    <input type="text" class="form-control" id="doctor_nationality_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["doctor_nationality"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <!-- Don't forget change type and id -->
                                     <label for="doctor_phone_seven">หมายเลขโทรศัพท์:</label>
-                                    <input type="text" class="form-control" id="doctor_phone_seven">
+                                    <input type="text" class="form-control" id="doctor_phone_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["doctor_phone"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="doctor_email_seven">Email:</label>
-                                    <input type="text" class="form-control" id="doctor_email_seven">
+                                    <input type="text" class="form-control" id="doctor_email_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["doctor_email"] : ""; ?>">
                                 </div>
                             </div>
                             <!--  -->
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="doctor_houseno_seven">บ้านเลขที่:</label>
-                                    <input type="text" class="form-control" id="doctor_houseno_seven">
+                                    <input type="text" class="form-control" id="doctor_houseno_seven"
+                                        value="<?php echo isset($_GET['data']) ? $doctor_address_house : ""; ?>">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="doctor_villageno_seven">หมู่:</label>
-                                    <input type="text" class="form-control" id="doctor_villageno_seven">
+                                    <input type="text" class="form-control" id="doctor_villageno_seven"
+                                        value="<?php echo isset($_GET['data']) ? $doctor_address_house1 : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="doctor_alley_seven">ตรอก / ซอย:</label>
-                                    <input type="text" class="form-control" id="doctor_alley_seven">
+                                    <input type="text" class="form-control" id="doctor_alley_seven"
+                                        value="<?php echo isset($_GET['data']) ? $doctor_address_house2 : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="doctor_road_seven">ถนน:</label>
-                                    <input type="text" class="form-control" id="doctor_road_seven">
+                                    <input type="text" class="form-control" id="doctor_road_seven"
+                                        value="<?php echo isset($_GET['data']) ? $doctor_address_house3 : ""; ?>">
                                 </div>
 
                             </div>
@@ -550,20 +614,24 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="doctor_subdistrict_seven">ตำบล / แขวง:</label>
-                                    <input type="text" class="form-control" id="doctor_subdistrict_seven">
+                                    <input type="text" class="form-control" id="doctor_subdistrict_seven"
+                                        value="<?php echo isset($_GET['data']) ? $doctor_address_district : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="doctor_district_seven">อำเภอ:</label>
-                                    <input type="text" class="form-control" id="doctor_district_seven">
+                                    <input type="text" class="form-control" id="doctor_district_seven"
+                                        value="<?php echo isset($_GET['data']) ? $doctor_address_amphoe : ""; ?>">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md">
                                         <label for="doctor_province_seven">จังหวัด:</label>
-                                        <input type="text" class="form-control" id="doctor_province_seven">
+                                        <input type="text" class="form-control" id="doctor_province_seven"
+                                            value="<?php echo isset($_GET['data']) ? $doctor_address_province : ""; ?>">
                                     </div>
                                     <div class="form-group col-md">
                                         <label for="doctor_zipcode_seven">รหัสไปรษณีย์:</label>
-                                        <input type="text" class="form-control" id="doctor_zipcode_seven">
+                                        <input type="text" class="form-control" id="doctor_zipcode_seven"
+                                            value="<?php echo isset($_GET['data']) ? $doctor_address_zipcode : ""; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -571,13 +639,15 @@
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="doctor_hospital_name_seven">ชื่อสถานที่ทำการ:</label>
-                                    <input type="text" class="form-control" id="doctor_hospital_name_seven">
+                                    <input type="text" class="form-control" id="doctor_hospital_name_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["doctor_work_name"] : ""; ?>">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md">
                                     <label for="doctor_artlicense_seven">ใบอนุญาตประกอบโรคศิลปะเลขที่:</label>
-                                    <input type="text" class="form-control" id="doctor_artlicense_seven">
+                                    <input type="text" class="form-control" id="doctor_artlicense_seven"
+                                        value="<?php echo isset($_GET['data']) ? $arrayData["doctor_art_license"] : ""; ?>">
                                 </div>
                                 <div class="form-group col-md">
                                     <label for="doctor_date_start_seven">ออกให้ ณ วันที่:</label>
@@ -605,11 +675,11 @@
                                 <label class="custom-control-label"
                                     for="save_doctorseven">จัดเก็บข้อมูลแพทย์ผู้รับผิดชอบเป็นรายการโปรด</label>
                             </div>
-                            <br>
+                            <!-- <br>
                             <h6>กรณีที่มีแพทย์ผู้รับผิดชอบมากกว่า 1 คน **กรุณากรอกข้อมูลเพิ่มเติม**</h6>
                             <button id="adddoctor7" type="button" style='font-size:16px'
                                 class="btn btn-outline-primary"><i class='fas fa-plus-circle'></i>
-                                เพิ่ม</button>
+                                เพิ่ม</button> -->
                         </div>
                     </div>
                 </div>
@@ -725,7 +795,12 @@
                                 </th>
                                 <td>
                                     <?php 
-                                        echo $request['material_address']; 
+                                        $material_address = explode(",",$request['material_address'])[0];
+                                        $material_address1 = explode(",",$request['material_address'])[1];
+                                        $material_address2 = explode(",",$request['material_address'])[2];
+                                        $material_address3 = explode(",",$request['material_address'])[3];
+                                        $material_address4 = explode(",",$request['material_address'])[4];
+                                        echo $material_address." ต.".$material_address1." อ.".$material_address2." จ.".$material_address3." ".$material_address4; 
                                     ?>
                                 </td>
                                 <td>
@@ -813,7 +888,15 @@
                                 </td>
                                 <td>
                                     <?php
-                                        echo $request1['staff_address'];
+                                        $staff_address = explode(",",$request1['staff_address'])[0];
+                                        $staff_address1 = explode(",",$request1['staff_address'])[1];
+                                        $staff_address2 = explode(",",$request1['staff_address'])[2];
+                                        $staff_address3 = explode(",",$request1['staff_address'])[3];
+                                        $staff_address4 = explode(",",$request1['staff_address'])[4];
+                                        $staff_address5 = explode(",",$request1['staff_address'])[5];
+                                        $staff_address6 = explode(",",$request1['staff_address'])[6];
+                                        $staff_address7 = explode(",",$request1['staff_address'])[7];
+                                        echo $staff_address." ต.".$staff_address4." อ.".$staff_address5." จ.".$staff_address6." ".$staff_address7;
                                     ?>
                                 </td>
                             </tr>
@@ -891,7 +974,15 @@
                                 </td>
                                 <td>
                                     <?php
-                                        echo $request2['staff_address'];
+                                        $staff_address = explode(",",$request2['staff_address'])[0];
+                                        $staff_address1 = explode(",",$request2['staff_address'])[1];
+                                        $staff_address2 = explode(",",$request2['staff_address'])[2];
+                                        $staff_address3 = explode(",",$request2['staff_address'])[3];
+                                        $staff_address4 = explode(",",$request2['staff_address'])[4];
+                                        $staff_address5 = explode(",",$request2['staff_address'])[5];
+                                        $staff_address6 = explode(",",$request2['staff_address'])[6];
+                                        $staff_address7 = explode(",",$request2['staff_address'])[7];
+                                        echo $staff_address." ต.".$staff_address4." อ.".$staff_address5." จ.".$staff_address6." ".$staff_address7;
                                     ?>
                                 </td>
                             </tr>
@@ -969,7 +1060,15 @@
                                 </td>
                                 <td>
                                     <?php
-                                        echo $request3['staff_address'];
+                                        $staff_address = explode(",",$request3['staff_address'])[0];
+                                        $staff_address1 = explode(",",$request3['staff_address'])[1];
+                                        $staff_address2 = explode(",",$request3['staff_address'])[2];
+                                        $staff_address3 = explode(",",$request3['staff_address'])[3];
+                                        $staff_address4 = explode(",",$request3['staff_address'])[4];
+                                        $staff_address5 = explode(",",$request3['staff_address'])[5];
+                                        $staff_address6 = explode(",",$request3['staff_address'])[6];
+                                        $staff_address7 = explode(",",$request3['staff_address'])[7];
+                                        echo $staff_address." ต.".$staff_address4." อ.".$staff_address5." จ.".$staff_address6." ".$staff_address7;
                                     ?>
                                 </td>
                             </tr>

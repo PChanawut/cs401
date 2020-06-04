@@ -68,11 +68,11 @@ function select_fav(material_id,row_no){
             if(response.success){
                 $("#select_fav_location").click(function(){
                     $('#show_favfive_location').modal('hide')
-                    $('#location_materialfive_address').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
-                    $('#location_materialfive_district').val(response.address.split(" ")[2])
-                    $('#location_materialfive_amphoe').val(response.address.split(" ")[3])
-                    $('#location_materialfive_province').val(response.address.split(" ")[4])
-                    $('#location_materialfive_zipcode').val(response.address.split(" ")[5])
+                    $('#location_materialfive_address').val(response.address.split(",")[0])
+                    $('#location_materialfive_district').val(response.address.split(",")[1])
+                    $('#location_materialfive_amphoe').val(response.address.split(",")[2])
+                    $('#location_materialfive_province').val(response.address.split(",")[3])
+                    $('#location_materialfive_zipcode').val(response.address.split(",")[4])
                     $('#location_materialfive_phone').val(response.phone)
                     $('#location_materialfive_email').val(response.email)
                      // $('#detail_location').show();
