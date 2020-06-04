@@ -97,3 +97,26 @@ $("#dismiss_license").click(function(e){
         }
     });
 })
+
+$("#dismiss_license_officer").click(function(e){
+    let license_id = $("#license_id").val()
+    let type = 'delete';
+    $.ajax({
+        type: 'POST',
+        url: 'php/php_license_dismiss.php',
+        data: {
+            license_id : license_id,
+            type : type
+        },
+        success: function(response) {
+            console.log(response)
+            response = JSON.parse(response);
+            if (response.success) {
+                $("#detail_license").modal('hide');
+                window.location.reload(false); 
+            } else {
+                
+            }
+        }
+    });
+})

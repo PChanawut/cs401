@@ -81,7 +81,7 @@ $("#confirm_license").click(function(e){
             response = JSON.parse(response);
             if (response.success) {
                 $("#detail_license").modal('hide');
-                location.reload();
+                window.location.reload(false); 
             } else {
                 
             }
@@ -104,7 +104,7 @@ $("#confirm_license").click(function(e){
             response = JSON.parse(response);
             if (response.success) {
                 $("#detail_license").modal('hide');
-                location.reload();
+                window.location.reload(false); 
             } else {
                 
             }
@@ -127,7 +127,7 @@ $("#dismiss_license").click(function(e){
             response = JSON.parse(response);
             if (response.success) {
                 $("#detail_license").modal('hide');
-                location.reload();
+                window.location.reload(false); 
             } else {
                 
             }

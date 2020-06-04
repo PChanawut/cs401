@@ -46,7 +46,7 @@
                 </div>
                 <input type="hidden" id="license_id" value="">
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger" id="dismiss_license">ยกเลิกใบอนุญาต</button>
+                    <button type="submit" class="btn btn-danger" id="dismiss_license_officer">ยกเลิกใบอนุญาต</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
                 </div>
             </div>

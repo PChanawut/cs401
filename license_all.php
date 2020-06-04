@@ -16,24 +16,40 @@
     <!-- footer -->
 
     <!-- model detail license-->
-    <div id="detail_license" class="modal" tabindex="-1" role="dialog">
+    <div class="modal fade bd-example-modal-lg" id="detail_license" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">รายละเอียดใบอนุญาต</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <div class="modal-header alert-primary">
+                    <h5 class="modal-title" id="exampleModalLabel">รายละเอียดใบอนุญาต</h5>
                 </div>
-                <form id="showdetailLicense" method="post">
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+                <div class="modal-body">
+                    <div class="row-ml-3">
+                        <h6>ประเภทใบอนุญาต:</h6>
+                        <p id="model_detail_license_licensetype" style="color:Gray;"></p>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <div class="row-ml-3">
+                        <h6>ชื่อบริษัท / ชื่อ-นามสกุล:</h6>
+                        <p id="model_detail_license_company1" style="color:Gray;"></p>
+                        <p id="model_detail_license_company2" style="color:Gray;"></p>
                     </div>
-                </form>
+                    <div class="row-ml-3" id="model_detail_license_stock">
+                        <h6>สถานที่จัดเก็บ:</h6>
+                        <div id="model_detail_license_location"></div>
+                    </div>
+                    <div class="row-ml-3">
+                        <h6>รายละเอียดใบอนุญาต:</h6>
+                        <div id="model_detail_license_detail"></div>
+                    </div>
+                    <div class="row-ml-3">
+                        <h6>เจ้าหน้าที่:</h6>
+                        <div id="model_detail_license_staff"></div>
+                    </div>
+                </div>
+                <input type="hidden" id="license_id" value="">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                </div>
             </div>
         </div>
     </div>

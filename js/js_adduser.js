@@ -31,7 +31,7 @@ $('#edituser').submit(function(e) {
             if (response.success) {
                 $("#model-edituser-id").val("");
                 $('#model-edituser').modal('toggle');
-                location.reload();
+                window.location.reload(false); 
             } else {
                 alert("Fail");
             }

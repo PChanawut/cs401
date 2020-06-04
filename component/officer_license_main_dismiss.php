@@ -29,7 +29,7 @@
             //https://www.tutorialrepublic.com/faq/how-to-convert-a-date-from-yyyy-mm-dd-to-dd-mm-yyyy-format-in-php.php
             $users = array();
             $sql = "SELECT * 
-                    FROM license WHERE NOT license_status = 'ใบอนุญาตถูกยกเลิก'
+                    FROM license WHERE license_status = 'ขอยกเลิก' 
                     ";
             $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
             while ($user =  mysqli_fetch_assoc($user_query)){

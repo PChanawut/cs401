@@ -31,7 +31,7 @@
             $company_id = $_SESSION['company_id'];
             $sql = "SELECT * 
                     FROM license
-                    WHERE sid = '$company_id' AND NOT license_status = 'ใบอนุญาตถูกยกเลิก'
+                    WHERE sid = '$company_id' AND NOT license_status = 'ใบอนุญาตถูกยกเลิก' AND NOT  license_status = 'ขอยกเลิก' 
                     ";
             $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
             while ($user =  mysqli_fetch_assoc($user_query)){

@@ -32,6 +32,8 @@
             $sql = "SELECT * 
                     FROM license
                     WHERE sid = '$company_id'
+                    AND NOT license_status = 'ใบอนุญาตถูกยกเลิก'
+                    
                     ";
             $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
             while ($user =  mysqli_fetch_assoc($user_query)){
@@ -62,9 +64,9 @@
                         $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
                             
                         if($years > 0){
-                            $out = 'มากกว่า '.$years.' ปี';
+                            $out = '≈ '.$years.' ปี';
                         }else if($months > 0){
-                            $out = 'มากกว่า '.$months.' เดือน';
+                            $out = '≈ '.$months.' เดือน';
                         }else{
                             $out = ''.$days.' วัน';
                         }

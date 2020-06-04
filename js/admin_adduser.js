@@ -41,7 +41,7 @@ $('#adduser_form').submit(function(e) {
             console.log(response)
             if (response.success) {
                 $('#model-adduser').modal('toggle');
-                location.reload();
+                window.location.reload(false); 
             } else {
                 alert(response);
             }
@@ -94,7 +94,7 @@ $('#edituser_form').submit(function(e) {
             console.log(response)
             if (response.success) {
                 $('#model-edit').modal('toggle');
-                location.reload();
+                window.location.reload(false); 
             } else {
                 alert(response);
             }

@@ -31,7 +31,7 @@
             $sql = "SELECT * 
                     FROM license l
                     INNER JOIN company c ON l.sid=c.company_id AND license_status = 'เจ้าหน้าที่ยืนยัน'
-                    INNER JOIN inspectionreport i ON l.license_id = i.license_id AND inspect_status = 'ผลการตรวจสอบสำเร็จ'
+                    -- INNER JOIN inspectionreport i ON l.license_id = i.license_id AND inspect_status = 'ผลการตรวจสอบสำเร็จ'
                     ";
             $user_query = mysqli_query($conn,$sql) or die("Query fail: " . mysqli_error($conn));
             while ($user =  mysqli_fetch_assoc($user_query)){
