@@ -49,7 +49,7 @@ $("#request").submit(function(e){
 
     // step one
     let type_request = $("#type_request").val()
-    let location_address = $("#location_materialtwo_address").val()+" "+$("#location_materialtwo_district").val()+" "+$("#location_materialtwo_amphoe").val()+" "+$("#location_materialtwo_province").val()+" "+$("#location_materialtwo_zipcode").val()
+    let location_address = $("#location_materialtwo_address").val()+","+$("#location_materialtwo_district").val()+","+$("#location_materialtwo_amphoe").val()+","+$("#location_materialtwo_province").val()+","+$("#location_materialtwo_zipcode").val()
     let location_materialtwo_phone = $("#location_materialtwo_phone").val()
     let location_materialtwo_email = $("#location_materialtwo_email").val()
     let location_materialtwo_benefit = $("#location_materialtwo_benefit").val()
@@ -111,7 +111,7 @@ $("#request").submit(function(e){
     let sale_email = $("#sale_email").val()
     let sale_phone = $("#sale_phone").val()
     let sale_work_name = $("#sale_work_name").val()
-    let sale_address = $("#sale_work_houseno").val()+" ม."+$("#sale_work_villageno").val()+" "+$("#sale_work_alley").val()+" "+$("#sale_work_road").val()+" ต."+$("#sale_work_subdistrict").val()+" อ."+$("#sale_work_district").val()+" จ."+$("#sale_work_province").val()+" "+$("#sale_work_zipcode").val()
+    let sale_address = $("#sale_work_houseno").val()+","+$("#sale_work_villageno").val()+","+$("#sale_work_alley").val()+","+$("#sale_work_road").val()+","+$("#sale_work_subdistrict").val()+","+$("#sale_work_district").val()+","+$("#sale_work_province").val()+","+$("#sale_work_zipcode").val()
     let sale_location_salework_two = "";
     if($("#save_location_salework_two").is(':checked')){
         sale_location_salework_two = "select";
@@ -127,7 +127,7 @@ $("#request").submit(function(e){
     let handler_email = $("#handler_email").val()
     let handler_phone = $("#handler_phone").val()
     let handler_work_name = $("#handler_work_name").val()
-    let handler_address = $("#handler_work_houseno").val()+" ต."+$("#handler_work_villageno").val()+" "+$("#handler_work_alley").val()+" "+$("#handler_work_road").val()+" ต."+$("#handler_work_subdistrict").val()+" อ."+$("#handler_work_district").val()+" จ."+$("#handler_work_province").val()+" "+$("#handler_work_zipcode").val()
+    let handler_address = $("#handler_work_houseno").val()+","+$("#handler_work_villageno").val()+","+$("#handler_work_alley").val()+","+$("#handler_work_road").val()+","+$("#handler_work_subdistrict").val()+","+$("#handler_work_district").val()+","+$("#handler_work_province").val()+","+$("#handler_work_zipcode").val()
     let handler_location_handlerwork_two = "";
     if($("#save_location_handlerwork_two").is(':checked')){
         handler_location_handlerwork_two = "select";
@@ -136,7 +136,7 @@ $("#request").submit(function(e){
     }
 
     let destination_work_name = $("#destination_work_name").val()
-    let destination_address = $("#destination_work_houseno").val()+" "+$("#destination_work_road").val()+" "+$("#destination_work_city").val()+" "+$("#destination_work_country").val()
+    let destination_address = $("#destination_work_houseno").val()+","+$("#destination_work_road").val()+","+$("#destination_work_city").val()+","+$("#destination_work_country").val()
     let destination_work_phone = $("#destination_work_phone").val()
     let destination_work_email = $("#destination_work_email").val()
     let destination_location_destinationwork_two = "";
@@ -147,7 +147,7 @@ $("#request").submit(function(e){
     }
 
     // step four
-    let import_address = $("#import_material_addrress_two").val()+" "+$("#import_material_district_two").val()+" "+$("#import_material_amphoe_two").val()+" "+$("#import_material_province_two").val()+" "+$("#import_material_zipcode_two").val()
+    let import_address = $("#import_material_addrress_two").val()+","+$("#import_material_district_two").val()+","+$("#import_material_amphoe_two").val()+","+$("#import_material_province_two").val()+","+$("#import_material_zipcode_two").val()
     let import_material_phone_two = $("#import_material_phone_two").val()
     let import_material_email_two = $("#import_material_email_two").val()
     let import_location_two = "";
@@ -157,7 +157,7 @@ $("#request").submit(function(e){
         import_location_two = "not";
     }
 
-    let export_address = $("#export_material_address_two").val()+" "+$("#export_material_district_two").val()+" "+$("#export_material_amphoe_two").val()+" "+$("#export_material_province_two").val()+" "+$("#export_material_zipcode_two").val()
+    let export_address = $("#export_material_address_two").val()+","+$("#export_material_district_two").val()+","+$("#export_material_amphoe_two").val()+","+$("#export_material_province_two").val()+","+$("#export_material_zipcode_two").val()
     let export_material_phone_two = $("#export_material_phone_two").val()
     let export_material_email_two = $("#export_material_email_two").val()
     let export_location_two = "";
@@ -272,32 +272,32 @@ function select_fav(material_id,row_no){
             if(response.success){
                 $("#select_fav_location").click(function(){
                     $('#show_favtwo_location').modal('hide')
-                    $('#location_materialtwo_address').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
-                    $('#location_materialtwo_district').val(response.address.split(" ")[2])
-                    $('#location_materialtwo_amphoe').val(response.address.split(" ")[3])
-                    $('#location_materialtwo_province').val(response.address.split(" ")[4])
-                    $('#location_materialtwo_zipcode').val(response.address.split(" ")[5])
+                    $('#location_materialtwo_address').val(response.address.split(",")[0])
+                    $('#location_materialtwo_district').val(response.address.split(",")[1])
+                    $('#location_materialtwo_amphoe').val(response.address.split(",")[2])
+                    $('#location_materialtwo_province').val(response.address.split(",")[3])
+                    $('#location_materialtwo_zipcode').val(response.address.split(",")[4])
                     $('#location_materialtwo_phone').val(response.phone)
                     $('#location_materialtwo_email').val(response.email)
                     // $('#detail_location').show();
                 });
                 $("#select_fav_import_two").click(function(){
                     $('#show_two_import').modal('hide')
-                    $('#import_material_addrress_two').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
-                    $('#import_material_district_two').val(response.address.split(" ")[2])
-                    $('#import_material_amphoe_two').val(response.address.split(" ")[3])
-                    $('#import_material_province_two').val(response.address.split(" ")[4])
-                    $('#import_material_zipcode_two').val(response.address.split(" ")[5])
+                    $('#import_material_addrress_two').val(response.address.split(",")[0])
+                    $('#import_material_district_two').val(response.address.split(",")[1])
+                    $('#import_material_amphoe_two').val(response.address.split(",")[2])
+                    $('#import_material_province_two').val(response.address.split(",")[3])
+                    $('#import_material_zipcode_two').val(response.address.split(",")[4])
                     $('#import_material_phone_two').val(response.phone)
                     $('#import_material_email_two').val(response.email)
                 });
                 $("#select_fav_export_two").click(function(){
                     $('#show_two_export').modal('hide')
-                    $('#export_material_address_two').val(response.address.split(" ")[0]+" "+response.address.split(" ")[1])
-                    $('#export_material_district_two').val(response.address.split(" ")[2])
-                    $('#export_material_amphoe_two').val(response.address.split(" ")[3])
-                    $('#export_material_province_two').val(response.address.split(" ")[4])
-                    $('#export_material_zipcode_two').val(response.address.split(" ")[5])
+                    $('#export_material_address_two').val(response.address.split(",")[0])
+                    $('#export_material_district_two').val(response.address.split(",")[1])
+                    $('#export_material_amphoe_two').val(response.address.split(",")[2])
+                    $('#export_material_province_two').val(response.address.split(",")[3])
+                    $('#export_material_zipcode_two').val(response.address.split(",")[4])
                     $('#export_material_phone_two').val(response.phone)
                     $('#export_material_email_two').val(response.email)
                 });
@@ -328,14 +328,14 @@ function select_fav_staff(staff_id,row_no){
                     $('#sale_phone').val(response.phone)
                     $('#sale_email').val(response.email)
                     $('#sale_work_name').val(response.staff_work_name)
-                    $('#sale_work_houseno').val(response.address.split(" ")[0])
-                    $('#sale_work_villageno').val(response.address.split(" ")[1])
-                    $('#sale_work_alley').val(response.address.split(" ")[2])
-                    $('#sale_work_road').val(response.address.split(" ")[3])
-                    $('#sale_work_subdistrict').val(response.address.split(" ")[4])
-                    $('#sale_work_district').val(response.address.split(" ")[5])
-                    $('#sale_work_province').val(response.address.split(" ")[6])
-                    $('#sale_work_zipcode').val(response.address.split(" ")[7])
+                    $('#sale_work_houseno').val(response.address.split(",")[0])
+                    $('#sale_work_villageno').val(response.address.split(",")[1])
+                    $('#sale_work_alley').val(response.address.split(",")[2])
+                    $('#sale_work_road').val(response.address.split(",")[3])
+                    $('#sale_work_subdistrict').val(response.address.split(",")[4])
+                    $('#sale_work_district').val(response.address.split(",")[5])
+                    $('#sale_work_province').val(response.address.split(",")[6])
+                    $('#sale_work_zipcode').val(response.address.split(",")[7])
                 });
                 $("#select_fav_handlertwo").click(function(){
                     $('#show_two_handler').modal('hide')
@@ -348,22 +348,22 @@ function select_fav_staff(staff_id,row_no){
                     $('#handler_phone').val(response.phone)
                     $('#handler_email').val(response.email)
                     $('#handler_work_name').val(response.staff_work_name)
-                    $('#handler_work_houseno').val(response.address.split(" ")[0])
-                    $('#handler_work_villageno').val(response.address.split(" ")[1])
-                    $('#handler_work_alley').val(response.address.split(" ")[2])
-                    $('#handler_work_road').val(response.address.split(" ")[3])
-                    $('#handler_work_subdistrict').val(response.address.split(" ")[4])
-                    $('#handler_work_district').val(response.address.split(" ")[5])
-                    $('#handler_work_province').val(response.address.split(" ")[6])
-                    $('#handler_work_zipcode').val(response.address.split(" ")[7])
+                    $('#handler_work_houseno').val(response.address.split(",")[0])
+                    $('#handler_work_villageno').val(response.address.split(",")[1])
+                    $('#handler_work_alley').val(response.address.split(",")[2])
+                    $('#handler_work_road').val(response.address.split(",")[3])
+                    $('#handler_work_subdistrict').val(response.address.split(",")[4])
+                    $('#handler_work_district').val(response.address.split(",")[5])
+                    $('#handler_work_province').val(response.address.split(",")[6])
+                    $('#handler_work_zipcode').val(response.address.split(",")[7])
                 });
                 $("#select_fav_destinationtwo").click(function(){
                     $('#show_two_destination').modal('hide')
                     $('#destination_work_name').val(response.staff_work_name)
-                    $('#destination_work_houseno').val(response.address.split(" ")[0])
-                    $('#destination_work_road').val(response.address.split(" ")[2])
-                    $('#destination_work_city').val(response.address.split(" ")[3])
-                    $('#destination_work_country').val(response.address.split(" ")[4])
+                    $('#destination_work_houseno').val(response.address.split(",")[0])
+                    $('#destination_work_road').val(response.address.split(",")[2])
+                    $('#destination_work_city').val(response.address.split(",")[3])
+                    $('#destination_work_country').val(response.address.split(",")[4])
                     $('#destination_work_phone').val(response.phone)
                     $('#destination_work_email').val(response.email)
                 });

@@ -29,29 +29,29 @@
             <div class="form-group col">
                 <label for="location_materialfive_address">รายละเอียดที่อยู่ (บ้านเลขที่, หมู่, ตึก, ถนน)</label>
                 <input type="text" class="form-control" id="location_materialfive_address"
-                    value="<?php echo isset($_GET['data']) ? $add_address : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $add_address : ""; ?>" required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col">
                 <label for="location_materialfive_district">ตำบล:</label>
                 <input type="text" class="form-control" id="location_materialfive_district"
-                    value="<?php echo isset($_GET['data']) ? $add_district : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $add_district : ""; ?>" required>
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_amphoe">อำเภอ:</label>
                 <input type="text" class="form-control" id="location_materialfive_amphoe"
-                    value="<?php echo isset($_GET['data']) ? $add_amphoe : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $add_amphoe : ""; ?>" required>
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_province">จังหวัด:</label>
                 <input type="text" class="form-control" id="location_materialfive_province"
-                    value="<?php echo isset($_GET['data']) ? $add_province : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $add_province : ""; ?>" required>
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_zipcode">รหัสไปรษณีย์:</label>
                 <input type="text" class="form-control" id="location_materialfive_zipcode"
-                    value="<?php echo isset($_GET['data']) ? $add_zipcode : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $add_zipcode : ""; ?>" required>
             </div>
         </div>
         <div class="form-row">
@@ -59,25 +59,25 @@
                 <label for="location_materialfive_phone">หมายเลขโทรศัพท์:</label>
                 <!-- Don't forget id -->
                 <input type="text" class="form-control" id="location_materialfive_phone"
-                    value="<?php echo isset($_GET['data']) ? $arrayData["material_phone"] : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $arrayData["material_phone"] : ""; ?>" required>
             </div>
             <div class="form-group col">
                 <label for="location_materialfive_email">Email:</label>
                 <!-- Don't forget id -->
                 <input type="text" class="form-control" id="location_materialfive_email"
-                    value="<?php echo isset($_GET['data']) ? $arrayData["material_email"] : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $arrayData["material_email"] : ""; ?>" required>
             </div>
             <div class="form-group col">
                 <label for="type_equipment_five">ชนิดของเครื่องปฏิกรณ์ปรมาณู:</label>
                 <!-- Don't forget id -->
                 <input type="text" class="form-control" id="type_equipment_five"
-                    value="<?php echo isset($_GET['data']) ? $arrayData["type_atomic"] : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $arrayData["type_atomic"] : ""; ?>" required>
             </div>
             <div class="form-group col">
                 <label for="make_heat_five">กำลังผลิตความร้อนสูงสุด:</label>
                 <!-- Don't forget id -->
                 <input type="text" class="form-control" id="make_heat_five"
-                    value="<?php echo isset($_GET['data']) ? $arrayData["power_heat"] : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $arrayData["power_heat"] : ""; ?>" required>
             </div>
         </div>
         <div class="form-row">
@@ -93,13 +93,13 @@
                 <label for="name_produce_equipment_five">ชื่อบริษัทผู้ผลิตเครื่องปฏิกรณ์ปรมาณู:</label>
                 <!-- Don't forget id -->
                 <input type="text" class="form-control" id="name_produce_equipment_five"
-                    value="<?php echo isset($_GET['data']) ? $arrayData["producename_atomic"] : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $arrayData["producename_atomic"] : ""; ?>" required>
             </div>
             <div class="form-group col-2">
                 <label for="country_produce_equipment_five">ประเทศผู้ผลิต:</label>
                 <!-- Don't forget id -->
                 <input type="text" class="form-control" id="country_produce_equipment_five"
-                    value="<?php echo isset($_GET['data']) ? $arrayData["country_produce_atomic"] : ""; ?>">
+                    value="<?php echo isset($_GET['data']) ? $arrayData["country_produce_atomic"] : ""; ?>" required>
             </div>
         </div>
         <div class="custom-control custom-checkbox">

@@ -61,8 +61,7 @@
                 </div>
                 <div class="form-group col">
                     <label for="materialtype_allow_four">ขออนุญาตวัสดุนิวเคลียร์หรือวัสดุต้นกำลังประเภท:</label>
-                    <select class="custom-select" id="materialtype_allow_four"
-                        value="<?php echo isset($_GET['data']) ? $arrayData["type_nuclear_special"] : ""; ?>">
+                    <select class="custom-select" id="materialtype_allow_four">
                         <option value="พลูโตเนียมหรือสารประกอบของพลูโตเนียม">01 พลูโตเนียมหรือสารประกอบของพลูโตเนียม
                         </option>
                         <option value="ยูเรเนียม 233 หรือสารประกอบยูเรเนียม 233">02 ยูเรเนียม 233 หรือสารประกอบยูเรเนียม
@@ -89,8 +88,7 @@
                 </div>
                 <div class="form-group col-3">
                     <label for="type_transport_four">พาหนะสำหรับการขนส่ง:</label>
-                    <select class="custom-select" id="type_transport_four"
-                        value="<?php echo isset($_GET['data']) ? $arrayData["nuclear_vehicle"] : ""; ?>">
+                    <select class="custom-select" id="type_transport_four">
                         <option value="เครื่องบิน">เครื่องบิน</option>
                         <option value="เรือ">เรือ</option>
                         <option value="รถยนต์">รถยนต์</option>
@@ -1145,7 +1143,11 @@
                                 </td>
                                 <td>
                                     <?php
-                                        echo $request3['staff_address'];
+                                        $destination_address = explode(",",$request3['destination_address'])[0];
+                                        $destination_address1 = explode(",",$request3['destination_address'])[1];
+                                        $destination_address2 = explode(",",$request3['destination_address'])[2];
+                                        $destination_address3 = explode(",",$request3['destination_address'])[3];
+                                        echo $destination_address." ถนน ".$destination_address1." เมือง ".$destination_address2." ประเทศ ".$destination_address3;
                                     ?>
                                 </td>
                                 <td>
@@ -1301,12 +1303,12 @@
                                 </th>
                                 <td>
                                     <?php 
-                                        $import_address = explode(",",$request4['material_address'])[0];
-                                        $import_address1 = explode(",",$request4['material_address'])[1];
-                                        $import_address2 = explode(",",$request4['material_address'])[2];
-                                        $import_address3 = explode(",",$request4['material_address'])[3];
-                                        $import_address4 = explode(",",$request4['material_address'])[3];
-                                        echo $import_address." ต.".$import_address1." อ.".$import_address2." จ.".$import_address3." ".$import_address4; 
+                                        $export_address = explode(",",$request5['material_address'])[0];
+                                        $export_address1 = explode(",",$request5['material_address'])[1];
+                                        $export_address2 = explode(",",$request5['material_address'])[2];
+                                        $export_address3 = explode(",",$request5['material_address'])[3];
+                                        $export_address4 = explode(",",$request5['material_address'])[3];
+                                        echo $export_address." ต.".$export_address1." อ.".$export_address2." จ.".$export_address3." ".$export_address4; 
                                     ?>
                                 </td>
                                 <td>

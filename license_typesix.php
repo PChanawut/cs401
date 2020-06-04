@@ -15,6 +15,49 @@
     <!-- header -->
     <?php include 'component/header.php' ?>
     <!-- main -->
+    <?php
+        if(isset($_GET['data'])){
+            $arrayData = json_decode($_GET['data'], true);
+            // print_r($arrayData);
+
+            $add_address = explode(",",$arrayData['chemical_material_address'])[0];
+            $add_district = explode(",",$arrayData['chemical_material_address'])[1];
+            $add_amphoe = explode(",",$arrayData['chemical_material_address'])[2];
+            $add_province = explode(",",$arrayData['chemical_material_address'])[3];
+            $add_zipcode = explode(",",$arrayData['chemical_material_address'])[4];
+            // echo $add_address;
+
+            $add_address1 = explode(",",$arrayData['material_address'])[0];
+            $add_district1 = explode(",",$arrayData['material_address'])[1];
+            $add_amphoe1 = explode(",",$arrayData['material_address'])[2];
+            $add_province1 = explode(",",$arrayData['material_address'])[3];
+            $add_zipcode1 = explode(",",$arrayData['material_address'])[4];
+
+            $safe_name = explode(" ",$arrayData['safe_name'])[0];
+            $safe_lname = explode(" ",$arrayData['safe_name'])[1];
+
+            $safe_address_house = explode(",",$arrayData['safe_address'])[0];
+            $safe_address_house1 = explode(",",$arrayData['safe_address'])[1];
+            $safe_address_house2 = explode(",",$arrayData['safe_address'])[2];
+            $safe_address_house3 = explode(",",$arrayData['safe_address'])[3];
+            $safe_address_district = explode(",",$arrayData['safe_address'])[4];
+            $safe_address_amphoe = explode(",",$arrayData['safe_address'])[5];
+            $safe_address_province = explode(",",$arrayData['safe_address'])[6];
+            $safe_address_zipcode = explode(",",$arrayData['safe_address'])[7];
+
+            $make_name = explode(" ",$arrayData['make_name'])[0];
+            $make_lname = explode(" ",$arrayData['make_name'])[1];
+
+            $make_address_house = explode(",",$arrayData['make_address'])[0];
+            $make_address_house1 = explode(",",$arrayData['make_address'])[1];
+            $make_address_house2 = explode(",",$arrayData['make_address'])[2];
+            $make_address_house3 = explode(",",$arrayData['make_address'])[3];
+            $make_address_district = explode(",",$arrayData['make_address'])[4];
+            $make_address_amphoe = explode(",",$arrayData['make_address'])[5];
+            $make_address_province = explode(",",$arrayData['make_address'])[6];
+            $make_address_zipcode = explode(",",$arrayData['make_address'])[7];
+        }
+    ?>
     <form id="request" action="./php/php_license_typesix.php" method="post">
         <?php include 'component/main_request_typesix.php' ?>
     </form>
