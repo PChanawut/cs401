@@ -1,4 +1,31 @@
 CS402 project
+├───asset
+│   └───config
+├───component
+├───css
+├───database
+├───file
+├───js
+│   └───jquery.Thailand.js
+│       ├───database
+│       │   ├───raw_database
+│       │   └───tools
+│       ├───dependencies
+│       │   └───zip.js
+│       ├───dist
+│       └───src
+├───php
+│   └───config
+├───phpmailer
+│   ├───.github
+│   ├───examples
+│   │   ├───images
+│   │   ├───scripts
+│   │   └───styles
+│   ├───extras
+│   └───language
+└───stylesheet
+
 
 Git repository:
 
