@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2020 at 07:13 PM
+-- Generation Time: Jun 05, 2020 at 08:21 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -47,7 +47,8 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`company_id`, `company_type`, `company_name`, `company_address`, `company_phone`, `company_fax`, `company_email`, `enroll_start`, `enroll_no`, `company_status`, `company_file`) VALUES
-(1, 'company', 'บริษัท ปตท. จำกัด (มหาชน)', '555 ถนนวิภาวดีรังสิต,จตุจักร,จตุจักร,กรุงเทพมหานคร,10900', '025372000', '0253734989', '-', '2001-10-01', '0107544000108', 'success', '9bc302a7784e837a553c6dbde4831bfdc720192307c90433e1ea3e0ba68e4347de245543eb7f8f5a8a7ff0464b2ea74e70ebd01da394fa97855a1d97992e436e.pdf');
+(1, 'company', 'บริษัท ปตท. จำกัด (มหาชน)', '555 ถนนวิภาวดีรังสิต,จตุจักร,จตุจักร,กรุงเทพมหานคร,10900', '0864562591', '0123456789', 'superhipee@hotmail.com', '2020-06-01', '0107544000108', 'success', '1b46ebb28f4483b47ca0122727ee082d2931bb8d736266fd6b53fc1d66fed101797711ea2cba9f1b1d6a3cd05377c1f834601e03231d21bdc2c1def8b1ddf8d6.pdf'),
+(2, 'company', 'บริษัท ปตท. จำกัด (มหาชน)2', '555 ถนนวิภาวดีรังสิต,บ้านเกาะ,เมืองนครราชสีมา,นครราชสีมา,30000', '0864562591', '0864562511', 'superhipee@hotmail.com', '2020-06-01', '59096502626', 'wait', 'b27acff6aa19049a9d870d756bafcd7cdb2fa7481e6614bdba51d6013fad902c8b22439856370ab3a930da5052aa56ddc9f9a73fff65a79be339b8721b20ec68.pdf');
 
 -- --------------------------------------------------------
 
@@ -58,6 +59,7 @@ INSERT INTO `company` (`company_id`, `company_type`, `company_name`, `company_ad
 CREATE TABLE `companystaff` (
   `staff_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
   `type_authorities` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `staff_name` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `staff_idcard` varchar(13) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -74,6 +76,24 @@ CREATE TABLE `companystaff` (
   `staff_start_work` date DEFAULT NULL,
   `fav_staff` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `companystaff`
+--
+
+INSERT INTO `companystaff` (`staff_id`, `license_id`, `company_id`, `type_authorities`, `staff_name`, `staff_idcard`, `staff_position`, `staff_age`, `staff_nationality`, `staff_phone`, `staff_email`, `staff_address`, `staff_qualification`, `staff_no_regis`, `staff_work_name`, `staff_art_license`, `staff_start_work`, `fav_staff`) VALUES
+(1, 1, 1, 'เจ้าหน้าที่ความปลอดภัยทางรังสี', 'สมชาย ทรัพย์ภูมิ', '1209700576651', 'วิศวกรความปลอดภัยทางรังสี', '45', 'ไทย', '0873550826', 'smell-sjr@hotmail.com', '38/2,6,-,-,กกกุง,เมืองสรวง,ร้อยเอ็ด,45220', 'วิศวกรรมศาสตร์ สาขารังสี', 'SD56862145', NULL, NULL, NULL, 'select'),
+(2, 1, 1, 'ผู้ปฏิบัติงานทางรังสี', 'รุ่งอรุณ จันทรกุล', '3200700576651', 'เจ้าหน้าที่ตรวจสอบความปลอดภัยท', '49', 'ไทย', '0864512215', 'rungarun@hotmail.com', '77/9,2,-,-,ดงกลาง,จตุรพักตรพิมาน,ร้อยเอ็ด,45180', 'วิทยาศาสตร์บัณฑิต สาขาฟิสิกส์', 'DF7862225415', NULL, NULL, NULL, 'select'),
+(3, 1, 1, 'แพทย์ผู้รับผิดชอบ', 'ปวิณ ปทุมวัน', '1204500547895', 'แพทย์ดูแลเจ้าหน้าทางรังสี', '43', 'ไทย', '0817613267', 'prawin@yahoo.com', '115/89,3,-,-,ยม,ท่าวังผา,น่าน,55140', NULL, NULL, 'ปตท. ปิโตรเลียม ระยอง', 'GF8464646', '0000-00-00', 'select'),
+(4, 2, 1, 'เจ้าหน้าที่ความปลอดภัยทางรังสี', 'สมชาย ทรัพย์ภูมิ', '1209700576651', 'วิศวกรความปลอดภัยทางรังสี', '45', 'ไทย', '0873550826', 'smell-sjr@hotmail.com', '38/2,6,-,-,กกกุง,เมืองสรวง,ร้อยเอ็ด,45220', 'วิศวกรรมศาสตร์ สาขารังสี', 'SD56862145', NULL, NULL, NULL, 'not'),
+(5, 2, 1, 'ผู้ปฏิบัติงานทางรังสี', 'รุ่งอรุณ จันทรกุล', '3200700576651', 'เจ้าหน้าที่ตรวจสอบความปลอดภัยท', '49', 'ไทย', '0864512215', 'rungarun@hotmail.com', '77/9,2,-,-,ดงกลาง,จตุรพักตรพิมาน,ร้อยเอ็ด,45180', 'วิทยาศาสตร์บัณฑิต สาขาฟิสิกส์', 'DF7862225415', NULL, NULL, NULL, 'not'),
+(6, 2, 1, 'แพทย์ผู้รับผิดชอบ', 'ปวิณ ปทุมวัน', '1204500547895', 'แพทย์ดูแลเจ้าหน้าทางรังสี', '43', 'ไทย', '0817613267', 'prawin@yahoo.com', '115/89,3,-,-,ยม,ท่าวังผา,น่าน,55140', NULL, NULL, 'ปตท. ปิโตรเลียม ระยอง', 'GF8464646', '0000-00-00', 'not'),
+(7, 3, 1, 'เจ้าหน้าที่ความปลอดภัยทางรังสี', 'สมชาย ทรัยพ์ภูมิ', '1120970057665', 'วิศวกรความปอดภัยทางรังสี', '45', 'ไทย', '0873550826', 'somchai@hotmail.com', '78/2,9,-,-,หนองกบ,หนองแซง,สระบุรี,18170', 'วิศวกรรมศาสตร์ สาขาฟิสิกส์', 'GF789546', NULL, NULL, NULL, 'select'),
+(8, 3, 1, 'ผู้ปฏิบัติงานทางรังสี', 'รุ่งอรุณ จันทรกุล', '3200700576651', 'เจ้าหน้าที่ตรวจสอบความปลอดภัยท', '49', 'ไทย', '0864512215', 'rungarun@hotmail.com', '77/9,2,-,-,ดงกลาง,จตุรพักตรพิมาน,ร้อยเอ็ด,45180', 'วิทยาศาสตร์บัณฑิต สาขาฟิสิกส์', 'DF7862225415', NULL, NULL, NULL, 'not'),
+(9, 3, 1, 'แพทย์ผู้รับผิดชอบ', 'ปวิณ ปทุมวัน', '1204500547895', 'แพทย์ดูแลเจ้าหน้าทางรังสี', '43', 'ไทย', '0817613267', 'prawin@yahoo.com', '115/89,3,-,-,ยม,ท่าวังผา,น่าน,55140', NULL, NULL, 'ปตท. ปิโตรเลียม ระยอง', 'GF8464646', '0000-00-00', 'not'),
+(10, 4, 1, 'เจ้าหน้าที่ความปลอดภัยทางรังสี', 'สมชาย ทรัพย์ภูมิ', '1209700576651', 'วิศวกรความปลอดภัยทางรังสี', '45', 'ไทย', '0873550826', 'smell-sjr@hotmail.com', '38/2,6,-,-,กกกุง,เมืองสรวง,ร้อยเอ็ด,45220', 'วิศวกรรมศาสตร์ สาขารังสี', 'SD56862145', NULL, NULL, NULL, 'not'),
+(11, 4, 1, 'ผู้ปฏิบัติงานทางรังสี', 'รุ่งอรุณ จันทรกุล', '3200700576651', 'เจ้าหน้าที่ตรวจสอบความปลอดภัยท', '49', 'ไทย', '0864512215', 'rungarun@hotmail.com', '77/9,2,-,-,ดงกลาง,จตุรพักตรพิมาน,ร้อยเอ็ด,45180', 'วิทยาศาสตร์บัณฑิต สาขาฟิสิกส์', 'DF7862225415', NULL, NULL, NULL, 'not'),
+(12, 4, 1, 'แพทย์ผู้รับผิดชอบ', 'ปวิณ ปทุมวัน', '1204500547895', 'แพทย์ดูแลเจ้าหน้าทางรังสี', '43', 'ไทย', '0817613267', 'prawin@yahoo.com', '115/89,3,-,-,ยม,ท่าวังผา,น่าน,55140', NULL, NULL, 'ปตท. ปิโตรเลียม ระยอง', 'GF8464646', '0000-00-00', 'not');
 
 -- --------------------------------------------------------
 
@@ -132,7 +152,10 @@ CREATE TABLE `license` (
 --
 
 INSERT INTO `license` (`license_id`, `license_type`, `license_number`, `place_id`, `sid`, `license_approve_person`, `license_status`, `start_date`, `expire_date`, `latest_inspect_date`, `next_inspect_date`) VALUES
-(1, 'ขออนุญาตพลังงานปรมาณูจากเครื่องปฏิกรณ์ปรมาณู', 'RE', '1', '4', 'NULL', 'รอตรวจสอบคำขอ', '2020-05-26', '0000-00-00', '0000-00-00', '0000-00-00');
+(1, 'ขออนุญาตฯ วัสดุพลอยได้', 'RE', '1', '1', 'สมชาย อินทานินท์', 'ใบอนุญาตถูกยกเลิก', '2020-06-04', '2020-06-12', NULL, NULL),
+(2, 'ขออนุญาตฯ วัสดุพลอยได้', 'RE', '2', '1', 'สมชาย อินทานินท์', 'สำเร็จ', '2020-06-04', '2020-06-17', NULL, NULL),
+(3, 'ขออนุญาตฯ วัสดุพลอยได้', 'RE', '3', '1', NULL, 'รอตรวจสอบคำขอ', '2020-06-04', NULL, NULL, NULL),
+(4, 'ขออนุญาตฯ วัสดุพลอยได้', 'RE', '4', '1', NULL, 'รอตรวจสอบคำขอ', '2020-06-04', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -164,6 +187,7 @@ CREATE TABLE `materialchemical` (
 CREATE TABLE `materiallocation` (
   `material_id` int(11) NOT NULL,
   `license_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
   `material_address` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `material_phone` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `material_email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -178,8 +202,11 @@ CREATE TABLE `materiallocation` (
 -- Dumping data for table `materiallocation`
 --
 
-INSERT INTO `materiallocation` (`material_id`, `license_id`, `material_address`, `material_phone`, `material_email`, `type_benefit`, `type_request`, `type_vehicle`, `type_location_material`, `fav_location`) VALUES
-(1, 1, '555 ถนนวิภาวดีรังสิต จตุจักร จตุจักร กรุงเทพมหานคร 10900', '025372000', '-', 'NULL', 'ผลิต', 'NULL', 'NULL', '');
+INSERT INTO `materiallocation` (`material_id`, `license_id`, `company_id`, `material_address`, `material_phone`, `material_email`, `type_benefit`, `type_request`, `type_vehicle`, `type_location_material`, `fav_location`) VALUES
+(1, 1, 1, '38/2 ม.6,หนองปลาไหล,บางละมุง,ชลบุรี,20150', '0984593954', 'smell-sjr@hotmail.com', 'ศึกษาวิจัย', 'มีไว้ในครอบครอง', NULL, NULL, 'select'),
+(2, 2, 1, '38/2 ม.6,หนองปลาไหล,บางละมุง,ชลบุรี,20150', '0984593954', 'smell-sjr@hotmail.com', 'การแพทย์', 'ผลิต', NULL, NULL, 'not'),
+(3, 3, 1, '38/2 ม.6,ปลวกแดง,ปลวกแดง,ระยอง,21140', '0873550826', 'ptt_rayong@hotmail.com', 'อุตสาหกรรม', 'มีไว้ในครอบครอง', NULL, NULL, 'select'),
+(4, 4, 1, '38/2 ม.6,หนองปลาไหล,ปลวกแดง,ระยอง,21140', '0873550826', 'ptt_rayong@hotmail.com', 'การแพทย์', 'ผลิต', NULL, NULL, 'not');
 
 -- --------------------------------------------------------
 
@@ -267,6 +294,16 @@ CREATE TABLE `materialrequest` (
   `company_sale` varchar(200) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `materialrequest`
+--
+
+INSERT INTO `materialrequest` (`material_request_id`, `license_id`, `material_type`, `no_reference`, `operation_type`, `element`, `product_model`, `material_status`, `manufacturer_material`, `material_number`, `weight_material`, `unit_weight`, `manufacturer_container`, `material_number_container`, `container_number`, `weight_container`, `unit_container`, `locationname_material`, `company_sale`) VALUES
+(1, 1, 'ไม่ปิดผนึก', 'FD55468', 'Leakage Testing', 'LI50', 'TY3465', 'ยกเลิกการใช้', 'RADIAN  INDUSTY', NULL, '25000', 'lb', 'ของเหลว', NULL, NULL, NULL, NULL, 'PTT RAYONG', 'RADIAN INDUSTY IN THAILAND'),
+(2, 2, 'ไม่ปิดผนึก', 'FD55468', 'Research', 'LI50', 'TY3465', 'ใช้งานปกติ', 'RADIAN  INDUSTY', NULL, '25000', 'Bq', 'ของแข็ง', NULL, NULL, NULL, NULL, 'PTT RAYONG', 'RADIAN INDUSTY IN THAILAND'),
+(3, 3, 'ไม่ปิดผนึก', 'DE7896', 'รังสีวินิจฉัย', 'CO-60', 'RT58889', 'เก็บสำรอง', 'RADIAN RAYONG', NULL, '25000', 'lb', 'ของเหลว', NULL, NULL, NULL, NULL, 'PTT RAYONG', 'RADIAN RAYONG THAILAND'),
+(4, 4, 'ไม่ปิดผนึก', 'FD55468', 'Research', 'LI50', 'TY3465', 'ใช้งานปกติ', 'RADIAN  INDUSTY', NULL, '25000', 'Bq', 'ของแข็ง', NULL, NULL, NULL, NULL, 'PTT RAYONG', 'RADIAN INDUSTY IN THAILAND');
+
 -- --------------------------------------------------------
 
 --
@@ -282,13 +319,6 @@ CREATE TABLE `materialspecial` (
   `producename_atomic` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `country_produce_atomic` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `materialspecial`
---
-
-INSERT INTO `materialspecial` (`material_id`, `license_id`, `type_atomic`, `power_heat`, `type_atomic_reactor`, `producename_atomic`, `country_produce_atomic`) VALUES
-(1, 1, 'เป่าลูกโป่ง', '1000', 'เครื่องปฏิกรณ์ปรมาณูกำลัง', 'ชนา เอนเตอร์ไพรส์', 'เยอรมัน');
 
 -- --------------------------------------------------------
 
@@ -332,6 +362,16 @@ CREATE TABLE `place` (
   `risk_group` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `place`
+--
+
+INSERT INTO `place` (`place_id`, `department_name`, `department_id`, `address`, `tel`, `fax`, `email`, `place_type`, `department_type`, `zone`, `risk_group`) VALUES
+(1, 'บริษัท ปตท. จำกัด (มหาชน)', '1', '38/2 ม.6,หนองปลาไหล,บางละมุง,ชลบุรี,20150', '0984593954', 'NULL', 'smell-sjr@hotmail.com', '01', 'NULL', 'NULL', 'NULL'),
+(2, 'บริษัท ปตท. จำกัด (มหาชน)', '1', '38/2 ม.6,หนองปลาไหล,บางละมุง,ชลบุรี,20150', '0984593954', 'NULL', 'smell-sjr@hotmail.com', '01', 'NULL', 'NULL', 'NULL'),
+(3, 'บริษัท ปตท. จำกัด (มหาชน)', '1', '38/2 ม.6,ปลวกแดง,ปลวกแดง,ระยอง,21140', '0873550826', 'NULL', 'ptt_rayong@hotmail.com', '01', 'NULL', 'NULL', 'NULL'),
+(4, 'บริษัท ปตท. จำกัด (มหาชน)', '1', '38/2 ม.6,หนองปลาไหล,ปลวกแดง,ระยอง,21140', '0873550826', 'NULL', 'ptt_rayong@hotmail.com', '01', 'NULL', 'NULL', 'NULL');
+
 -- --------------------------------------------------------
 
 --
@@ -356,9 +396,12 @@ CREATE TABLE `usercompany` (
 
 INSERT INTO `usercompany` (`usercompany_id`, `company_id`, `usercompany_username`, `usercompany_password`, `usercompany_name`, `usercompany_status`, `usercompany_type`, `usercompany_ativate`, `usercompany_permission`) VALUES
 (1, NULL, 'admin', '25f9e794323b453885f5181f1b624d0b', 'Power Admin', 'admin', 'admin', 'ativate', '11111'),
-(2, 0, 'officer', '25f9e794323b453885f5181f1b624d0b', 'พนักงาน นามสกุล', 'ชงชา', 'officer', 'ativate', '11110'),
-(3, 0, 'commit', '25f9e794323b453885f5181f1b624d0b', 'อนุกรรมการ นามสกุล', 'คนสวน', 'subcommittee', 'ativate', '11000'),
-(4, 1, 'admin_ptt', '25f9e794323b453885f5181f1b624d0b', 'บริษัท ปตท. จำกัด (มหาชน)', 'admin', 'company', 'ativate', '11111');
+(2, 1, 'admin_ptt', '25f9e794323b453885f5181f1b624d0b', 'บริษัท ปตท. จำกัด (มหาชน)', 'admin', 'company', 'ativate', '11111'),
+(3, 0, 'officer', '25f9e794323b453885f5181f1b624d0b', 'สมชาย อินทานินท์', 'เจ้าหน้าที่ขอใบอนุญาต', 'officer', 'ativate', '11110'),
+(4, 0, 'commit', '25f9e794323b453885f5181f1b624d0b', 'อมรรัตน์ สิงห์หราช', 'หัวหน้าฝ่ายออกใบอนุญาต', 'subcommittee', 'ativate', '11000'),
+(5, 1, 'kavin', '25f9e794323b453885f5181f1b624d0b', 'กวิน ศรีประทุม', 'เจ้าหน้าที่บัญชี', 'usercompany', 'ativate', '11110'),
+(6, 2, 'admin_ptt123', '25f9e794323b453885f5181f1b624d0b', 'บริษัท ปตท. จำกัด (มหาชน)2', 'admin', 'company', 'deativate', '11111'),
+(7, 1, 'chanawut', 'd41d8cd98f00b204e9800998ecf8427e', 'ชนะวุฒิ มหัทธนาคุณ', 'ฝ่ายคำร้อง', 'usercompany', 'deativate', '11110');
 
 --
 -- Indexes for dumped tables
@@ -466,13 +509,13 @@ ALTER TABLE `usercompany`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `company_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `company_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `companystaff`
 --
 ALTER TABLE `companystaff`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `document_relate`
@@ -490,7 +533,7 @@ ALTER TABLE `inspectionreport`
 -- AUTO_INCREMENT for table `license`
 --
 ALTER TABLE `license`
-  MODIFY `license_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `license_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `materialchemical`
@@ -502,7 +545,7 @@ ALTER TABLE `materialchemical`
 -- AUTO_INCREMENT for table `materiallocation`
 --
 ALTER TABLE `materiallocation`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `materialnatural`
@@ -526,13 +569,13 @@ ALTER TABLE `materialpack`
 -- AUTO_INCREMENT for table `materialrequest`
 --
 ALTER TABLE `materialrequest`
-  MODIFY `material_request_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `material_request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `materialspecial`
 --
 ALTER TABLE `materialspecial`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `materialxray`
@@ -544,13 +587,13 @@ ALTER TABLE `materialxray`
 -- AUTO_INCREMENT for table `place`
 --
 ALTER TABLE `place`
-  MODIFY `place_id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `place_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `usercompany`
 --
 ALTER TABLE `usercompany`
-  MODIFY `usercompany_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `usercompany_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
