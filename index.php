@@ -23,7 +23,7 @@
                 <input type="text" id='username' class="form-control mb-2" placeholder="ชื่อบัญชีผู้ใช้" required>
                 <input type="password" id='password' class="form-control" placeholder="รหัสผ่าน" autocomplete="on" required>    
                 <button class="btn btn-lg btn-primary btn-block mt-2 mb-1" type="submit">เข้าสู่ระบบ</button>
-                <a href="register" style="float:right;">สมัครสมาชิก</a>
+                <a href="register.php" style="float:right;">สมัครสมาชิก</a>
             </div>
         </form>
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

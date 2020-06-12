@@ -13,7 +13,7 @@ $('#login_form').submit(function(e) {
             response = JSON.parse(response);
             if (response.success) {
                 $(document).ajaxStop(function() {
-                    location.replace("home");
+                    location.replace("home.php");
                 });
             } else {
                 $("#invalid").css("display", "block");

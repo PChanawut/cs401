@@ -48,7 +48,7 @@
 				if($_SESSION["permission"][1] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany" || $_SESSION["type"] == "personality" || $_SESSION["type"] == "userpersonality")){
 			?>
             <li class="nav-item">
-                <a class="nav-link text-light" href="license_renew">ต่อใบอนุญาต</a>
+                <a class="nav-link text-light" href="license_renew.php">ต่อใบอนุญาต</a>
             </li>
             <?php
 				}
@@ -59,7 +59,7 @@
 				if($_SESSION["permission"][2] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany" || $_SESSION["type"] == "personality" || $_SESSION["type"] == "userpersonality")){
 			?>
             <li class="nav-item">
-                <a class="nav-link text-light" href="license_dismiss">ยกเลิกใบอนุญาต</a>
+                <a class="nav-link text-light" href="license_dismiss.php">ยกเลิกใบอนุญาต</a>
             </li>
             <?php
 				}
@@ -70,7 +70,7 @@
 				if($_SESSION["permission"][3] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany" || $_SESSION["type"] == "personality" || $_SESSION["type"] == "userpersonality")){
 			?>
             <li class="nav-item">
-                <a class="nav-link text-light" href="license_all">ใบอนุญาตทั้งหมด</a>
+                <a class="nav-link text-light" href="license_all.php">ใบอนุญาตทั้งหมด</a>
             </li>
             <?php
 				}
@@ -81,22 +81,22 @@
             <?php if(($_SESSION["type"] == "officer")){ ?>
                 <?php if($_SESSION["permission"][0] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_confirm_register">ยืนยันการสมัคร</a>
+                        <a class="nav-link text-light" href="officer_confirm_register.php">ยืนยันการสมัคร</a>
                     </li>
                 <?php } ?>
                 <?php if($_SESSION["permission"][1] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_confirm_license">อนุมัติใบอนุญาต</a>
+                        <a class="nav-link text-light" href="officer_confirm_license.php">อนุมัติใบอนุญาต</a>
                     </li>
                 <?php } ?>    
                 <?php if($_SESSION["permission"][2] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_license_dismiss">ยกเลิกใบอนุญาต</a>
+                        <a class="nav-link text-light" href="officer_license_dismiss.php">ยกเลิกใบอนุญาต</a>
                     </li>
                 <?php } ?>    
                 <?php if($_SESSION["permission"][3] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_confirm_license">ดูใบอนุญาต</a>
+                        <a class="nav-link text-light" href="officer_confirm_license.php">ดูใบอนุญาต</a>
                     </li>
                 <?php } ?>    
             <?php
@@ -108,12 +108,12 @@
             <?php if(($_SESSION["type"] == "subcommittee")){ ?>
                 <?php if($_SESSION["permission"][0] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="committee_confirm_license">อนุมัติใบอนุญาต</a>
+                        <a class="nav-link text-light" href="committee_confirm_license.php">อนุมัติใบอนุญาต</a>
                     </li>
                 <?php } ?>
                 <?php if($_SESSION["permission"][1] == 1){ ?>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="officer_confirm_license">ดูใบอนุญาต</a>
+                        <a class="nav-link text-light" href="officer_confirm_license.php">ดูใบอนุญาต</a>
                     </li>
                 <?php } ?>      
             <?php
@@ -130,11 +130,11 @@
                 <a class="dropdown-item" href="#">ข้อมูลส่วนตัว</a>
 
                 <?php if($_SESSION['permission'][4] == 1 && ($_SESSION["type"] == "company" || $_SESSION["type"] == "usercompany" || $_SESSION["type"] == "personality" || $_SESSION["type"] == "userpersonality")){ ?>
-                <a class="dropdown-item" href="adduser">เพิ่มสมาชิก</a>
+                <a class="dropdown-item" href="adduser.php">เพิ่มสมาชิก</a>
                 <?php } ?>
 
                 <?php if($_SESSION['type'] == "admin"){ ?>
-                <a class="dropdown-item" href="admin_adduser">เพิ่มสมาชิก</a>
+                <a class="dropdown-item" href="admin_adduser.php">เพิ่มสมาชิก</a>
                 <?php } ?>
 
                 <div class="dropdown-divider"></div>
